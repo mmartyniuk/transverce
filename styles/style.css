@@ -150,7 +150,8 @@ select.form-control {
 }
 
 input.error, input.error:focus, select.error, select.error:focus {
-   border: 1px solid #d3222a;
+    border: 1px solid #d3222a;
+    color: #000 !important;
 }
 .error+.error, .error {
     color: #d3222a;
