@@ -84,21 +84,27 @@
                         </div>
                     </div>
                     <form id="enterprise" class="tab-pane active" novalidate="novalidate" role="form">
-                        <div class="row form-group">
+                        <div class="row">
                             <!-- Corporate -->
                             <div class="col-md-6">
                                 <div class="wrapper">
                                     <fieldset class="the-fieldset">
                                         <legend class="the-legend">For personal account</legend>
-                                        <label for="firstName" class="required">First Name</label>
-                                        <input type="text" class="form-control" id="firstName" name="firstName">
-                                        <label for="LastName" class="required">Last Name</label>
-                                        <input type="text" class="form-control" id="LastName" name="LastName">
+                                        <div class="form-group">
+                                            <label for="firstName" class="required control-label">First Name</label>
+                                            <input type="text" class="form-control" id="firstName" name="firstName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="LastName" class="required control-label">Last Name</label>
+                                            <input type="text" class="form-control" id="LastName" name="LastName">
+                                        </div>
                                     </fieldset>
                                     <fieldset class="the-fieldset margin-0">
                                         <legend class="the-legend">For enterprise account</legend>
-                                        <label for="companyName" class="required">Company Name</label>
-                                        <input type="text" class="form-control" id="companyName" name="companyName">
+                                        <div class="form-group">
+                                            <label for="companyName" class="required control-label">Company Name</label>
+                                            <input type="text" class="form-control" id="companyName" name="companyName">
+                                        </div>
                                     </fieldset>
                                     <div class="row">
                                         <div class="col-md-7 col-sm-12 padding-right-0">
@@ -111,8 +117,10 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <label for="corporateEmail" class="required">Email</label>
-                                    <input type="email" class="form-control" id="corporateEmail" name="corporateEmail">
+                                    <div class="form-group">
+                                        <label for="corporateEmail" class="required control-label">Email</label>
+                                        <input type="email" class="form-control" id="corporateEmail" name="corporateEmail">
+                                    </div>
                                     <label for="corporatePhone">Phone</label>
                                     <div class="phone1">
                                         <div class="row">
@@ -200,16 +208,16 @@
                             <div class="col-md-6">
                                 <div class="wrapper">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <label for="currency" class="required">Currency</label>
+                                        <div class="col-md-4 form-group">
+                                            <label for="currency" class="required control-label">Currency</label>
                                             <select id="currency" class="form-control" name="currency">
                                                 <option value=""></option>
                                                 <option value="USD">USD</option>
                                                 <option value="EU">EU</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-8 padding-left-0">
-                                            <label for="billCycle" class="required">Bill Cycle</label>
+                                        <div class="col-md-8 padding-left-0 form-group">
+                                            <label for="billCycle" class="required control-label">Bill Cycle</label>
                                             <select id="billCycle" class="form-control" name="billCycle">
                                                 <option value=""></option>
                                             </select>
@@ -229,16 +237,20 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <label for="invoiceType" class="required">Invoice Type</label>
-                                    <select id="invoiceType" class="form-control" name="invoiceType">
-                                        <option value="">Please Select</option>
-                                        <option value="SomeTestData">Some Test Data</option>
-                                    </select>
-                                    <label for="accountCategory" class="required">Account Category</label>
-                                    <select id="accountCategory" class="form-control" name="accountCategory">
-                                        <option value="">Please Select</option>
-                                        <option value="SomeTestData">Some Test Data</option>
-                                    </select>
+                                    <div class="form-group">
+                                        <label for="invoiceType" class="required control-label">Invoice Type</label>
+                                        <select id="invoiceType" class="form-control" name="invoiceType">
+                                            <option value="">Please Select</option>
+                                            <option value="SomeTestData">Some Test Data</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="accountCategory" class="required control-label">Account Category</label>
+                                        <select id="accountCategory" class="form-control" name="accountCategory">
+                                            <option value="">Please Select</option>
+                                            <option value="SomeTestData">Some Test Data</option>
+                                        </select>
+                                    </div>
                                     <div class="spinner-container common-select" id="spinnerAcc">
                                         <div class="spinner">
                                             <svg height="1em" width="1em">
@@ -273,8 +285,10 @@
                                         <option value="sbp2">Sub Parent 2</option>
                                         <option value="sbp3">Sub Parent 3</option>
                                     </select>
-                                    <label for="ExternalAccountID" class="required">External Account ID</label>
-                                    <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
+                                    <div class="form-group">
+                                        <label for="ExternalAccountID" class="required control-label">External Account ID</label>
+                                        <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label for="autoPayment">
@@ -290,7 +304,7 @@
                                 <h3><span>Addresses</span></h3>
                             </div>
                         </div>
-                        <div class="row form-group">
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="wrapper">
                                     <div class="row margin-top-10">
@@ -300,42 +314,49 @@
                                             </label>
                                         </div>
                                     </div>
+
                                     <div id="BillingAdd">
-                                        <label for="countriesBilling" class="required">Country</label>
-                                        <select id="countriesBilling" class="form-control js-example-basic-single countries">
-                                            <option value="AF">Afghanistan</option>
-                                            <option value="AL">Albania</option>
-                                            <option value="DZ">Algeria</option>
-                                            <option value="AS">American Samoa</option>
-                                            <option value="AD">Andorra</option>
-                                            <option value="AO">Angola</option>
-                                            <option value="AI">Anguilla</option>
-                                            <option value="TM">Turkmenistan</option>
-                                            <option value="TC">Turks and Caicos Islands</option>
-                                            <option value="TV">Tuvalu</option>
-                                            <option value="UG">Uganda</option>
-                                            <option value="UA">Ukraine</option>
-                                            <option value="AE">United Arab Emirates</option>
-                                            <option value="GB">United Kingdom</option>
-                                            <option value="US" selected>United States</option>
-                                            <option value="UM">United States Minor Outlying Islands</option>
-                                            <option value="UY">Uruguay</option>
-                                            <option value="UZ">Uzbekistan</option>
-                                            <option value="VU">Vanuatu</option>
-                                        </select>
-                                        <label for="address1Billing" class="required">Address Line 1</label>
-                                        <input type="text" class="form-control" id="address1Billing" name="address1Billing">
+                                        <div class="form-group">
+                                            <label for="countriesBilling" class="required control-label">Country</label>
+                                            <select id="countriesBilling" class="form-control js-example-basic-single countries">
+                                                <option value="AF">Afghanistan</option>
+                                                <option value="AL">Albania</option>
+                                                <option value="DZ">Algeria</option>
+                                                <option value="AS">American Samoa</option>
+                                                <option value="AD">Andorra</option>
+                                                <option value="AO">Angola</option>
+                                                <option value="AI">Anguilla</option>
+                                                <option value="TM">Turkmenistan</option>
+                                                <option value="TC">Turks and Caicos Islands</option>
+                                                <option value="TV">Tuvalu</option>
+                                                <option value="UG">Uganda</option>
+                                                <option value="UA">Ukraine</option>
+                                                <option value="AE">United Arab Emirates</option>
+                                                <option value="GB">United Kingdom</option>
+                                                <option value="US" selected>United States</option>
+                                                <option value="UM">United States Minor Outlying Islands</option>
+                                                <option value="UY">Uruguay</option>
+                                                <option value="UZ">Uzbekistan</option>
+                                                <option value="VU">Vanuatu</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address1Billing" class="required control-label">Address Line 1</label>
+                                            <input type="text" class="form-control" id="address1Billing" name="address1Billing">
+                                        </div>
                                         <label for="address2Billing">Address Line 2</label>
                                         <input type="text" class="form-control" id="address2Billing">
-                                        <label for="cityBilling" class="required">City</label>
-                                        <input type="text" class="form-control" id="cityBilling" name="cityBilling">
+                                        <div class="form-group">
+                                            <label for="cityBilling" class="required control-label">City</label>
+                                            <input type="text" class="form-control" id="cityBilling" name="cityBilling">
+                                        </div>
                                         <div class="row">
-                                            <div class="col-md-8 hidden">
-                                                <label for="state" class="required">State</label>
+                                            <div class="col-md-8 hidden form-group">
+                                                <label for="state" class="required control-label">State</label>
                                                 <input type="text" class="form-control" id="state" name="state">
                                             </div>
-                                            <div class="col-md-8">
-                                                <label for="statesUS" class="required">State</label>
+                                            <div class="col-md-8 form-group">
+                                                <label for="statesUS" class="required control-label">State</label>
                                                 <select id="statesUS" class="form-control js-example-basic-single">
                                                     <option value="AL">Alabama</option>
                                                     <option value="AK">Alaska</option>
@@ -352,8 +373,8 @@
                                                     <option value="NC">North Carolina</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-4 padding-left-0">
-                                                <label for="postalCodeBilling" class="required">Postal Code</label>
+                                            <div class="col-md-4 padding-left-0 form-group">
+                                                <label for="postalCodeBilling" class="required control-label">Postal Code</label>
                                                 <input type="text" class="form-control" id="postalCodeBilling" name="postalCodeBilling">
                                             </div>
                                         </div>

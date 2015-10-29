@@ -26,6 +26,9 @@ h3 {
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     opacity: 0.5;
 }
+.form-group {
+    margin-bottom: 0;
+}
 
 header .row h6 strong, label strong {
     font-size: 18px;
@@ -149,13 +152,13 @@ select.form-control {
     padding: 2px 0 0 2px;
 }
 
-input.error, input.error:focus, select.error, select.error:focus {
+/*input.error, input.error:focus, select.error, select.error:focus {
     border: 1px solid #d3222a;
     color: #000 !important;
 }
 .error+.error, .error {
     color: #d3222a;
-}
+}*/
 #errormessages {
     color: #d3222a;
     font-size: 18px;
@@ -351,7 +354,7 @@ input.error, input.error:focus, select.error, select.error:focus {
 }
 #spinnerCurr{
     top: -32px;
-    left: 42px;
+    left: 27px;
 }
 .phone-container {
     position: relative;

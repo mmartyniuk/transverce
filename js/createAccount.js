@@ -468,17 +468,21 @@ $(document).ready(function(){
                 maxlength: 20
             }
         },
-        errorElement: "div",
-        highlight: function(element, errorClass, validClass) {
-            $(element).addClass(errorClass).removeClass(validClass);
-            $(element.form).find("label[for=" + element.id + "]")
-              .addClass(errorClass);
-          },
-          unhighlight: function(element, errorClass, validClass) {
-            $(element).removeClass(errorClass).addClass(validClass);
-            $(element.form).find("label[for=" + element.id + "]")
-              .removeClass(errorClass);
-          },
+        highlight: function(element) {
+            $(element).closest('.form-group').addClass('has-error');
+        },
+        unhighlight: function(element) {
+            $(element).closest('.form-group').removeClass('has-error');
+        },
+        errorElement: 'span',
+        errorClass: 'help-block',
+        errorPlacement: function(error, element) {
+            if(element.parent('.input-group').length) {
+                error.insertAfter(element.parent());
+            } else {
+                error.insertAfter(element);
+            }
+        },
         submitHandler: function(form, event) {
             event.preventDefault(event);
             if ($("#firstName").prop('disabled') && $("#LastName").prop('disabled')){
@@ -652,7 +656,7 @@ $(document).ready(function(){
                     // here added behaviors for temporary removal of 'required' errors
                     // this should be done after click on related field
                     $('html, body').animate({
-                        scrollTop: $(".error:first").offset().top + (-40)
+                        scrollTop: $(".has-error:first").offset().top + (-40)
                     }, 100);
                     $('#corporateEmail').on('focus', function(){
                         $("#corporateEmail").rules("add", {
