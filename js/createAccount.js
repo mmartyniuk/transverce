@@ -405,7 +405,7 @@ $(document).ready(function(){
         onfocusout: function(element) {
             this.element(element);
         },
-        focusCleanup: true,
+        focusCleanup: false,
         onkeyup: false,
         rules: {
             corporateEmail: {
@@ -619,7 +619,7 @@ $(document).ready(function(){
                     $('html, body').animate({
                         scrollTop: $(".has-error:first").offset().top + (-40)
                     }, 100);
-                    $('#corporateEmail').on('focus', function(){
+                    $('#corporateEmail').on('onkeyup', function(){
                         $("#corporateEmail").rules("add", {
                             required: false
                         });
