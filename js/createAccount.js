@@ -790,48 +790,6 @@ $(document).ready(function(){
                     $('html, body').animate({
                         scrollTop: $(".has-error:first").offset().top + (-40)
                     }, 100);
-                    /*/$('#corporateEmail').on('focusout', function(){
-                        $("#corporateEmail").rules("add", {
-                            required: false
-                        });
-                    });*/
-                    /*$('#firstName').on('focus', function(){
-                        $("#firstName").rules("add", {
-                            required: false
-                        });
-                        $("#companyName").rules("add", {
-                            required: false
-                        });
-                    });
-                    $('#LastName').on('focus', function(){
-                        $("#LastName").rules("add", {
-                            required: false
-                        });
-                        $("#companyName").rules("add", {
-                            required: false
-                        });
-                    });
-                    $('#companyName').on('focus', function(){
-                        $("#companyName").rules("add", {
-                            required: false
-                        });
-                        $("#firstName").rules("add", {
-                            required: false
-                        });
-                        $("#LastName").rules("add", {
-                            required: false
-                        });
-                    });
-                    $('#invoiceType').on('focus', function(){
-                        $("#invoiceType").rules("add", {
-                            required: false
-                        });
-                    });
-                    $('#accountCategory').on('focus', function(){
-                        $("#accountCategory").rules("add", {
-                            required: false
-                        });
-                    });*/
                     $('#address1Billing').on('focus', function(){
                         $("#address1Billing").rules("add", {
                             required: false
@@ -852,11 +810,6 @@ $(document).ready(function(){
                             required: false
                         });
                     });
-                    /*$('#ExternalAccountID').on('focus', function(){
-                        $("#ExternalAccountID").rules("add", {
-                            required: false
-                        });
-                    });*/
                     $('#currency').on('focus', function(){
                         $("#currency").rules("add", {
                             required: false
