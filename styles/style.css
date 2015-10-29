@@ -384,6 +384,7 @@ input.error, input.error:focus, select.error, select.error:focus {
 .pull-right:last-child {
     margin-right: 20px;
 }
+
 .the-legend {
         font-size: 0.9em;
         color: #A5A5A5;
@@ -391,8 +392,12 @@ input.error, input.error:focus, select.error, select.error:focus {
         width: auto;
         padding: 0 10px;
         border-bottom: none;
-        margin-bottom: -10px;
+        margin-bottom: 0;
+        (-bracket-:hack;
+            margin-bottom: -10px;
+        );
 }
+
 .the-fieldset {
     border: 1px dashed #A5A5A5;
     padding: 0 15px 15px 15px;
