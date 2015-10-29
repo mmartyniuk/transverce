@@ -42,7 +42,23 @@ $(document).ready(function(){
         }
         
     });
-
+    var ifFirstNameChangedInitially = false;
+    var ifCorporateEmailChangedInitially = false;
+    $('#firstName').bind("focusout", handlerFirstName);
+    function handlerFirstName(e) {
+        if ($('#firstName').val()) {
+            $('#firstName').unbind("focusout", handlerFirstName);
+            ifFirstNameChangedInitially = true;
+            console.log('name changed initially');
+        }
+    }
+    $('#corporateEmail').bind("focusout", handlerEmail);
+    function handlerEmail(e) {
+        if ($('#corporateEmail').val()) {
+            $('#corporateEmail').unbind("focusout", handlerEmail);
+            ifCorporateEmailChangedInitially = true;
+        }
+    }
     $('#taxExempt').click(function(){
         var $this = $(this);
         if ($this.is(':checked')) {
@@ -401,6 +417,12 @@ $(document).ready(function(){
             });
         }
     });
+    jQuery.validator.addMethod("notEqualFirstName", function(value, element, param) {
+        return value !== param;
+    }, "Please enter at least 3 characters.");
+    jQuery.validator.addMethod("notEqualEmail", function(value, element, param) {
+        return value !== param;
+    }, "Please enter a valid email address.");
     $("#enterprise").validate({
         onfocusout: function(element) {
             this.element(element);
@@ -409,11 +431,23 @@ $(document).ready(function(){
         onkeyup: false,
         rules: {
             corporateEmail: {
-                email: true
+                email: true,
+                notEqualEmail: {
+                    param: '',
+                    depends: function(element) {
+                        return ifCorporateEmailChangedInitially;
+                    }
+                }
             },
             firstName: {
                 minlength: 3,
-                maxlength: 20
+                maxlength: 20,
+                notEqualFirstName: {
+                    param: '',
+                    depends: function(element) {
+                        return ifFirstNameChangedInitially;
+                    }
+                }
             },
             LastName: {
                 minlength: 3,
@@ -619,11 +653,11 @@ $(document).ready(function(){
                     $('html, body').animate({
                         scrollTop: $(".has-error:first").offset().top + (-40)
                     }, 100);
-                    $('#corporateEmail').on('onkeyup', function(){
+                    /*/$('#corporateEmail').on('focusout', function(){
                         $("#corporateEmail").rules("add", {
                             required: false
                         });
-                    });
+                    });*/
                     $('#firstName').on('focus', function(){
                         $("#firstName").rules("add", {
                             required: false
