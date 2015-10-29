@@ -43,13 +43,32 @@ $(document).ready(function(){
         
     });
     var ifFirstNameChangedInitially = false;
+    var ifLastNameChangedInitially = false;
+    var ifCompanyNameChangedInitially = false;
     var ifCorporateEmailChangedInitially = false;
+    var ifCurrencyChangedInitially = false;
+    var ifInvoiceChangedInitially = false;
+    var ifAccountChangedInitially = false;
+    var iExternalIDChangedInitially = false;
     $('#firstName').bind("focusout", handlerFirstName);
     function handlerFirstName(e) {
         if ($('#firstName').val()) {
             $('#firstName').unbind("focusout", handlerFirstName);
             ifFirstNameChangedInitially = true;
-            console.log('name changed initially');
+        }
+    }
+    $('#LastName').bind("focusout", handlerLastName);
+    function handlerLastName(e) {
+        if ($('#LastName').val()) {
+            $('#LastName').unbind("focusout", handlerLastName);
+            ifLastNameChangedInitially = true;
+        }
+    }
+    $('#companyName').bind("focusout", handlerCompanyName);
+    function handlerCompanyName(e) {
+        if ($('#companyName').val()) {
+            $('#companyName').unbind("focusout", handlerCompanyName);
+            ifCompanyNameChangedInitially = true;
         }
     }
     $('#corporateEmail').bind("focusout", handlerEmail);
@@ -57,6 +76,34 @@ $(document).ready(function(){
         if ($('#corporateEmail').val()) {
             $('#corporateEmail').unbind("focusout", handlerEmail);
             ifCorporateEmailChangedInitially = true;
+        }
+    }
+    $('#currency').bind("change", handlerCurrency);
+    function handlerCurrency(e) {
+        if ($('#currency').val()) {
+            $('#currency').unbind("change", handlerCurrency);
+            ifCurrencyChangedInitially = true;
+        }
+    }
+    $('#invoiceType').bind("change", handlerInvoice);
+    function handlerInvoice(e) {
+        if ($('#invoiceType').val()) {
+            $('#invoiceType').unbind("change", handlerInvoice);
+            ifInvoiceChangedInitially = true;
+        }
+    }
+    $('#accountCategory').bind("change", handlerAccount);
+    function handlerAccount(e) {
+        if ($('#accountCategory').val()) {
+            $('#accountCategory').unbind("change", handlerAccount);
+            ifAccountChangedInitially = true;
+        }
+    }
+    $('#ExternalAccountID').bind("focusout", handlerExternalID);
+    function handlerExternalID(e) {
+        if ($('#ExternalAccountID').val()) {
+            $('#ExternalAccountID').unbind("focusout", handlerExternalID);
+            iExternalIDChangedInitially = true;
         }
     }
     $('#taxExempt').click(function(){
@@ -85,10 +132,12 @@ $(document).ready(function(){
             $("#firstName").rules("add", {
                 required: false,
             });
+            $("#firstName").rules("remove", "notEqualName");
             $("#firstName").blur();
             $("#LastName").rules("add", {
                 required: false,
             });
+            $("#LastName").rules("remove", "notEqualName");
             $("#LastName").blur();
             $('#firstName').prop("disabled", true);
             $('#LastName').prop("disabled", true);
@@ -103,6 +152,22 @@ $(document).ready(function(){
         } else {
             $('#firstName').prop("disabled", false);
             $('#LastName').prop("disabled", false);
+            $("#firstName").rules("add", {
+                notEqualName: {
+                    param: '',
+                    depends: function(element) {
+                        return ifFirstNameChangedInitially;
+                    }
+                }
+            });
+            $("#LastName").rules("add", {
+                notEqualName: {
+                    param: '',
+                    depends: function(element) {
+                        return ifLastNameChangedInitially;
+                    }
+                }
+            });
             $('#firstName').prev().css("opacity", "1");
             $('#LastName').prev().css("opacity", "1");
         }
@@ -113,12 +178,13 @@ $(document).ready(function(){
             $("#companyName").rules("add", {
                 required: false,
             });
+            $("#companyName").rules("remove", "notEqualCompanyName");
             $("#companyName").blur();
             $('#companyName').prop("disabled", true);
             $('#companyName').prev().css("opacity", "0.5");
-            
         } else if ($('#LastName').val()) {
             $('#companyName').prop("disabled", true);
+            $("#companyName").rules("remove", "notEqualCompanyName");
             $('#companyName').prev().css("opacity", "0.5");
             $("#companyName").rules("add", {
                 required: false,
@@ -126,6 +192,14 @@ $(document).ready(function(){
         } else {
             $('#companyName').prop("disabled", false);
             $('#companyName').prev().css("opacity", "1");
+            $("#companyName").rules("add", {
+                notEqualCompanyName: {
+                    param: '',
+                    depends: function(element) {
+                        return ifCompanyNameChangedInitially;
+                    }
+                }
+            });
         }
     });
     $('#LastName').on('focusout', function() {
@@ -134,6 +208,7 @@ $(document).ready(function(){
             $("#companyName").rules("add", {
                 required: false,
             });
+            $("#companyName").rules("remove", "notEqualCompanyName");
             $("#companyName").blur();
             $('#companyName').prop("disabled", true);
             $('#companyName').prev().css("opacity", "0.5");
@@ -146,9 +221,18 @@ $(document).ready(function(){
             $("#companyName").rules("add", {
                 required: false,
             });
+            $("#companyName").rules("remove", "notEqualCompanyName");
         } else {
             $('#companyName').prop("disabled", false);
             $('#companyName').prev().css("opacity", "1");
+            $("#companyName").rules("add", {
+                notEqualCompanyName: {
+                    param: '',
+                    depends: function(element) {
+                        return ifCompanyNameChangedInitially;
+                    }
+                }
+            });
         }
     });
     //$(".spinner-container").css("display", "block");
@@ -417,12 +501,22 @@ $(document).ready(function(){
             });
         }
     });
-    jQuery.validator.addMethod("notEqualFirstName", function(value, element, param) {
+    jQuery.validator.addMethod("notEqualName", function(value, element, param) {
         return value !== param;
     }, "Please enter at least 3 characters.");
+    jQuery.validator.addMethod("notEqualCompanyName", function(value, element, param) {
+        return value !== param;
+    }, "Company Name field shouldn't be empty");
     jQuery.validator.addMethod("notEqualEmail", function(value, element, param) {
         return value !== param;
     }, "Please enter a valid email address.");
+    jQuery.validator.addMethod("notSelect", function(value, element, param) {
+        return value !== param;
+    }, "Please select a value");
+    jQuery.validator.addMethod("notEqualExternalID", function(value, element, param) {
+        return value !== param;
+    }, "External Account ID field shouldn't be empty");
+    
     $("#enterprise").validate({
         onfocusout: function(element) {
             this.element(element);
@@ -442,7 +536,7 @@ $(document).ready(function(){
             firstName: {
                 minlength: 3,
                 maxlength: 20,
-                notEqualFirstName: {
+                notEqualName: {
                     param: '',
                     depends: function(element) {
                         return ifFirstNameChangedInitially;
@@ -451,10 +545,53 @@ $(document).ready(function(){
             },
             LastName: {
                 minlength: 3,
-                maxlength: 20
+                maxlength: 20,
+                notEqualName: {
+                    param: '',
+                    depends: function(element) {
+                        return ifLastNameChangedInitially;
+                    }
+                }
             },
             companyName: {
-                minlength: 1
+                notEqualCompanyName: {
+                    param: '',
+                    depends: function(element) {
+                        return ifCompanyNameChangedInitially;
+                    }
+                }
+            },
+            currency: {
+                notSelect: {
+                    param: '',
+                    depends: function(element) {
+                        return ifCurrencyChangedInitially;
+                    }
+                }
+            },
+            invoiceType: {
+                notSelect: {
+                    param: '',
+                    depends: function(element) {
+                        return ifInvoiceChangedInitially;
+                    }
+                }
+            },
+            accountCategory: {
+                notSelect: {
+                    param: '',
+                    depends: function(element) {
+                        return ifAccountChangedInitially;
+                    }
+                }
+            },
+            ExternalAccountID: {
+                notEqualExternalID: {
+                    param: '',
+                    depends: function(element) {
+                        return iExternalIDChangedInitially;
+                    }
+                }
             },
             tax: {
                 minlength: 2,
@@ -658,7 +795,7 @@ $(document).ready(function(){
                             required: false
                         });
                     });*/
-                    $('#firstName').on('focus', function(){
+                    /*$('#firstName').on('focus', function(){
                         $("#firstName").rules("add", {
                             required: false
                         });
@@ -694,7 +831,7 @@ $(document).ready(function(){
                         $("#accountCategory").rules("add", {
                             required: false
                         });
-                    });
+                    });*/
                     $('#address1Billing').on('focus', function(){
                         $("#address1Billing").rules("add", {
                             required: false
@@ -715,11 +852,11 @@ $(document).ready(function(){
                             required: false
                         });
                     });
-                    $('#ExternalAccountID').on('focus', function(){
+                    /*$('#ExternalAccountID').on('focus', function(){
                         $("#ExternalAccountID").rules("add", {
                             required: false
                         });
-                    });
+                    });*/
                     $('#currency').on('focus', function(){
                         $("#currency").rules("add", {
                             required: false
