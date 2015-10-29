@@ -25,29 +25,31 @@
         <!-- Account page -->
         <nav class="navbar container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"><img src="assets/logo.png"></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="assets/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                </div>
-                <button type="submit" class="btn btn-link"><i class="fa fa-search"></i></button>
-              </form>
-                <li class="active"><a href="#"><i class="fa fa-plus"></i> Create</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Douglas Johnson <span class="caret"></span></a>
-                </li>
-              </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-link">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <li class="active"><a href="#"><i class="fa fa-plus"></i> Create</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Douglas Johnson <span class="caret"></span></a>
+                    </li>
+                </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
 
@@ -314,7 +316,6 @@
                                             </label>
                                         </div>
                                     </div>
-
                                     <div id="BillingAdd">
                                         <div class="form-group">
                                             <label for="countriesBilling" class="required control-label">Country</label>
@@ -392,41 +393,47 @@
                                         </div>
                                     </div>
                                     <div class="serviceAddress hidden" id="serviceBlockEnterprise">
-                                        <label for="countriesService" class="required">Country</label>
-                                        <select id="countriesService" class="form-control js-example-basic-single countries">
-                                            <option value="AF">Afghanistan</option>
-                                            <option value="AL">Albania</option>
-                                            <option value="DZ">Algeria</option>
-                                            <option value="AS">American Samoa</option>
-                                            <option value="AD">Andorra</option>
-                                            <option value="AO">Angola</option>
-                                            <option value="AI">Anguilla</option>
-                                            <option value="TM">Turkmenistan</option>
-                                            <option value="TC">Turks and Caicos Islands</option>
-                                            <option value="TV">Tuvalu</option>
-                                            <option value="UG">Uganda</option>
-                                            <option value="UA">Ukraine</option>
-                                            <option value="AE">United Arab Emirates</option>
-                                            <option value="GB">United Kingdom</option>
-                                            <option value="US" selected>United States</option>
-                                            <option value="UM">United States Minor Outlying Islands</option>
-                                            <option value="UY">Uruguay</option>
-                                            <option value="UZ">Uzbekistan</option>
-                                            <option value="VU">Vanuatu</option>
-                                        </select>
-                                        <label for="address1Service" class="required">Address Line 1</label>
-                                        <input type="text" class="form-control" id="address1Service" maxlength="30">
+                                        <div class="form-group">
+                                            <label for="countriesService" class="required control-label">Country</label>
+                                            <select id="countriesService" class="form-control js-example-basic-single countries">
+                                                <option value="AF">Afghanistan</option>
+                                                <option value="AL">Albania</option>
+                                                <option value="DZ">Algeria</option>
+                                                <option value="AS">American Samoa</option>
+                                                <option value="AD">Andorra</option>
+                                                <option value="AO">Angola</option>
+                                                <option value="AI">Anguilla</option>
+                                                <option value="TM">Turkmenistan</option>
+                                                <option value="TC">Turks and Caicos Islands</option>
+                                                <option value="TV">Tuvalu</option>
+                                                <option value="UG">Uganda</option>
+                                                <option value="UA">Ukraine</option>
+                                                <option value="AE">United Arab Emirates</option>
+                                                <option value="GB">United Kingdom</option>
+                                                <option value="US" selected>United States</option>
+                                                <option value="UM">United States Minor Outlying Islands</option>
+                                                <option value="UY">Uruguay</option>
+                                                <option value="UZ">Uzbekistan</option>
+                                                <option value="VU">Vanuatu</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address1Service" class="required control-label">Address Line 1</label>
+                                            <input type="text" class="form-control" id="address1Service">
+                                        </div>
                                         <label for="address2Service">Address Line 2</label>
-                                        <input type="text" class="form-control" id="address2Service" maxlength="30">
-                                        <label for="cityService" class="required">City</label>
-                                        <input type="text" class="form-control" id="cityService" maxlength="18">
+                                        <input type="text" class="form-control" id="address2Service">
+                                        <div class="form-group">
+                                            <label for="cityService" class="required control-label">City</label>
+                                            <input type="text" class="form-control" id="cityService">
+                                        </div>
                                         <div class="row">
-                                            <div class="col-md-8 hidden">
-                                                <label for="stateServiceOthers" class="required">State</label>
+                                            <div class="col-md-8 hidden form-group">
+                                                <label for="stateServiceOthers" class="required control-label">State</label>
                                                 <input type="text" class="form-control" id="stateServiceOthers" name="stateServiceOthers" maxlength="20">
                                             </div>
-                                            <div class="col-md-8">
-                                                <label for="statesUSService" class="required">State</label>
+                                            <div class="col-md-8 form-group">
+                                                <label for="statesUSService" class="required control-label">State</label>
                                                 <select id="statesUSService" class="form-control js-example-basic-single">
                                                     <option value="AL">Alabama</option>
                                                     <option value="AK">Alaska</option>
@@ -443,8 +450,8 @@
                                                     <option value="NC">North Carolina</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-4  padding-left-0">
-                                                <label for="postalCodeService" class="required">Postal Code</label>
+                                            <div class="col-md-4 padding-left-0 form-group">
+                                                <label for="postalCodeService" class="required control-label">Postal Code</label>
                                                 <input type="text" class="form-control" id="postalCodeService" maxlength="10">
                                             </div>
                                         </div>
@@ -462,41 +469,47 @@
                                         </div>
                                     </div>
                                     <div class="shippingAddress hidden" id="shippingBlockEnterprise">
-                                        <label for="countriesShipping">Countries</label>
-                                        <select id="countriesShipping" class="form-control js-example-basic-single countries" name="countriesShipping">
-                                            <option value="AF">Afghanistan</option>
-                                            <option value="AL">Albania</option>
-                                            <option value="DZ">Algeria</option>
-                                            <option value="AS">American Samoa</option>
-                                            <option value="AD">Andorra</option>
-                                            <option value="AO">Angola</option>
-                                            <option value="AI">Anguilla</option>
-                                            <option value="TM">Turkmenistan</option>
-                                            <option value="TC">Turks and Caicos Islands</option>
-                                            <option value="TV">Tuvalu</option>
-                                            <option value="UG">Uganda</option>
-                                            <option value="UA">Ukraine</option>
-                                            <option value="AE">United Arab Emirates</option>
-                                            <option value="GB">United Kingdom</option>
-                                            <option value="US" selected>United States</option>
-                                            <option value="UM">United States Minor Outlying Islands</option>
-                                            <option value="UY">Uruguay</option>
-                                            <option value="UZ">Uzbekistan</option>
-                                            <option value="VU">Vanuatu</option>
-                                        </select>
-                                        <label for="address1Shipping">Address Line 1</label>
-                                        <input type="text" class="form-control" id="address1Shipping" name="address1Shipping" maxlength="30">
+                                        <div class="form-group">
+                                            <label for="countriesShipping" class="required control-label">Countries</label>
+                                            <select id="countriesShipping" class="form-control js-example-basic-single countries" name="countriesShipping">
+                                                <option value="AF">Afghanistan</option>
+                                                <option value="AL">Albania</option>
+                                                <option value="DZ">Algeria</option>
+                                                <option value="AS">American Samoa</option>
+                                                <option value="AD">Andorra</option>
+                                                <option value="AO">Angola</option>
+                                                <option value="AI">Anguilla</option>
+                                                <option value="TM">Turkmenistan</option>
+                                                <option value="TC">Turks and Caicos Islands</option>
+                                                <option value="TV">Tuvalu</option>
+                                                <option value="UG">Uganda</option>
+                                                <option value="UA">Ukraine</option>
+                                                <option value="AE">United Arab Emirates</option>
+                                                <option value="GB">United Kingdom</option>
+                                                <option value="US" selected>United States</option>
+                                                <option value="UM">United States Minor Outlying Islands</option>
+                                                <option value="UY">Uruguay</option>
+                                                <option value="UZ">Uzbekistan</option>
+                                                <option value="VU">Vanuatu</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="address1Shipping" class="required control-label">Address Line 1</label>
+                                            <input type="text" class="form-control" id="address1Shipping" name="address1Shipping">
+                                        </div>
                                         <label for="address2Shipping">Address Line 2</label>
-                                        <input type="text" class="form-control" id="address2Shipping" name="address2Shipping" maxlength="30">
-                                        <label for="cityShipping">City</label>
-                                        <input type="text" class="form-control" id="cityShipping" name="cityShipping" maxlength="18">
+                                        <input type="text" class="form-control" id="address2Shipping" name="address2Shipping">
+                                        <div class="form-group">
+                                            <label for="cityShipping" class="required control-label">City</label>
+                                            <input type="text" class="form-control" id="cityShipping" name="cityShipping">
+                                        </div>
                                         <div class="row">
-                                            <div class="col-md-8 hidden">
-                                                <label for="stateShippingOthers" class="required">State</label>
-                                                <input type="text" class="form-control" id="stateShippingOthers" name="stateShippingOthers" maxlength="20">
+                                            <div class="col-md-8 hidden form-group">
+                                                <label for="stateShippingOthers" class="required control-label">State</label>
+                                                <input type="text" class="form-control" id="stateShippingOthers" name="stateShippingOthers">
                                             </div>
-                                            <div class="col-md-8">
-                                                <label for="statesUSShipping" class="required">State</label>
+                                            <div class="col-md-8 form-group">
+                                                <label for="statesUSShipping" class="required control-labels">State</label>
                                                 <select id="statesUSShipping" class="form-control js-example-basic-single" name="statesUSShipping">
                                                     <option value="AL">Alabama</option>
                                                     <option value="AK">Alaska</option>
@@ -513,9 +526,9 @@
                                                     <option value="NC">North Carolina</option>
                                                 </select>
                                             </div>
-                                            <div class="col-md-4 padding-left-0">
-                                                <label for="postalCodeShipping" class="required">Postal Code</label>
-                                                <input type="text" class="form-control" id="postalCodeShipping" name="postalCodeShipping" maxlength="10">
+                                            <div class="col-md-4 padding-left-0 form-group">
+                                                <label for="postalCodeShipping" class="required control-label">Postal Code</label>
+                                                <input type="text" class="form-control" id="postalCodeShipping" name="postalCodeShipping">
                                             </div>
                                         </div>
                                     </div>
@@ -540,13 +553,11 @@
             </section>
         </div>
         
-        <!-- jQuery  -->
+        <!-- jQuery, custom scripts  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
-        <script src="js/typeahead.bundle.min.js"></script>
         <script src="js/createAccount.js"></script>
-        <script src="js/parentAcc.js"></script>
     </body>
 </html>

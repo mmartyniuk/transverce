@@ -320,10 +320,6 @@ $(document).ready(function(){
     // select countries and states for USA
     $('#countriesBilling').on('change', function(){
         if ($("#select2-countriesBilling-container").text() !== 'United States') {
-            //$('#state').parent().removeClass('hidden');
-            /*$("#state").rules("add", {
-                required: false
-            });*/
             $('#statesUS').parent().addClass('hidden');
             $("#postalCodeBilling").parent().removeClass('padding-left-0');
             $("#postalCodeBilling").parent().removeClass('col-md-4');
@@ -332,7 +328,6 @@ $(document).ready(function(){
                 number: false
             });
         } else {
-            //$('#state').parent().addClass('hidden');
             $('#statesUS').parent().removeClass('hidden');
             $("#postalCodeBilling").parent().addClass('padding-left-0');
             $("#postalCodeBilling").parent().addClass('col-md-4');
@@ -561,15 +556,6 @@ $(document).ready(function(){
                         required: "Email is required"
                     }
                 });
-                /*if ($("#select2-countriesBilling-container").val() !== 'United States') {
-                    $("#postalCodeBilling").rules("add", {
-                        number: false
-                    });
-                } else {
-                    $("#postalCodeBilling").rules("add", {
-                        number: true
-                    });
-                }*/
                 
                 $("#billCycle").rules("add", {
                     required: true,
@@ -619,32 +605,7 @@ $(document).ready(function(){
                         required: "External Account ID is required"
                     }
                 });
-                // we should also add/remove some validation for additional address fields
-                // in cases it is showing or not
-                /*if($("#showShippingEnterprise").is(":checked") && !($("#sameShippingEnterprise").is(":checked"))) {
-                    
-                } else {
 
-                }*/
-
-                // required logic for state field will be applied
-                // only if state relates not to US
-                // in this case there is required text field on the page
-                // if coutry is US
-                // state is filled by default, there will be no possibility
-                // to make it empty
-                /*if(!($("#state").parent().is(":visible"))) {
-                    $("#state").rules("add", {
-                        required: true,
-                        messages: {
-                            required: "State is required"
-                        }
-                    });
-                } else {
-                    $("#state").rules("add", {
-                        required: false
-                    });
-                }*/
                 if ($("#enterprise").valid()){
                     // here validation from backend should be applied
                     $("#errormessages").parent().removeClass('hidden');

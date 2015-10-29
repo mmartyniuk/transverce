@@ -23,9 +23,11 @@ h3 {
     margin-bottom: 20px;
     margin-top: 10px;
 }
+
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     opacity: 0.5;
 }
+
 .form-group {
     margin-bottom: 0;
 }
@@ -47,9 +49,11 @@ select.form-control {
     background-color: #fff;
     position: relative;
 }
+
 #accountDetails {
     padding: 20px 20px 0;
 }
+
 .wrapper {
     padding: 0 70px 0 20px;
     position: relative;
@@ -143,37 +147,35 @@ select.form-control {
 #enterprise .wrapper .select2-container {
     width: 100% !important;
 }
+
 .select2-container--default .select2-selection--single {
     border-radius: 0;
 }
+
 .select2-container .select2-selection--single {
     height: 35px;
     border: 1px solid #cbd5dd;
     padding: 2px 0 0 2px;
 }
 
-/*input.error, input.error:focus, select.error, select.error:focus {
-    border: 1px solid #d3222a;
-    color: #000 !important;
-}
-.error+.error, .error {
-    color: #d3222a;
-}*/
 #errormessages {
     color: #d3222a;
     font-size: 18px;
     font-weight: 700;
 }
+
 #corporatePhone:after {
     content: url(assets/image.jpg);
     padding-left: 2px;
 }
+
 .addPhone {
     font-weight: 700;
     margin-top: 10px;
     display: inline-block;
     text-decoration: none;
 }
+
 .addPhone:hover, .addPhone:visited, .addPhone:focus {
     text-decoration: none;
 }
@@ -201,6 +203,7 @@ select.form-control {
     line-height: 1;
     width: 1em;
 }
+
 .spinner circle {
     animation: 1.5s linear 0s normal none infinite running stroke-circle;
     fill: transparent;
@@ -220,63 +223,79 @@ select.form-control {
     margin: 1px 0 0;
     background-color: #fafafa;
 }
+
 #nav-container ul {
     padding-left: 0;
     list-style: none;
 }
+
 #nav>li:first-child>a {
     border-top: 0;
 }
+
 #nav>li.active>a {
     color: #3d77f9;
 }
+
 #nav>li>a {
     position: relative;
     display: block;
     padding: 15px 15px;
     color: #091f28;
 }
+
 #nav>li>a i {
     font-size: 32px;
     display: block;
 }
+
 #nav>li {
     text-align: center;
 }
+
 #nav>li:after {
     content: "";
     display: block;
     border-bottom: 1px #ededed solid;
 }
+
 #nav>li:last-child:after {
     content: none;
 }
+
 #nav>li.open>a, #nav>li:hover>a {
     background-color: #ededed;
     color: #3d77f9;
 }
+
 #nav a:hover {
     text-decoration: none;
 }
+
 .navbar {
     margin-bottom: 0;
     background-color: #3d77fa;
 }
+
 .navbar-brand {
     line-height: 20px;
     height: 50px;
     max-width: 90px;
     padding: 15px 8px;
 }
+
 .navbar-brand img {
     max-width: 100%;
 }
+
 .navbar-form {
     padding: 0;
 }
+
 .navbar-form .form-group {
     display: inline-block;
 }
+
 .navbar-form input {
     background-color: #3358d1;
     border: 1px solid #6581dc;
@@ -299,66 +318,83 @@ select.form-control {
 .navbar-form input:-ms-input-placeholder {  
    color: #6581dc; 
 }
+
 .btn-link {
     color: #fff;
     padding: 6px 12px 6px 6px;
 }
+
 .btn-link:hover {
     color: #6581dc;
 }
+
 .navbar .nav li a {
     color: #fff;
 }
+
 .navbar .nav li:hover {
     color: #6581dc;
     background-color: transparent;
 }
+
 .navbar .nav li:hover a {
     color: #fff;
     background-color: transparent;
 }
+
 .navbar .nav li.active a{
     color: #3d77f9;
     background-color: #fff;
     font-weight: 700;
 }
+
 .navbar .nav li.active a:hover {
     color: #3d77f9;
     background-color: #eee;
 }
+
 .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 31px;
 }
+
 .common-select {
     height: 0;
     width: 0;
     position: relative;
 }
+
 .common-select .spinner {
     font-size: 3rem;
 }
+
 .common-select .spinner circle {
     stroke: #3d77f9;
 }
+
 #spinnerAcc {
     left: -13px;
     top: -32px;
 }
+
 #spinnerPay {
     left: -13px;
     top: -32px;
 }
+
 #spinnerBill{
     top: -32px;
     left: -124px;
 }
+
 #spinnerCurr{
     top: -32px;
     left: 27px;
 }
+
 .phone-container {
     position: relative;
 }
+
 .desc-link {
     position: absolute;
     width: 14px;
@@ -420,6 +456,18 @@ select.form-control {
     padding-right: 0;
 }
 
+.taxContainer {
+    margin-top: 29px;
+}
+
+.phone1, .phone2, .phone3, .phone4 {
+    margin-bottom: 17px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
 /*media*/
 @media (max-width: 767px){
     .divider {
@@ -429,21 +477,25 @@ select.form-control {
         left: 0;
     }
 }
+
 @media (min-width: 768px){
     #nav-container {
         left: 0;
     }
 }
+
 @media (max-width: 991px){
     .wrapper {
         padding: 0 0 0 20px;
     }
 }
+
 @media (min-width: 992px){
     .the-fieldset {
         margin: 0 -15px 15px -15px;
     }
 }
+
 @media (min-width: 1200px){
     #accountDetails {
         padding: 40px 45px 0 165px;
@@ -451,13 +503,4 @@ select.form-control {
     .container {
         width: 1024px;
     }
-}
-.taxContainer {
-    margin-top: 29px;
-}
-.phone1, .phone2, .phone3, .phone4 {
-    margin-bottom: 17px;
-}
-.margin-top-10 {
-    margin-top: 10px;
 }
