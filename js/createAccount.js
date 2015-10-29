@@ -342,16 +342,16 @@ $(document).ready(function(){
     var previous1, previous2, previous3, previous4; // variables to store previous values from select
     //to prevent option lose
 
-    $('.phone-type1').on('focus', function(){
+    $('.phone-type1').on('click', function(){
         previous1 = this.value;
     });
-    $('.phone-type2').on('focus', function(){
+    $('.phone-type2').on('click', function(){
         previous2 = this.value;
     });
-    $('.phone-type3').on('focus', function(){
+    $('.phone-type3').on('click', function(){
         previous3 = this.value;
     });
-    $('.phone-type4').on('focus', function(){
+    $('.phone-type4').on('click', function(){
         previous4 = this.value;
     });
 
@@ -810,7 +810,7 @@ $(document).ready(function(){
                             required: false
                         });
                     });
-                    $('#currency').on('focus', function(){
+                    /*$('#currency').on('focus', function(){
                         $("#currency").rules("add", {
                             required: false
                         });
@@ -818,7 +818,7 @@ $(document).ready(function(){
                             required: false
                         });
                         $("#billCycle").click();
-                    });
+                    });*/
                 }
             }, 3000)
         }
