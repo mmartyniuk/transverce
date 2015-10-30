@@ -72,8 +72,10 @@
                     <div class="col-lg-4 col-lg-offset-3 col-md-2 col-md-offset-6 col-sm-2 col-sm-offset-4 col-xs-5">
                         <h6 class="text-right"><strong class="text-danger">&#42;</strong> Required</h6>
                     </div>
-                    <div class="row hidden text-center">
-                        <div class="col-md-12" id="errormessages">Connection is lost, please try later</div>
+                    <div class="row hidden">
+                        <div class="alert alert-danger col-md-12" role="alert" id="errormessages">
+                            <span class="errorIcon" aria-hidden="true">Connection is lost, please try later</span>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -436,7 +438,7 @@
                                             </div>
                                             <div class="col-md-8 form-group">
                                                 <label for="statesUSService" class="required control-label">State</label>
-                                                <select id="statesUSService" class="form-control js-example-basic-single">
+                                                <select id="statesUSService" name="statesUSService" class="form-control js-example-basic-single">
                                                     <option value="AL">Alabama</option>
                                                     <option value="AK">Alaska</option>
                                                     <option value="ME">Maine</option>

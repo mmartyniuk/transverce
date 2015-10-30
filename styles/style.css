@@ -170,11 +170,31 @@ select.form-control {
     padding: 2px 0 0 2px;
 }
 
-#errormessages {
-    color: #d3222a;
-    font-size: 18px;
-    font-weight: 700;
+#errormessages.alert-danger {
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: -20px;
+    box-shadow: none;
 }
+
+#errormessages span {
+    display: inline-block;
+    padding-left: 22px;
+}
+
+.alert-danger .errorIcon {
+    margin-left: 15px;
+}
+.errorIcon {
+    background: url('../assets/error_icon.png') no-repeat;
+    height: 20px;
+    display: inline-block;
+    background-position: 0 3px;
+}
+
 
 #corporatePhone:after {
     content: url(assets/image.jpg);
