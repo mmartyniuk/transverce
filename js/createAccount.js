@@ -614,24 +614,6 @@ $(document).ready(function(){
             state: {
                 minlength: 2,
                 maxlength: 20
-            },
-            // service addresses
-            address1Shipping: {
-                minlength: 5,
-                maxlength: 20
-            },
-            cityShipping: {
-                minlength: 3,
-                maxlength: 20
-            },
-            postalCodeShipping: {
-                minlength: 2,
-                maxlength: 20,
-                number: true
-            },
-            stateShippingOthers: {
-                minlength: 2,
-                maxlength: 20
             }
         },
         highlight: function(element) {

@@ -95,6 +95,8 @@
                                         <div class="form-group">
                                             <label for="firstName" class="required control-label">First Name</label>
                                             <input type="text" class="form-control" id="firstName" name="firstName">
+                                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                                            <span id="inputError2Status" class="sr-only">(error)</span>
                                         </div>
                                         <div class="form-group">
                                             <label for="LastName" class="required control-label">Last Name</label>
@@ -109,9 +111,9 @@
                                         </div>
                                     </fieldset>
                                     <div class="row">
-                                        <div class="col-md-7 col-sm-12 padding-right-0">
+                                        <div class="col-md-7 col-sm-12 padding-right-0 form-group">
                                             <label for="tax">Tax Number ( SSN / EIN )</label>
-                                            <input type="text" class="form-control" id="tax" name="tax">
+                                            <input type="text" class="form-control control-label" id="tax" name="tax">
                                         </div>
                                         <div class="col-md-5 col-sm-12 taxContainer">
                                             <label for="taxExempt">

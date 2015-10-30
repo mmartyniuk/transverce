@@ -31,6 +31,16 @@ h3 {
 
 .form-group {
     margin-bottom: 0;
+    position: relative;
+}
+
+.form-control-feedback {
+    top: inherit;
+    bottom: 25px;
+    display: none;
+}
+.has-error .glyphicon-remove {
+    display: block;
 }
 
 header .row h6 strong, label strong {
