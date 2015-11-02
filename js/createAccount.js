@@ -22,7 +22,7 @@ $(document).ready(function(){
     $('.desc-remove').click(function(){
         var $this = $(this);
         // phone
-        $this.parent().parent().parent().addClass('hidden');
+        $this.parent().parent().addClass('hidden');
         var case1 = $('.phone1').hasClass('hidden');
         var case2 = $('.phone2').hasClass('hidden');
         var case3 = $('.phone3').hasClass('hidden');
@@ -31,9 +31,10 @@ $(document).ready(function(){
             $(".addPhone").removeClass('hidden');
         }
         if ((case1 && case2 && case3) || (case2 && case3 && case4) || (case1 && case3 && case4) || (case1 && case2 && case4)) {
+
             $(".desc-remove").addClass('hidden');
         }
-        var appendSelectedPhoneType = $this.next().val();
+        var appendSelectedPhoneType = $this.parent().children('.input-container').children().val();
         if (appendSelectedPhoneType) {
             $('.phone-type1').append("<option value='"+appendSelectedPhoneType+"'>"+appendSelectedPhoneType+"</option>");
             $('.phone-type2').append("<option value='"+appendSelectedPhoneType+"'>"+appendSelectedPhoneType+"</option>");

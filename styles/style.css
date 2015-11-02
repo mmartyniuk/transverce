@@ -5,7 +5,7 @@ body {
 }
 
 label {
-    margin: 17px 0 3px 0;
+    margin: 0;
     position: relative;
     white-space: nowrap;
 }
@@ -13,6 +13,14 @@ label {
 input[type="radio"], input[type="checkbox"] {
     margin: -2px 3px 0 0;
     vertical-align: middle;
+}
+
+.warning-icon {
+    background: 
+}
+
+.input-container input[type="radio"], .input-container  input[type="checkbox"] {
+    margin-top: 11px;
 }
 
 section {
@@ -25,6 +33,7 @@ h3 {
     margin-top: 10px;
 }
 
+
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     opacity: 0.5;
 }
@@ -34,13 +43,32 @@ h3 {
     position: relative;
 }
 
-.form-control-feedback {
-    top: inherit;
-    bottom: 25px;
-    display: none;
+.input-container {
+    padding-left: 0;
+    padding-right: 20px;
 }
-.has-error .glyphicon-remove {
+
+.form-control {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.errorIcon {
+    background: url('../assets/error_icon.png') no-repeat;
+    height: 20px;
+    display: inline-block;
+    background-position: 0 3px;
+}
+
+.help-block:before {
+    content: '';
+    background: url('../assets/error_icon.png') no-repeat;
+    height: 16px;
+    width: 16px;
     display: block;
+    right: 26px;
+    position: absolute;
+    bottom: 50px;
 }
 
 header .row h6 strong, label strong {
@@ -66,7 +94,7 @@ select.form-control {
 }
 
 .wrapper {
-    padding: 0 70px 0 20px;
+    padding: 0 0 0 20px;
     position: relative;
 }
 
@@ -90,13 +118,11 @@ select.form-control {
     padding-right: 10px;
 }
 
-.required:before {
+.required:after {
     content: '*';
-    position: absolute;
-    left: -11px;
     color: #d3222a;
     font-size: 15px;
-    top: -6px;
+    margin-left: 3px;
 }
 
 .row.header .title {
@@ -169,7 +195,9 @@ select.form-control {
     border: 1px solid #cbd5dd;
     padding: 2px 0 0 2px;
 }
-
+.container-select2 {
+    margin-bottom: 6px;
+}
 #errormessages.alert-danger {
     background-color: #fff;
     background-image: none;
@@ -188,13 +216,6 @@ select.form-control {
 .alert-danger .errorIcon {
     margin-left: 15px;
 }
-.errorIcon {
-    background: url('../assets/error_icon.png') no-repeat;
-    height: 20px;
-    display: inline-block;
-    background-position: 0 3px;
-}
-
 
 #corporatePhone:after {
     content: url(assets/image.jpg);
@@ -203,7 +224,7 @@ select.form-control {
 
 .addPhone {
     font-weight: 700;
-    margin-top: 10px;
+    margin-bottom: 10px;
     display: inline-block;
     text-decoration: none;
 }
@@ -404,23 +425,23 @@ select.form-control {
 }
 
 #spinnerAcc {
-    left: -13px;
-    top: -32px;
+    left: 56px;
+    top: -38px;
 }
 
 #spinnerPay {
-    left: -13px;
-    top: -32px;
+    left: 55px;
+    top: -38px;
 }
 
 #spinnerBill{
-    top: -32px;
-    left: -124px;
+    top: -37px;
+    left: 56px;
 }
 
 #spinnerCurr{
-    top: -32px;
-    left: 27px;
+    top: -78px;
+    left: -49px;
 }
 
 .phone-container {
@@ -447,7 +468,7 @@ select.form-control {
     position: absolute;
     width: 19px;
     height: 19px;
-    left: -14px;
+    right: -14px;
     top: 8px;
     cursor: pointer;
 }
@@ -471,7 +492,7 @@ select.form-control {
 
 .the-fieldset {
     border: 1px dashed #A5A5A5;
-    padding: 0 15px 15px 15px;
+    padding: 15px;
     margin: 0 0 1.5em 0;
     -webkit-box-shadow:  0px 0px 0px 0px #000;
             box-shadow:  0px 0px 0px 0px #000;
@@ -493,11 +514,12 @@ select.form-control {
 }
 
 .phone1, .phone2, .phone3, .phone4 {
-    margin-bottom: 17px;
+    margin-bottom: 5px;
+    position: relative;
 }
 
-.margin-top-10 {
-    margin-top: 10px;
+.margin-top-bottom-10 {
+    margin: 10px 0;
 }
 
 .margin-top-40 {
