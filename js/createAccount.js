@@ -900,21 +900,29 @@ $(document).ready(function(){
         },
         highlight: function(element) {
             $(element).closest('.form-group').addClass('has-error');
+            if(!$(element).is("select")) {
+                $(element).parent().removeClass('success-container');
+                $(element).parent().addClass('icon-container');
+            }    
         },
         unhighlight: function(element) {
             $(element).closest('.form-group').removeClass('has-error');
+            if ($(element).val() && !$(element).is("select")){
+                $(element).parent().addClass('success-container');
+            }
+            
         },
         errorElement: 'span',
         errorClass: 'help-block',
         errorPlacement: function(error, element) {
-
+            if(!$(element).is("select")) {
             element.focus(function () {
                 error.insertAfter(element.parent());
                 error.removeClass('hidden');
-                error.prev().children(0).addClass('icon-container');
             }).blur(function(){
                 error.addClass('hidden');
             })
+            }
         },
         submitHandler: function(form, event) {
             event.preventDefault(event);

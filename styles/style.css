@@ -65,7 +65,7 @@ h3 {
     border-radius: 5px;
 }
 
-.icon-container:after{
+.icon-container:after {
     position: absolute;
     display: block;
     content: '';
@@ -76,6 +76,16 @@ h3 {
     top: 8px;
 }
 
+.success-container:after {
+    position: absolute;
+    display: block;
+    content: '';
+    background: url('../assets/ok_green.png') no-repeat;
+    height: 20px;
+    width: 18px;
+    right: 28px;
+    top: 8px;
+}
 .errorIcon {
     background: url('../assets/error_icon.png') no-repeat;
     height: 20px;
