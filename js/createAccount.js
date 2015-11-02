@@ -907,11 +907,14 @@ $(document).ready(function(){
         errorElement: 'span',
         errorClass: 'help-block',
         errorPlacement: function(error, element) {
-            if(element.parent('.input-group').length) {
+
+            element.focus(function () {
                 error.insertAfter(element.parent());
-            } else {
-                error.insertAfter(element);
-            }
+                error.removeClass('hidden');
+                error.prev().children(0).addClass('icon-container');
+            }).blur(function(){
+                error.addClass('hidden');
+            })
         },
         submitHandler: function(form, event) {
             event.preventDefault(event);
