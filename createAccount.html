@@ -84,13 +84,13 @@
                     <!-- Enterprice form -->
                     <div class="row header">
                         <div class="col-md-12 col-sm-12 title divider">
-                            <h3 class="line text-left"><span>Account details</span></h3>
+                            <h3 class="line text-left"><span>Account Details</span></h3>
                         </div>
                     </div>
                     <form id="enterprise" class="form-horizontal" novalidate="novalidate" role="form">
                         <div class="row">
                             <!-- Corporate -->
-                            <div class="col-md-8">
+                            <div class="col-9 col-sm-12">
                                 <div class="wrapper">
                                     <fieldset class="the-fieldset">
                                         <legend class="the-legend">For personal account</legend>
@@ -108,7 +108,7 @@
                                             </div>
                                         </div>
                                     </fieldset>
-                                    <fieldset class="the-fieldset margin-0">
+                                    <fieldset class="the-fieldset margin-bottom">
                                         <legend class="the-legend">For enterprise account</legend>
                                         <div class="form-group row">
                                             <label for="companyName" class="required control-label col-md-4">Company Name</label>
@@ -118,21 +118,27 @@
                                         </div>
                                     </fieldset>
                                     <div class="form-group row">
-                                        <label for="corporateEmail" class="required control-label col-md-4">Email</label>
+                                        <label for="ExternalAccountID" class="required control-label col-md-4">External Account ID</label>
                                         <div class="col-md-8 input-container">
-                                            <input type="email" class="form-control" id="corporateEmail" name="corporateEmail">
+                                            <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row checkRow">
+                                        <label for="taxExempt" class="col-md-4 control-label"> Taxable</label>
+                                        <div class="col-md-8 input-container">
+                                            <input type="checkbox" id="taxExempt" checked>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="tax" class="col-md-4 control-label">Tax Number ( SSN / EIN )</label>
                                         <div class="col-md-8 input-container">
-                                            <input type="text" class="form-control control-label" id="tax" name="tax">
+                                            <input type="text" class="form-control" id="tax" name="tax">
                                         </div>
                                     </div>
-                                    <div class="form-group row checkRow">
-                                        <label for="taxExempt" class="col-md-4 control-label"> Tax Exempt</label>
+                                    <div class="form-group row">
+                                        <label for="corporateEmail" class="required control-label col-md-4">Email</label>
                                         <div class="col-md-8 input-container">
-                                            <input type="checkbox" id="taxExempt" checked>
+                                            <input type="email" class="form-control" id="corporateEmail" name="corporateEmail">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -148,7 +154,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone padding-left-0">
+                                                <div class="col-md-8 phone-container phone">
                                                     <input type="text" class="form-control" id="phone1">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -165,7 +171,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone padding-left-0">
+                                                <div class="col-md-8 phone-container phone">
                                                     <input type="text" class="form-control" id="phone2">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -182,7 +188,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone padding-left-0">
+                                                <div class="col-md-8 phone-container phone">
                                                     <input type="text" class="form-control" id="phone3">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -199,7 +205,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone padding-left-0">
+                                                <div class="col-md-8 phone-container phone">
                                                     <input type="text" class="form-control" id="phone4">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -224,13 +230,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Financial -->
-                            <div class="row header">
-                                <div class="col-md-12 title divider margin-top-40">
-                                    <h3><span>Financial</span></h3>
-                                </div>
+                        </div>
+                        <!-- Financial -->
+                        <div class="row header">
+                            <div class="col-md-12 title divider margin-top-30">
+                                <h3><span>Financial</span></h3>
                             </div>
-                            <div class="col-md-8">
+                        </div>
+                        <div class="row financial">
+                            <div class="col-9 col-sm-12">
                                 <div class="wrapper">
                                     <div class="form-group row">
                                         <label for="currency" class="required control-label col-md-4">Currency</label>
@@ -274,28 +282,6 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="accountCategory" class="required control-label col-md-4">Account Category</label>
-                                        <div class="col-md-8 input-container">
-                                            <select id="accountCategory" class="form-control" name="accountCategory">
-                                                <option value="">Please Select</option>
-                                                <option value="SomeTestData">Some Test Data</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="spinner-container common-select" id="spinnerAcc">
-                                        <div class="spinner">
-                                            <svg height="1em" width="1em">
-                                                <circle r="0.45em" cy="0.5em" cx="0.5em">
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row checkRow">
-                                        <label for="autoPayment" class="control-label col-md-4"> Authorize Auto-Payment</label>
-                                        <div class="col-md-8 input-container">
-                                            <input type="checkbox" id="autoPayment">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
                                         <label for="paymentTerm" class="control-label col-md-4">Payment Term</label>
                                         <div class="col-md-8 input-container">
                                             <select id="paymentTerm" class="form-control">
@@ -311,13 +297,10 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="accountSegment" class="control-label col-md-4">Account Segment</label>
+                                    <div class="form-group row checkRow">
+                                        <label for="autoPayment" class="control-label col-md-4"> Authorize Auto-Payment</label>
                                         <div class="col-md-8 input-container">
-                                            <select id="accountSegment" class="form-control" name="accountSegment">
-                                                <option value="">Please Select</option>
-                                                <option value="SomeTestData">Some Test Data</option>
-                                            </select>
+                                            <input type="checkbox" id="autoPayment">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -335,24 +318,43 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="ExternalAccountID" class="required control-label col-md-4">External Account ID</label>
+                                        <label for="accountCategory" class="required control-label col-md-4">Account Category</label>
                                         <div class="col-md-8 input-container">
-                                            <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
+                                            <select id="accountCategory" class="form-control" name="accountCategory">
+                                                <option value="">Please Select</option>
+                                                <option value="SomeTestData">Some Test Data</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="spinner-container common-select" id="spinnerAcc">
+                                        <div class="spinner">
+                                            <svg height="1em" width="1em">
+                                                <circle r="0.45em" cy="0.5em" cx="0.5em">
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="accountSegment" class="control-label col-md-4">Account Segment</label>
+                                        <div class="col-md-8 input-container">
+                                            <select id="accountSegment" class="form-control" name="accountSegment">
+                                                <option value="">Please Select</option>
+                                                <option value="SomeTestData">Some Test Data</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row header margin-top-40">
+                        <div class="row header margin-top-addresses">
                             <div class="col-md-12 title divider">
                                 <h3><span>Addresses</span></h3>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-9 col-sm-12">
                                 <div class="wrapper">
-                                    <div class="row margin-top-bottom-10"> 
-                                        <label class="control-label">
+                                    <div class="row"> 
+                                        <label class="control-label address-box">
                                             <input type="checkbox" checked id="showBilling"> Billing Address
                                         </label>
                                     </div>
@@ -426,14 +428,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row margin-top-bottom-10">
+                                    <div class="row">
                                         <div class="col-sm-6 col-xs-12">
-                                            <label class="row">
+                                            <label class="row service-box">
                                                 <input type="checkbox" id="showServiceEnterprise"> Service Address
                                             </label>
                                         </div>
-                                        <div class="col-sm-6 col-xs-12">
-                                            <label class="hidden">
+                                        <div class="col-sm-12 col-md-3 col-md-offset-3">
+                                            <label class="hidden same">
                                                 <input type="checkbox" id="sameServiceEnterprise"> Same as billing
                                             </label>
                                         </div>
@@ -508,14 +510,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row margin-top-bottom-10">
+                                    <div class="row">
                                         <div class="col-sm-6 col-xs-12">
-                                            <label class="row">
+                                            <label class="row shipping-box">
                                                 <input type="checkbox" id="showShippingEnterprise"> Shipping Address
                                             </label>
                                         </div>
-                                        <div class="col-sm-6 col-xs-12">
-                                            <label class="hidden">
+                                        <div class="col-sm-12 col-md-3 col-md-offset-3">
+                                            <label class="hidden same-shipping">
                                                 <input type="checkbox" id="sameShippingEnterprise"> Same as billing
                                             </label>
                                         </div>
@@ -594,9 +596,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row header margin-top-addresses">
+                            <div class="col-md-12 title divider final-line"></div>
+                        </div>
                         <div class="row form-group row submitForm">
                             <div class="col-md-5 col-md-offset-7 col-xs-4">
-                                <button type="submit" class="btn btn-primary btn-lg pull-right" id="submitTheForm">Create Account</button>
+                                <button type="submit" class="btn btn-primary pull-right" id="submitTheForm">Create Account</button>
                                 <div class="spinner-container" id="createSpin">
                                     <div class="spinner">
                                         <svg height="1em" width="1em">
@@ -604,7 +609,7 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-default btn-lg pull-right cancelForm">Cancel</button>
+                                <button type="button" class="btn btn-default pull-right cancelForm">Cancel</button>
                             </div>
                         </div>    
                     </form>

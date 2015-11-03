@@ -4,7 +4,7 @@ $(document).ready(function(){
     $("#accountCategory").prop("disabled", true);
     $("#paymentTerm").prop("disabled", true);
     $("#billCycle").prop("disabled", true);
-    $("#tax").prop("disabled", true);
+    $("#tax").prop("disabled", false);
     $("#spinnerAcc").css('display', 'block');
     $("#spinnerPay").css('display', 'block');
     $("#spinnerBill").css('display', 'block');
@@ -183,9 +183,13 @@ $(document).ready(function(){
     $('#taxExempt').click(function(){
         var $this = $(this);
         if ($this.is(':checked')) {
-            $("#tax").prop("disabled", true);
-        } else {
             $("#tax").prop("disabled", false);
+            if ($("#tax").val()) {
+                $("#tax").parent().addClass('success-container');
+            }
+        } else {
+            $("#tax").prop("disabled", true);
+            $("#tax").parent().removeClass('success-container');
         }
     });
     $('#companyName').on('focusout', function() {
