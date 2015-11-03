@@ -686,6 +686,10 @@ select.form-control {
     #nav-container {
         left: 0;
     }
+    .navbar-nav > li > a {
+        padding-top: 15px;
+        padding-bottom: 13px;
+    }
 }
 
 @media (max-width: 991px){
