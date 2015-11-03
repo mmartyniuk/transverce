@@ -458,11 +458,11 @@ select.form-control {
 
 .btn-link {
     color: #fff;
-    padding: 5px 17px 24px 15px;
+    padding: 5px 17px 26px 15px;
 }
 
 .search {
-    margin-top: -2px;
+    margin-top: -4px;
 }
 
 .btn-link:hover {
