@@ -203,6 +203,10 @@ $(document).ready(function(){
             $("#LastName").blur();
             $('#firstName').prop("disabled", true);
             $('#LastName').prop("disabled", true);
+            $('#LastName').parent().removeClass('success-container');
+            $('#LastName').parent().removeClass('icon-container');
+            $('#firstName').parent().removeClass('success-container');
+            $('#firstName').parent().removeClass('icon-container');
             $('#firstName').prev().css("opacity", "0.5");
             $('#LastName').prev().css("opacity", "0.5");
             $("#firstName").rules("add", {
@@ -243,10 +247,14 @@ $(document).ready(function(){
             $("#companyName").rules("remove", "notEqualCompanyName");
             $("#companyName").blur();
             $('#companyName').prop("disabled", true);
+            $('#companyName').parent().removeClass('success-container');
+            $('#companyName').parent().removeClass('icon-container');
             $('#companyName').prev().css("opacity", "0.5");
         } else if ($('#LastName').val()) {
             $('#companyName').prop("disabled", true);
             $("#companyName").rules("remove", "notEqualCompanyName");
+            $('#companyName').parent().removeClass('success-container');
+            $('#companyName').parent().removeClass('icon-container');
             $('#companyName').prev().css("opacity", "0.5");
             $("#companyName").rules("add", {
                 required: false,
@@ -273,12 +281,16 @@ $(document).ready(function(){
             $("#companyName").rules("remove", "notEqualCompanyName");
             $("#companyName").blur();
             $('#companyName').prop("disabled", true);
+            $('#companyName').parent().removeClass('success-container');
+            $('#companyName').parent().removeClass('icon-container');
             $('#companyName').prev().css("opacity", "0.5");
             $("#companyName").rules("add", {
                 required: false,
             });
         } else if ($('#firstName').val()) {
             $('#companyName').prop("disabled", true);
+            $('#companyName').parent().removeClass('success-container');
+            $('#companyName').parent().removeClass('icon-container');
             $('#companyName').prev().css("opacity", "0.5");
             $("#companyName").rules("add", {
                 required: false,
@@ -685,17 +697,13 @@ $(document).ready(function(){
     $('#countriesBilling').on('change', function(){
         if ($("#select2-countriesBilling-container").text() !== 'United States') {
             $('#statesUS').parent().addClass('hidden');
-            $("#postalCodeBilling").parent().removeClass('padding-left-0');
-            $("#postalCodeBilling").parent().removeClass('col-md-4');
-            $("#postalCodeBilling").parent().addClass('col-md-12');
+            $('#statesUS').parent().prev().addClass('hidden');
             $("#postalCodeBilling").rules("add", {
                 number: false
             });
         } else {
             $('#statesUS').parent().removeClass('hidden');
-            $("#postalCodeBilling").parent().addClass('padding-left-0');
-            $("#postalCodeBilling").parent().addClass('col-md-4');
-            $("#postalCodeBilling").parent().removeClass('col-md-12');
+            $('#statesUS').parent().prev().removeClass('hidden');
             $("#postalCodeBilling").rules("add", {
                 number: true
             });
@@ -703,20 +711,14 @@ $(document).ready(function(){
     });
     $('#countriesService').on('change', function(){
         if ($("#select2-countriesService-container").text() !== 'United States') {
-            //$('#stateServiceOthers').parent().removeClass('hidden');
             $('#statesUSService').parent().addClass('hidden');
-            $("#postalCodeService").parent().removeClass('padding-left-0');
-            $("#postalCodeService").parent().removeClass('col-md-4');
-            $("#postalCodeService").parent().addClass('col-md-12');
+            $('#statesUSService').parent().prev().addClass('hidden');
             $("#postalCodeService").rules("add", {
                 number: false
             });
         } else {
-           // $('#stateServiceOthers').parent().addClass('hidden');
             $('#statesUSService').parent().removeClass('hidden');
-            $("#postalCodeService").parent().addClass('padding-left-0');
-            $("#postalCodeService").parent().addClass('col-md-4');
-            $("#postalCodeService").parent().removeClass('col-md-12');
+            $('#statesUSService').parent().prev().removeClass('hidden');
             $("#postalCodeService").rules("add", {
                 number: true
             });
@@ -724,20 +726,14 @@ $(document).ready(function(){
     });
     $('#countriesShipping').on('change', function(){
         if ($("#select2-countriesShipping-container").text() !== 'United States') {
-            //$('#stateShippingOthers').parent().removeClass('hidden');
             $('#statesUSShipping').parent().addClass('hidden');
-            $("#postalCodeShipping").parent().removeClass('padding-left-0');
-            $("#postalCodeShipping").parent().removeClass('col-md-4');
-            $("#postalCodeShipping").parent().addClass('col-md-12');
+            $('#statesUSShipping').parent().prev().addClass('hidden');
             $("#postalCodeShipping").rules("add", {
                 number: false
             });
         } else {
-           // $('#stateServiceOthers').parent().addClass('hidden');
             $('#statesUSShipping').parent().removeClass('hidden');
-            $("#postalCodeShipping").parent().addClass('padding-left-0');
-            $("#postalCodeShipping").parent().addClass('col-md-4');
-            $("#postalCodeShipping").parent().removeClass('col-md-12');
+            $('#statesUSShipping').parent().prev().removeClass('hidden');
             $("#postalCodeShipping").rules("add", {
                 number: true
             });

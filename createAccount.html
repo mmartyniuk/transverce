@@ -70,7 +70,7 @@
                         <h4>Create New Account</h4>
                     </div>
                     <div class="col-lg-4 col-lg-offset-3 col-md-2 col-md-offset-6 col-sm-2 col-sm-offset-4 col-xs-5">
-                        <h6 class="text-right"><strong class="text-danger">&#42;</strong> Required</h6>
+                        <h6 class="text-right"><strong class="text-danger">&#42;</strong> - Required</h6>
                     </div>
                     <div class="row hidden">
                         <div class="alert alert-danger col-md-12" role="alert" id="errormessages">
@@ -129,7 +129,7 @@
                                             <input type="text" class="form-control control-label" id="tax" name="tax">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row checkRow">
                                         <label for="taxExempt" class="col-md-4 control-label"> Tax Exempt</label>
                                         <div class="col-md-8 input-container">
                                             <input type="checkbox" id="taxExempt" checked>
@@ -139,7 +139,7 @@
                                         <label class="col-md-4 control-label">Phone</label>
                                         <div class="phone1 col-md-8">
                                             <div class="row">
-                                                <div class="col-md-6 input-container">
+                                                <div class="col-md-4 input-container">
                                                     <select class="form-control phone-type1">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -148,7 +148,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 phone-container phone padding-left-0">
+                                                <div class="col-md-8 phone-container phone padding-left-0">
                                                     <input type="text" class="form-control" id="phone1">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -156,7 +156,7 @@
                                         </div>
                                         <div class="phone2 col-md-8 col-md-offset-4 hidden">
                                             <div class="row">
-                                                <div class="col-md-6 input-container">
+                                                <div class="col-md-4 input-container">
                                                     <select class="form-control phone-type2">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -165,7 +165,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 phone-container phone padding-left-0">
+                                                <div class="col-md-8 phone-container phone padding-left-0">
                                                     <input type="text" class="form-control" id="phone2">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -173,7 +173,7 @@
                                         </div>
                                         <div class="phone3 col-md-8 col-md-offset-4 hidden">
                                             <div class="row">
-                                                <div class="col-md-6 input-container">
+                                                <div class="col-md-4 input-container">
                                                     <select class="form-control phone-type3">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -182,7 +182,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 phone-container phone padding-left-0">
+                                                <div class="col-md-8 phone-container phone padding-left-0">
                                                     <input type="text" class="form-control" id="phone3">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -190,7 +190,7 @@
                                         </div>
                                         <div class="phone4 col-md-8 col-md-offset-4 hidden">
                                             <div class="row">
-                                                <div class="col-md-6 input-container">
+                                                <div class="col-md-4 input-container">
                                                     <select class="form-control phone-type4">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -199,7 +199,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 phone-container phone padding-left-0">
+                                                <div class="col-md-8 phone-container phone padding-left-0">
                                                     <input type="text" class="form-control" id="phone4">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -225,8 +225,8 @@
                                 </div>
                             </div>
                             <!-- Financial -->
-                            <div class="row header margin-top-40">
-                                <div class="col-md-12 title divider">
+                            <div class="row header">
+                                <div class="col-md-12 title divider margin-top-40">
                                     <h3><span>Financial</span></h3>
                                 </div>
                             </div>
@@ -289,6 +289,12 @@
                                             </svg>
                                         </div>
                                     </div>
+                                    <div class="form-group row checkRow">
+                                        <label for="autoPayment" class="control-label col-md-4"> Authorize Auto-Payment</label>
+                                        <div class="col-md-8 input-container">
+                                            <input type="checkbox" id="autoPayment">
+                                        </div>
+                                    </div>
                                     <div class="form-group row">
                                         <label for="paymentTerm" class="control-label col-md-4">Payment Term</label>
                                         <div class="col-md-8 input-container">
@@ -332,12 +338,6 @@
                                         <label for="ExternalAccountID" class="required control-label col-md-4">External Account ID</label>
                                         <div class="col-md-8 input-container">
                                             <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="autoPayment" class="control-label col-md-4"> Authorize Auto-Payment</label>
-                                        <div class="col-md-8 input-container">
-                                            <input type="checkbox" id="autoPayment">
                                         </div>
                                     </div>
                                 </div>
