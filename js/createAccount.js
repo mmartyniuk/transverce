@@ -902,13 +902,22 @@ $(document).ready(function(){
             $(element).closest('.form-group').addClass('has-error');
             if(!$(element).is("select")) {
                 $(element).parent().removeClass('success-container');
-                $(element).parent().addClass('icon-container');
-            }    
+                if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
+                    $(element).parent().addClass('icon-container-postal');
+                }else{
+                    $(element).parent().addClass('icon-container');
+                }
+            }
         },
         unhighlight: function(element) {
             $(element).closest('.form-group').removeClass('has-error');
             if ($(element).val() && !$(element).is("select")){
                 $(element).parent().addClass('success-container');
+                if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
+                    $(element).parent().addClass('success-container-postal');
+                }else{
+                    $(element).parent().addClass('success-container');
+                }
             }
             
         },
