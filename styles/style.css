@@ -88,6 +88,18 @@ h3 {
     font-size: 11px;
 }
 
+#postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block {
+    display: block;
+    position: absolute;
+    background-color: #D0021B;
+    color: #fff;
+    width: 35%;
+    left: 58%;
+    padding: 10px 15px;
+    top: -6px;
+    font-size: 11px;
+}
+
 .checkRow {
     margin: 4px 0px 24px 0;
 }
