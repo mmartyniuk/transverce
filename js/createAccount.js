@@ -529,6 +529,10 @@ $(document).ready(function(){
         var $this = $(this);
         if ($this.is(':checked')) {
             $('#BillingAdd').removeClass('hidden');
+            $('.service-box').css('padding-left', '4px');
+            $('.shipping-box').css('padding-left', '4px');
+            $('.service-box').css('margin-top', '25px');
+            $('.address-box').css('margin-bottom', '27px');
             $("#address1Billing").rules("add", {
                 minlength: 5,
                 maxlength: 20,
@@ -572,6 +576,10 @@ $(document).ready(function(){
             $("#postalCodeBilling").rules("remove", "maxlength");
             $("#postalCodeBilling").rules("remove", "notEqualPostal");
             $("#postalCodeBilling").rules("remove", "number");
+            $('.service-box').css('padding-left', '2px');
+            $('.shipping-box').css('padding-left', '2px');
+            $('.address-box').css('margin-bottom', '0');
+            $('.service-box').css('margin-top', '11px');
         }
         if ($this.is(':checked') && $('#showShippingEnterprise').is(':checked')) {
             $('#sameShippingEnterprise').parent().removeClass('hidden');
