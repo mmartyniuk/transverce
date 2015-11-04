@@ -38,7 +38,11 @@ h3 {
 }
 
 .col-9 {
-    width: 71%;
+    width: 42%;
+}
+
+.col-offset {
+    margin-left: 20%;
 }
 .col-md-3 select {
     width: 122px;
@@ -54,7 +58,7 @@ h3 {
 }
 
 .input-container {
-    padding-left: 7px;
+    padding-left: 31px;
     padding-right: 20px;
 }
 
@@ -75,7 +79,7 @@ h3 {
 }
 
 #enterprise .control-label {
-    padding-right: 11px;
+    padding-right: 8px;
     padding-top: 8px;
 }
 
@@ -183,7 +187,7 @@ select.form-control {
     color: #444;
 }
 
-.container {
+.container-fluid {
     background-color: #fff;
     position: relative;
 }
@@ -615,7 +619,7 @@ select.form-control {
 
 .the-fieldset {
     border: 1px dashed #A5A5A5;
-    padding: 10px 16px 0px 15px;
+    padding: 10px 15px 0px 34px;
     margin: 0 0 1.5em 0;
     -webkit-box-shadow:  0px 0px 0px 0px #000;
             box-shadow:  0px 0px 0px 0px #000;
@@ -641,7 +645,7 @@ select.form-control {
 }
 
 .the-fieldset.margin-bottom {
-    margin-bottom: 37px;
+    margin-bottom: 38px;
 }
 
 .padding-left-0 {
@@ -753,7 +757,7 @@ select.form-control {
 
 @media (min-width: 992px){
     .the-fieldset {
-        margin: 0 -15px 32px -15px;
+        margin: 0 -108px 32px -9px;
     }
 }
 

@@ -23,7 +23,7 @@
     </head>
     <body>
         <!-- Account page -->
-        <nav class="navbar container">
+        <nav class="navbar container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
@@ -53,7 +53,7 @@
             </div><!-- /.navbar-collapse -->
         </nav>
 
-        <div class="container" id="accountDetails">
+        <div class="container-fluid" id="accountDetails">
             <aside id="nav-container" class="visible-lg">
                 <ul id="nav">
                     <li class="dropdown active">
@@ -90,20 +90,20 @@
                     <form id="enterprise" class="form-horizontal" novalidate="novalidate" role="form">
                         <div class="row">
                             <!-- Corporate -->
-                            <div class="col-9 col-sm-12">
+                            <div class="col-9 col-offset col-sm-12">
                                 <div class="wrapper">
                                     <fieldset class="the-fieldset">
                                         <legend class="the-legend">For personal account</legend>
                                         <div class="form-group row">
-                                            <label for="firstName" class="required control-label col-md-4">First Name</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="firstName" class="required control-label col-md-3">First Name</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="firstName" name="firstName">
                                                 <span id="inputError2Status" class="sr-only">(error)</span>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="LastName" class="required control-label col-md-4">Last Name</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="LastName" class="required control-label col-md-3">Last Name</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="LastName" name="LastName">
                                             </div>
                                         </div>
@@ -111,41 +111,41 @@
                                     <fieldset class="the-fieldset margin-bottom">
                                         <legend class="the-legend">For enterprise account</legend>
                                         <div class="form-group row">
-                                            <label for="companyName" class="required control-label col-md-4">Company Name</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="companyName" class="required control-label col-md-3">Company Name</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="companyName" name="companyName">
                                             </div>
                                         </div>
                                     </fieldset>
                                     <div class="form-group row">
-                                        <label for="ExternalAccountID" class="required control-label col-md-4">External Account ID</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="ExternalAccountID" class="required control-label col-md-3">External Account ID</label>
+                                        <div class="col-md-9 input-container">
                                             <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
                                         </div>
                                     </div>
                                     <div class="form-group row checkRow">
-                                        <label for="taxExempt" class="col-md-4 control-label"> Taxable</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="taxExempt" class="col-md-3 control-label"> Taxable</label>
+                                        <div class="col-md-9 input-container">
                                             <input type="checkbox" id="taxExempt" checked>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="tax" class="col-md-4 control-label letter-spacing">Tax Number (SSN / EIN)</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="tax" class="col-md-3 control-label letter-spacing">Tax Number (SSN / EIN)</label>
+                                        <div class="col-md-9 input-container">
                                             <input type="text" class="form-control" id="tax" name="tax">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="corporateEmail" class="required control-label col-md-4">Email</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="corporateEmail" class="required control-label col-md-3">Email</label>
+                                        <div class="col-md-9 input-container">
                                             <input type="email" class="form-control" id="corporateEmail" name="corporateEmail">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-4 control-label">Phone</label>
-                                        <div class="phone1 col-md-8">
+                                        <label class="col-md-3 control-label">Phone</label>
+                                        <div class="phone1 col-md-9">
                                             <div class="row">
-                                                <div class="col-md-4 input-container">
+                                                <div class="col-md-3 input-container">
                                                     <select class="form-control phone-type1">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -154,15 +154,15 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone">
+                                                <div class="col-md-9 phone-container phone">
                                                     <input type="text" class="form-control" id="phone1">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
                                             </div>
                                         </div>
-                                        <div class="phone2 col-md-8 col-md-offset-4 hidden">
+                                        <div class="phone2 col-md-9 col-md-offset-3 hidden">
                                             <div class="row">
-                                                <div class="col-md-4 input-container">
+                                                <div class="col-md-3 input-container">
                                                     <select class="form-control phone-type2">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -171,15 +171,15 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone">
+                                                <div class="col-md-9 phone-container phone">
                                                     <input type="text" class="form-control" id="phone2">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
                                             </div>
                                         </div>
-                                        <div class="phone3 col-md-8 col-md-offset-4 hidden">
+                                        <div class="phone3 col-md-9 col-md-offset-3 hidden">
                                             <div class="row">
-                                                <div class="col-md-4 input-container">
+                                                <div class="col-md-3 input-container">
                                                     <select class="form-control phone-type3">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -188,15 +188,15 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone">
+                                                <div class="col-md-9 phone-container phone">
                                                     <input type="text" class="form-control" id="phone3">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
                                             </div>
                                         </div>
-                                        <div class="phone4 col-md-8 col-md-offset-4 hidden">
+                                        <div class="phone4 col-md-9 col-md-offset-3 hidden">
                                             <div class="row">
-                                                <div class="col-md-4 input-container">
+                                                <div class="col-md-3 input-container">
                                                     <select class="form-control phone-type4">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -205,7 +205,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone">
+                                                <div class="col-md-9 phone-container phone">
                                                     <input type="text" class="form-control" id="phone4">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -219,12 +219,12 @@
                                     </div>
                                     <div class="row form-group">
                                         <!-- Custom fiedls -->
-                                        <label for="field1" class="col-md-4 control-label">Custom Field 1</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="field1" class="col-md-3 control-label">Custom Field 1</label>
+                                        <div class="col-md-9 input-container">
                                             <input type="text" class="form-control" id="field1" maxlength="100">
                                         </div>
-                                        <label for="field2" class="col-md-4 control-label">Custom Field 2</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="field2" class="col-md-3 control-label">Custom Field 2</label>
+                                        <div class="col-md-9 input-container">
                                             <input type="text" class="form-control" id="field2" maxlength="100">
                                         </div>
                                     </div>
