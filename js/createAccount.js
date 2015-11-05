@@ -529,8 +529,8 @@ $(document).ready(function(){
         var $this = $(this);
         if ($this.is(':checked')) {
             $('#BillingAdd').removeClass('hidden');
-            $('.service-box').css('padding-left', '4px');
-            $('.shipping-box').css('padding-left', '4px');
+            $('.service-box').css('padding-left', '6px');
+            $('.shipping-box').css('padding-left', '6px');
             $('.service-box').css('margin-top', '25px');
             $('.address-box').css('margin-bottom', '27px');
             $("#address1Billing").rules("add", {
@@ -910,6 +910,7 @@ $(document).ready(function(){
             $(element).closest('.form-group').addClass('has-error');
             if(!$(element).is("select")) {
                 $(element).parent().removeClass('success-container');
+                $(element).parent().removeClass('success-container-postal');
                 if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
                     $(element).parent().addClass('icon-container-postal');
                 }else{
