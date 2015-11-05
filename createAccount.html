@@ -118,7 +118,7 @@
                                         </div>
                                     </fieldset>
                                     <div class="form-group row">
-                                        <label for="ExternalAccountID" class="required control-label col-md-3">External Account ID</label>
+                                        <label for="ExternalAccountID" class="required control-label col-md-3">External ID</label>
                                         <div class="col-md-9 input-container">
                                             <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
                                         </div>
@@ -145,7 +145,7 @@
                                         <label class="col-md-3 control-label">Phone</label>
                                         <div class="phone1 col-md-9">
                                             <div class="row">
-                                                <div class="col-md-3 input-container">
+                                                <div class="col-md-4 input-container">
                                                     <select class="form-control phone-type1">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -154,7 +154,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-9 phone-container phone">
+                                                <div class="col-md-8 phone-container phone">
                                                     <input type="text" class="form-control" id="phone1">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -162,7 +162,7 @@
                                         </div>
                                         <div class="phone2 col-md-9 col-md-offset-3 hidden">
                                             <div class="row">
-                                                <div class="col-md-3 input-container">
+                                                <div class="col-md-4 input-container">
                                                     <select class="form-control phone-type2">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -171,7 +171,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-9 phone-container phone">
+                                                <div class="col-md-8 phone-container phone">
                                                     <input type="text" class="form-control" id="phone2">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -179,7 +179,7 @@
                                         </div>
                                         <div class="phone3 col-md-9 col-md-offset-3 hidden">
                                             <div class="row">
-                                                <div class="col-md-3 input-container">
+                                                <div class="col-md-4 input-container">
                                                     <select class="form-control phone-type3">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -188,7 +188,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-9 phone-container phone">
+                                                <div class="col-md-8 phone-container phone">
                                                     <input type="text" class="form-control" id="phone3">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -196,7 +196,7 @@
                                         </div>
                                         <div class="phone4 col-md-9 col-md-offset-3 hidden">
                                             <div class="row">
-                                                <div class="col-md-3 input-container">
+                                                <div class="col-md-4 input-container">
                                                     <select class="form-control phone-type4">
                                                         <option value="">Phone Type</option>
                                                         <option value="Office">Office</option>
@@ -205,7 +205,7 @@
                                                         <option value="Mobile">Mobile</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-9 phone-container phone">
+                                                <div class="col-md-8 phone-container phone">
                                                     <input type="text" class="form-control" id="phone4">
                                                 </div>
                                                 <span class="desc-remove hidden"></span>
@@ -213,7 +213,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-4 col-md-offset-4 input-container"> 
+                                        <div class="col-md-4 col-md-offset-3 input-container"> 
                                             <a href="#" class="addPhone">+ Add Phone Number</a>
                                         </div>
                                     </div>
@@ -238,21 +238,28 @@
                             </div>
                         </div>
                         <div class="row financial">
-                            <div class="col-9 col-sm-12">
+                            <div class="col-9 col-offset col-sm-12">
                                 <div class="wrapper">
                                     <div class="form-group row">
-                                        <label for="currency" class="required control-label col-md-4">Currency</label>
+                                        <label for="currency" class="required control-label col-md-3">Currency</label>
                                         <div class="col-md-3 input-container">
                                             <select id="currency" class="form-control" name="currency">
                                                 <option value=""></option>
                                                 <option value="USD">USD</option>
                                                 <option value="EU">EU</option>
                                             </select>
+                                            <div class="spinner-container common-select" id="spinnerCurr">
+                                                <div class="spinner">
+                                                    <svg height="1em" width="1em">
+                                                        <circle r="0.45em" cy="0.5em" cx="0.5em">
+                                                    </svg>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="billCycle" class="required control-label col-md-4">Bill Cycle</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="billCycle" class="required control-label col-md-3">Bill Cycle</label>
+                                        <div class="col-md-9 input-container">
                                             <select id="billCycle" class="form-control" name="billCycle">
                                                 <option value=""></option>
                                             </select>
@@ -265,16 +272,9 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="spinner-container common-select" id="spinnerCurr">
-                                        <div class="spinner">
-                                            <svg height="1em" width="1em">
-                                                <circle r="0.45em" cy="0.5em" cx="0.5em">
-                                            </svg>
-                                        </div>
-                                    </div>
                                     <div class="form-group row">
-                                        <label for="invoiceType" class="required control-label col-md-4">Invoice Type</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="invoiceType" class="required control-label col-md-3">Invoice Type</label>
+                                        <div class="col-md-9 input-container">
                                             <select id="invoiceType" class="form-control" name="invoiceType">
                                                 <option value="">Please Select</option>
                                                 <option value="SomeTestData">Some Test Data</option>
@@ -282,8 +282,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="paymentTerm" class="control-label col-md-4">Payment Term</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="paymentTerm" class="control-label col-md-3">Payment Term</label>
+                                        <div class="col-md-9 input-container">
                                             <select id="paymentTerm" class="form-control">
                                                 <option>Please Select</option>
                                                 <option>Some Test Data</option>
@@ -298,14 +298,14 @@
                                         </div>
                                     </div>
                                     <div class="form-group row checkRow">
-                                        <label for="autoPayment" class="control-label col-md-4"> Authorize Auto-Payment</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="autoPayment" class="control-label col-md-3"> Authorize Auto-Payment</label>
+                                        <div class="col-md-9 input-container">
                                             <input type="checkbox" id="autoPayment">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="parentAccount" class="control-label col-md-4">Parent Account</label>
-                                        <div class="col-md-8 input-container container-select2">
+                                        <label for="parentAccount" class="control-label col-md-3">Parent Account</label>
+                                        <div class="col-md-9 input-container container-select2">
                                             <select id="parentAccount" class="form-control js-example-basic-single">
                                                 <option></option>
                                                 <option value="p1">Parent Account 1</option>
@@ -318,8 +318,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="accountCategory" class="required control-label col-md-4">Account Category</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="accountCategory" class="required control-label col-md-3">Account Category</label>
+                                        <div class="col-md-9 input-container">
                                             <select id="accountCategory" class="form-control" name="accountCategory">
                                                 <option value="">Please Select</option>
                                                 <option value="SomeTestData">Some Test Data</option>
@@ -334,8 +334,8 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="accountSegment" class="control-label col-md-4">Account Segment</label>
-                                        <div class="col-md-8 input-container">
+                                        <label for="accountSegment" class="control-label col-md-3">Account Segment</label>
+                                        <div class="col-md-9 input-container">
                                             <select id="accountSegment" class="form-control" name="accountSegment">
                                                 <option value="">Please Select</option>
                                                 <option value="SomeTestData">Some Test Data</option>
@@ -351,7 +351,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-9 col-sm-12">
+                            <div class="col-9 col-offset col-sm-12">
                                 <div class="wrapper">
                                     <div class="row"> 
                                         <label class="control-label address-box">
@@ -360,8 +360,8 @@
                                     </div>
                                     <div id="BillingAdd">
                                         <div class="row">
-                                            <label for="countriesBilling" class="required control-label col-md-4">Country</label>
-                                            <div class="col-md-8 input-container container-select2">
+                                            <label for="countriesBilling" class="required control-label col-md-3">Country</label>
+                                            <div class="col-md-9 input-container container-select2">
                                                 <select id="countriesBilling" class="form-control js-example-basic-single countries">
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AL">Albania</option>
@@ -386,26 +386,26 @@
                                             </div>
                                         </div>
                                         <div class="form-group row margin-top-0">
-                                            <label for="address1Billing" class="required control-label col-md-4 letter-spacing">Address Line 1</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="address1Billing" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="address1Billing" name="address1Billing">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="address2Billing" class="control-label col-md-4 letter-spacing">Address Line 2</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="address2Billing" class="control-label col-md-3 letter-spacing">Address Line 2</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="address2Billing">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="cityBilling" class="required control-label col-md-4">City</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="cityBilling" class="required control-label col-md-3">City</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="cityBilling" name="cityBilling">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="statesUS" class="required control-label col-md-4">State</label>
-                                            <div class="col-md-8 input-container container-select2">
+                                            <label for="statesUS" class="required control-label col-md-3">State</label>
+                                            <div class="col-md-9 input-container container-select2">
                                                 <select id="statesUS" class="form-control js-example-basic-single">
                                                     <option value="AL">Alabama</option>
                                                     <option value="AK">Alaska</option>
@@ -424,8 +424,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="postalCodeBilling" class="required control-label col-md-4">Postal Code</label>
-                                            <div class="col-md-4 input-container">
+                                            <label for="postalCodeBilling" class="required control-label col-md-3">Postal Code</label>
+                                            <div class="col-md-4 input-container postal-container">
                                                 <input type="text" class="form-control" id="postalCodeBilling" name="postalCodeBilling">
                                             </div>
                                         </div>
@@ -444,8 +444,8 @@
                                     </div>
                                     <div class="serviceAddress hidden" id="serviceBlockEnterprise">
                                         <div class="form-group row">
-                                            <label for="countriesService" class="required control-label col-md-4">Country</label>
-                                            <div class="col-md-8 input-container container-select2">
+                                            <label for="countriesService" class="required control-label col-md-3">Country</label>
+                                            <div class="col-md-9 input-container container-select2">
                                                 <select id="countriesService" class="form-control js-example-basic-single countries">
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AL">Albania</option>
@@ -470,26 +470,26 @@
                                             </div>
                                         </div>
                                         <div class="form-group row margin-top-0">
-                                            <label for="address1Service" class="required control-label col-md-4 letter-spacing">Address Line 1</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="address1Service" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="address1Service" name="address1Service">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="address2Service" class="control-label col-md-4 letter-spacing">Address Line 2</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="address2Service" class="control-label col-md-3 letter-spacing">Address Line 2</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="address2Service" name="address2Service">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="cityService" class="required control-label col-md-4">City</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="cityService" class="required control-label col-md-3">City</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="cityService" name="cityService">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="statesUSService" class="required control-label col-md-4">State</label>
-                                            <div class="col-md-8 input-container container-select2">
+                                            <label for="statesUSService" class="required control-label col-md-3">State</label>
+                                            <div class="col-md-9 input-container container-select2">
                                                 <select id="statesUSService" name="statesUSService" class="form-control js-example-basic-single">
                                                     <option value="AL">Alabama</option>
                                                     <option value="AK">Alaska</option>
@@ -508,8 +508,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="postalCodeService" class="required control-label col-md-4">Postal Code</label>
-                                            <div class="col-md-4 input-container">
+                                            <label for="postalCodeService" class="required control-label col-md-3">Postal Code</label>
+                                            <div class="col-md-4 input-container postal-container">
                                                 <input type="text" class="form-control" id="postalCodeService" name="postalCodeService" maxlength="10">
                                             </div>
                                         </div>
@@ -528,8 +528,8 @@
                                     </div>
                                     <div class="shippingAddress hidden" id="shippingBlockEnterprise">
                                         <div class="form-group row">
-                                            <label for="countriesShipping" class="required control-label col-md-4">Countries</label>
-                                            <div class="col-md-8 input-container container-select2">
+                                            <label for="countriesShipping" class="required control-label col-md-3">Countries</label>
+                                            <div class="col-md-9 input-container container-select2">
                                                 <select id="countriesShipping" class="form-control js-example-basic-single countries" name="countriesShipping">
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AL">Albania</option>
@@ -554,26 +554,26 @@
                                             </div>
                                         </div>
                                         <div class="form-group row margin-top-0">
-                                            <label for="address1Shipping" class="required control-label col-md-4 letter-spacing">Address Line 1</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="address1Shipping" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="address1Shipping" name="address1Shipping">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="address2Shipping" class="control-label col-md-4 letter-spacing">Address Line 2</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="address2Shipping" class="control-label col-md-3 letter-spacing">Address Line 2</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="address2Shipping" name="address2Shipping">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="cityShipping" class="required control-label col-md-4">City</label>
-                                            <div class="col-md-8 input-container">
+                                            <label for="cityShipping" class="required control-label col-md-3">City</label>
+                                            <div class="col-md-9 input-container">
                                                 <input type="text" class="form-control" id="cityShipping" name="cityShipping">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                                <label for="statesUSShipping" class="required control-label col-md-4">State</label>
-                                                <div class="col-md-8 input-container container-select2">
+                                                <label for="statesUSShipping" class="required control-label col-md-3">State</label>
+                                                <div class="col-md-9 input-container container-select2">
                                                     <select id="statesUSShipping" class="form-control js-example-basic-single" name="statesUSShipping">
                                                         <option value="AL">Alabama</option>
                                                         <option value="AK">Alaska</option>
@@ -592,8 +592,8 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">    
-                                                <label for="postalCodeShipping" class="required control-label col-md-4">Postal Code</label>
-                                                <div class="col-md-4 input-container">
+                                                <label for="postalCodeShipping" class="required control-label col-md-3">Postal Code</label>
+                                                <div class="col-md-4 input-container postal-container">
                                                     <input type="text" class="form-control" id="postalCodeShipping" name="postalCodeShipping">
                                                 </div>
                                             </div>
