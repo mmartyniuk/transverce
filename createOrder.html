@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Create order</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        
+        <!-- Custom css files -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/styleAccount.css">
+        <link rel="stylesheet" href="styles/bootstrap-datepicker.min.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Account page -->
+        <nav class="navbar container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="assets/logo.png"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group row">
+                            <input type="text" class="form-control search" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-link">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <li class="active"><a href="#" class="letter-spacing"><i class="fa fa-plus"></i> Create</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Douglas Johnson <span class="caret"></span></a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <div class="container-fluid" id="account">
+            <aside id="nav-container" class="visible-lg">
+                <ul id="nav">
+                    <li class="dropdown active">
+                        <a href=""><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href=""><i class="fa fa-users"></i><span>Accounts</span></a>
+                    </li>
+                </ul>
+            </aside>
+            <div class="main-content row">
+                <header class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Create New Order</h2>
+                        </div>
+                        <div class="col-md-2 col-md-offset-2">
+                            <h6 class="text-right"><strong class="text-danger">&#42;</strong> Required</h6>
+                        </div>
+                    </div>
+                </header>
+                <section class="account-header col-md-12">
+                    <div class="row">
+                        <div class="col-md-4 section-title">
+                            <h3>Account</h3>
+                        </div>
+                        <div class="col-md-4 section-title">
+                            <h3>Order Details</h3>
+                        </div>
+                        <div class="col-md-2 col-md-offset-1">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Add Product
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li>
+                                        <a href="#">Product 1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <dl>
+                                <dt>Account with autopayment (770) <a href="#">Change</a></dt>
+                                <dd>620 Congress avenue</dd>
+                                <dd>Austin, TX 78071 USA</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-4">
+                            <dl>
+                                <dt>Order date</dt>
+                                <dd>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-th"></i>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-md-12">
+                    <div class="col-md-12">
+                        <h3>Order Items</h3>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <!-- jQuery, custom scripts  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <script src="js/createOrder.js"></script>
+    </body>
+</html>

@@ -17,10 +17,6 @@ input[type="radio"], input[type="checkbox"] {
     vertical-align: middle;
 }
 
-.warning-icon {
-    background: 
-}
-
 .input-container input[type="radio"], .input-container  input[type="checkbox"] {
     margin-top: 11px;
     margin-left: 1px;
