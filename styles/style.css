@@ -767,6 +767,12 @@ select.form-control {
     .the-fieldset {
         margin: 0 -12px 32px -33px;
     }
+    .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
+        width: 130px;
+    }
+    .phone-container {
+        padding-left: 20px;
+    }
 }
 
 @media (min-width: 1200px){
@@ -781,6 +787,12 @@ select.form-control {
     }
     .col-9 {
         width: 71.7%;
+    }
+    .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
+        width: 150px;
+    }
+    .phone-container {
+        padding-left: 30px;
     }
 }
 
@@ -797,6 +809,12 @@ select.form-control {
     }
     label {
         white-space: nowrap;
+    }
+    .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
+        width: 172px;
+    }
+    .phone-container {
+        padding-left: 46px;
     }
 }
 
