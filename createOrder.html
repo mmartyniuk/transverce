@@ -113,7 +113,7 @@
                                     <div class="input-group date">
                                         <input type="text" class="form-control">
                                         <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-th"></i>
+                                            <i class="glyphicon glyphicon-calendar"></i>
                                         </span>
                                     </div>
                                 </dd>
@@ -122,8 +122,43 @@
                     </div>
                 </section>
                 <section class="col-md-12">
-                    <div class="col-md-12">
-                        <h3>Order Items</h3>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Order Items</h3>
+                            <a class="btn btn-default" href="#">Add Product</a>
+                        </div>
+                    </div>
+                    <div class="row order-table">
+                        <div class="col-md-12">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>List Price (USD)</th>
+                                        <th>Order Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total (USD)</th>
+                                        <th>Configure</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div id="product-select">
+                                                <input class="typeahead" type="text" placeholder="Start typing product's name">
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -134,6 +169,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
         <script src="js/bootstrap-datepicker.min.js"></script>
         <script src="js/createOrder.js"></script>
     </body>
