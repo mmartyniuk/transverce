@@ -196,7 +196,7 @@ $(document).ready(function(){
     var sortSelect = function (select) {
 
         $(select).html($(select).children('option').sort(function (y, x) {
-            return $(x).text().toUpperCase() < $(y).text().toUpperCase() ? -1 : 1;
+            return $(x).val().toUpperCase() < $(y).val().toUpperCase() ? -1 : 1;
         }));
 
         $(select).get(0).selectedIndex = 0;
