@@ -258,6 +258,7 @@ h3 {
 }
 .input-group.date {
     width: 245px;
+    padding-bottom: 10px;
 }
 
 .account-header .dropdown {
