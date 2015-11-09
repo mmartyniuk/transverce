@@ -217,7 +217,7 @@ $(document).ready(function(){
             $('#AccountName').prop("disabled", false);
         } else if (!$this.val() && companyExists && !namesExists) {
             if (!placeholder) {
-                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+                $('#AccountName').append("<option value=''>Please fill (First Name and Last Name) or (Company Name)</option>");
             }
             $('#AccountName').find('[value="Company"]').remove();
             $('#companyName').parent().removeClass('success-container');
@@ -225,7 +225,7 @@ $(document).ready(function(){
         } else {
             $('#AccountName').find('[value="Company"]').remove();
             $('#companyName').parent().removeClass('success-container');
-            $('#AccountName').prop("disabled", false);
+            //$('#AccountName').prop("disabled", false);
         }
         sortSelect('#AccountName');
     });
@@ -249,13 +249,13 @@ $(document).ready(function(){
         } else if (!$this.val() && lastNameVal) {
             $('#AccountName').find('[value="Name"]').remove();
             if (!placeholder) {
-                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+                $('#AccountName').append("<option value=''>Please fill (First Name and Last Name) or (Company Name)</option>");
             }
             $('#firstName').parent().removeClass('success-container');
             $('#AccountName').prop("disabled", true);
         } else {
             if (!placeholder) {
-                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+                $('#AccountName').append("<option value=''>Please fill (First Name and Last Name) or (Company Name)</option>");
             }
             $('#firstName').parent().removeClass('success-container');
             $('#AccountName').prop("disabled", true);
@@ -282,13 +282,13 @@ $(document).ready(function(){
         } else if (!$this.val() && firstNameVal) {
             $('#AccountName').find('[value="Name"]').remove();
             if (!placeholder) {
-                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+                $('#AccountName').append("<option value=''>Please fill (First Name and Last Name) or (Company Name)</option>");
             }
             $('#LastName').parent().removeClass('success-container');
             $('#AccountName').prop("disabled", true);
         } else {
             if (!placeholder) {
-                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+                $('#AccountName').append("<option value=''>Please fill (First Name and Last Name) or (Company Name)</option>");
             }
             $('#AccountName').prop("disabled", true);
             $('#LastName').parent().removeClass('success-container');

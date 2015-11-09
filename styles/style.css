@@ -750,6 +750,9 @@ select.form-control {
 #AccountName[disabled] {
     color: #aaa;
     background-color: #fff;
+    border-color: rgb(203, 213, 221);
+    opacity: 1;
+    cursor: default;
 }
 /*media*/
 
