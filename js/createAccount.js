@@ -206,6 +206,7 @@ $(document).ready(function(){
         var $this = $(this);
         var companyExists = $("#AccountName option[value='Company']").length > 0;
         var namesExists = $("#AccountName option[value='Name']").length > 0;
+        var placeholder = $("#AccountName option[value='']").length > 0;
         if ($this.val() && !companyExists) {
             $('#AccountName').append("<option value='Company'>"+$this.val()+"</option>");
             $('#AccountName').find('[value=""]').remove();
@@ -215,7 +216,9 @@ $(document).ready(function(){
             $('#AccountName').append("<option value='Company'>"+$this.val()+"</option>");
             $('#AccountName').removeClass('account-placeholder');
         } else if (!$this.val() && companyExists && !namesExists) {
-            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            if (!placeholder) {
+                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            }
             $('#AccountName').find('[value="Company"]').remove();
             $('#companyName').parent().removeClass('success-container');
             $('#AccountName').addClass('account-placeholder');
@@ -231,6 +234,7 @@ $(document).ready(function(){
         var companyExists = $("#AccountName option[value='Company']").length > 0;
         var namesExists = $("#AccountName option[value='Name']").length > 0;
         var lastNameVal = $('#LastName').val();
+        var placeholder = $("#AccountName option[value='']").length > 0;
         if ($this.val() && !namesExists && lastNameVal) {
             $('#AccountName').append("<option value='Name'>" + $this.val() + " " + lastNameVal + "</option>");
             $('#AccountName').find('[value=""]').remove();
@@ -244,11 +248,15 @@ $(document).ready(function(){
             $('#AccountName').removeClass('account-placeholder');
         } else if (!$this.val() && lastNameVal) {
             $('#AccountName').find('[value="Name"]').remove();
-            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            if (!placeholder) {
+                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            }
             $('#firstName').parent().removeClass('success-container');
             $('#AccountName').addClass('account-placeholder');
         } else {
-            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            if (!placeholder) {
+                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            }
             $('#firstName').parent().removeClass('success-container');
             $('#AccountName').addClass('account-placeholder');
         }
@@ -259,6 +267,7 @@ $(document).ready(function(){
         var companyExists = $("#AccountName option[value='Company']").length > 0;
         var namesExists = $("#AccountName option[value='Name']").length > 0;
         var firstNameVal = $('#firstName').val();
+        var placeholder = $("#AccountName option[value='']").length > 0;
         if ($this.val() && !namesExists && firstNameVal) {
             $('#AccountName').append("<option value='Name'>"+ firstNameVal + " " + $this.val() +"</option>");
             $('#AccountName').find('[value=""]').remove();
@@ -272,11 +281,15 @@ $(document).ready(function(){
             $('#AccountName').removeClass('account-placeholder');
         } else if (!$this.val() && firstNameVal) {
             $('#AccountName').find('[value="Name"]').remove();
-            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            if (!placeholder) {
+                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            }
             $('#LastName').parent().removeClass('success-container');
             $('#AccountName').addClass('account-placeholder');
         } else {
-            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            if (!placeholder) {
+                $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            }
             $('#AccountName').addClass('account-placeholder');
             $('#LastName').parent().removeClass('success-container');
         }
