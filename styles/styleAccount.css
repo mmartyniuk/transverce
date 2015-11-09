@@ -221,15 +221,22 @@ h3 {
 
 #account {
     padding: 40px 15px 0 135px;
+    height: 100%;
 }
 
 .account-header {
     background-color: #F8F8F8;
     padding-bottom: 20px;
+    padding-top: 10px;
 }
 
 .account-header .dropdown {
     background: transparent;
+}
+
+.account-header .dropdown-menu {
+    left: inherit;
+    right: 0;
 }
 
 .account-header .dropdown button {
@@ -304,4 +311,9 @@ h3 {
 }
 .bottom-buttons {
     margin-top: 15px;
+}
+
+.padding-content {
+    padding-left: 40px;
+    padding-right: 40px;
 }
