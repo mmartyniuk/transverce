@@ -747,8 +747,9 @@ select.form-control {
     margin-bottom: 26px;
 }
 
-.account-placeholder {
-    color: #CBD5DD;
+#AccountName[disabled] {
+    color: #aaa;
+    background-color: #fff;
 }
 /*media*/
 

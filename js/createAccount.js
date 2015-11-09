@@ -210,22 +210,22 @@ $(document).ready(function(){
         if ($this.val() && !companyExists) {
             $('#AccountName').append("<option value='Company'>"+$this.val()+"</option>");
             $('#AccountName').find('[value=""]').remove();
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         } else if ($this.val() && companyExists) {
             $('#AccountName').find('[value="Company"]').remove();
             $('#AccountName').append("<option value='Company'>"+$this.val()+"</option>");
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         } else if (!$this.val() && companyExists && !namesExists) {
             if (!placeholder) {
                 $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
             }
             $('#AccountName').find('[value="Company"]').remove();
             $('#companyName').parent().removeClass('success-container');
-            $('#AccountName').addClass('account-placeholder');
+            $('#AccountName').prop("disabled", true);
         } else {
             $('#AccountName').find('[value="Company"]').remove();
             $('#companyName').parent().removeClass('success-container');
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         }
         sortSelect('#AccountName');
     });
@@ -238,27 +238,27 @@ $(document).ready(function(){
         if ($this.val() && !namesExists && lastNameVal) {
             $('#AccountName').append("<option value='Name'>" + $this.val() + " " + lastNameVal + "</option>");
             $('#AccountName').find('[value=""]').remove();
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         } else if ($this.val() && companyExists) {
             $('#firstName').parent().removeClass('success-container');
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         } else if (!$this.val() && companyExists) {
             $('#AccountName').find('[value="Name"]').remove();
             $('#firstName').parent().removeClass('success-container');
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         } else if (!$this.val() && lastNameVal) {
             $('#AccountName').find('[value="Name"]').remove();
             if (!placeholder) {
                 $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
             }
             $('#firstName').parent().removeClass('success-container');
-            $('#AccountName').addClass('account-placeholder');
+            $('#AccountName').prop("disabled", true);
         } else {
             if (!placeholder) {
                 $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
             }
             $('#firstName').parent().removeClass('success-container');
-            $('#AccountName').addClass('account-placeholder');
+            $('#AccountName').prop("disabled", true);
         }
         sortSelect('#AccountName');
     });
@@ -271,26 +271,26 @@ $(document).ready(function(){
         if ($this.val() && !namesExists && firstNameVal) {
             $('#AccountName').append("<option value='Name'>"+ firstNameVal + " " + $this.val() +"</option>");
             $('#AccountName').find('[value=""]').remove();
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         } else if ($this.val() && companyExists) {
             $('#LastName').parent().removeClass('success-container');
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         } else if (!$this.val() && companyExists) {
             $('#AccountName').find('[value="Name"]').remove();
             $('#LastName').parent().removeClass('success-container');
-            $('#AccountName').removeClass('account-placeholder');
+            $('#AccountName').prop("disabled", false);
         } else if (!$this.val() && firstNameVal) {
             $('#AccountName').find('[value="Name"]').remove();
             if (!placeholder) {
                 $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
             }
             $('#LastName').parent().removeClass('success-container');
-            $('#AccountName').addClass('account-placeholder');
+            $('#AccountName').prop("disabled", true);
         } else {
             if (!placeholder) {
                 $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
             }
-            $('#AccountName').addClass('account-placeholder');
+            $('#AccountName').prop("disabled", true);
             $('#LastName').parent().removeClass('success-container');
         }
         sortSelect('#AccountName');
