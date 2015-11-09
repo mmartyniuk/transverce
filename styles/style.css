@@ -747,6 +747,9 @@ select.form-control {
     margin-bottom: 26px;
 }
 
+.account-placeholder {
+    color: #CBD5DD;
+}
 /*media*/
 
 @media (min-width: 768px){
