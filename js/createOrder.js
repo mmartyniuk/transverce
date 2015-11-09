@@ -93,11 +93,67 @@ $(document).ready(function(){
         if (childGlyph.hasClass('glyphicon-unchecked')) {
             childGlyph.removeClass('glyphicon-unchecked');
             childGlyph.addClass('glyphicon-check');
-            $('#order-number').parent().removeClass('hidden');
+            $('#order-number').parent().parent().removeClass('hidden');
         } else {
             childGlyph.addClass('glyphicon-unchecked');
             childGlyph.removeClass('glyphicon-check');
-            $('#order-number').parent().addClass('hidden');
+            $('#order-number').parent().parent().addClass('hidden');
+        }
+    });
+
+    $('.set-referal').on('click', function(e){
+        e.preventDefault();
+        var childGlyph = $(this).find("i");
+        if (childGlyph.hasClass('glyphicon-unchecked')) {
+            childGlyph.removeClass('glyphicon-unchecked');
+            childGlyph.addClass('glyphicon-check');
+            $('#sales-referal').parent().parent().removeClass('hidden');
+        } else {
+            childGlyph.addClass('glyphicon-unchecked');
+            childGlyph.removeClass('glyphicon-check');
+            $('#sales-referal').parent().parent().addClass('hidden');
+        }
+    });
+
+    $('.set-custom-field-1').on('click', function(e){
+        e.preventDefault();
+        var childGlyph = $(this).find("i");
+        if (childGlyph.hasClass('glyphicon-unchecked')) {
+            childGlyph.removeClass('glyphicon-unchecked');
+            childGlyph.addClass('glyphicon-check');
+            $('#custom-field-1').parent().parent().removeClass('hidden');
+        } else {
+            childGlyph.addClass('glyphicon-unchecked');
+            childGlyph.removeClass('glyphicon-check');
+            $('#custom-field-1').parent().parent().addClass('hidden');
+        }
+    });
+
+    $('.set-custom-field-2').on('click', function(e){
+        e.preventDefault();
+        var childGlyph = $(this).find("i");
+        if (childGlyph.hasClass('glyphicon-unchecked')) {
+            childGlyph.removeClass('glyphicon-unchecked');
+            childGlyph.addClass('glyphicon-check');
+            $('#custom-field-2').parent().parent().removeClass('hidden');
+        } else {
+            childGlyph.addClass('glyphicon-unchecked');
+            childGlyph.removeClass('glyphicon-check');
+            $('#custom-field-2').parent().parent().addClass('hidden');
+        }
+    });
+
+    $('.set-notes').on('click', function(e){
+        e.preventDefault();
+        var childGlyph = $(this).find("i");
+        if (childGlyph.hasClass('glyphicon-unchecked')) {
+            childGlyph.removeClass('glyphicon-unchecked');
+            childGlyph.addClass('glyphicon-check');
+            $('#notes').parent().parent().removeClass('hidden');
+        } else {
+            childGlyph.addClass('glyphicon-unchecked');
+            childGlyph.removeClass('glyphicon-check');
+            $('#notes').parent().parent().addClass('hidden');
         }
     });
     
