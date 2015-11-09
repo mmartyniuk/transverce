@@ -92,36 +92,29 @@
                             <!-- Corporate -->
                             <div class="col-9 col-offset col-sm-12">
                                 <div class="wrapper">
-                                    <fieldset class="the-fieldset">
-                                        <legend class="the-legend">For personal account</legend>
-                                        <div class="form-group row">
-                                            <label for="firstName" class="control-label col-md-3">First Name</label>
-                                            <div class="col-md-9 input-container">
-                                                <input type="text" class="form-control" id="firstName" name="firstName">
-                                                <span id="inputError2Status" class="sr-only">(error)</span>
-                                            </div>
+                                    <div class="form-group row">
+                                        <label for="firstName" class="control-label col-md-3">First Name</label>
+                                        <div class="col-md-9 input-container">
+                                            <input type="text" class="form-control" id="firstName" name="firstName">
                                         </div>
-                                        <div class="form-group row">
-                                            <label for="LastName" class="control-label col-md-3">Last Name</label>
-                                            <div class="col-md-9 input-container">
-                                                <input type="text" class="form-control" id="LastName" name="LastName">
-                                            </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="LastName" class="control-label col-md-3">Last Name</label>
+                                        <div class="col-md-9 input-container">
+                                            <input type="text" class="form-control" id="LastName" name="LastName">
                                         </div>
-                                    </fieldset>
-                                    <fieldset class="the-fieldset margin-bottom">
-                                        <legend class="the-legend">For enterprise account</legend>
-                                        <div class="form-group row">
-                                            <label for="companyName" class="control-label col-md-3">Company Name</label>
-                                            <div class="col-md-9 input-container">
-                                                <input type="text" class="form-control" id="companyName" name="companyName">
-                                            </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="companyName" class="control-label col-md-3">Company Name</label>
+                                        <div class="col-md-9 input-container">
+                                            <input type="text" class="form-control" id="companyName" name="companyName">
                                         </div>
-                                    </fieldset>
+                                    </div>
                                     <div class="form-group row">
                                         <label for="AccountName" class="required control-label col-md-3">Account Name</label>
                                         <div class="col-md-9 input-container">
-                                            <select class="form-control account-placeholder" id="AccountName" name="AccountName">
-                                                <option value="">Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>
+                                            <select class="form-control account-placeholder" id="AccountName" name="AccountName" disabled>
+                                                <option value="">Please fill (First Name and Last Name) or (Company Name)</option>
                                             </select>
                                         </div>
                                     </div>
