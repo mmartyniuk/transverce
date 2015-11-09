@@ -43,9 +43,9 @@ $(document).ready(function(){
         }
         
     });
-    var ifFirstNameChangedInitially = false;
-    var ifLastNameChangedInitially = false;
-    var ifCompanyNameChangedInitially = false;
+    //var ifFirstNameChangedInitially = false;
+    //var ifLastNameChangedInitially = false;
+    //var ifCompanyNameChangedInitially = false;
     var ifCorporateEmailChangedInitially = false;
     var ifCurrencyChangedInitially = false;
     var ifInvoiceChangedInitially = false;
@@ -61,7 +61,7 @@ $(document).ready(function(){
     var ifcityServiceChangedInitially = false;
     var ifpostalCodeServiceChangedInitially = false;
 
-    $('#firstName').bind("focusout", handlerFirstName);
+    /*$('#firstName').bind("focusout", handlerFirstName);
     function handlerFirstName(e) {
         if ($('#firstName').val()) {
             $('#firstName').unbind("focusout", handlerFirstName);
@@ -81,7 +81,7 @@ $(document).ready(function(){
             $('#companyName').unbind("focusout", handlerCompanyName);
             ifCompanyNameChangedInitially = true;
         }
-    }
+    }*/
     $('#corporateEmail').bind("focusout", handlerEmail);
     function handlerEmail(e) {
         if ($('#corporateEmail').val()) {
@@ -192,126 +192,95 @@ $(document).ready(function(){
             $("#tax").parent().removeClass('success-container');
         }
     });
+
+    var sortSelect = function (select) {
+
+        $(select).html($(select).children('option').sort(function (y, x) {
+            return $(x).text().toUpperCase() < $(y).text().toUpperCase() ? -1 : 1;
+        }));
+
+        $(select).get(0).selectedIndex = 0;
+    }
+
     $('#companyName').on('focusout', function() {
         var $this = $(this);
-        if ($this.val()) {
-            $("#firstName").rules("add", {
-                required: false,
-            });
-            $("#firstName").rules("remove", "notEqualName");
-            $("#firstName").blur();
-            $("#LastName").rules("add", {
-                required: false,
-            });
-            $("#LastName").rules("remove", "notEqualName");
-            $("#LastName").blur();
-            $('#firstName').prop("disabled", true);
-            $('#LastName').prop("disabled", true);
-            $('#LastName').parent().removeClass('success-container');
-            $('#LastName').parent().removeClass('icon-container');
-            $('#firstName').parent().removeClass('success-container');
-            $('#firstName').parent().removeClass('icon-container');
-            $('#firstName').prev().css("opacity", "0.5");
-            $('#LastName').prev().css("opacity", "0.5");
-            $("#firstName").rules("add", {
-                required: false,
-            });
-            $("#LastName").rules("add", {
-                required: false,
-            });
+        var companyExists = $("#AccountName option[value='Company']").length > 0;
+        var namesExists = $("#AccountName option[value='Name']").length > 0;
+        if ($this.val() && !companyExists) {
+            $('#AccountName').append("<option value='Company'>"+$this.val()+"</option>");
+            $('#AccountName').find('[value=""]').remove();
+            $('#AccountName').removeClass('account-placeholder');
+        } else if ($this.val() && companyExists) {
+            $('#AccountName').find('[value="Company"]').remove();
+            $('#AccountName').append("<option value='Company'>"+$this.val()+"</option>");
+            $('#AccountName').removeClass('account-placeholder');
+        } else if (!$this.val() && companyExists && !namesExists) {
+            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            $('#AccountName').find('[value="Company"]').remove();
+            $('#companyName').parent().removeClass('success-container');
+            $('#AccountName').addClass('account-placeholder');
         } else {
-            $('#firstName').prop("disabled", false);
-            $('#LastName').prop("disabled", false);
-            $("#firstName").rules("add", {
-                notEqualName: {
-                    param: '',
-                    depends: function(element) {
-                        return ifFirstNameChangedInitially;
-                    }
-                }
-            });
-            $("#LastName").rules("add", {
-                notEqualName: {
-                    param: '',
-                    depends: function(element) {
-                        return ifLastNameChangedInitially;
-                    }
-                }
-            });
-            $('#firstName').prev().css("opacity", "1");
-            $('#LastName').prev().css("opacity", "1");
+            $('#AccountName').find('[value="Company"]').remove();
+            $('#companyName').parent().removeClass('success-container');
+            $('#AccountName').removeClass('account-placeholder');
         }
+        sortSelect('#AccountName');
     });
     $('#firstName').on('focusout', function() {
         var $this = $(this);
-        if ($this.val()) {
-            $("#companyName").rules("add", {
-                required: false,
-            });
-            $("#companyName").rules("remove", "notEqualCompanyName");
-            $("#companyName").blur();
-            $('#companyName').prop("disabled", true);
-            $('#companyName').parent().removeClass('success-container');
-            $('#companyName').parent().removeClass('icon-container');
-            $('#companyName').prev().css("opacity", "0.5");
-        } else if ($('#LastName').val()) {
-            $('#companyName').prop("disabled", true);
-            $("#companyName").rules("remove", "notEqualCompanyName");
-            $('#companyName').parent().removeClass('success-container');
-            $('#companyName').parent().removeClass('icon-container');
-            $('#companyName').prev().css("opacity", "0.5");
-            $("#companyName").rules("add", {
-                required: false,
-            });
+        var companyExists = $("#AccountName option[value='Company']").length > 0;
+        var namesExists = $("#AccountName option[value='Name']").length > 0;
+        var lastNameVal = $('#LastName').val();
+        if ($this.val() && !namesExists && lastNameVal) {
+            $('#AccountName').append("<option value='Name'>" + $this.val() + " " + lastNameVal + "</option>");
+            $('#AccountName').find('[value=""]').remove();
+            $('#AccountName').removeClass('account-placeholder');
+        } else if ($this.val() && companyExists) {
+            $('#firstName').parent().removeClass('success-container');
+            $('#AccountName').removeClass('account-placeholder');
+        } else if (!$this.val() && companyExists) {
+            $('#AccountName').find('[value="Name"]').remove();
+            $('#firstName').parent().removeClass('success-container');
+            $('#AccountName').removeClass('account-placeholder');
+        } else if (!$this.val() && lastNameVal) {
+            $('#AccountName').find('[value="Name"]').remove();
+            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            $('#firstName').parent().removeClass('success-container');
+            $('#AccountName').addClass('account-placeholder');
         } else {
-            $('#companyName').prop("disabled", false);
-            $('#companyName').prev().css("opacity", "1");
-            $("#companyName").rules("add", {
-                notEqualCompanyName: {
-                    param: '',
-                    depends: function(element) {
-                        return ifCompanyNameChangedInitially;
-                    }
-                }
-            });
+            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            $('#firstName').parent().removeClass('success-container');
+            $('#AccountName').addClass('account-placeholder');
         }
+        sortSelect('#AccountName');
     });
     $('#LastName').on('focusout', function() {
         var $this = $(this);
-        if ($this.val()) {
-            $("#companyName").rules("add", {
-                required: false,
-            });
-            $("#companyName").rules("remove", "notEqualCompanyName");
-            $("#companyName").blur();
-            $('#companyName').prop("disabled", true);
-            $('#companyName').parent().removeClass('success-container');
-            $('#companyName').parent().removeClass('icon-container');
-            $('#companyName').prev().css("opacity", "0.5");
-            $("#companyName").rules("add", {
-                required: false,
-            });
-        } else if ($('#firstName').val()) {
-            $('#companyName').prop("disabled", true);
-            $('#companyName').parent().removeClass('success-container');
-            $('#companyName').parent().removeClass('icon-container');
-            $('#companyName').prev().css("opacity", "0.5");
-            $("#companyName").rules("add", {
-                required: false,
-            });
-            $("#companyName").rules("remove", "notEqualCompanyName");
+        var companyExists = $("#AccountName option[value='Company']").length > 0;
+        var namesExists = $("#AccountName option[value='Name']").length > 0;
+        var firstNameVal = $('#firstName').val();
+        if ($this.val() && !namesExists && firstNameVal) {
+            $('#AccountName').append("<option value='Name'>"+ firstNameVal + " " + $this.val() +"</option>");
+            $('#AccountName').find('[value=""]').remove();
+            $('#AccountName').removeClass('account-placeholder');
+        } else if ($this.val() && companyExists) {
+            $('#LastName').parent().removeClass('success-container');
+            $('#AccountName').removeClass('account-placeholder');
+        } else if (!$this.val() && companyExists) {
+            $('#AccountName').find('[value="Name"]').remove();
+            $('#LastName').parent().removeClass('success-container');
+            $('#AccountName').removeClass('account-placeholder');
+        } else if (!$this.val() && firstNameVal) {
+            $('#AccountName').find('[value="Name"]').remove();
+            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            $('#LastName').parent().removeClass('success-container');
+            $('#AccountName').addClass('account-placeholder');
         } else {
-            $('#companyName').prop("disabled", false);
-            $('#companyName').prev().css("opacity", "1");
-            $("#companyName").rules("add", {
-                notEqualCompanyName: {
-                    param: '',
-                    depends: function(element) {
-                        return ifCompanyNameChangedInitially;
-                    }
-                }
-            });
+            $('#AccountName').append("<option value=''>Please fill (First Name ∧ Last Name) ∨ (Company Name)</option>");
+            $('#AccountName').addClass('account-placeholder');
+            $('#LastName').parent().removeClass('success-container');
         }
+        sortSelect('#AccountName');
     });
     // here is logic to add another block of fields
     // if user wants to add more than one address
@@ -814,7 +783,7 @@ $(document).ready(function(){
                     }
                 }
             },
-            firstName: {
+            /*firstName: {
                 minlength: 3,
                 maxlength: 20,
                 notEqualName: {
@@ -841,7 +810,7 @@ $(document).ready(function(){
                         return ifCompanyNameChangedInitially;
                     }
                 }
-            },
+            },*/
             currency: {
                 notSelect: {
                     param: '',
@@ -944,49 +913,6 @@ $(document).ready(function(){
         },
         submitHandler: function(form, event) {
             event.preventDefault(event);
-            if ($("#firstName").prop('disabled') && $("#LastName").prop('disabled')){
-                    $("#companyName").rules("add", {
-                        required: true,
-                        messages: {
-                            required: "Last name field is required"
-                        }
-                    });
-                } else if ($("#companyName").prop('disabled')){
-                    $("#firstName").rules("add", {
-                        required: true,
-                        messages: {
-                            required: "First name field is required"
-                        }
-                    });
-                    $("#LastName").rules("add", {
-                        required: true,
-                        messages: {
-                            required: "Last name field is required"
-                        }
-                    });
-                    $("#companyName").rules("add", {
-                        required: false
-                    });
-                } else {
-                    $("#firstName").rules("add", {
-                        required: true,
-                        messages: {
-                            required: "First name field is required"
-                        }
-                    });
-                    $("#LastName").rules("add", {
-                        required: true,
-                        messages: {
-                            required: "Last name field is required"
-                        }
-                    });
-                    $("#companyName").rules("add", {
-                        required: true,
-                        messages: {
-                            required: "Company name field is required"
-                        }
-                    });
-                }
             $("#enterprise :input").prop("disabled", true);
             $("#enterprise :checkbox").prop("disabled", true);
             $("#createSpin").css("display", "block");
@@ -1001,16 +927,6 @@ $(document).ready(function(){
                 }
                 if (!$("#tax").val()) {
                     $("#tax").prop("disabled", true);
-                }
-                if ($("#firstName").val() || $("#LastName").val()) {
-                    $("#companyName").prop("disabled", true);
-                } else if ($("#companyName").val() ) {
-                    $("#firstName").prop("disabled", true);
-                    $("#LastName").prop("disabled", true);
-                } else {
-                    $("#companyName").prop("disabled", false);
-                    $("#firstName").prop("disabled", false);
-                    $("#LastName").prop("disabled", false);
                 }
                 $("#createSpin").css("display", "none");
                 $("body").css("opacity", "1");
@@ -1112,6 +1028,13 @@ $(document).ready(function(){
                     $("#cityService").rules("remove", "required");
                     $("#postalCodeService").rules("remove", "required");
                 }
+
+                $("#AccountName").rules("add", {
+                    required: true,
+                    messages: {
+                        required: "Account Name is required field"
+                    }
+                });
 
                 $("#currency").rules("add", {
                     required: true,
