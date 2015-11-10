@@ -115,8 +115,15 @@
                             <dl>
                                 <dt>
                                     <span class="account-name">Account with autopayment (770)</span>
-                                    <input class="typeahead hidden" type="text" id="changeAccount">
-                                    <a href="#" class="change-account">Change</a>
+                                    <div class="hidden">
+                                        <select id="changeAccount" class="form-control js-example-basic-single">
+                                            <option value=""></option>
+                                            <option value="account1">Account with autopayment (770)</option>
+                                            <option value="account2">Premium account (1170)</option>
+                                            <option value="account3">Common account (1001)</option>
+                                        </select>
+                                    </div>
+                                    <a href="#" class="btn btn-default change-account">Change</a>
                                     <a class="btn btn-default hidden cancel-account-change" href="#">Cancel</a>
                                 </dt>
                                 <dd>620 Congress avenue</dd>
@@ -124,47 +131,47 @@
                             </dl>
                         </div>
                         <div class="col-md-4">
-                            <dl>
-                                <dt>Order date</dt>
-                                <dd>
-                                    <div class="input-group date">
-                                        <input type="text" class="form-control">
+                            <form class="form-horizontal">
+                                <div class="input-group date form-group row">
+                                    <label for="date" class="control-label col-md-3">Order date</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" id="date">
                                         <span class="input-group-addon">
                                             <i class="glyphicon glyphicon-calendar"></i>
                                         </span>
                                     </div>
-                                </dd>
-                                <dd class="hidden">
-                                    <div class="form-group">
-                                        <label for="order-number" class="control-label">Order Number</label>
+                                </div>
+                                <div class="form-group hidden">
+                                    <label for="order-number" class="control-label col-md-3">Order Number</label>
+                                    <div class="col-md-9">
                                         <input type="text" class="form-control" id="order-number">
                                     </div>
-                                </dd>
-                                <dd class="hidden">
-                                    <div class="form-group">
-                                        <label for="sales-referal" class="control-label">Sales Referal</label>
+                                </div>
+                                <div class="form-group hidden">
+                                    <label for="sales-referal" class="control-label col-md-3">Sales Referal</label>
+                                    <div class="col-md-9">
                                         <input type="text" class="form-control" id="sales-referal">
                                     </div>
-                                </dd>
-                                <dd class="hidden">
-                                    <div class="form-group">
-                                        <label for="custom-field-1" class="control-label">Custom Field 1</label>
+                                </div>
+                                <div class="form-group hidden">
+                                    <label for="custom-field-1" class="control-label col-md-3">Custom Field 1</label>
+                                    <div class="col-md-9">
                                         <input type="text" class="form-control" id="custom-field-1">
                                     </div>
-                                </dd>
-                                <dd class="hidden">
-                                    <div class="form-group">
-                                        <label for="custom-field-2" class="control-label">Custom Field 2</label>
+                                </div>
+                                <div class="form-group hidden">
+                                    <label for="custom-field-2" class="control-label col-md-3">Custom Field 2</label>
+                                    <div class="col-md-9">
                                         <input type="text" class="form-control" id="custom-field-2">
                                     </div>
-                                </dd>
-                                <dd class="hidden">
-                                    <div class="form-group">
-                                        <label for="notes" class="control-label">Notes</label>
+                                </div>
+                                <div class="form-group hidden">
+                                    <label for="notes" class="control-label col-md-3">Notes</label>
+                                    <div class="col-md-9">
                                         <input type="text" class="form-control" id="notes">
                                     </div>
-                                </dd>
-                            </dl>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </section>
@@ -236,7 +243,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
         <script src="js/bootstrap-datepicker.min.js"></script>
         <script src="js/createOrder.js"></script>
     </body>
