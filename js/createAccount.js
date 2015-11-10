@@ -253,6 +253,9 @@ $(document).ready(function(){
             }
             $('#firstName').parent().removeClass('success-container');
             $('#AccountName').prop("disabled", true);
+        } else if ($this.val() && lastNameVal) {
+            $('#AccountName').find('[value="Name"]').remove();
+            $('#AccountName').append("<option value='Name'>"+ $this.val() + " " + lastNameVal +"</option>");
         } else {
             if (!placeholder) {
                 $('#AccountName').append("<option value=''>Please fill (First Name and Last Name) or (Company Name)</option>");
@@ -286,6 +289,9 @@ $(document).ready(function(){
             }
             $('#LastName').parent().removeClass('success-container');
             $('#AccountName').prop("disabled", true);
+        } else if ($this.val() && firstNameVal && namesExists) {
+            $('#AccountName').find('[value="Name"]').remove();
+            $('#AccountName').append("<option value='Name'>"+ firstNameVal + " " + $this.val() +"</option>");
         } else {
             if (!placeholder) {
                 $('#AccountName').append("<option value=''>Please fill (First Name and Last Name) or (Company Name)</option>");

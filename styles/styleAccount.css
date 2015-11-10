@@ -243,9 +243,10 @@ h3 {
     padding-right: 5px;
 }
 
-.account-header .dropdown button {
+.account-header .dropdown button, a.btn.btn-default {
     color: #3d77f9;
     border: 1px solid #3d77f9;
+    background: transparent;
 }
 
 .dropdown-menu > li > a {
@@ -257,7 +258,6 @@ h3 {
     background-image: none;
 }
 .input-group.date {
-    width: 245px;
     padding-bottom: 10px;
 }
 
@@ -272,6 +272,17 @@ h3 {
 .input-group.date .input-group-addon {
     background-color: #F8F8F8;
     border: none;
+    text-align: left;
+    padding: 8px 12px;
+}
+
+.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom {
+    margin-top: 7px;
+    margin-left: 14px;
+}
+
+#date {
+    max-width: 206px;
 }
 
 .table > thead > tr {
@@ -321,4 +332,22 @@ h3 {
 .padding-content {
     padding-left: 40px;
     padding-right: 40px;
+}
+
+/* select2 */
+.select2-container {
+    width: 50% !important;
+}
+
+.select2-container--default .select2-selection--single {
+    border-radius: 0;
+}
+
+.select2-container .select2-container--default {
+    height: 35px;
+    border: 1px solid #cbd5dd;
+    padding: 2px 0 0 2px;
+}
+.container-select2 {
+    margin-bottom: 18px;
 }

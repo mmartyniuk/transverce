@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
-    //applying datepicker here
+    // applying select2 here 
+    $(".js-example-basic-single").select2();
+
+    // applying datepicker here
     var today = new Date();
     $('.input-group.date').datepicker("setDate", today);
     $('.input-group.date').datepicker('update');
@@ -21,30 +24,15 @@ $(document).ready(function(){
         };
     };
 
-    var states = ['Product 1', 'Sub-product', 'One More Product'];
-
-    $('#product-select .typeahead').typeahead({
-        hint: false,
-        highlight: true,
-        minLength: 1
-    },
-    {
-        name: 'states',
-        source: substringMatcher(states)
-    });
-
-    var accounts = ['Account 1', 'Sub-account', 'One More Account'];
-
-    $('#changeAccount.typeahead').typeahead({
-        hint: false,
-        highlight: true,
-        minLength: 1
-    },
-    {
-        name: 'accounts',
-        source: substringMatcher(accounts)
-    });
     // the end of changes
+    // setting accounts value
+    /*$('.tt-dataset-accounts .tt-highlight').click(function(){
+        $('.account-name').val() = $('#changeAccount').val();
+        $('.change-account').removeClass('hidden');
+        
+        $('#changeAccount').addClass('hidden');
+        $(this).parent().parent().parent().parent().addClass('hidden');
+    })*/
 
     // additional options expanding
     // start of changes
@@ -52,16 +40,19 @@ $(document).ready(function(){
         $(this).parent().toggleClass("open");
     });
 
-    $('body').on('click', function (event) {
-        if (!$('.additional-options-expanded').is(event.target) && $('.additional-options-expanded').has(e.target).length === 0 && $('.open').has(e.target).length === 0) {
-            $('.additional-options-expanded').removeClass('open');
+    // tbd, the issue is reproducing when clicking out of dropdown
+    /*$('body').on('click', function (event) {
+        if (!$('.additional-options-expanded').children().is(event.target)) {
+            console.log(event.target)
+            $('#additional-options').parent().toggleClass("open");
         }
-    });
+    });*/
     // end of changes
 
     // change account and cancel button functionality
-    $('.change-account').on('click', function(){
-        $('#changeAccount').removeClass('hidden');
+    $('.change-account').on('click', function(e){
+        e.preventDefault();
+        $('#changeAccount').parent().removeClass('hidden');
         $('.cancel-account-change').removeClass('hidden');
         $(this).addClass('hidden');
         $('.account-name').addClass('hidden');
@@ -72,7 +63,6 @@ $(document).ready(function(){
         $('.change-account').removeClass('hidden');
         $('.account-name').removeClass('hidden');
         $('#changeAccount').addClass('hidden');
-        $('#changeAccount').val('');
         $(this).addClass('hidden');
     });
 
@@ -169,5 +159,6 @@ $(document).ready(function(){
             $('#notes').parent().parent().addClass('hidden');
         }
     });
+
     
 });
