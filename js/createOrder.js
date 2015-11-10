@@ -46,6 +46,19 @@ $(document).ready(function(){
     });
     // the end of changes
 
+    // additional options expanding
+    // start of changes
+    $('#additional-options').on('click', function (event) {
+        $(this).parent().toggleClass("open");
+    });
+
+    $('body').on('click', function (event) {
+        if (!$('.additional-options-expanded').is(event.target) && $('.additional-options-expanded').has(e.target).length === 0 && $('.open').has(e.target).length === 0) {
+            $('.additional-options-expanded').removeClass('open');
+        }
+    });
+    // end of changes
+
     // change account and cancel button functionality
     $('.change-account').on('click', function(){
         $('#changeAccount').removeClass('hidden');
