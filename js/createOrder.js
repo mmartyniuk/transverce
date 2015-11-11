@@ -1,38 +1,18 @@
 $(document).ready(function(){
 
     // applying select2 here 
-    $(".js-example-basic-single").select2();
+    $("#changeAccount").select2();
+    $("#add-product").select2({
+        placeholder: "Start typing product's name",
+        maximumSelectionSize: 1
+    });
+    //var products = [{ id: 'user1', text: 'Jane Doe'},{ id: 'user5', text: 'Spongebob Squarepants'}];
+    
 
     // applying datepicker here
     var today = new Date();
     $('.input-group.date').datepicker("setDate", today);
     $('.input-group.date').datepicker('update');
-
-    // typeahead for product input (#product-select)
-    // the start of changes
-    var substringMatcher = function(strs) {
-        return function findMatches(q, cb) {
-            var matches, substringRegex;
-            matches = [];
-            substrRegex = new RegExp(q, 'i');
-            $.each(strs, function(i, str) {
-                if (substrRegex.test(str)) {
-                    matches.push(str);
-                }
-            });
-            cb(matches);
-        };
-    };
-
-    // the end of changes
-    // setting accounts value
-    /*$('.tt-dataset-accounts .tt-highlight').click(function(){
-        $('.account-name').val() = $('#changeAccount').val();
-        $('.change-account').removeClass('hidden');
-        
-        $('#changeAccount').addClass('hidden');
-        $(this).parent().parent().parent().parent().addClass('hidden');
-    })*/
 
     // additional options expanding
     // start of changes
@@ -85,13 +65,37 @@ $(document).ready(function(){
     });
 
     // browse and cancel button block
-    $('#product-select .typeahead').on('focus', function(){
+    $('#product-select .select2.select2-container').on('click', function(){
         $('.product-option-divider').addClass('hidden');
         $('.product-select-browse').addClass('hidden');
         $('.product-select-cancel').removeClass('hidden');
     });
 
-    $('#product-select .typeahead').on('blur', function(){
+    $('#add-product').on('change', function(){
+        switch ($('#add-product').select2('data')[0].element.value) {
+            case 'product1':
+                $('#add-product').find('[value="product1"]').remove();
+                $('.product1').removeClass('hidden');
+                $("#add-product").select2("val", "");
+                break;
+            case 'product2':
+                $('#add-product').find('[value="product2"]').remove();
+                $('.product2').removeClass('hidden');
+                $("#add-product").select2("val", "");
+                break;
+            case 'product3':
+                $('#add-product').find('[value="product3"]').remove();
+                $('.product3').removeClass('hidden');
+                $("#add-product").select2("val", "");
+                break;
+        }
+        $('.product-option-divider').removeClass('hidden');
+        $('.product-select-browse').removeClass('hidden');
+        $('.product-select-cancel').addClass('hidden');
+        
+    });
+
+    $('#product-select .select2.select2-container').on('blur', function(){
         if (!$(this).val()) {
             $('.product-option-divider').removeClass('hidden');
             $('.product-select-browse').removeClass('hidden');
@@ -102,7 +106,6 @@ $(document).ready(function(){
         e.preventDefault();
         $('.product-option-divider').removeClass('hidden');
         $('.product-select-browse').removeClass('hidden');
-        $('#product-select .typeahead').val('');
         $(this).addClass('hidden');
     });
 
@@ -177,6 +180,5 @@ $(document).ready(function(){
             $('#notes').parent().parent().addClass('hidden');
         }
     });
-
-    
+ 
 });
