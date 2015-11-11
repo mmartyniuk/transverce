@@ -335,7 +335,7 @@ h3 {
 }
 
 /* select2 */
-.select2-container {
+.account-edit .select2-container {
     width: 50% !important;
 }
 
@@ -350,4 +350,8 @@ h3 {
 }
 .container-select2 {
     margin-bottom: 18px;
+}
+
+.account-edit {
+    display: inline;
 }

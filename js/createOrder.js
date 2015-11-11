@@ -62,8 +62,26 @@ $(document).ready(function(){
         e.preventDefault();
         $('.change-account').removeClass('hidden');
         $('.account-name').removeClass('hidden');
-        $('#changeAccount').addClass('hidden');
+        $('#changeAccount').parent().addClass('hidden');
         $(this).addClass('hidden');
+    });
+
+    $('#changeAccount').on('change', function(e){
+        $('.account-name').text($('#changeAccount').select2('data')[0].text);
+        if ($('#changeAccount').val() === "account1") {
+            $('#account-address').text('620 Congress avenue');
+            $('#account-address-general').text('Austin, TX 78071 USA');
+        } else if ($('#changeAccount').val() === "account2") {
+            $('#account-address').text('Street 250 Marriott Driv');
+            $('#account-address-general').text('Tallahassee, FL 32301 USA');
+        } else {
+            $('#account-address').text('120 E 87th Street');
+            $('#account-address-general').text('New York , 10128 USA');
+        }
+        $('.change-account').removeClass('hidden');
+        $('.account-name').removeClass('hidden');
+        $('#changeAccount').parent().addClass('hidden');
+        $('.cancel-account-change').addClass('hidden');
     });
 
     // browse and cancel button block
