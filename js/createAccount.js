@@ -690,6 +690,19 @@ $(document).ready(function(){
     // autocomplete countries and states
     $(".js-example-basic-single").select2();
 
+    // autocomplete for parent account
+    // with some additional overrides
+    var parents = [{name: 'Account 1', id: '12345', external: '6789'},{name: 'Account 2', id: '34567', external: '12890'}];
+    function formatData (parents) {
+        var $data = $('<span>' + parents.name + '</span>' + '<span> ' + parents.id + '</span>' + '<span> ' + parents.external + '</span>');
+        return $data;
+    };
+    $("#parentAccount").select2({
+        data: parents,
+        templateSelection: formatData,
+        templateResult: formatData
+    });
+
     // temp remove of selection arrow
     // it doesn't match to default browser styles
 
