@@ -72,6 +72,28 @@
                     <div class="col-lg-4 col-lg-offset-3 col-md-2 col-md-offset-6 col-sm-2 col-sm-offset-4 col-xs-5">
                         <h6 class="text-right"><strong class="text-danger">&#42;</strong> Required</h6>
                     </div>
+                    <div class="col-lg-4 col-lg-offset-3 col-md-2 col-md-offset-6 col-sm-2 col-sm-offset-4 col-xs-5 text-right">
+                        <div class="dropdown">
+                            <button class="btn btn-default" type="button" id="additional-options">
+                            Add Field
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu additional-options-expanded">
+                                <li>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>External ID</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Taxes</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Email</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Phone</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Custom Field 1</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Custom Field 2</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Payment Term</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Authorize Auto-Payment</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Parent Account</a>
+                                    <a href="#" class="set-value"><i class="glyphicon glyphicon-unchecked"></i>Account Segment</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="row hidden">
                         <div class="alert alert-danger col-md-12" role="alert" id="errormessages">
                             <span class="errorIcon" aria-hidden="true">Connection is lost, please try later</span>
@@ -118,112 +140,118 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row hidden external-id">
                                         <label for="ExternalAccountID" class="control-label col-md-3">External ID</label>
                                         <div class="col-md-9 input-container">
                                             <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
                                         </div>
                                     </div>
-                                    <div class="form-group row checkRow">
-                                        <label for="taxExempt" class="col-md-3 control-label"> Taxable</label>
-                                        <div class="col-md-9 input-container">
-                                            <input type="checkbox" id="taxExempt" checked>
+                                    <div class="taxes hidden">
+                                        <div class="form-group row checkRow">
+                                            <label for="taxExempt" class="col-md-3 control-label"> Taxable</label>
+                                            <div class="col-md-9 input-container">
+                                                <input type="checkbox" id="taxExempt" checked>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="tax" class="col-md-3 control-label letter-spacing">Tax Number (EIN)</label>
+                                            <div class="col-md-9 input-container">
+                                                <input type="text" class="form-control" id="tax" name="tax">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="tax" class="col-md-3 control-label letter-spacing">Tax Number (EIN)</label>
-                                        <div class="col-md-9 input-container">
-                                            <input type="text" class="form-control" id="tax" name="tax">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row email-add hidden">
                                         <label for="corporateEmail" class="control-label col-md-3">Email</label>
                                         <div class="col-md-9 input-container">
                                             <input type="email" class="form-control" id="corporateEmail" name="corporateEmail">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 control-label">Phone</label>
-                                        <div class="phone1 col-md-9">
-                                            <div class="row">
-                                                <div class="col-md-4 input-container">
-                                                    <select class="form-control phone-type1">
-                                                        <option value="">Phone Type</option>
-                                                        <option value="Office">Office</option>
-                                                        <option value="Home">Home</option>
-                                                        <option value="Fax">Fax</option>
-                                                        <option value="Mobile">Mobile</option>
-                                                    </select>
+                                    <div class="phone-numbers hidden">
+                                        <div class="form-group row">
+                                            <label class="col-md-3 control-label">Phone</label>
+                                            <div class="phone1 col-md-9">
+                                                <div class="row">
+                                                    <div class="col-md-4 input-container">
+                                                        <select class="form-control phone-type1">
+                                                            <option value="">Phone Type</option>
+                                                            <option value="Office">Office</option>
+                                                            <option value="Home">Home</option>
+                                                            <option value="Fax">Fax</option>
+                                                            <option value="Mobile">Mobile</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-8 phone-container phone">
+                                                        <input type="text" class="form-control" id="phone1">
+                                                    </div>
+                                                    <span class="desc-remove hidden"></span>
                                                 </div>
-                                                <div class="col-md-8 phone-container phone">
-                                                    <input type="text" class="form-control" id="phone1">
+                                            </div>
+                                            <div class="phone2 col-md-9 pull-right hidden">
+                                                <div class="row">
+                                                    <div class="col-md-4 input-container">
+                                                        <select class="form-control phone-type2">
+                                                            <option value="">Phone Type</option>
+                                                            <option value="Office">Office</option>
+                                                            <option value="Home">Home</option>
+                                                            <option value="Fax">Fax</option>
+                                                            <option value="Mobile">Mobile</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-8 phone-container phone">
+                                                        <input type="text" class="form-control" id="phone2">
+                                                    </div>
+                                                    <span class="desc-remove hidden"></span>
                                                 </div>
-                                                <span class="desc-remove hidden"></span>
+                                            </div>
+                                            <div class="phone3 col-md-9 pull-right hidden">
+                                                <div class="row">
+                                                    <div class="col-md-4 input-container">
+                                                        <select class="form-control phone-type3">
+                                                            <option value="">Phone Type</option>
+                                                            <option value="Office">Office</option>
+                                                            <option value="Home">Home</option>
+                                                            <option value="Fax">Fax</option>
+                                                            <option value="Mobile">Mobile</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-8 phone-container phone">
+                                                        <input type="text" class="form-control" id="phone3">
+                                                    </div>
+                                                    <span class="desc-remove hidden"></span>
+                                                </div>
+                                            </div>
+                                            <div class="phone4 col-md-9 pull-right hidden">
+                                                <div class="row">
+                                                    <div class="col-md-4 input-container">
+                                                        <select class="form-control phone-type4">
+                                                            <option value="">Phone Type</option>
+                                                            <option value="Office">Office</option>
+                                                            <option value="Home">Home</option>
+                                                            <option value="Fax">Fax</option>
+                                                            <option value="Mobile">Mobile</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-8 phone-container phone">
+                                                        <input type="text" class="form-control" id="phone4">
+                                                    </div>
+                                                    <span class="desc-remove hidden"></span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="phone2 col-md-9 pull-right hidden">
-                                            <div class="row">
-                                                <div class="col-md-4 input-container">
-                                                    <select class="form-control phone-type2">
-                                                        <option value="">Phone Type</option>
-                                                        <option value="Office">Office</option>
-                                                        <option value="Home">Home</option>
-                                                        <option value="Fax">Fax</option>
-                                                        <option value="Mobile">Mobile</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-8 phone-container phone">
-                                                    <input type="text" class="form-control" id="phone2">
-                                                </div>
-                                                <span class="desc-remove hidden"></span>
-                                            </div>
-                                        </div>
-                                        <div class="phone3 col-md-9 pull-right hidden">
-                                            <div class="row">
-                                                <div class="col-md-4 input-container">
-                                                    <select class="form-control phone-type3">
-                                                        <option value="">Phone Type</option>
-                                                        <option value="Office">Office</option>
-                                                        <option value="Home">Home</option>
-                                                        <option value="Fax">Fax</option>
-                                                        <option value="Mobile">Mobile</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-8 phone-container phone">
-                                                    <input type="text" class="form-control" id="phone3">
-                                                </div>
-                                                <span class="desc-remove hidden"></span>
-                                            </div>
-                                        </div>
-                                        <div class="phone4 col-md-9 pull-right hidden">
-                                            <div class="row">
-                                                <div class="col-md-4 input-container">
-                                                    <select class="form-control phone-type4">
-                                                        <option value="">Phone Type</option>
-                                                        <option value="Office">Office</option>
-                                                        <option value="Home">Home</option>
-                                                        <option value="Fax">Fax</option>
-                                                        <option value="Mobile">Mobile</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-8 phone-container phone">
-                                                    <input type="text" class="form-control" id="phone4">
-                                                </div>
-                                                <span class="desc-remove hidden"></span>
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-offset-3 input-container"> 
+                                                <a href="#" class="addPhone">+ Add Phone Number</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4 col-md-offset-3 input-container"> 
-                                            <a href="#" class="addPhone">+ Add Phone Number</a>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group">
+                                    <div class="row form-group custom-field-1 hidden">
                                         <!-- Custom fiedls -->
                                         <label for="field1" class="col-md-3 control-label">Custom Field 1</label>
                                         <div class="col-md-9 input-container">
                                             <input type="text" class="form-control" id="field1" maxlength="100">
                                         </div>
+                                    </div>
+                                    <div class="row form-group custom-field-2 hidden">
                                         <label for="field2" class="col-md-3 control-label">Custom Field 2</label>
                                         <div class="col-md-9 input-container">
                                             <input type="text" class="form-control" id="field2" maxlength="100">
@@ -282,12 +310,12 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row payment-term hidden">
                                         <label for="paymentTerm" class="control-label col-md-3">Payment Term</label>
                                         <div class="col-md-9 input-container">
                                             <select id="paymentTerm" class="form-control">
-                                                <option>Please Select</option>
-                                                <option>Some Test Data</option>
+                                                <option value="">Please Select</option>
+                                                <option value="testdata">Some Test Data</option>
                                             </select>
                                         </div>
                                     </div>
@@ -298,24 +326,16 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="form-group row checkRow">
+                                    <div class="form-group row checkRow authorize-auto-payment hidden">
                                         <label for="autoPayment" class="control-label col-md-3"> Authorize Auto-Payment</label>
                                         <div class="col-md-9 input-container">
                                             <input type="checkbox" id="autoPayment">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row parent-account hidden">
                                         <label for="parentAccount" class="control-label col-md-3">Parent Account</label>
                                         <div class="col-md-9 input-container container-select2">
-                                            <select id="parentAccount" class="form-control js-example-basic-single">
-                                                <option></option>
-                                                <option value="p1">Parent Account 1</option>
-                                                <option value="p2">Parent Account 2</option>
-                                                <option value="p3">Parent Account 3</option>
-                                                <option value="sbp1">Sub Parent</option>
-                                                <option value="sbp2">Sub Parent 2</option>
-                                                <option value="sbp3">Sub Parent 3</option>
-                                            </select>
+                                            <input name='parentAccount' type='hidden' id='parentAccount'/>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -334,7 +354,7 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row account-segment hidden">
                                         <label for="accountSegment" class="control-label col-md-3">Account Segment</label>
                                         <div class="col-md-9 input-container">
                                             <select id="accountSegment" class="form-control" name="accountSegment">
@@ -628,7 +648,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.1/js/select2.full.js"></script>
         <script src="js/createAccount.js"></script>
     </body>
 </html>

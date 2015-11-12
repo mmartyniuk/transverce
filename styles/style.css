@@ -59,7 +59,7 @@ h3 {
 
 .form-control {
     display: inline-block;
-    margin-bottom: 19px;
+    margin-bottom: 10px;
     height: 35px;
     width: 99%;
     padding-right: 28px;
@@ -111,7 +111,7 @@ h3 {
 }
 
 .checkRow {
-    margin: 3px 0px 25px 0;
+    margin: 0 0 10px 0;
 }
 
 .icon-container:after {
@@ -312,7 +312,7 @@ select.form-control {
     padding: 2px 0 0 2px;
 }
 .container-select2 {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 #errormessages.alert-danger {
     background-color: #fff;
@@ -695,7 +695,7 @@ select.form-control {
 }
 
 .financial select {
-    margin-bottom: 17px;
+    margin-bottom: 10px;
 }
 
 #enterprise .address-box {
@@ -710,7 +710,7 @@ select.form-control {
 }
 
 #BillingAdd select, #BillingAdd input {
-    margin-bottom: 17px;
+    margin-bottom: 10px;
 }
 
 #postalCodeBilling, #postalCodeShipping, #postalCodeService {
@@ -752,6 +752,38 @@ select.form-control {
     border-color: rgb(203, 213, 221);
     opacity: 1;
     cursor: default;
+}
+
+.select2-results__option {
+    text-align: center;
+}
+
+.select2-results__option span:first-child {
+    float: left;
+    padding-left: 20px;
+}
+
+.select2-results__option span {
+    float: none;
+    text-align: left;
+}
+
+.select2-results__option span:last-child {
+    float: right;
+    padding-right: 20px;
+}
+
+.dropdown-menu.additional-options-expanded {
+    left: inherit;
+    right: 0;
+}
+
+.dropdown-menu > li > a {
+    padding: 3px 10px;
+}
+
+.dropdown-menu .glyphicon {
+    padding-right: 10px;
 }
 
 @media (min-width: 768px){

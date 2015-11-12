@@ -43,14 +43,129 @@ $(document).ready(function(){
         }
         
     });
-    //var ifFirstNameChangedInitially = false;
-    //var ifLastNameChangedInitially = false;
-    //var ifCompanyNameChangedInitially = false;
-    //var ifCorporateEmailChangedInitially = false;
+
+    // add additional fields logic, start of changes
+    $('#additional-options').on('click', function (event) {
+        $(this).parent().toggleClass("open");
+    });
+    $('body').on('click', function (event) {
+        if (!$('.dropdown').find(event.target).length > 0 && $('#additional-options').parent().hasClass('open')) {
+            $('#additional-options').parent().toggleClass("open");
+        }
+    });
+    $('.set-value').click(function(){
+        var childGlyph = $(this).find("i");
+        // 'checking glyphicon here'
+        if (childGlyph.hasClass('glyphicon-check')) {
+            childGlyph.removeClass('glyphicon-check');
+            childGlyph.addClass('glyphicon-unchecked');
+        } else {
+            childGlyph.removeClass('glyphicon-unchecked');
+            childGlyph.addClass('glyphicon-check');
+        }
+        switch ($(this).text()) {
+            case 'External ID':
+            if ($('.external-id').hasClass('hidden')){
+                $('.external-id').removeClass('hidden');
+            } else {
+                if ($('#ExternalAccountID').val()) {
+                    $('#ExternalAccountID').val("");
+                    $('#ExternalAccountID').focusout(); 
+                }
+                $('.external-id').addClass('hidden');
+            }
+            break;
+            case 'Taxes':
+            if ($('.taxes').hasClass('hidden')){
+                $('.taxes').removeClass('hidden');
+            } else {
+                if ($('#tax').val()) {
+                    $('#tax').val("");
+                    $('#tax').focusout(); 
+                }
+                if (!$('#taxExempt').is(":checked")) {
+                    $('#taxExempt').prop('checked', true);
+                }
+                $('.taxes').addClass('hidden');
+            }
+            break;
+            case 'Email':
+            if ($('.email-add').hasClass('hidden')){
+                $('.email-add').removeClass('hidden');
+            } else {
+                if ($('#corporateEmail').val()) {
+                    $('#corporateEmail').val("");
+                    $('#corporateEmail').focus(); 
+                    $('#corporateEmail').focusout(); 
+                }
+                $('.email-add').addClass('hidden');
+            }
+            break;
+            case 'Phone': // tbd at home
+            break;
+            case 'Custom Field 1':
+            if ($('.custom-field-1').hasClass('hidden')){
+                $('.custom-field-1').removeClass('hidden');
+            } else {
+                if ($('#field1').val()) {
+                    $('#field1').val("");
+                    $('#field1').focusout(); 
+                }
+                $('.custom-field-1').addClass('hidden');
+            }
+            break;
+            case 'Custom Field 2':
+            if ($('.custom-field-2').hasClass('hidden')){
+                $('.custom-field-2').removeClass('hidden');
+            } else {
+                if ($('#field2').val()) {
+                    $('#field2').val("");
+                    $('#field2').focusout(); 
+                }
+                $('.custom-field-2').addClass('hidden');
+            }
+            break;
+            case 'Payment Term':
+            if ($('.payment-term').hasClass('hidden')){
+                $('.payment-term').removeClass('hidden');
+            } else {
+                if ($('#paymentTerm').val()) {
+                    $("#paymentTerm option[value='']").attr('selected', 'true');
+                    $('#paymentTerm').focusout(); 
+                }
+                $('.payment-term').addClass('hidden');
+            }
+            break;
+            case 'Authorize Auto-Payment':
+            if ($('.authorize-auto-payment').hasClass('hidden')){
+                $('.authorize-auto-payment').removeClass('hidden');
+            } else {
+                if ($('#autoPayment').is(":checked")) {
+                    $('#autoPayment').prop('checked', false);
+                }
+                $('.authorize-auto-payment').addClass('hidden');
+            }
+            break;
+            case 'Parent Account':
+            if ($('.parent-account').hasClass('hidden')){
+                $('.parent-account').removeClass('hidden');
+            } else {
+                if ($('#parentAccount').val()) {
+                    $('#parentAccount').val("");
+                    $('#parentAccount').focusout(); 
+                }
+                $('.parent-account').addClass('hidden');
+            }
+            break;
+            case 'Account Segment':
+            break;
+        }
+    })
+    // add additional fields logic, end of changes
+
     var ifCurrencyChangedInitially = false;
     var ifInvoiceChangedInitially = false;
     var ifAccountChangedInitially = false;
-    //var iExternalIDChangedInitially = false;
     var iAddressBillingChangedInitially = false;
     var ifcityBillingChangedInitially = false;
     var ifpostalCodeChangedInitially = false;
@@ -61,34 +176,6 @@ $(document).ready(function(){
     var ifcityServiceChangedInitially = false;
     var ifpostalCodeServiceChangedInitially = false;
 
-    /*$('#firstName').bind("focusout", handlerFirstName);
-    function handlerFirstName(e) {
-        if ($('#firstName').val()) {
-            $('#firstName').unbind("focusout", handlerFirstName);
-            ifFirstNameChangedInitially = true;
-        }
-    }
-    $('#LastName').bind("focusout", handlerLastName);
-    function handlerLastName(e) {
-        if ($('#LastName').val()) {
-            $('#LastName').unbind("focusout", handlerLastName);
-            ifLastNameChangedInitially = true;
-        }
-    }
-    $('#companyName').bind("focusout", handlerCompanyName);
-    function handlerCompanyName(e) {
-        if ($('#companyName').val()) {
-            $('#companyName').unbind("focusout", handlerCompanyName);
-            ifCompanyNameChangedInitially = true;
-        }
-    }
-    $('#corporateEmail').bind("focusout", handlerEmail);
-    function handlerEmail(e) {
-        if ($('#corporateEmail').val()) {
-            $('#corporateEmail').unbind("focusout", handlerEmail);
-            ifCorporateEmailChangedInitially = true;
-        }
-    }*/
     $('#currency').bind("change", handlerCurrency);
     function handlerCurrency(e) {
         if ($('#currency').val()) {
@@ -110,13 +197,6 @@ $(document).ready(function(){
             ifAccountChangedInitially = true;
         }
     }
-    /*$('#ExternalAccountID').bind("focusout", handlerExternalID);
-    function handlerExternalID(e) {
-        if ($('#ExternalAccountID').val()) {
-            $('#ExternalAccountID').unbind("focusout", handlerExternalID);
-            iExternalIDChangedInitially = true;
-        }
-    }*/
     $('#address1Billing').bind("focusout", handlerAddressBilling);
     function handlerAddressBilling(e) {
         if ($('#address1Billing').val()) {
@@ -180,18 +260,6 @@ $(document).ready(function(){
             ifpostalCodeShippingChangedInitially = true;
         }
     }
-    /*$('#taxExempt').click(function(){
-        var $this = $(this);
-        if ($this.is(':checked')) {
-            $("#tax").prop("disabled", false);
-            if ($("#tax").val()) {
-                $("#tax").parent().addClass('success-container');
-            }
-        } else {
-            $("#tax").prop("disabled", true);
-            $("#tax").parent().removeClass('success-container');
-        }
-    });*/
 
     var sortSelect = function (select) {
 
@@ -225,7 +293,6 @@ $(document).ready(function(){
         } else {
             $('#AccountName').find('[value="Company"]').remove();
             $('#companyName').parent().removeClass('success-container');
-            //$('#AccountName').prop("disabled", false);
         }
         sortSelect('#AccountName');
     });
@@ -690,6 +757,19 @@ $(document).ready(function(){
     // autocomplete countries and states
     $(".js-example-basic-single").select2();
 
+    // autocomplete for parent account
+    // with some additional overrides
+    var parents = [{name: 'Account 1', id: '12345', external: '6789'},{name: 'Account 2', id: '34567', external: '12890'}];
+    function formatData (parents) {
+        var $data = $('<span>' + parents.name + '</span>' + '<span> ' + parents.id + '</span>' + '<span> ' + parents.external + '</span>');
+        return $data;
+    };
+    $("#parentAccount").select2({
+        data: parents,
+        templateSelection: formatData,
+        templateResult: formatData
+    });
+
     // temp remove of selection arrow
     // it doesn't match to default browser styles
 
@@ -793,43 +873,6 @@ $(document).ready(function(){
         focusCleanup: false,
         onkeyup: false,
         rules: {
-            /*corporateEmail: {
-                email: true,
-                notEqualEmail: {
-                    param: '',
-                    depends: function(element) {
-                        return ifCorporateEmailChangedInitially;
-                    }
-                }
-            },
-            firstName: {
-                minlength: 3,
-                maxlength: 20,
-                notEqualName: {
-                    param: '',
-                    depends: function(element) {
-                        return ifFirstNameChangedInitially;
-                    }
-                }
-            },
-            LastName: {
-                minlength: 3,
-                maxlength: 20,
-                notEqualName: {
-                    param: '',
-                    depends: function(element) {
-                        return ifLastNameChangedInitially;
-                    }
-                }
-            },
-            companyName: {
-                notEqualCompanyName: {
-                    param: '',
-                    depends: function(element) {
-                        return ifCompanyNameChangedInitially;
-                    }
-                }
-            },*/
             currency: {
                 notSelect: {
                     param: '',
@@ -854,14 +897,6 @@ $(document).ready(function(){
                     }
                 }
             },
-            /*ExternalAccountID: {
-                notEqualExternalID: {
-                    param: '',
-                    depends: function(element) {
-                        return iExternalIDChangedInitially;
-                    }
-                }
-            },*/
             address1Billing: {
                 minlength: 5,
                 maxlength: 20,
@@ -946,20 +981,12 @@ $(document).ready(function(){
             // adding required fields logic after click on submit button
                 $("#enterprise :input").prop("disabled", false);
                 $("#enterprise :checkbox").prop("disabled", false);
+
                 if (!$("#billCycle").val()) {
                     $("#billCycle").prop("disabled", true);
                 }
-                /*if (!$("#tax").val()) {
-                    $("#tax").prop("disabled", true);
-                }*/
                 $("#createSpin").css("display", "none");
                 $("body").css("opacity", "1");
-                /*$("#corporateEmail").rules("add", {
-                    required: true,
-                    messages: {
-                        required: "Email is required"
-                    }
-                });*/
                 
                 $("#billCycle").rules("add", {
                     required: true,
@@ -1066,13 +1093,6 @@ $(document).ready(function(){
                         required: "Currency is required"
                     }
                 });
-
-                /*$("#ExternalAccountID").rules("add", {
-                    required: true,
-                    messages: {
-                        required: "External Account ID is required"
-                    }
-                });*/
 
                 if ($("#enterprise").valid()){
                     // here validation from backend should be applied
