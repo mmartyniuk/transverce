@@ -613,11 +613,11 @@ select.form-control {
     cursor: pointer;
 }
 
-.pull-right:first-child {
+.btn.pull-right:first-child {
     margin-right: 16px;
 }
 
-.pull-right:last-child {
+.btn.pull-right:last-child {
     margin-right: 20px;
     padding: 7px 46px 10px 45px;
 }
@@ -680,7 +680,6 @@ select.form-control {
 .phone1, .phone2, .phone3, .phone4 {
     margin-bottom: 7px;
     position: relative;
-    margin-top: -2px;
 }
 
 .margin-top-bottom-10 {

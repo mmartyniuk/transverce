@@ -4,7 +4,7 @@ $(document).ready(function(){
     $("#accountCategory").prop("disabled", true);
     $("#paymentTerm").prop("disabled", true);
     $("#billCycle").prop("disabled", true);
-    $("#tax").prop("disabled", false);
+    //$("#tax").prop("disabled", false);
     $("#spinnerAcc").css('display', 'block');
     $("#spinnerPay").css('display', 'block');
     $("#spinnerBill").css('display', 'block');
@@ -46,11 +46,11 @@ $(document).ready(function(){
     //var ifFirstNameChangedInitially = false;
     //var ifLastNameChangedInitially = false;
     //var ifCompanyNameChangedInitially = false;
-    var ifCorporateEmailChangedInitially = false;
+    //var ifCorporateEmailChangedInitially = false;
     var ifCurrencyChangedInitially = false;
     var ifInvoiceChangedInitially = false;
     var ifAccountChangedInitially = false;
-    var iExternalIDChangedInitially = false;
+    //var iExternalIDChangedInitially = false;
     var iAddressBillingChangedInitially = false;
     var ifcityBillingChangedInitially = false;
     var ifpostalCodeChangedInitially = false;
@@ -81,14 +81,14 @@ $(document).ready(function(){
             $('#companyName').unbind("focusout", handlerCompanyName);
             ifCompanyNameChangedInitially = true;
         }
-    }*/
+    }
     $('#corporateEmail').bind("focusout", handlerEmail);
     function handlerEmail(e) {
         if ($('#corporateEmail').val()) {
             $('#corporateEmail').unbind("focusout", handlerEmail);
             ifCorporateEmailChangedInitially = true;
         }
-    }
+    }*/
     $('#currency').bind("change", handlerCurrency);
     function handlerCurrency(e) {
         if ($('#currency').val()) {
@@ -110,13 +110,13 @@ $(document).ready(function(){
             ifAccountChangedInitially = true;
         }
     }
-    $('#ExternalAccountID').bind("focusout", handlerExternalID);
+    /*$('#ExternalAccountID').bind("focusout", handlerExternalID);
     function handlerExternalID(e) {
         if ($('#ExternalAccountID').val()) {
             $('#ExternalAccountID').unbind("focusout", handlerExternalID);
             iExternalIDChangedInitially = true;
         }
-    }
+    }*/
     $('#address1Billing').bind("focusout", handlerAddressBilling);
     function handlerAddressBilling(e) {
         if ($('#address1Billing').val()) {
@@ -180,7 +180,7 @@ $(document).ready(function(){
             ifpostalCodeShippingChangedInitially = true;
         }
     }
-    $('#taxExempt').click(function(){
+    /*$('#taxExempt').click(function(){
         var $this = $(this);
         if ($this.is(':checked')) {
             $("#tax").prop("disabled", false);
@@ -191,7 +191,7 @@ $(document).ready(function(){
             $("#tax").prop("disabled", true);
             $("#tax").parent().removeClass('success-container');
         }
-    });
+    });*/
 
     var sortSelect = function (select) {
 
@@ -793,7 +793,7 @@ $(document).ready(function(){
         focusCleanup: false,
         onkeyup: false,
         rules: {
-            corporateEmail: {
+            /*corporateEmail: {
                 email: true,
                 notEqualEmail: {
                     param: '',
@@ -802,7 +802,7 @@ $(document).ready(function(){
                     }
                 }
             },
-            /*firstName: {
+            firstName: {
                 minlength: 3,
                 maxlength: 20,
                 notEqualName: {
@@ -854,14 +854,14 @@ $(document).ready(function(){
                     }
                 }
             },
-            ExternalAccountID: {
+            /*ExternalAccountID: {
                 notEqualExternalID: {
                     param: '',
                     depends: function(element) {
                         return iExternalIDChangedInitially;
                     }
                 }
-            },
+            },*/
             address1Billing: {
                 minlength: 5,
                 maxlength: 20,
@@ -915,6 +915,11 @@ $(document).ready(function(){
                 }else{
                     $(element).parent().addClass('success-container');
                 }
+            } else {
+                $(element).parent().removeClass('success-container');
+                $(element).parent().removeClass('success-container-postal');
+                $(element).parent().removeClass('icon-container-postal');
+                $(element).parent().removeClass('icon-container');
             }
             
         },
@@ -944,17 +949,17 @@ $(document).ready(function(){
                 if (!$("#billCycle").val()) {
                     $("#billCycle").prop("disabled", true);
                 }
-                if (!$("#tax").val()) {
+                /*if (!$("#tax").val()) {
                     $("#tax").prop("disabled", true);
-                }
+                }*/
                 $("#createSpin").css("display", "none");
                 $("body").css("opacity", "1");
-                $("#corporateEmail").rules("add", {
+                /*$("#corporateEmail").rules("add", {
                     required: true,
                     messages: {
                         required: "Email is required"
                     }
-                });
+                });*/
                 
                 $("#billCycle").rules("add", {
                     required: true,
@@ -1062,12 +1067,12 @@ $(document).ready(function(){
                     }
                 });
 
-                $("#ExternalAccountID").rules("add", {
+                /*$("#ExternalAccountID").rules("add", {
                     required: true,
                     messages: {
                         required: "External Account ID is required"
                     }
-                });
+                });*/
 
                 if ($("#enterprise").valid()){
                     // here validation from backend should be applied

@@ -116,7 +116,7 @@
                                 <dt>
                                     <span class="account-name">Account with autopayment (770)</span>
                                     <div class="hidden account-edit">
-                                        <select id="changeAccount" class="form-control js-example-basic-single">
+                                        <select id="changeAccount" class="form-control">
                                             <option value="account1" selected>Account with autopayment (770)</option>
                                             <option value="account2">Premium account (1170)</option>
                                             <option value="account3">Common account (1001)</option>
@@ -195,34 +195,65 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!--<tr class="product1">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                    <tr class="product1 hidden">
+                                        <td>
+                                            <dl>
+                                                <dt>Product Name A</dt>
+                                            </dl>
+                                            <dd>Exclusive Fee Pro's shor description, this description is a little longer than others and has three lines</dd>
+                                        </td>
+                                        <td>Subscription</td>
+                                        <td>Monthly / 225.00</td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text"></td>
+                                        <td>225.00</td>
+                                        <td><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></td>
                                     </tr>
-                                    <tr class="product2">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>-->
+                                    <tr class="product2 hidden">
+                                        <td>
+                                            <dl>
+                                                <dt>Product Name B</dt>
+                                            </dl>
+                                            <dd>Another Exclusive Fee Pro's shor description, this description is shorter than previous</dd>
+                                        </td>
+                                        <td>Subscription</td>
+                                        <td>Monthly / 50.00</td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text"></td>
+                                        <td>50.00</td>
+                                        <td><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></td>
+                                    </tr>
+                                    <tr class="product3 hidden">
+                                        <td>
+                                            <dl>
+                                                <dt>Product Name C</dt>
+                                            </dl>
+                                            <dd>This description is very short</dd>
+                                        </td>
+                                        <td>Subscription</td>
+                                        <td>Monthly / 100.00</td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text"></td>
+                                        <td>100.00</td>
+                                        <td><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></td>
+                                    </tr>
                                 </tbody>
                             </table>
-                            <div id="product-select">
-                                <input class="typeahead" type="text" placeholder="Start typing product's name">
-                                <span class="product-option-divider">or</span>
-                                <div class="product-select-browse">
-                                    <a class="btn btn-default" href="#">Browse</a>
-                                </div>
-                                <div class="product-select-cancel hidden">
-                                    <a class="btn btn-default" href="#">Cancel</a>
+                            <div id="product-select" class="row">
+                                <div class="col-md-3">
+                                    <select id="add-product" class="form-control">
+                                        <option value=""></option>
+                                        <option value="product1">Product Name A</option>
+                                        <option value="product2">Product Name B</option>
+                                        <option value="product3">Product Name C</option>
+                                    </select>
+                                    <span class="product-option-divider">or</span>
+                                    <div class="product-select-browse">
+                                        <a class="btn btn-default" href="#">Browse</a>
+                                    </div>
+                                    <div class="product-select-cancel hidden">
+                                        <a class="btn btn-default" href="#">Cancel</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

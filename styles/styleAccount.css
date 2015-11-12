@@ -269,6 +269,21 @@ h3 {
     margin-top: 20px;
 }
 
+.order-table table tr td {
+    border-bottom: 2px solid #ddd;
+}
+
+.order-table table tr td:last-child span {
+    font-size: 20px;
+    color: #00f;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.order-table table tr td input {
+    width: 50%;
+}
+
 .input-group.date .input-group-addon {
     background-color: #F8F8F8;
     border: none;
@@ -354,4 +369,10 @@ h3 {
 
 .account-edit {
     display: inline;
+}
+#product-select .select2.select2-container{
+    width: 70% !important;
+}
+#product-select .select2.select2-container b{
+    display: none;
 }
