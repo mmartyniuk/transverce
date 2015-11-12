@@ -773,6 +773,19 @@ select.form-control {
     padding-right: 20px;
 }
 
+.dropdown-menu.additional-options-expanded {
+    left: inherit;
+    right: 0;
+}
+
+.dropdown-menu > li > a {
+    padding: 3px 10px;
+}
+
+.dropdown-menu .glyphicon {
+    padding-right: 10px;
+}
+
 @media (min-width: 768px){
     #nav-container {
         left: 0;
