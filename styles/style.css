@@ -754,6 +754,25 @@ select.form-control {
     cursor: default;
 }
 
+.select2-results__option {
+    text-align: center;
+}
+
+.select2-results__option span:first-child {
+    float: left;
+    padding-left: 20px;
+}
+
+.select2-results__option span {
+    float: none;
+    text-align: left;
+}
+
+.select2-results__option span:last-child {
+    float: right;
+    padding-right: 20px;
+}
+
 @media (min-width: 768px){
     #nav-container {
         left: 0;
