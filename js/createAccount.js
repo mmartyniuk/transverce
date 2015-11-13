@@ -18,6 +18,7 @@ $(document).ready(function(){
         $("#spinnerBill").css('display', 'none');
         $("#spinnerCurr").css('display', 'none');
     }, 3000)
+    var parents = [{name: 'Account 1', id: '22345', external: '6789'},{name: 'Account 2', id: '34567', external: '32890'}];
     // phone description logic
     $('.desc-remove').click(function(){
         var $this = $(this);
@@ -53,7 +54,8 @@ $(document).ready(function(){
             $('#additional-options').parent().toggleClass("open");
         }
     });
-    $('.set-value').click(function(){
+    $('.set-value').click(function(event){
+        event.preventDefault();
         var childGlyph = $(this).find("i");
         // 'checking glyphicon here'
         if (childGlyph.hasClass('glyphicon-check')) {
@@ -101,7 +103,75 @@ $(document).ready(function(){
                 $('.email-add').addClass('hidden');
             }
             break;
-            case 'Phone': // tbd at home
+            case 'Phone':
+            if ($('.phone-numbers').hasClass('hidden')){
+                $('.phone-numbers').removeClass('hidden');
+            } else {
+                if (!$('.desc-remove').hasClass('hidden')) {
+                    $('.desc-remove').addClass('hidden')
+                }
+                if (!$('.phone2').hasClass('hidden')) {
+                    $('.phone2').addClass('hidden')
+                }
+                if (!$('.phone3').hasClass('hidden')) {
+                    $('.phone3').addClass('hidden')
+                }
+                if (!$('.phone4').hasClass('hidden')) {
+                    $('.phone4').addClass('hidden')
+                }
+                if ($('.addPhone').hasClass('hidden')) {
+                    $('.addPhone').removeClass('hidden')
+                }
+                if ($('#phone1').val()) {
+                    $('#phone1').val("");
+                    $('#phone1').parent().removeClass('success-container');
+                }
+                if ($('#phone2').val()) {
+                    $('#phone2').val("");
+                    $('#phone2').parent().removeClass('success-container');
+                }
+                if ($('#phone3').val()) {
+                    $('#phone3').val("");
+                    $('#phone3').parent().removeClass('success-container');
+                }
+                if ($('#phone4').val()) {
+                    $('#phone4').val("");
+                    $('#phone4').parent().removeClass('success-container');
+                }
+                if (!$(".phone-type1 option[value='']").is(':selected')) {
+                    $('.phone-type1').find('option').remove()
+                    $(".phone-type1").append($("<option></option>").val('').html("Please select a value"));
+                    $(".phone-type1").append($("<option></option>").val('Office').html("Office"));
+                    $(".phone-type1").append($("<option></option>").val('Home').html("Home"));
+                    $(".phone-type1").append($("<option></option>").val('Fax').html("Fax"));
+                    $(".phone-type1").append($("<option></option>").val('Mobile').html("Mobile"));
+                }
+                if (!$(".phone-type2 option[value='']").is(':selected')) {
+                    $('.phone-type2').find('option').remove()
+                    $(".phone-type2").append($("<option></option>").val('').html("Please select a value"));
+                    $(".phone-type2").append($("<option></option>").val('Office').html("Office"));
+                    $(".phone-type2").append($("<option></option>").val('Home').html("Home"));
+                    $(".phone-type2").append($("<option></option>").val('Fax').html("Fax"));
+                    $(".phone-type2").append($("<option></option>").val('Mobile').html("Mobile"));
+                }
+                if (!$(".phone-type3 option[value='']").is(':selected')) {
+                    $('.phone-type3').find('option').remove()
+                    $(".phone-type3").append($("<option></option>").val('').html("Please select a value"));
+                    $(".phone-type3").append($("<option></option>").val('Office').html("Office"));
+                    $(".phone-type3").append($("<option></option>").val('Home').html("Home"));
+                    $(".phone-type3").append($("<option></option>").val('Fax').html("Fax"));
+                    $(".phone-type3").append($("<option></option>").val('Mobile').html("Mobile"));
+                }
+                if (!$(".phone-type4 option[value='']").is(':selected')) {
+                    $('.phone-type4').find('option').remove()
+                    $(".phone-type4").append($("<option></option>").val('').html("Please select a value"));
+                    $(".phone-type4").append($("<option></option>").val('Office').html("Office"));
+                    $(".phone-type4").append($("<option></option>").val('Home').html("Home"));
+                    $(".phone-type4").append($("<option></option>").val('Fax').html("Fax"));
+                    $(".phone-type4").append($("<option></option>").val('Mobile').html("Mobile"));
+                }
+                $('.phone-numbers').addClass('hidden');
+            }
             break;
             case 'Custom Field 1':
             if ($('.custom-field-1').hasClass('hidden')){
@@ -149,15 +219,35 @@ $(document).ready(function(){
             case 'Parent Account':
             if ($('.parent-account').hasClass('hidden')){
                 $('.parent-account').removeClass('hidden');
+                // autocomplete for parent account
+                // with some additional overrides
+                function formatData (parents) {
+                    var $data = $('<span>' + parents.name + '</span>' + '<span> ' + parents.id + '</span>' + '<span> ' + parents.external + '</span>');
+                    return $data;
+                };
+                $("#parentAccount").select2({
+                    data: parents,
+                    templateSelection: formatData,
+                    templateResult: formatData
+                });
             } else {
                 if ($('#parentAccount').val()) {
-                    $('#parentAccount').val("");
-                    $('#parentAccount').focusout(); 
+                    $('#parentAccount').val('');
+                    $('#parentAccount').select2({data: null});
                 }
                 $('.parent-account').addClass('hidden');
             }
             break;
             case 'Account Segment':
+            if ($('.account-segment').hasClass('hidden')){
+                $('.account-segment').removeClass('hidden');
+            } else {
+                if ($('#accountSegment').val()) {
+                    $("#accountSegment option[value='']").attr('selected', 'true');
+                    $('#accountSegment').focusout(); 
+                }
+                $('.account-segment').addClass('hidden');
+            }
             break;
         }
     })
@@ -756,19 +846,6 @@ $(document).ready(function(){
     });
     // autocomplete countries and states
     $(".js-example-basic-single").select2();
-
-    // autocomplete for parent account
-    // with some additional overrides
-    var parents = [{name: 'Account 1', id: '12345', external: '6789'},{name: 'Account 2', id: '34567', external: '12890'}];
-    function formatData (parents) {
-        var $data = $('<span>' + parents.name + '</span>' + '<span> ' + parents.id + '</span>' + '<span> ' + parents.external + '</span>');
-        return $data;
-    };
-    $("#parentAccount").select2({
-        data: parents,
-        templateSelection: formatData,
-        templateResult: formatData
-    });
 
     // temp remove of selection arrow
     // it doesn't match to default browser styles
