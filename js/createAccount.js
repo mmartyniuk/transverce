@@ -56,14 +56,12 @@ $(document).ready(function(){
     });
     $('.set-value').click(function(event){
         event.preventDefault();
-        var childGlyph = $(this).find("i");
-        // 'checking glyphicon here'
-        if (childGlyph.hasClass('glyphicon-check')) {
-            childGlyph.removeClass('glyphicon-check');
-            childGlyph.addClass('glyphicon-unchecked');
+        var check = $(this).find("input");
+        // 'checking input here'
+        if (check.is(':checked')) {
+            check.prop('checked', false);
         } else {
-            childGlyph.removeClass('glyphicon-unchecked');
-            childGlyph.addClass('glyphicon-check');
+            check.prop('checked', true);
         }
         switch ($(this).text()) {
             case 'External ID':
@@ -101,6 +99,20 @@ $(document).ready(function(){
                     $('#corporateEmail').focusout(); 
                 }
                 $('.email-add').addClass('hidden');
+            }
+            case 'Credit Card Number':
+            if ($('.credit-cart-number').hasClass('hidden')){
+                $('.credit-cart-number').removeClass('hidden');
+            } else {
+                if ($('.credit-card-group').hasClass('invalid')) {
+                    $('.credit-card-group').removeClass('invalid');
+                    $('.credit-card-group').removeClass('shake');
+                    $('#card-number').val("");
+                    $('#card-expiration').val("");
+                    $('#card-cvv').val("");
+                    $('#card-zip').val("");
+                }
+                $('.credit-cart-number').addClass('hidden');
             }
             break;
             case 'Phone':
@@ -1025,7 +1037,9 @@ $(document).ready(function(){
                 if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
                     $(element).parent().addClass('success-container-postal');
                 }else{
-                    $(element).parent().addClass('success-container');
+                    if (element.id !== 'card-number' && element.id !== 'card-expiration' && element.id !== 'card-cvv' && element.id !== 'card-zip') {
+                        $(element).parent().addClass('success-container');
+                    }
                 }
             } else {
                 $(element).parent().removeClass('success-container');
@@ -1163,7 +1177,6 @@ $(document).ready(function(){
                         required: "Account Name is required field"
                     }
                 });
-
                 $("#currency").rules("add", {
                     required: true,
                     messages: {
