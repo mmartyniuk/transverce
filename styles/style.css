@@ -69,9 +69,9 @@ h3 {
     padding: 7px 19px 8px 20px;
 }
 
-.required-main {
+/*.required-main {
     right: 80px;
-}
+}*/
 
 .phone1 select, .phone1 input, .phone2 select, .phone2 input,.phone3 select, .phone3 input,.phone4 select, .phone4 input {
     margin-bottom: 4px;
@@ -348,6 +348,14 @@ select.form-control {
     display: inline-block;
     text-decoration: none;
     padding-left: 5px;
+}
+
+.addCard {
+    font-weight: 700;
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 8px;
+    margin-bottom: 13px;
 }
 
 .addPhone:hover, .addPhone:visited, .addPhone:focus {
@@ -804,39 +812,6 @@ select.form-control {
 .same-checkboxes {
     text-align: right;
     padding-right: 25px;
-}
-
-.card-instruction {
-    display: none;
-}
-
-.card-image {
-    top: 5px;
-    margin: 0;
-}
-
-.credit-card-group {
-    height: 35px;
-    margin-bottom: 10px !important;
-    width: 99%;
-    border: 1px solid #CBD5DD !important;
-}
-.credit-card-group:focus {
-    border-color: #3d77f9 !important;
-    box-shadow: none !important;
-    outline: 0 !important;
-}
-
-.credit-card-group input{
-    padding-left: 5px !important;
-}
-
-.credit-card-group.success-container:after {
-    background: none;
-}
-
-.js .credit-card-group.invalid input {
-    color: #000;
 }
 
 @media (min-width: 768px){

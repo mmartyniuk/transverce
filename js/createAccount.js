@@ -784,6 +784,30 @@ $(document).ready(function(){
         
     });
 
+    //credit card
+    $('.addCard').click(function(e){
+        e.preventDefault();
+        $('#card-number').payment('formatCardNumber');
+        $('#card-date').payment('formatCardExpiry');
+        $('#cvv').payment('formatCardCVC');
+        $('#card-form').modal('show')
+    });
+    $('#saveCard').click(function(e){
+        e.preventDefault();
+        var cardType = $('#card-type').val();
+        var cardNum = $('#card-number').val().replace( /[0-9]{4}$/, '****' );
+        var cardDate = $('#card-date').val();
+        var cardCvv = $('#cvv').val();
+        
+        $('#card-type-copy').val(cardType).prop("disabled", true);
+        $('#card-number-copy').val(cardNum).prop("disabled", true);
+        $('#card-date-copy').val(cardDate).prop("disabled", true);
+        $('#cvv-copy').val(cardCvv).prop("disabled", true);
+        $('.card-values').removeClass('hidden');
+        $('#card-form').modal('hide');
+    });
+    
+
     var previous1, previous2, previous3, previous4; // variables to store previous values from select
     //to prevent option lose
 
