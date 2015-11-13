@@ -69,6 +69,10 @@ h3 {
     padding: 7px 19px 8px 20px;
 }
 
+.required-main {
+    right: 80px;
+}
+
 .phone1 select, .phone1 input, .phone2 select, .phone2 input,.phone3 select, .phone3 input,.phone4 select, .phone4 input {
     margin-bottom: 4px;
 }
@@ -556,22 +560,22 @@ select.form-control {
 
 #spinnerAcc {
     left: 61px;
-    top: -49px;
+    top: -43px;
 }
 
 #spinnerPay {
     left: 62px;
-    top: -50px;
+    top: -42px;
 }
 
 #spinnerBill{
-    top: -49px;
+    top: -43px;
     left: 63px;
 }
 
 #spinnerCurr{
     position: absolute;
-    top: -47px;
+    top: -41px;
     right: 50%;
 }
 
@@ -754,23 +758,34 @@ select.form-control {
     cursor: default;
 }
 
-.select2-results__option {
+#select2-parentAccount-results .select2-results__option {
     text-align: center;
 }
 
-.select2-results__option span:first-child {
+#select2-parentAccount-results .select2-results__option span:first-child {
     float: left;
     padding-left: 20px;
 }
 
-.select2-results__option span {
+#select2-parentAccount-results .select2-results__option span {
     float: none;
     text-align: left;
 }
 
-.select2-results__option span:last-child {
+#select2-parentAccount-results .select2-results__option span:last-child {
     float: right;
     padding-right: 20px;
+}
+
+.dropdown button, a.btn.btn-default, .dropdown .btn-default:focus {
+    color: #3d77f9;
+    border: 1px solid #3d77f9;
+    background: transparent;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: #3d77f9;
+    background-image: none;
 }
 
 .dropdown-menu.additional-options-expanded {
@@ -782,8 +797,46 @@ select.form-control {
     padding: 3px 10px;
 }
 
-.dropdown-menu .glyphicon {
-    padding-right: 10px;
+.dropdown-menu .set-value input {
+    margin-right: 10px;
+}
+
+.same-checkboxes {
+    text-align: right;
+    padding-right: 25px;
+}
+
+.card-instruction {
+    display: none;
+}
+
+.card-image {
+    top: 5px;
+    margin: 0;
+}
+
+.credit-card-group {
+    height: 35px;
+    margin-bottom: 10px !important;
+    width: 99%;
+    border: 1px solid #CBD5DD !important;
+}
+.credit-card-group:focus {
+    border-color: #3d77f9 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+}
+
+.credit-card-group input{
+    padding-left: 5px !important;
+}
+
+.credit-card-group.success-container:after {
+    background: none;
+}
+
+.js .credit-card-group.invalid input {
+    color: #000;
 }
 
 @media (min-width: 768px){
