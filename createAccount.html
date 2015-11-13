@@ -13,7 +13,6 @@
         
         <!-- Custom css files -->
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" type="text/css" href="css/paymentInfo.css">
         <link rel="stylesheet" href="styles/style.css">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -70,7 +69,7 @@
                     <div class="col-lg-2 col-md-4 col-sm-6 col-xs-7">
                         <h4>Create New Account</h4>
                     </div>
-                    <div class="col-lg-1 col-md-2 col-sm-2 col-xs-5 required-main">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-5 required-main">
                         <h6 class="text-left"><strong class="text-danger">&#42;</strong> Required</h6>
                     </div>
                     <div class="col-lg-4 col-lg-offset-5 col-md-2 col-md-offset-6 col-sm-2 col-sm-offset-4 col-xs-5 text-right">
@@ -322,16 +321,79 @@
                                     <div class="form-group row credit-cart-number hidden">
                                         <label class="col-md-3 control-label">Credit Card Number</label>
                                         <div class="col-md-9 input-container">
-                                            <fieldset class="credit-card-group">
-                                                <label for="card-number">Credit Card Number</label>
-                                                <input placeholder="1234 5678 9012 3456" pattern="[0-9]*" type="text" class="card-number form-control" id="card-number">
-                                                <label for="card-number">Expiration Date</label>
-                                                <input placeholder="MM/YY" pattern="[0-9]*" type="text" class="card-expiration form-control" id="card-expiration">
-                                                <label for="card-number">CVV Number</label>
-                                                <input placeholder="CVV" pattern="[0-9]*" type="text" class="card-cvv form-control" id="card-cvv">
-                                                <label for="card-number">Billing Zip Code</label>
-                                                <input placeholder="ZIP" pattern="[0-9]*" type="text" class="card-zip form-control" id="card-zip">
-                                            </fieldset>
+                                            <a href="#" class="addCard">+ Add Credit Card</a>
+                                        </div>
+                                    </div>
+                                    <div class="card-values hidden">
+                                        <div class="form-group row">
+                                            <label for="card-type-copy" class="control-label col-md-3">Card Type</label>
+                                            <div class="col-md-6 input-container">
+                                                <select id="card-type-copy" class="form-control">
+                                                    <option value="Visa">Visa</option>
+                                                    <option value="Master Card">Master Card</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row ">
+                                            <label for="card-number-copy" class="col-md-3 control-label">Card Number</label>
+                                            <div class="col-md-9 input-container">
+                                                <input type="tel" class="form-control" id="card-number-copy">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row ">
+                                            <label for="card-date-copy" class="col-md-3 control-label">Expiration Date</label>
+                                            <div class="col-md-9 input-container">
+                                                <input type="tel" class="form-control" id="card-date-copy">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row ">
+                                            <label for="cvv-copy" class="col-md-3 control-label">CVV</label>
+                                            <div class="col-md-9 input-container">
+                                                <input type="tel" class="form-control" id="cvv-copy">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal fade" id="card-form">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title">Add credit card</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-group row">
+                                                        <label for="card-type" class="control-label col-md-3">Card Type</label>
+                                                        <div class="col-md-6 input-container">
+                                                            <select id="card-type" class="form-control">
+                                                                <option value="Visa">Visa</option>
+                                                                <option value="Master Card">Master Card</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <label for="card-number" class="col-md-3 control-label">Card Number</label>
+                                                        <div class="col-md-9 input-container">
+                                                            <input type="tel" class="form-control" id="card-number" placeholder="•••• •••• •••• ••••" pattern="\d*">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <label for="card-number" class="col-md-3 control-label">Expiration Date</label>
+                                                        <div class="col-md-9 input-container">
+                                                            <input type="tel" class="form-control" id="card-date" placeholder="••/••">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <label for="cvv" class="col-md-3 control-label">CVV</label>
+                                                        <div class="col-md-9 input-container">
+                                                            <input type="tel" class="form-control" id="cvv" placeholder="••••">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    <button type="button" id="saveCard" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -666,10 +728,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.1/js/select2.full.js"></script>
-        <script src="scripts/libs/modernizr.js"></script>
-        <script src="scripts/libs/jquery.inputmask.js"></script>
-        <script src="scripts/libs/jquery.inputmask.date.extensions.js"></script>
-        <script src="scripts/app.js"></script>
+        <script src="js/jquery.payment.min.js"></script>
         <script src="js/createAccount.js"></script>
     </body>
 </html>
