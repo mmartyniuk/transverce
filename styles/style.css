@@ -22,14 +22,23 @@ input[type="radio"], input[type="checkbox"] {
     margin-left: 1px;
 }
 
-section {
-    margin-top: 20px;
-}
-
 h3 {
     font-size: 18px;
     margin-bottom: 20px;
     margin-top: 10px;
+}
+
+#accountDetails .modal-header {
+    border-bottom: none;
+}
+
+#accountDetails .modal-body {
+    padding-top: 0;
+}
+
+.modal.fade.in {
+    display: block;
+    overflow-y: scroll;
 }
 
 .col-9 {
@@ -206,6 +215,11 @@ select.form-control {
 
 #accountDetails {
     padding: 20px 20px 0;
+    min-height: calc(100% - 50px);
+}
+
+#accountDetails .modal {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .wrapper {
@@ -261,7 +275,6 @@ select.form-control {
 .submitForm {
     display: block;
     padding-top: 0;
-    margin-bottom: 60px;
     margin-top: 0;
 }
 
@@ -626,7 +639,7 @@ select.form-control {
 }
 
 .btn.pull-right:first-child {
-    margin-right: 16px;
+    margin-right: 0;
 }
 
 .btn.pull-right:last-child {
@@ -671,7 +684,7 @@ select.form-control {
 }
 
 .margin-top-addresses {
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .the-fieldset.margin-bottom {
@@ -703,7 +716,7 @@ select.form-control {
 }
 
 .margin-top-30, .title.divider.margin-top-30 {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .financial select {
@@ -712,7 +725,7 @@ select.form-control {
 
 #enterprise .address-box {
     padding-top: 0;
-    margin-bottom: 27px;
+    margin-bottom: 0px;
     padding-left: 2px;
     letter-spacing: 0.1px;
 }
@@ -730,14 +743,14 @@ select.form-control {
 }
 
 .service-box {
-    margin-top: 25px;
-    padding-left: 6px;
+    padding-left: 2px; 
+    margin-top: 11px;
     letter-spacing: 0.1px;
 }
 
 .shipping-box {
-    margin-top: 10px;
-    padding-left: 6px;
+    padding-left: 2px; 
+    margin-top: 11px;
     letter-spacing: 0.1px;
 }
 
@@ -746,7 +759,7 @@ select.form-control {
 }
 
 .header .title.divider.final-line {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .same {
@@ -860,10 +873,10 @@ select.form-control {
 
 @media (min-width: 1501px){
     .col-offset {
-        margin-left: 21.6%;
+        margin-left: 0;
     }
     .col-9 {
-        width: 46.8%;
+        width: 88%;
     }
     .the-fieldset {
         margin: 0 -10px 32px -32px;

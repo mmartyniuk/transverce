@@ -54,8 +54,13 @@ $(document).ready(function(){
             $('#additional-options').parent().toggleClass("open");
         }
     });
+
+    $(".set-value input").click(function(event){
+        $(this).prop("checked", !$(this).prop("checked"));
+    });
+
     $('.set-value').click(function(event){
-        event.preventDefault();
+        //event.preventDefault();
         var check = $(this).find("input");
         // 'checking input here'
         if (check.is(':checked')) {
@@ -262,7 +267,7 @@ $(document).ready(function(){
             }
             break;
         }
-    })
+    });
     // add additional fields logic, end of changes
 
     var ifCurrencyChangedInitially = false;
