@@ -124,7 +124,7 @@ h3 {
 }
 
 .checkRow {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
 }
 
 .icon-container:after {
@@ -384,7 +384,7 @@ select.form-control {
     margin: auto;
     position: absolute;
     left: inherit;
-    right: 80px;
+    right: 63px;
     top: 0;
     width: 40px;
     z-index: 1001;
@@ -803,6 +803,16 @@ select.form-control {
     border: 1px solid #3d77f9;
     background: transparent;
 }
+
+.dropdown .glyphicon.glyphicon-cog {
+    padding-right: 10px;
+    margin-left: -10px;
+}
+
+.dropdown .caret {
+    margin-left: 10px;
+}
+
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     background-color: #3d77f9;
