@@ -239,7 +239,7 @@ h3 {
     right: 0;
 }
 
-.account-header .dropdown-menu  .glyphicon {
+.account-header .dropdown-menu input {
     padding-right: 5px;
 }
 
@@ -257,6 +257,15 @@ h3 {
     background-color: #3d77f9;
     background-image: none;
 }
+
+.dropdown .glyphicon.glyphicon-cog {
+    padding-right: 5px;
+}
+
+.dropdown .caret {
+    margin-left: 10px;
+}
+
 .input-group.date {
     padding-bottom: 10px;
 }
@@ -276,8 +285,14 @@ h3 {
 .order-table table tr td:last-child span {
     font-size: 20px;
     color: #00f;
-    padding-left: 15px;
+    padding-left: 22px;
     cursor: pointer;
+}
+
+.order-table table tr td:last-child span:last-child {
+    font-size: 20px;
+    color: #00f;
+    padding-left: 45px;
 }
 
 .order-table table tr td input {
