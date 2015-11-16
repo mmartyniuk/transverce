@@ -1,4 +1,13 @@
 $(document).ready(function(){
+    // selection sort
+    var sortSelect = function (select) {
+
+        $(select).html($(select).children('option').sort(function (x, y) {
+            return $(x).val().toUpperCase() < $(y).val().toUpperCase() ? -1 : 1;
+        }));
+
+        $(select).get(0).selectedIndex = 0;
+    }
 
     // applying select2 here 
     $("#changeAccount").select2();
@@ -21,12 +30,11 @@ $(document).ready(function(){
     });
 
     // tbd, the issue is reproducing when clicking out of dropdown
-    /*$('body').on('click', function (event) {
-        if (!$('.additional-options-expanded').children().is(event.target)) {
-            console.log(event.target)
+    $('body').on('click', function (event) {
+        if (!$('.dropdown').find(event.target).length > 0 && $('#additional-options').parent().hasClass('open')) {
             $('#additional-options').parent().toggleClass("open");
         }
-    });*/
+    });
     // end of changes
 
     // change account and cancel button functionality
@@ -111,74 +119,79 @@ $(document).ready(function(){
 
     // here dropdown functionality is applied
 
-    $('.set-number-field').on('click', function(e){
-        e.preventDefault();
-        var childGlyph = $(this).find("i");
-        if (childGlyph.hasClass('glyphicon-unchecked')) {
-            childGlyph.removeClass('glyphicon-unchecked');
-            childGlyph.addClass('glyphicon-check');
-            $('#order-number').parent().parent().removeClass('hidden');
+    $(".set-field input").click(function(event){
+        $(this).prop("checked", !$(this).prop("checked"));
+    });
+
+    $('.set-field').click(function(event){
+        //event.preventDefault();
+        var check = $(this).find("input");
+        // 'checking input here'
+        if (check.is(':checked')) {
+            check.prop('checked', false);
         } else {
-            childGlyph.addClass('glyphicon-unchecked');
-            childGlyph.removeClass('glyphicon-check');
-            $('#order-number').parent().parent().addClass('hidden');
+            check.prop('checked', true);
+        }
+        switch ($(this).text()) {
+            case ' Purchase Order Number':
+            if ($('#order-number').parent().parent().hasClass('hidden')){
+                $('#order-number').parent().parent().removeClass('hidden');
+            } else {
+                $('#order-number').parent().parent().addClass('hidden');
+            }
+            break;
+            case ' Sales Referal':
+            if ($('#sales-referal').parent().parent().hasClass('hidden')){
+                $('#sales-referal').parent().parent().removeClass('hidden');
+            } else {
+                $('#sales-referal').parent().parent().addClass('hidden');
+            }
+            break;
+            case ' Custom Field A':
+            if ($('#custom-field-1').parent().parent().hasClass('hidden')){
+                $('#custom-field-1').parent().parent().removeClass('hidden');
+            } else {
+                $('#custom-field-1').parent().parent().addClass('hidden');
+            }
+            break;
+            case ' Custom Field B':
+            if ($('#custom-field-2').parent().parent().hasClass('hidden')){
+                $('#custom-field-2').parent().parent().removeClass('hidden');
+            } else {
+                $('#custom-field-2').parent().parent().addClass('hidden');
+            }
+            break;
+            case ' Notes':
+            if ($('#notes').parent().parent().hasClass('hidden')){
+                $('#notes').parent().parent().removeClass('hidden');
+            } else {
+                $('#notes').parent().parent().addClass('hidden');
+            }
+            break;
         }
     });
 
-    $('.set-referal').on('click', function(e){
-        e.preventDefault();
-        var childGlyph = $(this).find("i");
-        if (childGlyph.hasClass('glyphicon-unchecked')) {
-            childGlyph.removeClass('glyphicon-unchecked');
-            childGlyph.addClass('glyphicon-check');
-            $('#sales-referal').parent().parent().removeClass('hidden');
-        } else {
-            childGlyph.addClass('glyphicon-unchecked');
-            childGlyph.removeClass('glyphicon-check');
-            $('#sales-referal').parent().parent().addClass('hidden');
+    $(".order-table td:last-child span:last-child").click(function(event){
+        event.preventDefault();
+        $(this).parent().parent().addClass('hidden');
+        var product = $(this).parent().parent().find('dt').text();
+        switch (product) {
+            case 'Product Name A':
+            $('#add-product').append($("<option></option>").val('product1').html(product));
+            sortSelect('#add-product');
+            break;
+            case 'Product Name B':
+            $('#add-product').append($("<option></option>").val('product2').html(product));
+            sortSelect('#add-product');
+            break;
+            case 'Product Name C':
+            $('#add-product').append($("<option></option>").val('product3').html(product));
+            sortSelect('#add-product');
+            break;
         }
+
     });
 
-    $('.set-custom-field-1').on('click', function(e){
-        e.preventDefault();
-        var childGlyph = $(this).find("i");
-        if (childGlyph.hasClass('glyphicon-unchecked')) {
-            childGlyph.removeClass('glyphicon-unchecked');
-            childGlyph.addClass('glyphicon-check');
-            $('#custom-field-1').parent().parent().removeClass('hidden');
-        } else {
-            childGlyph.addClass('glyphicon-unchecked');
-            childGlyph.removeClass('glyphicon-check');
-            $('#custom-field-1').parent().parent().addClass('hidden');
-        }
-    });
 
-    $('.set-custom-field-2').on('click', function(e){
-        e.preventDefault();
-        var childGlyph = $(this).find("i");
-        if (childGlyph.hasClass('glyphicon-unchecked')) {
-            childGlyph.removeClass('glyphicon-unchecked');
-            childGlyph.addClass('glyphicon-check');
-            $('#custom-field-2').parent().parent().removeClass('hidden');
-        } else {
-            childGlyph.addClass('glyphicon-unchecked');
-            childGlyph.removeClass('glyphicon-check');
-            $('#custom-field-2').parent().parent().addClass('hidden');
-        }
-    });
-
-    $('.set-notes').on('click', function(e){
-        e.preventDefault();
-        var childGlyph = $(this).find("i");
-        if (childGlyph.hasClass('glyphicon-unchecked')) {
-            childGlyph.removeClass('glyphicon-unchecked');
-            childGlyph.addClass('glyphicon-check');
-            $('#notes').parent().parent().removeClass('hidden');
-        } else {
-            childGlyph.addClass('glyphicon-unchecked');
-            childGlyph.removeClass('glyphicon-check');
-            $('#notes').parent().parent().addClass('hidden');
-        }
-    });
  
 });
