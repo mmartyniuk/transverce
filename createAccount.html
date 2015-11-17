@@ -75,12 +75,12 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 required-main">
                                     <h6 class="text-left"><strong class="text-danger">&#42;</strong> Required</h6>
                                 </div>
-                                <div class="col-lg-3 col-lg-offset-4 col-md-2 col-md-offset-4 col-sm-2 col-sm-offset-2 col-xs-2 text-right">
+                                <div class="col-lg-3 col-lg-offset-4 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-1 col-xs-2 text-right">
                                     <div class="dropdown">
 
                                         <button class="btn btn-default" type="button" id="additional-options">
                                             <span class="glyphicon glyphicon-cog"></span>
-                                        Add Field
+                                        Add Fields
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu additional-options-expanded">
@@ -88,7 +88,6 @@
                                                 <a href="#" class="set-value"><input type="checkbox">External ID</a>
                                                 <a href="#" class="set-value"><input type="checkbox">Taxes</a>
                                                 <a href="#" class="set-value"><input type="checkbox">Email</a>
-                                                <a href="#" class="set-value"><input type="checkbox">Credit Card Number</a>
                                                 <a href="#" class="set-value"><input type="checkbox">Phone</a>
                                                 <a href="#" class="set-value"><input type="checkbox">Custom Field 1</a>
                                                 <a href="#" class="set-value"><input type="checkbox">Custom Field 2</a>
@@ -323,49 +322,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="card-form">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                                <h4 class="modal-title">Add credit card</h4>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="form-group row">
-                                                                    <label for="card-type" class="control-label col-md-3">Card Type</label>
-                                                                    <div class="col-md-6 input-container">
-                                                                        <select id="card-type" class="form-control">
-                                                                            <option value="Visa">Visa</option>
-                                                                            <option value="Master Card">Master Card</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row form-group">
-                                                                    <label for="card-number" class="col-md-3 control-label">Card Number</label>
-                                                                    <div class="col-md-9 input-container">
-                                                                        <input type="tel" class="form-control" id="card-number" placeholder="•••• •••• •••• ••••" pattern="\d*">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row form-group">
-                                                                    <label for="card-number" class="col-md-3 control-label">Expiration Date</label>
-                                                                    <div class="col-md-9 input-container">
-                                                                        <input type="tel" class="form-control" id="card-date" placeholder="••/••">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row form-group">
-                                                                    <label for="cvv" class="col-md-3 control-label">CVV</label>
-                                                                    <div class="col-md-9 input-container">
-                                                                        <input type="tel" class="form-control" id="cvv" placeholder="••••">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                                <button type="button" id="saveCard" class="btn btn-primary">Save changes</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div class="form-group row">
                                                     <label for="billCycle" class="required control-label col-md-3">Bill Cycle</label>
                                                     <div class="col-md-9 input-container">
@@ -381,41 +337,6 @@
                                                         </svg>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row credit-cart-number hidden">
-                                                    <label class="col-md-3 control-label">Credit Card Number</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <a href="#" class="addCard">+ Add Credit Card</a>
-                                                    </div>
-                                                </div>
-                                                <div class="card-values hidden">
-                                                    <div class="form-group row">
-                                                        <label for="card-type-copy" class="control-label col-md-3">Card Type</label>
-                                                        <div class="col-md-6 input-container">
-                                                            <select id="card-type-copy" class="form-control">
-                                                                <option value="Visa">Visa</option>
-                                                                <option value="Master Card">Master Card</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row ">
-                                                        <label for="card-number-copy" class="col-md-3 control-label">Card Number</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="tel" class="form-control" id="card-number-copy">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row ">
-                                                        <label for="card-date-copy" class="col-md-3 control-label">Expiration Date</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="tel" class="form-control" id="card-date-copy">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row ">
-                                                        <label for="cvv-copy" class="col-md-3 control-label">CVV</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="tel" class="form-control" id="cvv-copy">
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                 <div class="form-group row">
                                                     <label for="invoiceType" class="required control-label col-md-3">Invoice Type</label>
                                                     <div class="col-md-9 input-container">
@@ -425,6 +346,20 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="card-form-expanded hidden">
+                                                    <div class="form-group row">
+                                                        <label for="card-first-name" class="control-label col-md-3">First Name</label>
+                                                        <div class="col-md-9 input-container">
+                                                            <input type="text" class="form-control" id="card-first-name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row credit-cart-number">
+                                                    <label class="required col-md-3 control-label">Credit Card</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <a href="#" class="addCard">+ Add Credit Card</a>
+                                                    </div>
+                                                </div>
                                                 <div class="form-group row payment-term hidden">
                                                     <label for="paymentTerm" class="control-label col-md-3">Payment Term</label>
                                                     <div class="col-md-9 input-container">
@@ -432,13 +367,6 @@
                                                             <option value="">Please Select</option>
                                                             <option value="testdata">Some Test Data</option>
                                                         </select>
-                                                    </div>
-                                                </div>
-                                                <div class="spinner-container common-select" id="spinnerPay">
-                                                    <div class="spinner">
-                                                        <svg height="1em" width="1em">
-                                                            <circle r="0.45em" cy="0.5em" cx="0.5em">
-                                                        </svg>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row checkRow authorize-auto-payment hidden">
@@ -541,7 +469,7 @@
                                                             <input type="checkbox" id="showServiceEnterprise"> Service Address
                                                         </label>
                                                     </div>
-                                                    <div class="col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-2 col-xs-12 same-checkboxes">
+                                                    <div class="col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2 col-xs-12 same-checkboxes">
                                                         <label class="hidden same">
                                                             <input type="checkbox" id="sameServiceEnterprise"> Same as billing
                                                         </label>
@@ -625,7 +553,7 @@
                                                             <input type="checkbox" id="showShippingEnterprise"> Shipping Address
                                                         </label>
                                                     </div>
-                                                    <div class="col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-2 col-xs-12 same-checkboxes">
+                                                    <div class="col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2 col-xs-12 same-checkboxes">
                                                         <label class="hidden same-shipping">
                                                             <input type="checkbox" id="sameShippingEnterprise"> Same as billing
                                                         </label>
@@ -711,7 +639,7 @@
                                         <div class="col-md-12 title divider final-line"></div>
                                     </div>
                                     <div class="row form-group row submitForm">
-                                        <div class="col-md-5 col-md-offset-7 col-sm-6 col-sm-offset-2">
+                                        <div class="col-md-5 col-md-offset-7 col-sm-7 col-sm-offset-4">
                                             <button type="submit" class="btn btn-primary pull-right" id="submitTheForm">Create Account</button>
                                             <div class="spinner-container" id="createSpin">
                                                 <div class="spinner">
