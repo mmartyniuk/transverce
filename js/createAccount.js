@@ -691,8 +691,6 @@ $(document).ready(function(){
         var $this = $(this);
         if ($this.is(':checked')) {
             $('#BillingAdd').removeClass('hidden');
-            $('.service-box').css('padding-left', '6px');
-            $('.shipping-box').css('padding-left', '6px');
             $('.service-box').css('margin-top', '25px');
             $('.address-box').css('margin-bottom', '27px');
             $("#address1Billing").rules("add", {
@@ -738,8 +736,6 @@ $(document).ready(function(){
             $("#postalCodeBilling").rules("remove", "maxlength");
             $("#postalCodeBilling").rules("remove", "notEqualPostal");
             $("#postalCodeBilling").rules("remove", "number");
-            $('.service-box').css('padding-left', '2px');
-            $('.shipping-box').css('padding-left', '2px');
             $('.address-box').css('margin-bottom', '0');
             $('.service-box').css('margin-top', '11px');
         }
@@ -1060,23 +1056,24 @@ $(document).ready(function(){
             }
         },
         unhighlight: function(element) {
-            $(element).closest('.form-group').removeClass('has-error');
-            if ($(element).val() && !$(element).is("select")){
-                $(element).parent().addClass('success-container');
-                if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
-                    $(element).parent().addClass('success-container-postal');
-                }else{
-                    if (element.id !== 'card-number' && element.id !== 'card-expiration' && element.id !== 'card-cvv' && element.id !== 'card-zip') {
-                        $(element).parent().addClass('success-container');
+            if ($(element).closest('.form-group').hasClass('has-error')) {
+                $(element).closest('.form-group').removeClass('has-error');
+                if ($(element).val() && !$(element).is("select")){
+                    $(element).parent().addClass('success-container');
+                    if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
+                        $(element).parent().addClass('success-container-postal');
+                    }else{
+                        if (element.id !== 'card-number' && element.id !== 'card-expiration' && element.id !== 'card-cvv' && element.id !== 'card-zip') {
+                            $(element).parent().addClass('success-container');
+                        }
                     }
+                } else {
+                    $(element).parent().removeClass('success-container');
+                    $(element).parent().removeClass('success-container-postal');
+                    $(element).parent().removeClass('icon-container-postal');
+                    $(element).parent().removeClass('icon-container');
                 }
-            } else {
-                $(element).parent().removeClass('success-container');
-                $(element).parent().removeClass('success-container-postal');
-                $(element).parent().removeClass('icon-container-postal');
-                $(element).parent().removeClass('icon-container');
             }
-            
         },
         errorElement: 'span',
         errorClass: 'help-block',
