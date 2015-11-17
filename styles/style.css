@@ -70,7 +70,7 @@ h3 {
     display: inline-block;
     margin-bottom: 10px;
     height: 35px;
-    width: 99%;
+    width: 86%;
     padding-right: 28px;
 }
 
@@ -228,7 +228,11 @@ select.form-control {
 }
 
 .header {
-    padding: 0 15px;
+    padding: 0 60px;
+}
+
+.modal-header {
+    padding: 15px 15px 15px 60px;
 }
 
 .header h3 {
@@ -316,7 +320,7 @@ select.form-control {
 
 /* autocomplete */
 #enterprise .wrapper .select2-container {
-    width: 99% !important;
+    width: 86% !important;
 }
 
 .select2-container--default .select2-selection--single {
@@ -835,6 +839,10 @@ select.form-control {
 .same-checkboxes {
     text-align: right;
     padding-right: 25px;
+}
+
+.addresses-wrapper {
+    padding-left: 43px;
 }
 
 @media (min-width: 768px){
