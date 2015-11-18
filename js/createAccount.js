@@ -110,18 +110,10 @@ $(document).ready(function(){
                 $('.email-add').addClass('hidden');
             }
             break;
-            case 'Credit Card Number':
+            case 'Credit Card':
             if ($('.credit-cart-number').hasClass('hidden')){
                 $('.credit-cart-number').removeClass('hidden');
             } else {
-                if ($('.credit-card-group').hasClass('invalid')) {
-                    $('.credit-card-group').removeClass('invalid');
-                    $('.credit-card-group').removeClass('shake');
-                    $('#card-number').val("");
-                    $('#card-expiration').val("");
-                    $('#card-cvv').val("");
-                    $('#card-zip').val("");
-                }
                 $('.credit-cart-number').addClass('hidden');
             }
             break;
@@ -765,7 +757,7 @@ $(document).ready(function(){
     });
 
     //credit card
-    $('.addCard').click(function(e){
+    /*$('.addCard').click(function(e){
         e.preventDefault();
         $('#card-number').payment('formatCardNumber');
         $('#card-date').payment('formatCardExpiry');
@@ -785,7 +777,7 @@ $(document).ready(function(){
         $('#cvv-copy').val(cardCvv).prop("disabled", true);
         $('.card-values').removeClass('hidden');
         $('#card-form').modal('hide');
-    });
+    });*/
     
 
     var previous1, previous2, previous3, previous4; // variables to store previous values from select
