@@ -1215,7 +1215,7 @@ $(document).ready(function(){
                     if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
                         $(element).parent().addClass('success-container-postal');
                     }else{
-                        if (element.id !== 'card-number' && element.id !== 'card-expiration' && element.id !== 'card-cvv' && element.id !== 'card-zip') {
+                        if (element.id == 'corporateEmail') {
                             $(element).parent().addClass('success-container');
                         }
                     }

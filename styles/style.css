@@ -108,7 +108,7 @@ h3 {
     background-color: #D0021B;
     color: #fff;
     width: 20%;
-    left: 93%;
+    left: 88%;
     padding: 10px 15px;
     top: -13px;
     font-size: 11px;
@@ -120,7 +120,7 @@ h3 {
     background-color: #D0021B;
     color: #fff;
     width: 40%;
-    left: 4.5%;
+    left: 0.5%;
     padding: 10px 15px;
     top: 6px;
     font-size: 11px;
@@ -148,7 +148,7 @@ h3 {
     background: url('../assets/error_icon.png') no-repeat;
     height: 20px;
     width: 20px;
-    right: 65px;
+    right: 96px;
     top: 8px;
 }
 
@@ -159,7 +159,7 @@ h3 {
     background: url('../assets/error_icon.png') no-repeat;
     height: 20px;
     width: 20px;
-    right: -28px;
+    right: 4px;
     top: 8px;
 }
 
@@ -170,7 +170,7 @@ h3 {
     background: url('../assets/ok_green.png') no-repeat;
     height: 20px;
     width: 20px;
-    right: 65px;
+    right: 96px;
     top: 8px;
 }
 
@@ -189,7 +189,7 @@ h3 {
     background: url('../assets/ok_green.png') no-repeat;
     height: 20px;
     width: 20px;
-    right: -28px;
+    right: 4px;
     top: 8px;
 }
 .errorIcon {
