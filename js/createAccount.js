@@ -45,12 +45,11 @@ $(document).ready(function(){
         
     });
 
-    jQuery('.scrollbar-inner').scrollbar();
-
     // add additional fields logic, start of changes
     $('#additional-options').on('click', function (event) {
         $(this).parent().toggleClass("open");
     });
+
     $('body').on('click', function (event) {
         if (!$('.dropdown').find(event.target).length > 0 && $('#additional-options').parent().hasClass('open')) {
             $('#additional-options').parent().toggleClass("open");

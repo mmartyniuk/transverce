@@ -672,14 +672,6 @@ select.form-control {
     padding: 7px 46px 10px 45px;
 }
 
-.scrollbar-inner > .scroll-element.scroll-y {
-    width: 15px;
-}
-
-.scrollbar-inner > .scroll-element .scroll-element_track {
-    background-color: #fff;
-}
-
 .the-legend {
         font-size: 0.9em;
         color: #A5A5A5;
