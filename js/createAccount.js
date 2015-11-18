@@ -110,18 +110,10 @@ $(document).ready(function(){
                 $('.email-add').addClass('hidden');
             }
             break;
-            case 'Credit Card Number':
+            case 'Credit Card':
             if ($('.credit-cart-number').hasClass('hidden')){
                 $('.credit-cart-number').removeClass('hidden');
             } else {
-                if ($('.credit-card-group').hasClass('invalid')) {
-                    $('.credit-card-group').removeClass('invalid');
-                    $('.credit-card-group').removeClass('shake');
-                    $('#card-number').val("");
-                    $('#card-expiration').val("");
-                    $('#card-cvv').val("");
-                    $('#card-zip').val("");
-                }
                 $('.credit-cart-number').addClass('hidden');
             }
             break;
@@ -206,6 +198,25 @@ $(document).ready(function(){
                 }
             } else {
                 $('#BillingAdd').addClass('hidden');
+                $("#countriesBilling").select2('val', 'US');
+                $("#address1Billing").val("");
+                $("#address2Billing").val("");
+                $("#cityBilling").val("");
+                if ($("#statesUS").hasClass('hidden')) {
+                    $("#statesUS").removeClass('hidden');
+                }
+                $("#statesUS").select2('val', 'NY');
+                $("#postalCodeBilling").val("");
+                $("#address1Billing").rules("remove", "minlength");
+                $("#address1Billing").rules("remove", "maxlength");
+                $("#address1Billing").rules("remove", "notEqualAddress");
+                $("#cityBilling").rules("remove", "minlength");
+                $("#cityBilling").rules("remove", "maxlength");
+                $("#cityBilling").rules("remove", "notEqualCity");
+                $("#postalCodeBilling").rules("remove", "minlength");
+                $("#postalCodeBilling").rules("remove", "maxlength");
+                $("#postalCodeBilling").rules("remove", "notEqualPostal");
+                $("#postalCodeBilling").rules("remove", "number");
                 $('#sameServiceEnterprise').parent().parent().addClass('hidden');
                 if ($('#sameServiceEnterprise').is(":checked")) {
                     $('#sameServiceEnterprise').prop('checked', false);
@@ -285,6 +296,25 @@ $(document).ready(function(){
                 $('#serviceBlockEnterprise').removeClass('hidden');
             } else {
                 $('#serviceBlockEnterprise').addClass('hidden');
+                $("#countriesService").select2('val', 'US');
+                $("#address1Service").val("");
+                $("#address2Service").val("");
+                $("#cityService").val("");
+                if ($("#statesUSService").hasClass('hidden')) {
+                    $("#statesUSService").removeClass('hidden');
+                }
+                $("#statesUSService").select2('val', 'NY');
+                $("#postalCodeService").val("");
+                $("#address1Service").rules("remove", "minlength");
+                $("#address1Service").rules("remove", "maxlength");
+                $("#address1Service").rules("remove", "notEqualAddress");
+                $("#cityService").rules("remove", "minlength");
+                $("#cityService").rules("remove", "maxlength");
+                $("#cityService").rules("remove", "notEqualCity");
+                $("#postalCodeService").rules("remove", "minlength");
+                $("#postalCodeService").rules("remove", "maxlength");
+                $("#postalCodeService").rules("remove", "notEqualPostal");
+                $("#postalCodeService").rules("remove", "number");
             }
             break;
             case 'Shipping Address':
@@ -292,6 +322,25 @@ $(document).ready(function(){
                 $('#shippingBlockEnterprise').removeClass('hidden');
             } else {
                 $('#shippingBlockEnterprise').addClass('hidden');
+                $("#countriesShipping").select2('val', 'US');
+                $("#address1Shipping").val("");
+                $("#address2Shipping").val("");
+                $("#cityShipping").val("");
+                if ($("#statesUSShipping").hasClass('hidden')) {
+                    $("#statesUSShipping").removeClass('hidden');
+                }
+                $("#statesUSShipping").select2('val', 'NY');
+                $("#postalCodeShipping").val("");
+                $("#address1Shipping").rules("remove", "minlength");
+                $("#address1Shipping").rules("remove", "maxlength");
+                $("#address1Shipping").rules("remove", "notEqualAddress");
+                $("#cityShipping").rules("remove", "minlength");
+                $("#cityShipping").rules("remove", "maxlength");
+                $("#cityShipping").rules("remove", "notEqualCity");
+                $("#postalCodeShipping").rules("remove", "minlength");
+                $("#postalCodeShipping").rules("remove", "maxlength");
+                $("#postalCodeShipping").rules("remove", "notEqualPostal");
+                $("#postalCodeShipping").rules("remove", "number");
             }
             break;
             case 'Custom Field 1':
@@ -680,236 +729,6 @@ $(document).ready(function(){
             });
         }
     });
-    
-    /*$('#showShippingEnterprise').click(function(){
-        var $this = $(this);
-        if ($this.is(':checked')) {
-            $('#shippingBlockEnterprise').removeClass('hidden');
-            $("#address1Shipping").rules("add", {
-                minlength: 5,
-                maxlength: 20,
-                notEqualAddress: {
-                    param: '',
-                    depends: function(element) {
-                        return iAddressShippingChangedInitially;
-                    }
-                }
-            });
-            $("#cityShipping").rules("add", {
-                minlength: 3,
-                maxlength: 20,
-                notEqualCity: {
-                    param: '',
-                    depends: function(element) {
-                        return ifcityShippingChangedInitially;
-                    }
-                }
-            });
-            $("#postalCodeShipping").rules("add", {
-                minlength: 2,
-                maxlength: 20,
-                number: true,
-                notEqualPostal: {
-                    param: '',
-                    depends: function(element) {
-                        return ifpostalCodeShippingChangedInitially;
-                    }
-                }
-            });
-            if ($('#showBilling').is(':checked')) {
-                $('#sameShippingEnterprise').parent().removeClass('hidden');
-            }
-        } else {
-            $('#sameShippingEnterprise').parent().addClass('hidden');
-            $('#shippingBlockEnterprise').addClass('hidden');
-            $("#sameShippingEnterprise").prop('checked', false); 
-            $("#address1Shipping").rules("remove", "minlength");
-            $("#address1Shipping").rules("remove", "maxlength");
-            $("#address1Shipping").rules("remove", "notEqualAddress");
-            $("#cityShipping").rules("remove", "minlength");
-            $("#cityShipping").rules("remove", "maxlength");
-            $("#cityShipping").rules("remove", "notEqualCity");
-            $("#postalCodeShipping").rules("remove", "minlength");
-            $("#postalCodeShipping").rules("remove", "maxlength");
-            $("#postalCodeShipping").rules("remove", "notEqualPostal");
-            $("#postalCodeShipping").rules("remove", "number");
-        }
-    });
-    $('#showServiceEnterprise').click(function(){
-        var $this = $(this);
-        if ($this.is(':checked')) {
-            $('#serviceBlockEnterprise').removeClass('hidden');
-            $("#address1Service").rules("add", {
-                minlength: 5,
-                maxlength: 20,
-                notEqualAddress: {
-                    param: '',
-                    depends: function(element) {
-                        return iAddressServiceChangedInitially;
-                    }
-                }
-            });
-            $("#cityService").rules("add", {
-                minlength: 3,
-                maxlength: 20,
-                notEqualCity: {
-                    param: '',
-                    depends: function(element) {
-                        return ifcityServiceChangedInitially;
-                    }
-                }
-            });
-            $("#postalCodeService").rules("add", {
-                minlength: 2,
-                maxlength: 20,
-                number: true,
-                notEqualPostal: {
-                    param: '',
-                    depends: function(element) {
-                        return ifpostalCodeServiceChangedInitially;
-                    }
-                }
-            });
-            if ($('#showBilling').is(':checked')) {
-                $('#sameServiceEnterprise').parent().removeClass('hidden');
-            }
-        } else {
-            $('#sameServiceEnterprise').parent().addClass('hidden');
-            $('#serviceBlockEnterprise').addClass('hidden');
-            $("#sameServiceEnterprise").prop('checked', false);
-            $("#address1Service").rules("remove", "minlength");
-            $("#address1Service").rules("remove", "maxlength");
-            $("#address1Service").rules("remove", "notEqualAddress");
-            $("#cityService").rules("remove", "minlength");
-            $("#cityService").rules("remove", "maxlength");
-            $("#cityService").rules("remove", "notEqualCity");
-            $("#postalCodeService").rules("remove", "minlength");
-            $("#postalCodeService").rules("remove", "maxlength");
-            $("#postalCodeService").rules("remove", "notEqualPostal");
-            $("#postalCodeService").rules("remove", "number");
-        }
-    });
-    $('#sameShippingEnterprise').click(function(){
-        var $this = $(this);
-        if ($this.is(':checked')) {
-            $('#shippingBlockEnterprise').addClass('hidden');
-            $("#address1Shipping").rules("remove", "minlength");
-            $("#address1Shipping").rules("remove", "maxlength");
-            $("#address1Shipping").rules("remove", "notEqualAddress");
-            $("#cityShipping").rules("remove", "minlength");
-            $("#cityShipping").rules("remove", "maxlength");
-            $("#cityShipping").rules("remove", "notEqualCity");
-            $("#postalCodeShipping").rules("remove", "minlength");
-            $("#postalCodeShipping").rules("remove", "maxlength");
-            $("#postalCodeShipping").rules("remove", "notEqualPostal");
-            $("#postalCodeShipping").rules("remove", "number");
-        } else {
-            $('#shippingBlockEnterprise').removeClass('hidden');
-            $("#address1Shipping").rules("add", {
-                minlength: 5,
-                maxlength: 20,
-                notEqualAddress: {
-                    param: '',
-                    depends: function(element) {
-                        return iAddressShippingChangedInitially;
-                    }
-                }
-            });
-            $("#cityShipping").rules("add", {
-                minlength: 3,
-                maxlength: 20,
-                notEqualCity: {
-                    param: '',
-                    depends: function(element) {
-                        return ifcityShippingChangedInitially;
-                    }
-                }
-            });
-            $("#postalCodeShipping").rules("add", {
-                minlength: 2,
-                maxlength: 20,
-                number: true,
-                notEqualPostal: {
-                    param: '',
-                    depends: function(element) {
-                        return ifpostalCodeShippingChangedInitially;
-                    }
-                }
-            });
-        }
-    });
-
-    $('#showBilling').click(function(){
-        var $this = $(this);
-        if ($this.is(':checked')) {
-            $('#BillingAdd').removeClass('hidden');
-            $('.service-box').css('margin-top', '25px');
-            $('.address-box').css('margin-bottom', '27px');
-            $("#address1Billing").rules("add", {
-                minlength: 5,
-                maxlength: 20,
-                notEqualAddress: {
-                    param: '',
-                    depends: function(element) {
-                        return iAddressBillingChangedInitially;
-                    }
-                }
-            });
-            $("#cityBilling").rules("add", {
-                minlength: 3,
-                maxlength: 20,
-                notEqualCity: {
-                    param: '',
-                    depends: function(element) {
-                        return ifcityBillingChangedInitially;
-                    }
-                }
-            });
-            $("#postalCodeBilling").rules("add", {
-                minlength: 2,
-                maxlength: 20,
-                number: true,
-                notEqualPostal: {
-                    param: '',
-                    depends: function(element) {
-                        return ifpostalCodeChangedInitially;
-                    }
-                }
-            });
-        } else {
-            $('#BillingAdd').addClass('hidden');
-            $("#address1Billing").rules("remove", "minlength");
-            $("#address1Billing").rules("remove", "maxlength");
-            $("#address1Billing").rules("remove", "notEqualAddress");
-            $("#cityBilling").rules("remove", "minlength");
-            $("#cityBilling").rules("remove", "maxlength");
-            $("#cityBilling").rules("remove", "notEqualCity");
-            $("#postalCodeBilling").rules("remove", "minlength");
-            $("#postalCodeBilling").rules("remove", "maxlength");
-            $("#postalCodeBilling").rules("remove", "notEqualPostal");
-            $("#postalCodeBilling").rules("remove", "number");
-            $('.address-box').css('margin-bottom', '0');
-            $('.service-box').css('margin-top', '11px');
-        }
-        if ($this.is(':checked') && $('#showShippingEnterprise').is(':checked')) {
-            $('#sameShippingEnterprise').parent().removeClass('hidden');
-        } else {
-            $('#sameShippingEnterprise').parent().addClass('hidden');
-        }
-        if ($this.is(':checked') && $('#showServiceEnterprise').is(':checked')) {
-            $('#sameServiceEnterprise').parent().removeClass('hidden');
-        } else {
-            $('#sameServiceEnterprise').parent().addClass('hidden');
-        }
-        if (!$this.is(':checked') && $('#showShippingEnterprise').is(':checked')) {
-            $("#sameShippingEnterprise").prop('checked', false); 
-            $('#shippingBlockEnterprise').removeClass('hidden');
-        }
-        if (!$this.is(':checked') && $('#showServiceEnterprise').is(':checked')) {
-            $("#sameServiceEnterprise").prop('checked', false); 
-            $('#serviceBlockEnterprise').removeClass('hidden');
-        }
-    });*/
 
     // showing additional phone number in case it is needed
     $('.addPhone').click(function(e){
@@ -938,7 +757,7 @@ $(document).ready(function(){
     });
 
     //credit card
-    $('.addCard').click(function(e){
+    /*$('.addCard').click(function(e){
         e.preventDefault();
         $('#card-number').payment('formatCardNumber');
         $('#card-date').payment('formatCardExpiry');
@@ -958,7 +777,7 @@ $(document).ready(function(){
         $('#cvv-copy').val(cardCvv).prop("disabled", true);
         $('.card-values').removeClass('hidden');
         $('#card-form').modal('hide');
-    });
+    });*/
     
 
     var previous1, previous2, previous3, previous4; // variables to store previous values from select
