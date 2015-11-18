@@ -45,6 +45,8 @@ $(document).ready(function(){
         
     });
 
+    jQuery('.scrollbar-inner').scrollbar();
+
     // add additional fields logic, start of changes
     $('#additional-options').on('click', function (event) {
         $(this).parent().toggleClass("open");
@@ -60,6 +62,7 @@ $(document).ready(function(){
     });
 
     $('.set-value').click(function(event){
+        console.log($(this));
         //event.preventDefault();
         var check = $(this).find("input");
         // 'checking input here'

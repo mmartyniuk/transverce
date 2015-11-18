@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        
+        <link rel="stylesheet" href="styles/jquery.scrollbar.css">
+
         <!-- Custom css files -->
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/style.css">
@@ -31,7 +32,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="assets/logo.png"></a>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/logo.png">
+                </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -47,20 +50,29 @@
                     </form>
                     <li class="active"><a href="#" class="letter-spacing"><i class="fa fa-plus"></i> Create</a></li>
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Douglas Johnson <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Douglas Johnson 
+                            <span class="caret"></span>
+                        </a>
                     </li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
+            <!-- /.navbar-collapse -->
         </nav>
 
         <div class="container-fluid" id="accountDetails">
             <aside id="nav-container" class="visible-lg">
                 <ul id="nav">
                     <li class="dropdown active">
-                        <a href=""><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        <a href="">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
                     </li>
                     <li class="dropdown">
-                        <a href=""><i class="fa fa-users"></i><span>Accounts</span></a>
+                        <a href="">
+                            <i class="fa fa-users"></i>
+                            <span>Accounts</span>
+                        </a>
                     </li>
                 </ul>
             </aside>
@@ -77,10 +89,9 @@
                                 </div>
                                 <div class="col-lg-3 col-lg-offset-4 col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-1 col-xs-2 text-right">
                                     <div class="dropdown">
-
                                         <button class="btn btn-default" type="button" id="additional-options">
                                             <span class="glyphicon glyphicon-cog"></span>
-                                        Add Fields
+                                            Add Fields
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu additional-options-expanded">
@@ -106,565 +117,560 @@
                                 </div>
                             </div>
                         </header>
-                        <section class="modal-body">
-                            <div class="tab-content">
+                        <form id="enterprise" class="form-horizontal" novalidate="novalidate" role="form">
+                            <section class="modal-body scrollbar-inner">
                                 <!-- Enterprice form -->
-                                <div class="row header">
-                                    <div class="col-md-12 col-sm-12 title divider">
-                                        <h3 class="line text-left"><span>Account Details</span></h3>
-                                    </div>
-                                </div>
-                                <form id="enterprise" class="form-horizontal" novalidate="novalidate" role="form">
-                                    <div class="row">
-                                        <!-- Corporate -->
-                                        <div class="col-9 col-offset col-sm-12">
-                                            <div class="wrapper">
-                                                <div class="form-group row">
-                                                    <label for="firstName" class="control-label col-md-3">First Name</label>
+                                <div class="row">
+                                    <!-- Corporate -->
+                                    <div class="col-9 col-offset col-sm-12">
+                                        <div class="wrapper">
+                                            <div class="form-group row">
+                                                <label for="firstName" class="control-label col-md-3">First Name</label>
+                                                <div class="col-md-9 input-container">
+                                                    <input type="text" class="form-control" id="firstName" name="firstName">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="LastName" class="control-label col-md-3">Last Name</label>
+                                                <div class="col-md-9 input-container">
+                                                    <input type="text" class="form-control" id="LastName" name="LastName">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="companyName" class="control-label col-md-3">Company Name</label>
+                                                <div class="col-md-9 input-container">
+                                                    <input type="text" class="form-control" id="companyName" name="companyName">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="AccountName" class="required control-label col-md-3">Account Name</label>
+                                                <div class="col-md-9 input-container">
+                                                    <select class="form-control account-placeholder" id="AccountName" name="AccountName" disabled>
+                                                        <option value="">Please fill (First Name and Last Name) or (Company Name)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row hidden external-id">
+                                                <label for="ExternalAccountID" class="control-label col-md-3">External ID</label>
+                                                <div class="col-md-9 input-container">
+                                                    <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
+                                                </div>
+                                            </div>
+                                            <div class="taxes hidden">
+                                                <div class="form-group row checkRow">
+                                                    <label for="taxExempt" class="col-md-3 control-label"> Taxable</label>
                                                     <div class="col-md-9 input-container">
-                                                        <input type="text" class="form-control" id="firstName" name="firstName">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="LastName" class="control-label col-md-3">Last Name</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <input type="text" class="form-control" id="LastName" name="LastName">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="companyName" class="control-label col-md-3">Company Name</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <input type="text" class="form-control" id="companyName" name="companyName">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="AccountName" class="required control-label col-md-3">Account Name</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <select class="form-control account-placeholder" id="AccountName" name="AccountName" disabled>
-                                                            <option value="">Please fill (First Name and Last Name) or (Company Name)</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row hidden external-id">
-                                                    <label for="ExternalAccountID" class="control-label col-md-3">External ID</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <input type="text" class="form-control" id="ExternalAccountID" name="ExternalAccountID">
-                                                    </div>
-                                                </div>
-                                                <div class="taxes hidden">
-                                                    <div class="form-group row checkRow">
-                                                        <label for="taxExempt" class="col-md-3 control-label"> Taxable</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="checkbox" id="taxExempt" checked>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="tax" class="col-md-3 control-label letter-spacing">Tax Number (EIN)</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="tax" name="tax">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row email-add hidden">
-                                                    <label for="corporateEmail" class="control-label col-md-3">Email</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <input type="email" class="form-control" id="corporateEmail" name="corporateEmail">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row parent-account hidden">
-                                                    <label for="parentAccount" class="control-label col-md-3">Parent Account</label>
-                                                    <div class="col-md-9 input-container container-select2">
-                                                        <input name='parentAccount' type='hidden' id='parentAccount'/>
+                                                        <input type="checkbox" id="taxExempt" checked>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="accountCategory" class="required control-label col-md-3">Account Category</label>
+                                                    <label for="tax" class="col-md-3 control-label letter-spacing">Tax Number (EIN)</label>
                                                     <div class="col-md-9 input-container">
-                                                        <select id="accountCategory" class="form-control" name="accountCategory">
-                                                            <option value="">Please Select</option>
-                                                            <option value="SomeTestData">Some Test Data</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="spinner-container common-select" id="spinnerAcc">
-                                                    <div class="spinner">
-                                                        <svg height="1em" width="1em">
-                                                            <circle r="0.45em" cy="0.5em" cx="0.5em">
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row account-segment hidden">
-                                                    <label for="accountSegment" class="control-label col-md-3">Account Segment</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <select id="accountSegment" class="form-control" name="accountSegment">
-                                                            <option value="">Please Select</option>
-                                                            <option value="SomeTestData">Some Test Data</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="phone-numbers hidden">
-                                                    <div class="form-group row">
-                                                        <label class="col-md-3 control-label">Phone</label>
-                                                        <div class="phone1 col-md-9">
-                                                            <div class="row">
-                                                                <div class="col-md-4 input-container">
-                                                                    <select class="form-control phone-type1">
-                                                                        <option value="">Phone Type</option>
-                                                                        <option value="Office">Office</option>
-                                                                        <option value="Home">Home</option>
-                                                                        <option value="Fax">Fax</option>
-                                                                        <option value="Mobile">Mobile</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-8 phone-container phone">
-                                                                    <input type="text" class="form-control" id="phone1">
-                                                                </div>
-                                                                <span class="desc-remove hidden"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="phone2 col-md-9 pull-right hidden">
-                                                            <div class="row">
-                                                                <div class="col-md-4 input-container">
-                                                                    <select class="form-control phone-type2">
-                                                                        <option value="">Phone Type</option>
-                                                                        <option value="Office">Office</option>
-                                                                        <option value="Home">Home</option>
-                                                                        <option value="Fax">Fax</option>
-                                                                        <option value="Mobile">Mobile</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-8 phone-container phone">
-                                                                    <input type="text" class="form-control" id="phone2">
-                                                                </div>
-                                                                <span class="desc-remove hidden"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="phone3 col-md-9 pull-right hidden">
-                                                            <div class="row">
-                                                                <div class="col-md-4 input-container">
-                                                                    <select class="form-control phone-type3">
-                                                                        <option value="">Phone Type</option>
-                                                                        <option value="Office">Office</option>
-                                                                        <option value="Home">Home</option>
-                                                                        <option value="Fax">Fax</option>
-                                                                        <option value="Mobile">Mobile</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-8 phone-container phone">
-                                                                    <input type="text" class="form-control" id="phone3">
-                                                                </div>
-                                                                <span class="desc-remove hidden"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="phone4 col-md-9 pull-right hidden">
-                                                            <div class="row">
-                                                                <div class="col-md-4 input-container">
-                                                                    <select class="form-control phone-type4">
-                                                                        <option value="">Phone Type</option>
-                                                                        <option value="Office">Office</option>
-                                                                        <option value="Home">Home</option>
-                                                                        <option value="Fax">Fax</option>
-                                                                        <option value="Mobile">Mobile</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-8 phone-container phone">
-                                                                    <input type="text" class="form-control" id="phone4">
-                                                                </div>
-                                                                <span class="desc-remove hidden"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4 col-md-offset-3 input-container"> 
-                                                            <a href="#" class="addPhone">+ Add Phone Number</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row form-group custom-field-1 hidden">
-                                                    <!-- Custom fiedls -->
-                                                    <label for="field1" class="col-md-3 control-label">Custom Field 1</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <input type="text" class="form-control" id="field1" maxlength="100">
-                                                    </div>
-                                                </div>
-                                                <div class="row form-group custom-field-2 hidden">
-                                                    <label for="field2" class="col-md-3 control-label">Custom Field 2</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <input type="text" class="form-control" id="field2" maxlength="100">
+                                                        <input type="text" class="form-control" id="tax" name="tax">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <!-- Financial -->
-                                    <div class="row header">
-                                        <div class="col-md-12 title divider margin-top-30">
-                                            <h3><span>Financial</span></h3>
-                                        </div>
-                                    </div>
-                                    <div class="row financial">
-                                        <div class="col-9 col-offset col-sm-12">
-                                            <div class="wrapper">
-                                                <div class="form-group row">
-                                                    <label for="currency" class="required control-label col-md-3">Currency</label>
-                                                    <div class="col-md-3 input-container currency-container">
-                                                        <select id="currency" class="form-control" name="currency">
-                                                            <option value=""></option>
-                                                            <option value="USD">USD</option>
-                                                            <option value="EU">EU</option>
-                                                        </select>
-                                                        <div class="spinner-container common-select" id="spinnerCurr">
-                                                            <div class="spinner">
-                                                                <svg height="1em" width="1em">
-                                                                    <circle r="0.45em" cy="0.5em" cx="0.5em">
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="billCycle" class="required control-label col-md-3">Bill Cycle</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <select id="billCycle" class="form-control" name="billCycle">
-                                                            <option value=""></option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="spinner-container common-select" id="spinnerBill">
-                                                    <div class="spinner">
-                                                        <svg height="1em" width="1em">
-                                                            <circle r="0.45em" cy="0.5em" cx="0.5em">
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="invoiceType" class="required control-label col-md-3">Invoice Type</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <select id="invoiceType" class="form-control" name="invoiceType">
-                                                            <option value="">Please Select</option>
-                                                            <option value="SomeTestData">Some Test Data</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="card-form-expanded hidden">
-                                                    <div class="form-group row">
-                                                        <label for="card-first-name" class="control-label col-md-3">First Name</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="card-first-name">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row credit-cart-number">
-                                                    <label class="required col-md-3 control-label">Credit Card</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <a href="#" class="addCard">+ Add Credit Card</a>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row payment-term hidden">
-                                                    <label for="paymentTerm" class="control-label col-md-3">Payment Term</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <select id="paymentTerm" class="form-control">
-                                                            <option value="">Please Select</option>
-                                                            <option value="testdata">Some Test Data</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row checkRow authorize-auto-payment hidden">
-                                                    <label for="autoPayment" class="control-label col-md-3"> Authorize Auto-Payment</label>
-                                                    <div class="col-md-9 input-container">
-                                                        <input type="checkbox" id="autoPayment">
-                                                    </div>
+                                            <div class="form-group row email-add hidden">
+                                                <label for="corporateEmail" class="control-label col-md-3">Email</label>
+                                                <div class="col-md-9 input-container">
+                                                    <input type="email" class="form-control" id="corporateEmail" name="corporateEmail">
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="row header margin-top-addresses">
-                                        <div class="col-md-12 title divider">
-                                            <h3><span>Addresses</span></h3>
-                                        </div>
-                                    </div>
-                                    <div class="row addresses-wrapper">
-                                        <div class="col-9 col-offset col-sm-12">
-                                            <div class="wrapper">
-                                                <div class="row"> 
-                                                    <label class="control-label address-box">
-                                                        <input type="checkbox" id="showBilling"> Billing Address
-                                                    </label>
-                                                </div>
-                                                <div id="BillingAdd" class="hidden">
-                                                    <div class="row">
-                                                        <label for="countriesBilling" class="required control-label col-md-3">Country</label>
-                                                        <div class="col-md-9 input-container container-select2">
-                                                            <select id="countriesBilling" class="form-control js-example-basic-single countries">
-                                                                <option value="AF">Afghanistan</option>
-                                                                <option value="AL">Albania</option>
-                                                                <option value="DZ">Algeria</option>
-                                                                <option value="AS">American Samoa</option>
-                                                                <option value="AD">Andorra</option>
-                                                                <option value="AO">Angola</option>
-                                                                <option value="AI">Anguilla</option>
-                                                                <option value="TM">Turkmenistan</option>
-                                                                <option value="TC">Turks and Caicos Islands</option>
-                                                                <option value="TV">Tuvalu</option>
-                                                                <option value="UG">Uganda</option>
-                                                                <option value="UA">Ukraine</option>
-                                                                <option value="AE">United Arab Emirates</option>
-                                                                <option value="GB">United Kingdom</option>
-                                                                <option value="US" selected>United States</option>
-                                                                <option value="UM">United States Minor Outlying Islands</option>
-                                                                <option value="UY">Uruguay</option>
-                                                                <option value="UZ">Uzbekistan</option>
-                                                                <option value="VU">Vanuatu</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row margin-top-0">
-                                                        <label for="address1Billing" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="address1Billing" name="address1Billing">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="address2Billing" class="control-label col-md-3 letter-spacing">Address Line 2</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="address2Billing">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="cityBilling" class="required control-label col-md-3">City</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="cityBilling" name="cityBilling">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="statesUS" class="required control-label col-md-3">State</label>
-                                                        <div class="col-md-9 input-container container-select2">
-                                                            <select id="statesUS" class="form-control js-example-basic-single">
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="NY" selected>New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="postalCodeBilling" class="required control-label col-md-3">Postal Code</label>
-                                                        <div class="col-md-4 input-container postal-container">
-                                                            <input type="text" class="form-control" id="postalCodeBilling" name="postalCodeBilling">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-md-6 col-xs-12">
-                                                        <label class="row service-box">
-                                                            <input type="checkbox" id="showServiceEnterprise"> Service Address
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2 col-xs-12 same-checkboxes">
-                                                        <label class="hidden same">
-                                                            <input type="checkbox" id="sameServiceEnterprise"> Same as billing
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="serviceAddress hidden" id="serviceBlockEnterprise">
-                                                    <div class="form-group row">
-                                                        <label for="countriesService" class="required control-label col-md-3">Country</label>
-                                                        <div class="col-md-9 input-container container-select2">
-                                                            <select id="countriesService" class="form-control js-example-basic-single countries">
-                                                                <option value="AF">Afghanistan</option>
-                                                                <option value="AL">Albania</option>
-                                                                <option value="DZ">Algeria</option>
-                                                                <option value="AS">American Samoa</option>
-                                                                <option value="AD">Andorra</option>
-                                                                <option value="AO">Angola</option>
-                                                                <option value="AI">Anguilla</option>
-                                                                <option value="TM">Turkmenistan</option>
-                                                                <option value="TC">Turks and Caicos Islands</option>
-                                                                <option value="TV">Tuvalu</option>
-                                                                <option value="UG">Uganda</option>
-                                                                <option value="UA">Ukraine</option>
-                                                                <option value="AE">United Arab Emirates</option>
-                                                                <option value="GB">United Kingdom</option>
-                                                                <option value="US" selected>United States</option>
-                                                                <option value="UM">United States Minor Outlying Islands</option>
-                                                                <option value="UY">Uruguay</option>
-                                                                <option value="UZ">Uzbekistan</option>
-                                                                <option value="VU">Vanuatu</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row margin-top-0">
-                                                        <label for="address1Service" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="address1Service" name="address1Service">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="address2Service" class="control-label col-md-3 letter-spacing">Address Line 2</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="address2Service" name="address2Service">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="cityService" class="required control-label col-md-3">City</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="cityService" name="cityService">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="statesUSService" class="required control-label col-md-3">State</label>
-                                                        <div class="col-md-9 input-container container-select2">
-                                                            <select id="statesUSService" name="statesUSService" class="form-control js-example-basic-single">
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="AK">Alaska</option>
-                                                                <option value="ME">Maine</option>
-                                                                <option value="MD">Maryland</option>
-                                                                <option value="MO">Missouri</option>
-                                                                <option value="MT">Montana</option>
-                                                                <option value="NE">Nebraska</option>
-                                                                <option value="NV">Nevada</option>
-                                                                <option value="NH">New Hampshire</option>
-                                                                <option value="NJ">New Jersey</option>
-                                                                <option value="NM">New Mexico</option>
-                                                                <option value="NY" selected>New York</option>
-                                                                <option value="NC">North Carolina</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="postalCodeService" class="required control-label col-md-3">Postal Code</label>
-                                                        <div class="col-md-4 input-container postal-container">
-                                                            <input type="text" class="form-control" id="postalCodeService" name="postalCodeService" maxlength="10">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-6 col-md-6 col-xs-12">
-                                                        <label class="row shipping-box">
-                                                            <input type="checkbox" id="showShippingEnterprise"> Shipping Address
-                                                        </label>
-                                                    </div>
-                                                    <div class="col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2 col-xs-12 same-checkboxes">
-                                                        <label class="hidden same-shipping">
-                                                            <input type="checkbox" id="sameShippingEnterprise"> Same as billing
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="shippingAddress hidden" id="shippingBlockEnterprise">
-                                                    <div class="form-group row">
-                                                        <label for="countriesShipping" class="required control-label col-md-3">Countries</label>
-                                                        <div class="col-md-9 input-container container-select2">
-                                                            <select id="countriesShipping" class="form-control js-example-basic-single countries" name="countriesShipping">
-                                                                <option value="AF">Afghanistan</option>
-                                                                <option value="AL">Albania</option>
-                                                                <option value="DZ">Algeria</option>
-                                                                <option value="AS">American Samoa</option>
-                                                                <option value="AD">Andorra</option>
-                                                                <option value="AO">Angola</option>
-                                                                <option value="AI">Anguilla</option>
-                                                                <option value="TM">Turkmenistan</option>
-                                                                <option value="TC">Turks and Caicos Islands</option>
-                                                                <option value="TV">Tuvalu</option>
-                                                                <option value="UG">Uganda</option>
-                                                                <option value="UA">Ukraine</option>
-                                                                <option value="AE">United Arab Emirates</option>
-                                                                <option value="GB">United Kingdom</option>
-                                                                <option value="US" selected>United States</option>
-                                                                <option value="UM">United States Minor Outlying Islands</option>
-                                                                <option value="UY">Uruguay</option>
-                                                                <option value="UZ">Uzbekistan</option>
-                                                                <option value="VU">Vanuatu</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row margin-top-0">
-                                                        <label for="address1Shipping" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="address1Shipping" name="address1Shipping">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="address2Shipping" class="control-label col-md-3 letter-spacing">Address Line 2</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="address2Shipping" name="address2Shipping">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="cityShipping" class="required control-label col-md-3">City</label>
-                                                        <div class="col-md-9 input-container">
-                                                            <input type="text" class="form-control" id="cityShipping" name="cityShipping">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                            <label for="statesUSShipping" class="required control-label col-md-3">State</label>
-                                                            <div class="col-md-9 input-container container-select2">
-                                                                <select id="statesUSShipping" class="form-control js-example-basic-single" name="statesUSShipping">
-                                                                    <option value="AL">Alabama</option>
-                                                                    <option value="AK">Alaska</option>
-                                                                    <option value="ME">Maine</option>
-                                                                    <option value="MD">Maryland</option>
-                                                                    <option value="MO">Missouri</option>
-                                                                    <option value="MT">Montana</option>
-                                                                    <option value="NE">Nebraska</option>
-                                                                    <option value="NV">Nevada</option>
-                                                                    <option value="NH">New Hampshire</option>
-                                                                    <option value="NJ">New Jersey</option>
-                                                                    <option value="NM">New Mexico</option>
-                                                                    <option value="NY" selected>New York</option>
-                                                                    <option value="NC">North Carolina</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">    
-                                                            <label for="postalCodeShipping" class="required control-label col-md-3">Postal Code</label>
-                                                            <div class="col-md-4 input-container postal-container">
-                                                                <input type="text" class="form-control" id="postalCodeShipping" name="postalCodeShipping">
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            <div class="form-group row parent-account hidden">
+                                                <label for="parentAccount" class="control-label col-md-3">Parent Account</label>
+                                                <div class="col-md-9 input-container container-select2">
+                                                    <input name='parentAccount' type='hidden' id='parentAccount'/>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="row header margin-top-addresses">
-                                        <div class="col-md-12 title divider final-line"></div>
-                                    </div>
-                                    <div class="row form-group row submitForm">
-                                        <div class="col-md-5 col-md-offset-7 col-sm-7 col-sm-offset-4">
-                                            <button type="submit" class="btn btn-primary pull-right" id="submitTheForm">Create Account</button>
-                                            <div class="spinner-container" id="createSpin">
+                                            <div class="form-group row">
+                                                <label for="accountCategory" class="required control-label col-md-3">Account Category</label>
+                                                <div class="col-md-9 input-container">
+                                                    <select id="accountCategory" class="form-control" name="accountCategory">
+                                                        <option value="">Please Select</option>
+                                                        <option value="SomeTestData">Some Test Data</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="spinner-container common-select" id="spinnerAcc">
                                                 <div class="spinner">
                                                     <svg height="1em" width="1em">
-                                                        <circle r="0.45em" cy="0.5em" cx="0.5em">
+                                                        <circle r="0.45em" cy="0.5em" cx="0.5em"/>
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-default pull-right cancelForm">Cancel</button>
+                                            <div class="form-group row account-segment hidden">
+                                                <label for="accountSegment" class="control-label col-md-3">Account Segment</label>
+                                                <div class="col-md-9 input-container">
+                                                    <select id="accountSegment" class="form-control" name="accountSegment">
+                                                        <option value="">Please Select</option>
+                                                        <option value="SomeTestData">Some Test Data</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="phone-numbers hidden">
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 control-label">Phone</label>
+                                                    <div class="phone1 col-md-9">
+                                                        <div class="row">
+                                                            <div class="col-md-4 input-container">
+                                                                <select class="form-control phone-type1">
+                                                                    <option value="">Phone Type</option>
+                                                                    <option value="Office">Office</option>
+                                                                    <option value="Home">Home</option>
+                                                                    <option value="Fax">Fax</option>
+                                                                    <option value="Mobile">Mobile</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-8 phone-container phone">
+                                                                <input type="text" class="form-control" id="phone1">
+                                                            </div>
+                                                            <span class="desc-remove hidden"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="phone2 col-md-9 pull-right hidden">
+                                                        <div class="row">
+                                                            <div class="col-md-4 input-container">
+                                                                <select class="form-control phone-type2">
+                                                                    <option value="">Phone Type</option>
+                                                                    <option value="Office">Office</option>
+                                                                    <option value="Home">Home</option>
+                                                                    <option value="Fax">Fax</option>
+                                                                    <option value="Mobile">Mobile</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-8 phone-container phone">
+                                                                <input type="text" class="form-control" id="phone2">
+                                                            </div>
+                                                            <span class="desc-remove hidden"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="phone3 col-md-9 pull-right hidden">
+                                                        <div class="row">
+                                                            <div class="col-md-4 input-container">
+                                                                <select class="form-control phone-type3">
+                                                                    <option value="">Phone Type</option>
+                                                                    <option value="Office">Office</option>
+                                                                    <option value="Home">Home</option>
+                                                                    <option value="Fax">Fax</option>
+                                                                    <option value="Mobile">Mobile</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-8 phone-container phone">
+                                                                <input type="text" class="form-control" id="phone3">
+                                                            </div>
+                                                            <span class="desc-remove hidden"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="phone4 col-md-9 pull-right hidden">
+                                                        <div class="row">
+                                                            <div class="col-md-4 input-container">
+                                                                <select class="form-control phone-type4">
+                                                                    <option value="">Phone Type</option>
+                                                                    <option value="Office">Office</option>
+                                                                    <option value="Home">Home</option>
+                                                                    <option value="Fax">Fax</option>
+                                                                    <option value="Mobile">Mobile</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-8 phone-container phone">
+                                                                <input type="text" class="form-control" id="phone4">
+                                                            </div>
+                                                            <span class="desc-remove hidden"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-md-offset-3 input-container">
+                                                        <a href="#" class="addPhone">+ Add Phone Number</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group custom-field-1 hidden">
+                                                <!-- Custom fiedls -->
+                                                <label for="field1" class="col-md-3 control-label">Custom Field 1</label>
+                                                <div class="col-md-9 input-container">
+                                                    <input type="text" class="form-control" id="field1" maxlength="100">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group custom-field-2 hidden">
+                                                <label for="field2" class="col-md-3 control-label">Custom Field 2</label>
+                                                <div class="col-md-9 input-container">
+                                                    <input type="text" class="form-control" id="field2" maxlength="100">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>    
-                                </form>
-                            </div>
-                        </section>
+                                    </div>
+                                </div>
+                                <!-- Financial -->
+                                <div class="row header">
+                                    <div class="col-md-12 title divider margin-top-30">
+                                        <h3><span>Financial</span></h3>
+                                    </div>
+                                </div>
+                                <div class="row financial">
+                                    <div class="col-9 col-offset col-sm-12">
+                                        <div class="wrapper">
+                                            <div class="form-group row">
+                                                <label for="currency" class="required control-label col-md-3">Currency</label>
+                                                <div class="col-md-3 input-container currency-container">
+                                                    <select id="currency" class="form-control" name="currency">
+                                                        <option value=""></option>
+                                                        <option value="USD">USD</option>
+                                                        <option value="EU">EU</option>
+                                                    </select>
+                                                    <div class="spinner-container common-select" id="spinnerCurr">
+                                                        <div class="spinner">
+                                                            <svg height="1em" width="1em">
+                                                                <circle r="0.45em" cy="0.5em" cx="0.5em"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="billCycle" class="required control-label col-md-3">Bill Cycle</label>
+                                                <div class="col-md-9 input-container">
+                                                    <select id="billCycle" class="form-control" name="billCycle">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="spinner-container common-select" id="spinnerBill">
+                                                <div class="spinner">
+                                                    <svg height="1em" width="1em">
+                                                        <circle r="0.45em" cy="0.5em" cx="0.5em"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="invoiceType" class="required control-label col-md-3">Invoice Type</label>
+                                                <div class="col-md-9 input-container">
+                                                    <select id="invoiceType" class="form-control" name="invoiceType">
+                                                        <option value="">Please Select</option>
+                                                        <option value="SomeTestData">Some Test Data</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="card-form-expanded hidden">
+                                                <div class="form-group row">
+                                                    <label for="card-first-name" class="control-label col-md-3">First Name</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="card-first-name">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row credit-cart-number">
+                                                <label class="required col-md-3 control-label">Credit Card</label>
+                                                <div class="col-md-9 input-container">
+                                                    <a href="#" class="addCard">+ Add Credit Card</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row payment-term hidden">
+                                                <label for="paymentTerm" class="control-label col-md-3">Payment Term</label>
+                                                <div class="col-md-9 input-container">
+                                                    <select id="paymentTerm" class="form-control">
+                                                        <option value="">Please Select</option>
+                                                        <option value="testdata">Some Test Data</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row checkRow authorize-auto-payment hidden">
+                                                <label for="autoPayment" class="control-label col-md-3"> Authorize Auto-Payment</label>
+                                                <div class="col-md-9 input-container">
+                                                    <input type="checkbox" id="autoPayment">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row header margin-top-addresses">
+                                    <div class="col-md-12 title divider">
+                                        <h3><span>Addresses</span></h3>
+                                    </div>
+                                </div>
+                                <div class="row addresses-wrapper">
+                                    <div class="col-9 col-offset col-sm-12">
+                                        <div class="wrapper">
+                                            <div class="row">
+                                                <label class="control-label address-box">
+                                                    <input type="checkbox" id="showBilling"> Billing Address
+                                                </label>
+                                            </div>
+                                            <div id="BillingAdd" class="hidden">
+                                                <div class="row">
+                                                    <label for="countriesBilling" class="required control-label col-md-3">Country</label>
+                                                    <div class="col-md-9 input-container container-select2">
+                                                        <select id="countriesBilling" class="form-control js-example-basic-single countries">
+                                                            <option value="AF">Afghanistan</option>
+                                                            <option value="AL">Albania</option>
+                                                            <option value="DZ">Algeria</option>
+                                                            <option value="AS">American Samoa</option>
+                                                            <option value="AD">Andorra</option>
+                                                            <option value="AO">Angola</option>
+                                                            <option value="AI">Anguilla</option>
+                                                            <option value="TM">Turkmenistan</option>
+                                                            <option value="TC">Turks and Caicos Islands</option>
+                                                            <option value="TV">Tuvalu</option>
+                                                            <option value="UG">Uganda</option>
+                                                            <option value="UA">Ukraine</option>
+                                                            <option value="AE">United Arab Emirates</option>
+                                                            <option value="GB">United Kingdom</option>
+                                                            <option value="US" selected>United States</option>
+                                                            <option value="UM">United States Minor Outlying Islands</option>
+                                                            <option value="UY">Uruguay</option>
+                                                            <option value="UZ">Uzbekistan</option>
+                                                            <option value="VU">Vanuatu</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row margin-top-0">
+                                                    <label for="address1Billing" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="address1Billing"
+                                                               name="address1Billing">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="address2Billing" class="control-label col-md-3 letter-spacing">Address Line 2</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="address2Billing">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="cityBilling" class="required control-label col-md-3">City</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="cityBilling" name="cityBilling">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="statesUS" class="required control-label col-md-3">State</label>
+                                                    <div class="col-md-9 input-container container-select2">
+                                                        <select id="statesUS" class="form-control js-example-basic-single">
+                                                            <option value="AL">Alabama</option>
+                                                            <option value="AK">Alaska</option>
+                                                            <option value="ME">Maine</option>
+                                                            <option value="MD">Maryland</option>
+                                                            <option value="MO">Missouri</option>
+                                                            <option value="MT">Montana</option>
+                                                            <option value="NE">Nebraska</option>
+                                                            <option value="NV">Nevada</option>
+                                                            <option value="NH">New Hampshire</option>
+                                                            <option value="NJ">New Jersey</option>
+                                                            <option value="NM">New Mexico</option>
+                                                            <option value="NY" selected>New York</option>
+                                                            <option value="NC">North Carolina</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="postalCodeBilling" class="required control-label col-md-3">Postal Code</label>
+                                                    <div class="col-md-4 input-container postal-container">
+                                                        <input type="text" class="form-control" id="postalCodeBilling" name="postalCodeBilling">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                                    <label class="row service-box">
+                                                        <input type="checkbox" id="showServiceEnterprise"> Service Address
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2 col-xs-12 same-checkboxes">
+                                                    <label class="hidden same">
+                                                        <input type="checkbox" id="sameServiceEnterprise"> Same as billing
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="serviceAddress hidden" id="serviceBlockEnterprise">
+                                                <div class="form-group row">
+                                                    <label for="countriesService" class="required control-label col-md-3">Country</label>
+                                                    <div class="col-md-9 input-container container-select2">
+                                                        <select id="countriesService" class="form-control js-example-basic-single countries">
+                                                            <option value="AF">Afghanistan</option>
+                                                            <option value="AL">Albania</option>
+                                                            <option value="DZ">Algeria</option>
+                                                            <option value="AS">American Samoa</option>
+                                                            <option value="AD">Andorra</option>
+                                                            <option value="AO">Angola</option>
+                                                            <option value="AI">Anguilla</option>
+                                                            <option value="TM">Turkmenistan</option>
+                                                            <option value="TC">Turks and Caicos Islands</option>
+                                                            <option value="TV">Tuvalu</option>
+                                                            <option value="UG">Uganda</option>
+                                                            <option value="UA">Ukraine</option>
+                                                            <option value="AE">United Arab Emirates</option>
+                                                            <option value="GB">United Kingdom</option>
+                                                            <option value="US" selected>United States</option>
+                                                            <option value="UM">United States Minor Outlying Islands</option>
+                                                            <option value="UY">Uruguay</option>
+                                                            <option value="UZ">Uzbekistan</option>
+                                                            <option value="VU">Vanuatu</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row margin-top-0">
+                                                    <label for="address1Service" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="address1Service" name="address1Service">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="address2Service" class="control-label col-md-3 letter-spacing">Address Line 2</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="address2Service" name="address2Service">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="cityService" class="required control-label col-md-3">City</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="cityService" name="cityService">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="statesUSService" class="required control-label col-md-3">State</label>
+                                                    <div class="col-md-9 input-container container-select2">
+                                                        <select id="statesUSService" name="statesUSService" class="form-control js-example-basic-single">
+                                                            <option value="AL">Alabama</option>
+                                                            <option value="AK">Alaska</option>
+                                                            <option value="ME">Maine</option>
+                                                            <option value="MD">Maryland</option>
+                                                            <option value="MO">Missouri</option>
+                                                            <option value="MT">Montana</option>
+                                                            <option value="NE">Nebraska</option>
+                                                            <option value="NV">Nevada</option>
+                                                            <option value="NH">New Hampshire</option>
+                                                            <option value="NJ">New Jersey</option>
+                                                            <option value="NM">New Mexico</option>
+                                                            <option value="NY" selected>New York</option>
+                                                            <option value="NC">North Carolina</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="postalCodeService" class="required control-label col-md-3">Postal Code</label>
+                                                    <div class="col-md-4 input-container postal-container">
+                                                        <input type="text" class="form-control" id="postalCodeService" name="postalCodeService" maxlength="10">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-6 col-md-6 col-xs-12">
+                                                    <label class="row shipping-box">
+                                                        <input type="checkbox" id="showShippingEnterprise"> Shipping Address
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-4 col-sm-offset-1 col-md-3 col-md-offset-2 col-xs-12 same-checkboxes">
+                                                    <label class="hidden same-shipping">
+                                                        <input type="checkbox" id="sameShippingEnterprise"> Same as billing
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="shippingAddress hidden" id="shippingBlockEnterprise">
+                                                <div class="form-group row">
+                                                    <label for="countriesShipping" class="required control-label col-md-3">Countries</label>
+                                                    <div class="col-md-9 input-container container-select2">
+                                                        <select id="countriesShipping" class="form-control js-example-basic-single countries" name="countriesShipping">
+                                                            <option value="AF">Afghanistan</option>
+                                                            <option value="AL">Albania</option>
+                                                            <option value="DZ">Algeria</option>
+                                                            <option value="AS">American Samoa</option>
+                                                            <option value="AD">Andorra</option>
+                                                            <option value="AO">Angola</option>
+                                                            <option value="AI">Anguilla</option>
+                                                            <option value="TM">Turkmenistan</option>
+                                                            <option value="TC">Turks and Caicos Islands</option>
+                                                            <option value="TV">Tuvalu</option>
+                                                            <option value="UG">Uganda</option>
+                                                            <option value="UA">Ukraine</option>
+                                                            <option value="AE">United Arab Emirates</option>
+                                                            <option value="GB">United Kingdom</option>
+                                                            <option value="US" selected>United States</option>
+                                                            <option value="UM">United States Minor Outlying Islands</option>
+                                                            <option value="UY">Uruguay</option>
+                                                            <option value="UZ">Uzbekistan</option>
+                                                            <option value="VU">Vanuatu</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row margin-top-0">
+                                                    <label for="address1Shipping" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="address1Shipping" name="address1Shipping">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="address2Shipping" class="control-label col-md-3 letter-spacing">Address Line 2</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="address2Shipping" name="address2Shipping">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="cityShipping" class="required control-label col-md-3">City</label>
+                                                    <div class="col-md-9 input-container">
+                                                        <input type="text" class="form-control" id="cityShipping" name="cityShipping">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="statesUSShipping" class="required control-label col-md-3">State</label>
+                                                    <div class="col-md-9 input-container container-select2">
+                                                        <select id="statesUSShipping" class="form-control js-example-basic-single" name="statesUSShipping">
+                                                            <option value="AL">Alabama</option>
+                                                            <option value="AK">Alaska</option>
+                                                            <option value="ME">Maine</option>
+                                                            <option value="MD">Maryland</option>
+                                                            <option value="MO">Missouri</option>
+                                                            <option value="MT">Montana</option>
+                                                            <option value="NE">Nebraska</option>
+                                                            <option value="NV">Nevada</option>
+                                                            <option value="NH">New Hampshire</option>
+                                                            <option value="NJ">New Jersey</option>
+                                                            <option value="NM">New Mexico</option>
+                                                            <option value="NY" selected>New York</option>
+                                                            <option value="NC">North Carolina</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="postalCodeShipping" class="required control-label col-md-3">Postal Code</label>
+                                                    <div class="col-md-4 input-container postal-container">
+                                                        <input type="text" class="form-control" id="postalCodeShipping" name="postalCodeShipping">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <footer class="submitForm modal-footer">
+                                <div class="col-md-6 col-md-offset-6 col-sm-7 col-sm-offset-4">
+                                    <button type="submit" class="btn btn-primary pull-right" id="submitTheForm">Create Account
+                                    </button>
+                                    <div class="spinner-container" id="createSpin">
+                                        <div class="spinner">
+                                            <svg height="1em" width="1em">
+                                                <circle r="0.45em" cy="0.5em" cx="0.5em"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-default pull-right cancelForm">Cancel</button>
+                                    <label>
+                                        <input type="checkbox"> Create Another
+                                    </label>
+                                </div>
+                            </footer>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- jQuery, custom scripts  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.1/js/select2.full.js"></script>
         <script src="js/jquery.payment.min.js"></script>
+        <script src="js/jquery.scrollbar.min.js"></script>
         <script src="js/createAccount.js"></script>
     </body>
 </html>
