@@ -29,7 +29,11 @@ h3 {
 }
 
 #accountDetails .modal-header {
-    border-bottom: none;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+#accountDetails .modal-footer {
+    border-top: 2px solid #e5e5e5;
 }
 
 #accountDetails .modal-body {
@@ -39,6 +43,12 @@ h3 {
 .modal.fade.in {
     display: block;
     overflow-y: scroll;
+}
+
+.submitForm.modal-footer label {
+    padding-right: 20px;
+    padding-top: 8px;
+    font-weight: normal;
 }
 
 .col-9 {
@@ -286,7 +296,6 @@ select.form-control {
 
 .submitForm {
     display: block;
-    padding-top: 0;
     margin-top: 0;
 }
 
@@ -654,13 +663,21 @@ select.form-control {
     opacity: 1;
 }
 
-.btn.pull-right:first-child {
-    margin-right: 0;
+.btn.pull-right.cancelForm {
+    margin-right: 15px;
 }
 
 .btn.pull-right:last-child {
     margin-right: 20px;
     padding: 7px 46px 10px 45px;
+}
+
+.scrollbar-inner > .scroll-element.scroll-y {
+    width: 15px;
+}
+
+.scrollbar-inner > .scroll-element .scroll-element_track {
+    background-color: #fff;
 }
 
 .the-legend {
@@ -853,8 +870,12 @@ select.form-control {
     padding-right: 29px;
 }
 
+.modal.fade.in {
+    overflow-y: hidden;
+}
+
 .modal-body {
-    max-height: calc(100vh - 140px);
+    max-height: calc(100vh - 200px);
     overflow-y: auto;
 }
 
