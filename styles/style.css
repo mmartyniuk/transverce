@@ -88,10 +88,6 @@ h3 {
     padding: 7px 19px 8px 20px;
 }
 
-/*.required-main {
-    right: 80px;
-}*/
-
 .phone1 select, .phone1 input, .phone2 select, .phone2 input,.phone3 select, .phone3 input,.phone4 select, .phone4 input {
     margin-bottom: 4px;
 }
@@ -672,6 +668,10 @@ select.form-control {
     padding: 7px 46px 10px 45px;
 }
 
+.addresses-label {
+    padding-bottom: 16px;
+}
+
 .the-legend {
         font-size: 0.9em;
         color: #A5A5A5;
@@ -869,6 +869,15 @@ select.form-control {
 .modal-body {
     max-height: calc(100vh - 200px);
     overflow-y: auto;
+}
+
+.serviceAddress .input-container input[type="checkbox"], .shippingAddress .input-container input[type="checkbox"] {
+    margin: 0;
+}
+
+.serviceAddress .input-container label, .shippingAddress .input-container label {
+    font-weight: normal;
+    padding-top: 7px;
 }
 
 @media (min-width: 768px){
