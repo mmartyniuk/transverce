@@ -39,6 +39,7 @@ h3 {
 
 #accountDetails .modal-body {
     padding-top: 0;
+    overflow-x: hidden;
 }
 
 .modal.fade.in {
@@ -569,7 +570,7 @@ select.form-control {
 }
 
 .search {
-    margin-top: -4px;
+    margin-top: -12px;
     margin-right: 9px;
 }
 

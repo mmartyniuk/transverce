@@ -52,6 +52,41 @@ $(document).ready(function(){
     $('#card-number').payment('formatCardNumber');
     $('#card-date').payment('formatCardExpiry');
     $('#card-cvv').payment('formatCardCVC');
+    $('.addCard').on('click', function (e) {
+        e.preventDefault();
+        $('.card-apply').removeClass('hidden');
+        $(this).parent().addClass('hidden');
+    });
+
+    $('.card-cancel').on('click', function (e) {
+        if (!$('#credit-card-full').val()) {
+            $('.card-apply').addClass('hidden');
+            $('#credit-card-full').val("");
+            $("#card-first-name").val("");
+            $("#card-last-name").val("");
+            $("#card-type").val("");
+            $("#card-number").val("");
+            $("#card-date").val("");
+            $("#card-cvv").val("");
+            $('.addCard').parent().removeClass('hidden');
+        } else {
+            $('.card-apply').addClass('hidden');
+            $('#credit-card-full').parent().removeClass('hidden');
+        }
+
+    });
+    /* how to refresh data in credit field
+        $('.credit-card-number').addClass('hidden');
+        $('#credit-card-full').parent().addClass('hidden');
+        $('.card-apply').removeClass('hidden');
+        $('#credit-card-full').val("");
+        $("#card-first-name").val("");
+        $("#card-last-name").val("");
+        $("#card-type").val("");
+        $("#card-number").val("");
+        $("#card-date").val("");
+        $("#card-cvv").val("");*/
+                
 
     // checking if card info is valid
     $('.card-submit').on('click', function () {
@@ -59,7 +94,7 @@ $(document).ready(function(){
         var cardDateValid = $.payment.validateCardExpiry($('#card-date').payment('cardExpiryVal'));
         var cardCvvValid = $.payment.validateCardCVC($('#card-cvv').val());
         var maskedNumber = 'XXXX-XXXX-XXXX-' + $('#card-number').val().slice(-4);
-        creditFormValid = cardNumberValid && cardDateValid && cardCvvValid && $('#card-first-name').val() && $('#card-last-name').val() && $('#card-type').val();
+        creditFormValid = cardNumberValid && cardDateValid && cardCvvValid && $('#card-first-name').val() && $('#card-last-name').val();
         if (creditFormValid) {
             $('.card-apply').addClass('hidden');
             $('#credit-card-full').parent().removeClass('hidden');
@@ -135,22 +170,6 @@ $(document).ready(function(){
                     $('#corporateEmail').focusout(); 
                 }
                 $('.email-add').addClass('hidden');
-            }
-            break;
-            case 'Credit Card':
-            if ($('.credit-card-number').hasClass('hidden')){
-                $('.credit-card-number').removeClass('hidden');
-            } else {
-                $('.credit-card-number').addClass('hidden');
-                $('#credit-card-full').parent().addClass('hidden');
-                $('.card-apply').removeClass('hidden');
-                $('#credit-card-full').val("");
-                $("#card-first-name").val("");
-                $("#card-last-name").val("");
-                $("#card-type").val("");
-                $("#card-number").val("");
-                $("#card-date").val("");
-                $("#card-cvv").val("");
             }
             break;
             case 'Phone':
@@ -793,14 +812,7 @@ $(document).ready(function(){
     });
 
     //credit card
-    /*$('.addCard').click(function(e){
-        e.preventDefault();
-        $('#card-number').payment('formatCardNumber');
-        $('#card-date').payment('formatCardExpiry');
-        $('#cvv').payment('formatCardCVC');
-        $('#card-form').modal('show');
-    });
-    $('#saveCard').click(function(e){
+    /*$('#saveCard').click(function(e){
         e.preventDefault();
         var cardType = $('#card-type').val();
         var cardNum = $('#card-number').val().replace( /[0-9]{4}$/, '****' );

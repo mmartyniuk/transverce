@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Transverce create account page</title>
+        <title>Transverse create account page</title>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -104,7 +104,6 @@
                                                 <a href="#" class="set-value"><input type="checkbox">Payment Term</a>
                                                 <a href="#" class="set-value"><input type="checkbox">Authorize Auto-Payment</a>
                                                 <a href="#" class="set-value"><input type="checkbox">Parent Account</a>
-                                                <a href="#" class="set-value"><input type="checkbox">Credit Card</a>
                                                 <a href="#" class="set-value"><input type="checkbox">Account Segment</a>
                                             </li>
                                         </ul>
@@ -591,14 +590,17 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="credit-card-number hidden">
+                                            <div class="credit-card-number">
                                                 <div class="row form-group">
                                                     <label class="col-md-3 control-label title-label" for="credit-card-full">Credit Card</label>
                                                     <div class="col-md-9 input-container hidden">
                                                         <input type="text" class="form-control" id="credit-card-full">
                                                     </div>
+                                                    <div class="col-md-4 input-container">
+                                                        <a href="#" class="addCard">+ Add Credit Card</a>
+                                                    </div>
                                                 </div>
-                                                <div class="card-apply">
+                                                <div class="card-apply hidden">
                                                     <div class="row form-group">
                                                         <label for="card-first-name" class="col-md-3 control-label">First Name</label>
                                                         <div class="col-md-9 input-container">
@@ -609,16 +611,6 @@
                                                         <label for="card-last-name" class="col-md-3 control-label">Last Name</label>
                                                         <div class="col-md-9 input-container">
                                                             <input type="text" class="form-control" id="card-last-name">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row form-group">
-                                                        <label for="card-type" class="col-md-3 control-label">Card Type</label>
-                                                        <div class="col-md-3 input-container">
-                                                            <select id="card-type" class="form-control">
-                                                                <option value="">Please Select</option>
-                                                                <option value="PS">Personal</option>
-                                                                <option value="CP">Corporate</option>
-                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="row form-group">
