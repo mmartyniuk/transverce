@@ -48,6 +48,33 @@ $(document).ready(function(){
         return $data;
     }
 
+    // credit card register field
+    $('#card-number').payment('formatCardNumber');
+    $('#card-date').payment('formatCardExpiry');
+    $('#card-cvv').payment('formatCardCVC');
+
+    // checking if card info is valid
+    $('.card-submit').on('click', function () {
+        var cardNumberValid = $.payment.validateCardNumber($('#card-number').val());
+        var cardDateValid = $.payment.validateCardExpiry($('#card-date').payment('cardExpiryVal'));
+        var cardCvvValid = $.payment.validateCardCVC($('#card-cvv').val());
+        var maskedNumber = 'XXXX-XXXX-XXXX-' + $('#card-number').val().slice(-4);
+        creditFormValid = cardNumberValid && cardDateValid && cardCvvValid && $('#card-first-name').val() && $('#card-last-name').val() && $('#card-type').val();
+        if (creditFormValid) {
+            $('.card-apply').addClass('hidden');
+            $('#credit-card-full').parent().removeClass('hidden');
+            $('#credit-card-full').val(maskedNumber);
+        }
+    });
+
+    // click on credit card masked value will expand edit functionality
+    $('#credit-card-full').on('click', function () {
+        $(this).parent().addClass('hidden');
+        $('.card-apply').removeClass('hidden');
+    });
+
+    $(".account-name-container").tooltip();
+
     // add additional fields logic, start of changes
     $('#additional-options').on('click', function (event) {
         $(this).parent().toggleClass("open");
@@ -111,10 +138,19 @@ $(document).ready(function(){
             }
             break;
             case 'Credit Card':
-            if ($('.credit-cart-number').hasClass('hidden')){
-                $('.credit-cart-number').removeClass('hidden');
+            if ($('.credit-card-number').hasClass('hidden')){
+                $('.credit-card-number').removeClass('hidden');
             } else {
-                $('.credit-cart-number').addClass('hidden');
+                $('.credit-card-number').addClass('hidden');
+                $('#credit-card-full').parent().addClass('hidden');
+                $('.card-apply').removeClass('hidden');
+                $('#credit-card-full').val("");
+                $("#card-first-name").val("");
+                $("#card-last-name").val("");
+                $("#card-type").val("");
+                $("#card-number").val("");
+                $("#card-date").val("");
+                $("#card-cvv").val("");
             }
             break;
             case 'Phone':

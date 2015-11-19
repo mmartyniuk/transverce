@@ -148,6 +148,7 @@
                                                     <select class="form-control account-placeholder" id="AccountName" name="AccountName" disabled>
                                                         <option value="">Please fill (First Name and Last Name) or (Company Name)</option>
                                                     </select>
+                                                    <span class="account-name-container" data-toggle="tooltip" data-placement="right" title="" data-original-title="Account name is very required field"></span>
                                                 </div>
                                             </div>
                                             <div class="form-group row hidden external-id">
@@ -287,7 +288,7 @@
                                             </div>
                                             <div id="BillingAdd" class="hidden">
                                                 <div class="form-group row">
-                                                    <label class="col-md-3 control-label addresses-label">Billing Address</label>
+                                                    <label class="col-md-3 control-label address-label">Billing Address</label>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="countriesBilling" class="required control-label col-md-3">Country</label>
@@ -362,7 +363,7 @@
                                             </div>
                                             <div class="serviceAddress hidden" id="serviceBlockEnterprise">
                                                 <div class="form-group row margin-top-0">
-                                                    <label class="col-md-3 control-label addresses-label">Service Address</label>
+                                                    <label class="col-md-3 control-label address-label">Service Address</label>
                                                     <div class="col-md-3 col-md-offset-5 input-container">
                                                         <label for="sameServiceEnterprise">
                                                             <input type="checkbox" id="sameServiceEnterprise"> Same as billing
@@ -444,7 +445,7 @@
                                             </div>
                                             <div class="shippingAddress hidden" id="shippingBlockEnterprise">
                                                 <div class="form-group row margin-top-0">
-                                                    <label class="col-md-3 control-label addresses-label">Shipping Address</label>
+                                                    <label class="col-md-3 control-label address-label">Shipping Address</label>
                                                     <div class="col-md-3 col-md-offset-5 input-container">
                                                         <label for="sameShippingEnterprise">
                                                             <input type="checkbox" id="sameShippingEnterprise"> Same as billing
@@ -590,10 +591,60 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group row credit-cart-number hidden">
-                                                <label class="col-md-3 control-label">Credit Card</label>
-                                                <div class="col-md-9 input-container">
-                                                    <a href="#" class="addCard">+ Add Credit Card</a>
+                                            <div class="credit-card-number hidden">
+                                                <div class="row form-group">
+                                                    <label class="col-md-3 control-label title-label" for="credit-card-full">Credit Card</label>
+                                                    <div class="col-md-9 input-container hidden">
+                                                        <input type="text" class="form-control" id="credit-card-full">
+                                                    </div>
+                                                </div>
+                                                <div class="card-apply">
+                                                    <div class="row form-group">
+                                                        <label for="card-first-name" class="col-md-3 control-label">First Name</label>
+                                                        <div class="col-md-9 input-container">
+                                                            <input type="text" class="form-control" id="card-first-name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <label for="card-last-name" class="col-md-3 control-label">Last Name</label>
+                                                        <div class="col-md-9 input-container">
+                                                            <input type="text" class="form-control" id="card-last-name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <label for="card-type" class="col-md-3 control-label">Card Type</label>
+                                                        <div class="col-md-3 input-container">
+                                                            <select id="card-type" class="form-control">
+                                                                <option value="">Please Select</option>
+                                                                <option value="PS">Personal</option>
+                                                                <option value="CP">Corporate</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <label for="card-number" class="col-md-3 control-label">Card Number</label>
+                                                        <div class="col-md-9 input-container">
+                                                            <input type="tel" class="form-control" id="card-number">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <label for="card-date" class="col-md-3 control-label">Expiration Date</label>
+                                                        <div class="col-md-3 input-container">
+                                                            <input type="tel" class="form-control" id="card-date">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <label for="card-cvv" class="col-md-3 control-label">CVV</label>
+                                                        <div class="col-md-3 input-container">
+                                                            <input type="tel" class="form-control" id="card-cvv">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4 col-md-offset-8">
+                                                            <button type="button" class="btn btn-default card-cancel">Cancel</button>
+                                                            <button type="button" class="btn btn-primary card-submit">Apply</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row payment-term hidden">

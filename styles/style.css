@@ -32,8 +32,9 @@ h3 {
     border-bottom: 2px solid #e5e5e5;
 }
 
-#accountDetails .modal-footer {
+.submitForm.modal-footer {
     border-top: 2px solid #e5e5e5;
+    padding: 15px;
 }
 
 #accountDetails .modal-body {
@@ -152,6 +153,36 @@ h3 {
     top: 8px;
 }
 
+.account-name-container {
+    position: absolute;
+    display: block;
+    content: '';
+    background: url('../assets/info.png') no-repeat;
+    height: 20px;
+    width: 20px;
+    right: 65px;
+    top: 8px;
+    opacity: 0.7;
+}
+
+.account-name-container:hover {
+    opacity: 1;
+}
+
+.account-name-container+.tooltip {
+    width: 140px;
+
+}
+.account-name-container+.tooltip .tooltip-inner {
+    border: 1px solid #aaa;
+    background-color: #fff;
+    color: #aaa;
+}
+
+.account-name-container+.tooltip .tooltip-arrow {
+    border-right-color: #aaa;
+}
+
 .icon-container-postal:after {
     position: absolute;
     display: block;
@@ -246,7 +277,7 @@ select.form-control {
 }
 
 .modal-header {
-    padding: 15px 15px 15px 60px;
+    padding: 8px 20px;
 }
 
 .header h3 {
@@ -668,36 +699,18 @@ select.form-control {
     padding: 7px 46px 10px 45px;
 }
 
-.addresses-label {
+.title-label {
     padding-bottom: 16px;
 }
 
-.the-legend {
-        font-size: 0.9em;
-        color: #A5A5A5;
-        text-align: left;
-        width: auto;
-        padding: 0 10px;
-        border-bottom: none;
-        margin-bottom: 0;
-        (-bracket-:hack;
-            margin-bottom: -10px;
-        );
+.address-label {
+    margin-top: 15px;
+    padding-bottom: 8px;
 }
 
-.the-fieldset {
-    border: 1px dashed #A5A5A5;
-    padding: 10px 15px 0px 34px;
-    margin: 0 0 1.5em 0;
-    -webkit-box-shadow:  0px 0px 0px 0px #000;
-            box-shadow:  0px 0px 0px 0px #000;
-}
-.the-fieldset:last-child {
-    margin-bottom: 35px;
-}
-
-.the-fieldset input {
-    width: 100%;
+#credit-card-full {
+    color: #aaa;
+    cursor: pointer;
 }
 
 .margin-0 {
@@ -877,7 +890,7 @@ select.form-control {
 
 .serviceAddress .input-container label, .shippingAddress .input-container label {
     font-weight: normal;
-    padding-top: 7px;
+    padding-top: 18px;
 }
 
 @media (min-width: 768px){
