@@ -4,7 +4,7 @@ body {
     background-color: #e6e6e6;
 }
 body label {
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1px;
 }
 
 label {
@@ -53,10 +53,6 @@ h3 {
     font-weight: normal;
 }
 
-.col-9 {
-    width: 46.7%;
-}
-
 .col-offset {
     margin-left: 21.7%;
 }
@@ -74,13 +70,13 @@ h3 {
 }
 
 .input-container {
-    padding-left: 31px;
-    padding-right: 20px;
+    padding-left: 5px;
+    padding-right: 36px;
 }
 
 .form-control {
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 9px;
     height: 35px;
     width: 86%;
     padding-right: 28px;
@@ -100,7 +96,7 @@ h3 {
 }
 
 #enterprise .control-label {
-    padding-right: 8px;
+    padding-right: 13px;
     padding-top: 8px;
 }
 
@@ -206,12 +202,9 @@ h3 {
     top: 8px;
 }
 
-.the-fieldset .icon-container:after, .the-fieldset .success-container:after {
-    right: 25px;
-}
+.address-box .input-container input[type="checkbox"] {
+    margin-top: 0;
 
-#enterprise .the-fieldset .help-block{
-    left: 99%;
 }
 
 .success-container-postal:after {
@@ -269,16 +262,16 @@ select.form-control {
 }
 
 .wrapper {
-    padding: 16px 0 0 15px;
+    /*padding: 16px 0 0 15px;*/
     position: relative;
 }
 
 .header {
-    padding: 0 60px;
+    padding: 0 75px;
 }
 
 .modal-header {
-    padding: 8px 20px;
+    padding: 7px 20px 4px;
 }
 
 .header h3 {
@@ -628,8 +621,8 @@ select.form-control {
 }
 
 #spinnerAcc {
-    left: 61px;
-    top: -43px;
+    left: 11px;
+    top: -42px;
 }
 
 #spinnerPay {
@@ -639,13 +632,13 @@ select.form-control {
 
 #spinnerBill{
     top: -43px;
-    left: 63px;
+    left: 11px;
 }
 
 #spinnerCurr{
     position: absolute;
     top: -41px;
-    right: 50%;
+    right: 63%;
 }
 
 .currency-container {
@@ -755,7 +748,8 @@ select.form-control {
 }
 
 .margin-top-30, .title.divider.margin-top-30 {
-    margin-top: 10px;
+    margin-top: 17px;
+    margin-bottom: 7px;
 }
 
 .financial select {
@@ -781,20 +775,16 @@ select.form-control {
     width: 172px;
 }
 
-.service-box {
-    padding-left: 44px;
-    margin-top: 11px;
-    letter-spacing: 0.1px;
-}
-
-.shipping-box {
-    padding-left: 44px;
-    margin-top: 11px;
-    letter-spacing: 0.1px;
-}
-
-.address-box, .shipping-box, .service-box, .same, .same-shipping {
+#enterprise .address-box label{
     font-weight: normal;
+    text-align: left;
+    padding-left: 24px;
+}
+
+#BillingAdd, #shippingBlockEnterprise, #serviceBlockEnterprise {
+    margin-top: 17px;
+    padding-top: 16px;
+    background-color: #F8F8F8;
 }
 
 .header .title.divider.final-line {
@@ -875,6 +865,9 @@ select.form-control {
     text-align: right;
     padding-right: 29px;
 }
+#accountDetails .modal-dialog.modal-lg {
+    max-width: 815px;
+}
 
 .modal.fade.in {
     overflow-y: hidden;
@@ -883,6 +876,7 @@ select.form-control {
 .modal-body {
     max-height: calc(100vh - 200px);
     overflow-y: auto;
+    padding: 0;
 }
 
 .serviceAddress .input-container input[type="checkbox"], .shippingAddress .input-container input[type="checkbox"] {
@@ -928,6 +922,7 @@ select.form-control {
     }
     .col-9 {
         width: 71.7%;
+        margin: auto;
     }
     .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
         width: 150px;
@@ -938,9 +933,6 @@ select.form-control {
 @media (min-width: 1501px){
     .col-offset {
         margin-left: 0;
-    }
-    .col-9 {
-        width: 88%;
     }
     .the-fieldset {
         margin: 0 -10px 32px -32px;
@@ -971,15 +963,15 @@ select.form-control {
 }
 
 @media (max-width: 991px){
-    .wrapper {
+    /*.wrapper {
         padding: 0 0 0 20px;
-    }
+    }*/
     .form-horizontal .control-label {
         margin-bottom: 3px;
     }
     .input-container {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 5px;
+        padding-right: 36px;
     }
     .the-fieldset {
         margin: 0px -11px 1.5em -34px;
