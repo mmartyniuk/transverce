@@ -891,8 +891,13 @@ select.form-control {
     width: 77%;
     margin: auto;
 }
+
 .col-auto-payment-label {
     float: left;
+}
+
+#autoPayment {
+    margin-left: 4px;
 }
 
 .credit-option {
@@ -908,14 +913,19 @@ select.form-control {
 }
 .card-apply {
     padding-top: 16px;
+    padding-left: 3px;
 }
 
 .custom-field-1 {
     margin-top: 20px;
 }
 
-.сard-box{
+.сard-box {
     padding-bottom: 10px;
+}
+
+.card-cvc {
+    padding-right: 27px;
 }
 
 #enterprise .сard-box label{
@@ -924,6 +934,7 @@ select.form-control {
 
 .paymentAddress {
     margin-top: 8px;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px){

@@ -827,6 +827,9 @@ $(document).ready(function(){
             });
         } else {
             $('#sameServiceEnterprise').parent().parent().addClass('hidden');
+            if ($('#sameServiceEnterprise').is(':checked')) {
+                $('#sameServiceEnterprise').prop('checked', false);
+            }
             $('#serviceBlockEnterprise').addClass('hidden');
             $("#countriesService").select2('val', 'US');
             $("#address1Service").val("");
@@ -889,6 +892,9 @@ $(document).ready(function(){
             });
         } else {
             $('#sameShippingEnterprise').parent().parent().addClass('hidden');
+            if ($('#sameShippingEnterprise').is(':checked')) {
+                $('#sameShippingEnterprise').prop('checked', false);
+            }
             $('#shippingBlockEnterprise').addClass('hidden');
             $("#countriesShipping").select2('val', 'US');
             $("#address1Shipping").val("");
@@ -1036,23 +1042,6 @@ $(document).ready(function(){
         }
         
     });
-
-    //credit card
-    /*$('#saveCard').click(function(e){
-        e.preventDefault();
-        var cardType = $('#card-type').val();
-        var cardNum = $('#card-number').val().replace( /[0-9]{4}$/, '****' );
-        var cardDate = $('#card-date').val();
-        var cardCvv = $('#cvv').val();
-        
-        $('#card-type-copy').val(cardType).prop("disabled", true);
-        $('#card-number-copy').val(cardNum).prop("disabled", true);
-        $('#card-date-copy').val(cardDate).prop("disabled", true);
-        $('#cvv-copy').val(cardCvv).prop("disabled", true);
-        $('.card-values').removeClass('hidden');
-        $('#card-form').modal('hide');
-    });*/
-    
 
     var previous1, previous2, previous3, previous4; // variables to store previous values from select
     //to prevent option lose
@@ -1326,6 +1315,8 @@ $(document).ready(function(){
             setTimeout(function(){
             // adding required fields logic after click on submit button
                 $("#enterprise :input").prop("disabled", false);
+                $("#AccountName").prop("disabled", true);
+                $("#enterprise :checkbox").prop("disabled", false);
                 $("#enterprise :checkbox").prop("disabled", false);
 
                 if (!$("#billCycle").val()) {
