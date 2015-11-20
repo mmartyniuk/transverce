@@ -52,10 +52,13 @@ $(document).ready(function(){
     $('#card-number').payment('formatCardNumber');
     $('#card-date').payment('formatCardExpiry');
     $('#card-cvv').payment('formatCardCVC');
-    $('.addCard').on('click', function (e) {
-        e.preventDefault();
-        $('.card-apply').removeClass('hidden');
-        $(this).parent().addClass('hidden');
+    $('#showCreditCard').on('click', function (e) {
+        if ($(this).is(':checked')) {
+            $('.card-apply').removeClass('hidden');
+        } else {
+            $('.card-apply').addClass('hidden');
+        }
+        
     });
 
     $('.card-cancel').on('click', function (e) {

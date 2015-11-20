@@ -91,8 +91,7 @@ h3 {
 }
 
 .phone1 input, .phone2 input, .phone3 input, .phone4 input {
-    width: 76%;
-    margin-left: -1px;
+    width: 69%;
 }
 
 #enterprise .control-label {
@@ -888,6 +887,28 @@ select.form-control {
     padding-top: 18px;
 }
 
+.col-10 {
+    width: 77%;
+    margin: auto;
+}
+.col-auto-payment-label {
+    float: left;
+}
+
+.credit-option {
+    margin-top: 8px;
+}
+
+.credit-option #showCreditCard {
+    margin-top: 0;
+}
+
+.grey {
+    background-color: #F8F8F8;
+}
+.card-apply {
+    padding-top: 16px;
+}
 @media (min-width: 768px){
     #nav-container {
         left: 0;
@@ -903,7 +924,7 @@ select.form-control {
         margin: 0 -12px 32px -33px;
     }
     .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
-        width: 130px;
+        width: 150px;
     }
     .phone-container {
         padding-left: 0;
@@ -956,8 +977,11 @@ select.form-control {
     .col-9 {
         width: 88%;
     }
+    .col-10 {
+        width: 84%;
+    }
     .phone1 input, .phone2 input, .phone3 input, .phone4 input {
-        width: 80%;
+        width: 75%;
         margin-left: 1px;
     }
 }
