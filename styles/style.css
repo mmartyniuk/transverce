@@ -111,18 +111,18 @@ h3 {
     font-size: 11px;
 }
 
-#postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block {
+#postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
     display: block;
     position: relative;
     background-color: #D0021B;
     color: #fff;
     width: 40%;
-    left: 0.5%;
+    left: -3.5%;
     padding: 10px 15px;
     top: 6px;
     font-size: 11px;
 }
-#postalCodeBilling-error.help-block:before, #postalCodeShipping-error.help-block:before, #postalCodeService-error.help-block:before {
+#postalCodeBilling-error.help-block:before, #postalCodeShipping-error.help-block:before, #postalCodeService-error.help-block:before, #postalCodePayment-error.help-block:before {
     top: 12px;
 }
 
@@ -186,7 +186,7 @@ h3 {
     background: url('../assets/error_icon.png') no-repeat;
     height: 20px;
     width: 20px;
-    right: 4px;
+    right: 29px;
     top: 8px;
 }
 
@@ -213,7 +213,7 @@ h3 {
     background: url('../assets/ok_green.png') no-repeat;
     height: 20px;
     width: 20px;
-    right: 4px;
+    right: 29px;
     top: 8px;
 }
 .errorIcon {
@@ -770,7 +770,7 @@ select.form-control {
     margin-bottom: 10px;
 }
 
-#postalCodeBilling, #postalCodeShipping, #postalCodeService {
+#postalCodeBilling, #postalCodeShipping, #postalCodeService, #postalCodePayment {
     width: 172px;
 }
 
@@ -909,6 +909,23 @@ select.form-control {
 .card-apply {
     padding-top: 16px;
 }
+
+.custom-field-1 {
+    margin-top: 20px;
+}
+
+.сard-box{
+    padding-bottom: 10px;
+}
+
+#enterprise .сard-box label{
+    padding-left: 30px;
+}
+
+.paymentAddress {
+    margin-top: 8px;
+}
+
 @media (min-width: 768px){
     #nav-container {
         left: 0;
@@ -972,7 +989,7 @@ select.form-control {
 
 @media (max-width: 1500px){
     .col-offset {
-        margin-left: 4%;
+        margin-left: 0;
     }
     .col-9 {
         width: 88%;

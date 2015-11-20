@@ -375,7 +375,7 @@
                                                     <label class="control-label col-md-3 col-md-offset-2">
                                                         <input type="checkbox" id="showService"> Service Address
                                                     </label>
-                                                    <div class="col-md-3 col-md-offset-2 input-container hidden">
+                                                    <div class="col-md-4 col-md-offset-2 input-container hidden">
                                                         <label for="sameServiceEnterprise" class="control-label">
                                                             <input type="checkbox" id="sameServiceEnterprise"> Same as billing
                                                         </label>
@@ -463,7 +463,7 @@
                                                     <label class="control-label col-md-3 col-md-offset-2">
                                                         <input type="checkbox" id="showShipping"> Shipping Address
                                                     </label>
-                                                    <div class="col-md-3 col-md-offset-2 input-container hidden">
+                                                    <div class="col-md-4 col-md-offset-2 input-container hidden">
                                                         <label for="sameShippingEnterprise" class="control-label">
                                                             <input type="checkbox" id="sameShippingEnterprise"> Same as billing
                                                         </label>
@@ -628,31 +628,116 @@
                                                 <div class="col-9">
                                                     <div class="card-apply hidden">
                                                         <div class="row form-group">
-                                                            <label for="card-first-name" class="col-md-3 control-label">First Name</label>
+                                                            <label for="card-first-name" class="col-md-3 control-label required">First Name</label>
                                                             <div class="col-md-9 input-container">
                                                                 <input type="text" class="form-control" id="card-first-name">
                                                             </div>
                                                         </div>
                                                         <div class="row form-group">
-                                                            <label for="card-last-name" class="col-md-3 control-label">Last Name</label>
+                                                            <label for="card-last-name" class="col-md-3 control-label required">Last Name</label>
                                                             <div class="col-md-9 input-container">
                                                                 <input type="text" class="form-control" id="card-last-name">
                                                             </div>
                                                         </div>
                                                         <div class="row form-group">
-                                                            <label for="card-number" class="col-md-3 control-label">Card Number</label>
+                                                            <label for="card-number" class="col-md-3 control-label required">Card Number</label>
                                                             <div class="col-md-9 input-container">
                                                                 <input type="tel" class="form-control" id="card-number">
                                                             </div>
                                                         </div>
                                                         <div class="row form-group">
-                                                            <label for="card-date" class="col-md-3 control-label">Expiration Date</label>
+                                                            <label for="card-date" class="col-md-3 control-label required">Expiration Date</label>
                                                             <div class="col-md-3 input-container">
                                                                 <input type="tel" class="form-control" id="card-date">
                                                             </div>
-                                                            <label for="card-cvv" class="col-md-2 control-label">CVV</label>
+                                                            <label for="card-cvv" class="col-md-2 control-label required">CVV</label>
                                                             <div class="col-md-3 input-container">
                                                                 <input type="tel" class="form-control" id="card-cvv">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row address-box сard-box"> 
+                                                            <div class="col-9">
+                                                                <label class="control-label col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-2">
+                                                                    <input type="checkbox" id="showPaymentAddress"> Payment Address
+                                                                </label>
+                                                                <div class="col-lg-4 col-lg-offset-3 col-md-4 col-md-offset-2 input-container card-same hidden">
+                                                                    <label for="sameServiceEnterprise" class="control-label">
+                                                                        <input type="checkbox" id="samePayment"> Same as billing
+                                                                    </label>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="paymentAddress hidden">
+                                                            <div class="form-group row">
+                                                                <label for="countriesPayment" class="required control-label col-md-3">Countries</label>
+                                                                <div class="col-md-9 input-container container-select2">
+                                                                    <select id="countriesPayment" class="form-control js-example-basic-single countries" name="countriesPayment">
+                                                                        <option value="AF">Afghanistan</option>
+                                                                        <option value="AL">Albania</option>
+                                                                        <option value="DZ">Algeria</option>
+                                                                        <option value="AS">American Samoa</option>
+                                                                        <option value="AD">Andorra</option>
+                                                                        <option value="AO">Angola</option>
+                                                                        <option value="AI">Anguilla</option>
+                                                                        <option value="TM">Turkmenistan</option>
+                                                                        <option value="TC">Turks and Caicos Islands</option>
+                                                                        <option value="TV">Tuvalu</option>
+                                                                        <option value="UG">Uganda</option>
+                                                                        <option value="UA">Ukraine</option>
+                                                                        <option value="AE">United Arab Emirates</option>
+                                                                        <option value="GB">United Kingdom</option>
+                                                                        <option value="US" selected>United States</option>
+                                                                        <option value="UM">United States Minor Outlying Islands</option>
+                                                                        <option value="UY">Uruguay</option>
+                                                                        <option value="UZ">Uzbekistan</option>
+                                                                        <option value="VU">Vanuatu</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row margin-top-0">
+                                                                <label for="address1Payment" class="required control-label col-md-3 letter-spacing">Address Line 1</label>
+                                                                <div class="col-md-9 input-container">
+                                                                    <input type="text" class="form-control" id="address1Payment" name="address1Payment">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="address2Payment" class="control-label col-md-3 letter-spacing">Address Line 2</label>
+                                                                <div class="col-md-9 input-container">
+                                                                    <input type="text" class="form-control" id="address2Payment" name="address2Payment">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="cityPayment" class="required control-label col-md-3">City</label>
+                                                                <div class="col-md-9 input-container">
+                                                                    <input type="text" class="form-control" id="cityPayment" name="cityPayment">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="statesUSPayment" class="required control-label col-md-3">State</label>
+                                                                <div class="col-md-9 input-container container-select2">
+                                                                    <select id="statesUSPayment" class="form-control js-example-basic-single" name="statesUSPayment">
+                                                                        <option value="AL">Alabama</option>
+                                                                        <option value="AK">Alaska</option>
+                                                                        <option value="ME">Maine</option>
+                                                                        <option value="MD">Maryland</option>
+                                                                        <option value="MO">Missouri</option>
+                                                                        <option value="MT">Montana</option>
+                                                                        <option value="NE">Nebraska</option>
+                                                                        <option value="NV">Nevada</option>
+                                                                        <option value="NH">New Hampshire</option>
+                                                                        <option value="NJ">New Jersey</option>
+                                                                        <option value="NM">New Mexico</option>
+                                                                        <option value="NY" selected>New York</option>
+                                                                        <option value="NC">North Carolina</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="postalCodePayment" class="required control-label col-md-3">Postal Code</label>
+                                                                <div class="col-md-4 input-container postal-container">
+                                                                    <input type="text" class="form-control" id="postalCodePayment" name="postalCodePayment">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

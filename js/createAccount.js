@@ -93,10 +93,114 @@ $(document).ready(function(){
         }
     });
 
-    // click on credit card masked value will expand edit functionality
-    $('#credit-card-full').on('click', function () {
-        $(this).parent().addClass('hidden');
-        $('.card-apply').removeClass('hidden');
+    // applying addresses to card
+    $('#showPaymentAddress').click(function(){
+        var $this = $(this);
+        if ($this.is(':checked')) {
+            $('.paymentAddress').removeClass('hidden');
+            $("#address1Payment").rules("add", {
+                minlength: 5,
+                maxlength: 20,
+                notEqualAddress: {
+                    param: '',
+                    depends: function(element) {
+                        return ifAddressPaymentChangedInitially;
+                    }
+                }
+            });
+            $("#cityPayment").rules("add", {
+                minlength: 3,
+                maxlength: 20,
+                notEqualCity: {
+                    param: '',
+                    depends: function(element) {
+                        return ifcityPaymentChangedInitially;
+                    }
+                }
+            });
+            $("#postalCodePayment").rules("add", {
+                minlength: 2,
+                maxlength: 20,
+                number: true,
+                notEqualPostal: {
+                    param: '',
+                    depends: function(element) {
+                        return ifpostalCodePaymentChangedInitially;
+                    }
+                }
+            });
+        } else {
+            $('.paymentAddress').addClass('hidden');
+            $("#countriesPayment").select2('val', 'US');
+            $("#address1Payment").val("");
+            $("#address2Payment").val("");
+            $("#cityPayment").val("");
+            if ($("#statesUSPayment").hasClass('hidden')) {
+                $("#statesUSPayment").removeClass('hidden');
+            }
+            $("#statesUSPayment").select2('val', 'NY');
+            $("#postalCodePayment").val("");
+            $("#address1Payment").rules("remove", "minlength");
+            $("#address1Payment").rules("remove", "maxlength");
+            $("#address1Payment").rules("remove", "notEqualAddress");
+            $("#cityPayment").rules("remove", "minlength");
+            $("#cityPayment").rules("remove", "maxlength");
+            $("#cityPayment").rules("remove", "notEqualCity");
+            $("#postalCodePayment").rules("remove", "minlength");
+            $("#postalCodePayment").rules("remove", "maxlength");
+            $("#postalCodePayment").rules("remove", "notEqualPostal");
+            $("#postalCodePayment").rules("remove", "number");
+        }
+    });
+
+    $('#samePayment').click(function(){
+        var $this = $(this);
+        if ($this.is(':checked')) {
+            $('.paymentAddress').addClass('hidden');
+            $("#address1Payment").rules("remove", "minlength");
+            $("#address1Payment").rules("remove", "maxlength");
+            $("#address1Payment").rules("remove", "notEqualAddress");
+            $("#cityPayment").rules("remove", "minlength");
+            $("#cityPayment").rules("remove", "maxlength");
+            $("#cityPayment").rules("remove", "notEqualCity");
+            $("#postalCodePayment").rules("remove", "minlength");
+            $("#postalCodePayment").rules("remove", "maxlength");
+            $("#postalCodePayment").rules("remove", "notEqualPostal");
+            $("#postalCodePayment").rules("remove", "number");
+        } else {
+            $('.paymentAddress').removeClass('hidden');
+            $("#address1Payment").rules("add", {
+                minlength: 5,
+                maxlength: 20,
+                notEqualAddress: {
+                    param: '',
+                    depends: function(element) {
+                        return ifAddressPaymentChangedInitially;
+                    }
+                }
+            });
+            $("#cityPayment").rules("add", {
+                minlength: 3,
+                maxlength: 20,
+                notEqualCity: {
+                    param: '',
+                    depends: function(element) {
+                        return ifcityPaymentChangedInitially;
+                    }
+                }
+            });
+            $("#postalCodePayment").rules("add", {
+                minlength: 2,
+                maxlength: 20,
+                number: true,
+                notEqualPostal: {
+                    param: '',
+                    depends: function(element) {
+                        return ifpostalCodePaymentChangedInitially;
+                    }
+                }
+            });
+        }
     });
 
     $(".account-name-container").tooltip();
@@ -321,6 +425,9 @@ $(document).ready(function(){
     var iAddressServiceChangedInitially = false;
     var ifcityServiceChangedInitially = false;
     var ifpostalCodeServiceChangedInitially = false;
+    var ifAddressPaymentChangedInitially = false;
+    var ifcityPaymentChangedInitially = false;
+    var ifpostalCodePaymentChangedInitially = false;
 
     $('#currency').bind("change", handlerCurrency);
     function handlerCurrency(e) {
@@ -404,6 +511,28 @@ $(document).ready(function(){
         if ($('#postalCodeShipping').val()) {
             $('#postalCodeShipping').unbind("focusout", handlerPostalShipping);
             ifpostalCodeShippingChangedInitially = true;
+        }
+    }
+
+    $('#address1Payment').bind("focusout", handlerAddressPayment);
+    function handlerAddressPayment(e) {
+        if ($('#address1Payment').val()) {
+            $('#address1Payment').unbind("focusout", handlerAddressPayment);
+            ifAddressPaymentChangedInitially = true;
+        }
+    }
+    $('#cityPayment').bind("focusout", handlerCityPayment);
+    function handlerCityPayment(e) {
+        if ($('#cityPayment').val()) {
+            $('#cityPayment').unbind("focusout", handlerCityPayment);
+            ifcityPaymentChangedInitially = true;
+        }
+    }
+    $('#postalCodePayment').bind("focusout", handlerPostalPayment);
+    function handlerPostalPayment(e) {
+        if ($('#postalCodePayment').val()) {
+            $('#postalCodePayment').unbind("focusout", handlerPostalPayment);
+            ifpostalCodePaymentChangedInitially = true;
         }
     }
 
@@ -523,6 +652,7 @@ $(document).ready(function(){
     $('#showBilling').click(function(){
         var $this = $(this);
         if ($this.is(':checked')) {
+            $('.card-same').removeClass('hidden');
             if (!$('#serviceBlockEnterprise').hasClass('hidden')) {
                 $('#sameServiceEnterprise').parent().parent().removeClass('hidden');
             }
@@ -562,6 +692,7 @@ $(document).ready(function(){
                 }
             });
         } else {
+            $('.card-same').addClass('hidden');
             $('#BillingAdd').addClass('hidden');
             $("#countriesBilling").select2('val', 'US');
             $("#address1Billing").val("");
@@ -1047,6 +1178,21 @@ $(document).ready(function(){
             });
         }
     });
+    $('#countriesPayment').on('change', function(){
+        if ($("#select2-countriesPayment-container").text() !== 'United States') {
+            $('#statesUSPayment').parent().addClass('hidden');
+            $('#statesUSPayment').parent().prev().addClass('hidden');
+            $("#postalCodePayment").rules("add", {
+                number: false
+            });
+        } else {
+            $('#statesUSPayment').parent().removeClass('hidden');
+            $('#statesUSPayment').parent().prev().removeClass('hidden');
+            $("#postalCodePayment").rules("add", {
+                number: true
+            });
+        }
+    });
     // Bill Cycle changes depending on currency selected value
     $('#currency').on('change', function(){
         if ($("#currency").val() === 'USD') {
@@ -1124,37 +1270,6 @@ $(document).ready(function(){
                         return ifAccountChangedInitially;
                     }
                 }
-            },
-            address1Billing: {
-                minlength: 5,
-                maxlength: 20,
-                notEqualAddress: {
-                    param: '',
-                    depends: function(element) {
-                        return iAddressBillingChangedInitially;
-                    }
-                }
-            },
-            cityBilling: {
-                minlength: 3,
-                maxlength: 20,
-                notEqualCity: {
-                    param: '',
-                    depends: function(element) {
-                        return ifcityBillingChangedInitially;
-                    }
-                }
-            },
-            postalCodeBilling: {
-                minlength: 2,
-                maxlength: 20,
-                number: true,
-                notEqualPostal: {
-                    param: '',
-                    depends: function(element) {
-                        return ifpostalCodeChangedInitially;
-                    }
-                }
             }
         },
         highlight: function(element) {
@@ -1162,7 +1277,7 @@ $(document).ready(function(){
             if(!$(element).is("select")) {
                 $(element).parent().removeClass('success-container');
                 $(element).parent().removeClass('success-container-postal');
-                if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
+                if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping' || element.id == 'postalCodePayment') {
                     $(element).parent().addClass('icon-container-postal');
                 }else{
                     $(element).parent().addClass('icon-container');
@@ -1174,7 +1289,7 @@ $(document).ready(function(){
                 $(element).closest('.form-group').removeClass('has-error');
                 if ($(element).val() && !$(element).is("select")){
                     $(element).parent().addClass('success-container');
-                    if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping') {
+                    if(element.id == 'postalCodeBilling' || element.id == 'postalCodeService' || element.id == 'postalCodeShipping' || element.id == 'postalCodePayment') {
                         $(element).parent().addClass('success-container-postal');
                     }else{
                         if (element.id == 'corporateEmail') {
@@ -1261,7 +1376,7 @@ $(document).ready(function(){
                     $("#cityBilling").rules("remove", "required");
                     $("#postalCodeBilling").rules("remove", "required");
                 }
-                if ($("#showShippingEnterprise").is(':checked') && !$("#sameShippingEnterprise").is(':checked')) {
+                if ($("#showShipping").is(':checked') && !$("#sameShippingEnterprise").is(':checked')) {
                     $("#address1Shipping").rules("add", {
                         required: true,
                         messages: {
@@ -1285,7 +1400,7 @@ $(document).ready(function(){
                     $("#cityShipping").rules("remove", "required");
                     $("#postalCodeShipping").rules("remove", "required");
                 }
-                if ($("#showServiceEnterprise").is(':checked') && !$("#sameServiceEnterprise").is(':checked')) {
+                if ($("#showService").is(':checked') && !$("#sameServiceEnterprise").is(':checked')) {
                     $("#address1Service").rules("add", {
                         required: true,
                         messages: {
@@ -1309,6 +1424,30 @@ $(document).ready(function(){
                     $("#address1Service").rules("remove", "required");
                     $("#cityService").rules("remove", "required");
                     $("#postalCodeService").rules("remove", "required");
+                }
+                if ($("#showPaymentAddress").is(':checked')) {
+                    $("#address1Payment").rules("add", {
+                        required: true,
+                        messages: {
+                            required: "Address field is required"
+                        }
+                    });
+                    $("#cityPayment").rules("add", {
+                        required: true,
+                        messages: {
+                            required: "City field is required"
+                        }
+                    });
+                    $("#postalCodePayment").rules("add", {
+                        required: true,
+                        messages: {
+                            required: "Postal Code is required"
+                        }
+                    });
+                } else {
+                    $("#address1Payment").rules("remove", "required");
+                    $("#cityPayment").rules("remove", "required");
+                    $("#postalCodePayment").rules("remove", "required");
                 }
 
                 $("#AccountName").rules("add", {
