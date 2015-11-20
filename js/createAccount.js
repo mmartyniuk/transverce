@@ -785,6 +785,41 @@ $(document).ready(function(){
                     }
                 });
             }
+            if ($('#samePayment').is(":checked")) {
+                $('#samePayment').prop('checked', false);
+                $('.paymentAddress').removeClass('hidden');
+                $("#address1Payment").rules("add", {
+                    minlength: 5,
+                    maxlength: 20,
+                    notEqualAddress: {
+                        param: '',
+                        depends: function(element) {
+                            return ifAddressPaymentChangedInitially;
+                        }
+                    }
+                });
+                $("#cityPayment").rules("add", {
+                    minlength: 3,
+                    maxlength: 20,
+                    notEqualCity: {
+                        param: '',
+                        depends: function(element) {
+                            return ifcityPaymentChangedInitially;
+                        }
+                    }
+                });
+                $("#postalCodePayment").rules("add", {
+                    minlength: 2,
+                    maxlength: 20,
+                    number: true,
+                    notEqualPostal: {
+                        param: '',
+                        depends: function(element) {
+                            return ifpostalCodePaymentChangedInitially;
+                        }
+                    }
+                });
+            }
         }
     });
     $('#showService').click(function(){
