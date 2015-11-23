@@ -1000,6 +1000,15 @@ select.form-control {
         margin-left: 8.5%;
         margin-right: 7%;
     }
+    #enterprise .help-block {
+        left: 85%;
+    }
+    .icon-container:after {
+        right: 96px;
+    }
+    #postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
+        left: -3.5%;
+    }
 }
 
 @media (max-width: 1500px){
@@ -1022,6 +1031,15 @@ select.form-control {
     }
     .account-name-container {
         right: 77px;
+    }
+    #enterprise .help-block {
+        left: 86%;
+    }
+    .icon-container:after {
+        right: 111px;
+    }
+    #postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
+        left: -2.5%;
     }
 } 
 
