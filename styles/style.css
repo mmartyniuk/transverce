@@ -203,7 +203,11 @@ h3 {
 
 .address-box .input-container input[type="checkbox"] {
     margin-top: 0;
+}
 
+#enterprise .address-box .addresses-main-label {
+    font-weight: 700;
+    padding-left: 33px;
 }
 
 .success-container-postal:after {
@@ -1042,6 +1046,9 @@ select.form-control {
     }
     #postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
         left: -2.5%;
+    }
+    #enterprise .address-box .addresses-main-label {
+        padding-left: 54px;
     }
 } 
 
