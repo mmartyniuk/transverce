@@ -941,6 +941,18 @@ select.form-control {
     margin-bottom: 10px;
 }
 
+.cvv-n-date-container input {
+    width: 100%;
+}
+
+.date-container {
+    margin-right: 16px;
+}
+
+.cvv-n-date-container div, .cvv-n-date-container label {
+    padding-right: 10px;
+}
+
 @media (min-width: 768px){
     #nav-container {
         left: 0;
@@ -958,11 +970,8 @@ select.form-control {
     .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
         width: 150px;
     }
-    .phone-container {
+    .phone-container, #enterprise .сard-box label {
         padding-left: 0;
-    }
-    #enterprise .сard-box label {
-        padding-left: 2px;
     }
 }
 
@@ -1050,6 +1059,9 @@ select.form-control {
     }
     #enterprise .address-box .addresses-main-label {
         padding-left: 54px;
+    }
+    .date-container {
+        margin-right: 24px;
     }
 } 
 
