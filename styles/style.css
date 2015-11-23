@@ -758,7 +758,7 @@ select.form-control {
 #enterprise .address-box {
     padding-top: 0;
     margin-bottom: 0px;
-    padding-left: 44px;
+    padding-left: 38px;
     letter-spacing: 0.1px;
 }
 
@@ -929,10 +929,6 @@ select.form-control {
     padding-right: 27px;
 }
 
-#enterprise .сard-box label{
-    padding-left: 30px;
-}
-
 .paymentAddress {
     margin-top: 8px;
     margin-bottom: 10px;
@@ -957,6 +953,9 @@ select.form-control {
     }
     .phone-container {
         padding-left: 0;
+    }
+    #enterprise .сard-box label {
+        padding-left: 2px;
     }
 }
 
@@ -997,6 +996,10 @@ select.form-control {
         padding-left: 0;
         padding-right: 0;
     }
+    .address-box.сard-box .col-lg-offset-2:first-child {
+        margin-left: 8.5%;
+        margin-right: 7%;
+    }
 }
 
 @media (max-width: 1500px){
@@ -1005,15 +1008,22 @@ select.form-control {
     }
     .col-9 {
         width: 88%;
+        margin-left: 5%;
     }
     .col-10 {
-        width: 84%;
+        width: 87%;
     }
     .phone1 input, .phone2 input, .phone3 input, .phone4 input {
         width: 75%;
         margin-left: 1px;
     }
-}
+    #enterprise .address-box {
+        padding-left: 50px;
+    }
+    .account-name-container {
+        right: 77px;
+    }
+} 
 
 @media (max-width: 991px){
     /*.wrapper {
