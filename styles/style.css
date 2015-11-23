@@ -782,7 +782,8 @@ select.form-control {
 
 #BillingAdd, #shippingBlockEnterprise, #serviceBlockEnterprise {
     margin-top: 17px;
-    padding-top: 16px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     background-color: #F8F8F8;
 }
 
@@ -912,7 +913,8 @@ select.form-control {
     background-color: #F8F8F8;
 }
 .card-apply {
-    padding-top: 16px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     padding-left: 3px;
     margin-bottom: 16px;
 }
