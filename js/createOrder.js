@@ -1,7 +1,36 @@
 $(document).ready(function(){
+    // products
+    var products = {}
+    products.product1 = {
+        name: $(".product1 .product-name").text(),
+        description: $(".product1 .product-desc").text(),
+        type: $(".product1 .product-type").text(),
+        listPrice: $(".product1 .product-list-price").text(),
+        orderPrice: $(".product1 .product-order-price").val(),
+        quantity: $(".product1 .product-qty").val(),
+        total: $(".product1 .product-total").text()
+    };
+    products.product2 = {
+        name: $(".product2 .product-name").text(),
+        description: $(".product2 .product-desc").text(),
+        type: $(".product2 .product-type").text(),
+        listPrice: $(".product2 .product-list-price").text(),
+        orderPrice: $(".product2 .product-order-price").val(),
+        quantity: $(".product2 .product-qty").val(),
+        total: $(".product2 .product-total").text()
+    };
+    products.product3 = {
+        name: $(".product3 .product-name").text(),
+        description: $(".product3 .product-desc").text(),
+        type: $(".product3 .product-type").text(),
+        listPrice: $(".product3 .product-list-price").text(),
+        orderPrice: $(".product3 .product-order-price").val(),
+        quantity: $(".product3 .product-qty").val(),
+        total: $(".product3 .product-total").text()
+    };
+
     // selection sort
     var sortSelect = function (select) {
-
         $(select).html($(select).children('option').sort(function (x, y) {
             return $(x).val().toUpperCase() < $(y).val().toUpperCase() ? -1 : 1;
         }));
@@ -15,8 +44,6 @@ $(document).ready(function(){
         placeholder: "Start typing product's name",
         maximumSelectionSize: 1
     });
-    //var products = [{ id: 'user1', text: 'Jane Doe'},{ id: 'user5', text: 'Spongebob Squarepants'}];
-    
 
     // applying datepicker here
     var today = new Date();
@@ -192,6 +219,77 @@ $(document).ready(function(){
 
     });
 
+    $(".product-order-price").on('focusout', function(){
+        var currentPrice = Number($(this).val()) || '';
+        var currentQuantity = Number($(this).parent().next().find('input').val()) || '';
+        var verifyPrice = false, verifyQty = false;
+        if (typeof currentPrice === "number") {
+            verifyPrice = true;
+        }
+        if (typeof currentQuantity === "number") {
+            verifyQty = true;
+        }
+        if(currentPrice && currentQuantity && verifyPrice && verifyQty) {
+            return $(this).parent().prev().find('.product-list-price-value').text(currentPrice*currentQuantity);
+        } else {
+            return $(this).parent().prev().find('.product-list-price-value').text('N/A');
+        }
+    });
 
- 
+    $(".product-qty").on('focusout', function(){
+        var currentQuantity = Number($(this).val()) || '';
+        var currentPrice = Number($(this).parent().prev().find('input').val()) || '';
+        var verifyPrice = false, verifyQty = false;
+        if (typeof currentPrice === "number") {
+            verifyPrice = true;
+        }
+        if (typeof currentQuantity === "number") {
+            verifyQty = true;
+        }
+        if(currentPrice && currentQuantity && verifyPrice && verifyQty) {
+            return $(this).parent().prev().prev().find('.product-list-price-value').text(currentPrice*currentQuantity);
+        } else {
+            return $(this).parent().prev().prev().find('.product-list-price-value').text('N/A');
+        }
+    });
+
+    $('#product-1-popover').popover({
+        trigger: 'hover',
+        html: 'true',
+        content: '<div class="product-1-popup">'+
+        '<div>Parameter 1 is verified</div>'+
+        '<div>Parameter 2 is verified</div>'+
+        '<div>Parameter 3 is verified</div>'+
+        '<div>Parameter 4 is verified</div>'+
+        '<div>Parameter 5 is verified</div>'+
+        '</div>',
+        placement: 'left'
+    });
+
+    $('#product-2-popover').popover({
+        trigger: 'hover',
+        html: 'true',
+        content: '<div class="product-1-popup">'+
+        '<div>Parameter 1 is verified</div>'+
+        '<div>Parameter 2 is verified</div>'+
+        '<div>Parameter 3 is verified</div>'+
+        '<div>Parameter 4 is verified</div>'+
+        '<div>Parameter 5 is verified</div>'+
+        '</div>',
+        placement: 'left'
+    });
+
+    $('#product-3-popover').popover({
+        trigger: 'hover',
+        html: 'true',
+        content: '<div class="product-1-popup">'+
+        '<div>Parameter 1 is verified</div>'+
+        '<div>Parameter 2 is verified</div>'+
+        '<div>Parameter 3 is verified</div>'+
+        '<div>Parameter 4 is verified</div>'+
+        '<div>Parameter 5 is verified</div>'+
+        '</div>',
+        placement: 'left'
+    });
+
 });
