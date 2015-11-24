@@ -61,38 +61,6 @@ $(document).ready(function(){
         
     });
 
-    $('.card-cancel').on('click', function (e) {
-        if (!$('#credit-card-full').val()) {
-            $('.card-apply').addClass('hidden');
-            $('#credit-card-full').val("");
-            $("#card-first-name").val("");
-            $("#card-last-name").val("");
-            $("#card-type").val("");
-            $("#card-number").val("");
-            $("#card-date").val("");
-            $("#card-cvv").val("");
-            $('.addCard').parent().removeClass('hidden');
-        } else {
-            $('.card-apply').addClass('hidden');
-            $('#credit-card-full').parent().removeClass('hidden');
-        }
-
-    });
-
-    // checking if card info is valid
-    $('.card-submit').on('click', function () {
-        var cardNumberValid = $.payment.validateCardNumber($('#card-number').val());
-        var cardDateValid = $.payment.validateCardExpiry($('#card-date').payment('cardExpiryVal'));
-        var cardCvvValid = $.payment.validateCardCVC($('#card-cvv').val());
-        var maskedNumber = 'XXXX-XXXX-XXXX-' + $('#card-number').val().slice(-4);
-        creditFormValid = cardNumberValid && cardDateValid && cardCvvValid && $('#card-first-name').val() && $('#card-last-name').val();
-        if (creditFormValid) {
-            $('.card-apply').addClass('hidden');
-            $('#credit-card-full').parent().removeClass('hidden');
-            $('#credit-card-full').val(maskedNumber);
-        }
-    });
-
     // applying addresses to card
     $('#showPaymentAddress').click(function(){
         var $this = $(this);
@@ -335,6 +303,125 @@ $(document).ready(function(){
                     $(".phone-type4").append($("<option></option>").val('Mobile').html("Mobile"));
                 }
                 $('.phone-numbers').addClass('hidden');
+            }
+            break;
+            case 'Addresses':
+            if ($('.all-addresses-block').hasClass('hidden')){
+                $('.all-addresses-block').removeClass('hidden');
+            } else {
+                $('.all-addresses-block').addClass('hidden');
+                $('.card-same').addClass('hidden');
+                $('#BillingAdd').addClass('hidden');
+                $('#showBilling').prop('checked', false);
+                $("#countriesBilling").select2('val', 'US');
+                $("#address1Billing").val("");
+                $("#address2Billing").val("");
+                $("#cityBilling").val("");
+                if ($("#statesUS").hasClass('hidden')) {
+                    $("#statesUS").removeClass('hidden');
+                }
+                $("#statesUS").select2('val', 'NY');
+                $("#postalCodeBilling").val("");
+                $("#address1Billing").rules("remove", "minlength");
+                $("#address1Billing").rules("remove", "maxlength");
+                $("#address1Billing").rules("remove", "notEqualAddress");
+                $("#cityBilling").rules("remove", "minlength");
+                $("#cityBilling").rules("remove", "maxlength");
+                $("#cityBilling").rules("remove", "notEqualCity");
+                $("#postalCodeBilling").rules("remove", "minlength");
+                $("#postalCodeBilling").rules("remove", "maxlength");
+                $("#postalCodeBilling").rules("remove", "notEqualPostal");
+                $("#postalCodeBilling").rules("remove", "number");
+                $('#serviceBlockEnterprise').addClass('hidden');
+                $('#showService').prop('checked', false);
+                $('#sameServiceEnterprise').prop('checked', false);
+                $("#countriesService").select2('val', 'US');
+                $("#address1Service").val("");
+                $("#address2Service").val("");
+                $("#cityService").val("");
+                if ($("#statesUSService").hasClass('hidden')) {
+                    $("#statesUSService").removeClass('hidden');
+                }
+                $("#statesUSService").select2('val', 'NY');
+                $('#sameServiceEnterprise').parent().parent().addClass('hidden');
+                $("#postalCodeService").val("");
+                $("#address1Service").rules("remove", "minlength");
+                $("#address1Service").rules("remove", "maxlength");
+                $("#address1Service").rules("remove", "notEqualAddress");
+                $("#cityService").rules("remove", "minlength");
+                $("#cityService").rules("remove", "maxlength");
+                $("#cityService").rules("remove", "notEqualCity");
+                $("#postalCodeService").rules("remove", "minlength");
+                $("#postalCodeService").rules("remove", "maxlength");
+                $("#postalCodeService").rules("remove", "notEqualPostal");
+                $("#postalCodeService").rules("remove", "number");
+                $('#shippingBlockEnterprise').addClass('hidden');
+                $('#showShipping').prop('checked', false);
+                $('#sameShippingEnterprise').prop('checked', false);
+                $("#countriesShipping").select2('val', 'US');
+                $("#address1Shipping").val("");
+                $("#address2Shipping").val("");
+                $("#cityShipping").val("");
+                if ($("#statesUSShipping").hasClass('hidden')) {
+                    $("#statesUSShipping").removeClass('hidden');
+                }
+                $("#statesUSShipping").select2('val', 'NY');
+                $('#sameShippingEnterprise').parent().parent().addClass('hidden');
+                $("#postalCodeShipping").val("");
+                $("#address1Shipping").rules("remove", "minlength");
+                $("#address1Shipping").rules("remove", "maxlength");
+                $("#address1Shipping").rules("remove", "notEqualAddress");
+                $("#cityShipping").rules("remove", "minlength");
+                $("#cityShipping").rules("remove", "maxlength");
+                $("#cityShipping").rules("remove", "notEqualCity");
+                $("#postalCodeShipping").rules("remove", "minlength");
+                $("#postalCodeShipping").rules("remove", "maxlength");
+                $("#postalCodeShipping").rules("remove", "notEqualPostal");
+                $("#postalCodeShipping").rules("remove", "number");
+                
+                $('#samePayment').prop('checked', false);
+                $('.paymentAddress').removeClass('hidden');
+                $("#countriesPayment").select2('val', 'US');
+                $("#address1Payment").val("");
+                $("#address2Payment").val("");
+                $("#cityPayment").val("");
+                if ($("#statesUSPayment").hasClass('hidden')) {
+                    $("#statesUSPayment").removeClass('hidden');
+                }
+                $("#statesUSPayment").select2('val', 'NY');
+                $("#postalCodePayment").val("");
+                $("#address1Payment").rules("add", {
+                    minlength: 5,
+                    maxlength: 20,
+                    notEqualAddress: {
+                        param: '',
+                        depends: function(element) {
+                            return ifAddressPaymentChangedInitially;
+                        }
+                    }
+                });
+                $("#cityPayment").rules("add", {
+                    minlength: 3,
+                    maxlength: 20,
+                    notEqualCity: {
+                        param: '',
+                        depends: function(element) {
+                            return ifcityPaymentChangedInitially;
+                        }
+                    }
+                });
+                $("#postalCodePayment").rules("add", {
+                    minlength: 2,
+                    maxlength: 20,
+                    number: true,
+                    notEqualPostal: {
+                        param: '',
+                        depends: function(element) {
+                            return ifpostalCodePaymentChangedInitially;
+                        }
+                    }
+                });
+
             }
             break;
             case 'Custom Field 1':

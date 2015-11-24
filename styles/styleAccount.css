@@ -404,3 +404,34 @@ h3 {
 }
 
 /* popups styling end*/
+
+/* modals */
+.products-modals .nav-tabs {
+    max-width: 30%;
+    min-width: 26%;
+    float: left;
+}
+
+.products-modals .nav-tabs > li {
+    float: none;
+}
+
+.products-modals .tab-content {
+    max-width: 76%;
+    float: left;
+    padding: 20px;
+}
+
+.products-modals .modal-footer {
+    clear: both;
+}
+
+.right-caret {
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-left: 5px solid #000000;
+    position: absolute;
+    right: 6px;
+    top: 14px;
+}
+/* modals end*/

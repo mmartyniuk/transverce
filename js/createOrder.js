@@ -265,6 +265,10 @@ $(document).ready(function(){
         '</div>',
         placement: 'left'
     });
+    $('#product-1-popover').click(function() {
+        $('#product-1-modal').modal('show');
+    })
+           
 
     $('#product-2-popover').popover({
         trigger: 'hover',

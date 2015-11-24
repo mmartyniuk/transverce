@@ -238,10 +238,33 @@ h3 {
 .arrow-postal:before {
     left: -112px;
 }
+
 header .row h6 strong, label strong {
     font-size: 17px;
 }
 
+.col-lg-4.col-lg-offset-2.col-md-4.col-md-offset-2.input-container.card-same {
+    margin-top: -10px;
+}
+
+.payment-divider {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.payment-divider-wrapper {
+    position: absolute;
+    left: 60px;
+    padding: 0;
+    right: 60px;
+    border-top: 1px solid #d8d8d8;
+}
+
+.payment-divider-wrapper span{
+    color: #A5A5A5;
+    font-size: 16px;
+    font-weight: normal;
+}
 select.form-control {
     padding: 6px 5px;
 }
@@ -839,14 +862,14 @@ select.form-control {
 }
 
 .dropdown .glyphicon.glyphicon-cog {
-    padding-right: 10px;
+    padding-right: 3px;
     margin-left: -10px;
 }
 
 .dropdown .caret {
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 11px;
 }
-
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     background-color: #3d77f9;
@@ -856,6 +879,19 @@ select.form-control {
 .dropdown-menu.additional-options-expanded {
     left: inherit;
     right: 0;
+    margin-right: 5px;
+}
+
+#additional-options {
+    margin-right: 5px;
+    padding: 7px 0 5px 20px;
+}
+
+.modal-header .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px;
 }
 
 .dropdown-menu > li > a {
