@@ -98,6 +98,7 @@ h3 {
 #enterprise .control-label {
     padding-right: 13px;
     padding-top: 8px;
+    font-weight: normal;
 }
 
 #enterprise .help-block {
@@ -206,7 +207,6 @@ h3 {
 }
 
 #enterprise .address-box .addresses-main-label {
-    font-weight: 700;
     padding-left: 33px;
 }
 
@@ -1094,6 +1094,9 @@ select.form-control {
     .phone1 input, .phone2 input, .phone3 input, .phone4 input {
         width: 75%;
         margin-left: 1px;
+    }
+    #enterprise .address-box.сard-box {
+        padding-left: 107px;
     }
     #enterprise .address-box {
         padding-left: 50px;
