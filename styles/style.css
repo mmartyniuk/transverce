@@ -168,7 +168,6 @@ h3 {
 
 .account-name-container+.tooltip {
     width: 140px;
-
 }
 .account-name-container+.tooltip .tooltip-inner {
     border: 1px solid #aaa;
@@ -244,12 +243,12 @@ header .row h6 strong, label strong {
 }
 
 .col-lg-4.col-lg-offset-2.col-md-4.col-md-offset-2.input-container.card-same {
-    margin-top: -10px;
+    margin-top: -20px;
 }
 
 .payment-divider {
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .payment-divider-wrapper {
@@ -555,6 +554,7 @@ select.form-control {
 
 .navbar-form {
     padding: 0;
+    margin-top: 7px;
 }
 
 .navbar-form .form-group {
@@ -879,11 +879,11 @@ select.form-control {
 .dropdown-menu.additional-options-expanded {
     left: inherit;
     right: 0;
-    margin-right: 5px;
+    margin-right: -21px;
 }
 
 #additional-options {
-    margin-right: 5px;
+    margin-right: -21px;
     padding: 7px 0 5px 20px;
 }
 
@@ -891,7 +891,11 @@ select.form-control {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 3px;
+    padding: 10px;
+}
+
+.modal-header .close span {
+    font-size: 30px;
 }
 
 .dropdown-menu > li > a {
@@ -933,13 +937,19 @@ select.form-control {
     width: 77%;
     margin: auto;
 }
+@-moz-document url-prefix() { 
+    .col-10 {
+        width: 78.6%;
+        margin: auto;
+    }
+}
 
 .col-auto-payment-label {
     float: left;
 }
 
 #autoPayment {
-    margin-left: 4px;
+    margin-left: 6px;
 }
 
 .credit-option {
@@ -959,11 +969,12 @@ select.form-control {
     padding-left: 3px;
     margin-bottom: 16px;
 }
-
-.custom-field-1 {
-    margin-top: 20px;
+#enterprise .address-shipping {
+    margin-bottom: 15px;
 }
-
+.financial-divider {
+    margin-top: 12px;
+}
 .сard-box {
     padding-bottom: 10px;
 }
@@ -989,6 +1000,11 @@ select.form-control {
     padding-right: 10px;
 }
 
+.address-box.сard-box .col-lg-offset-2:first-child {
+    margin-left: 7.7%;
+    margin-right: 7%;
+}
+
 @media (min-width: 768px){
     #nav-container {
         left: 0;
@@ -1009,6 +1025,13 @@ select.form-control {
     .phone-container, #enterprise .сard-box label {
         padding-left: 0;
     }
+    .col-9 {
+        width: 71.7%;
+        margin: auto;
+    }
+    .col-offset {
+        margin-left: 10.7%;
+    }
 }
 
 @media (min-width: 1200px){
@@ -1017,13 +1040,6 @@ select.form-control {
     }
     .container {
         width: 1024px;
-    }
-    .col-offset {
-        margin-left: 10.7%;
-    }
-    .col-9 {
-        width: 71.7%;
-        margin: auto;
     }
     .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
         width: 150px;
@@ -1048,10 +1064,6 @@ select.form-control {
         padding-left: 0;
         padding-right: 0;
     }
-    .address-box.сard-box .col-lg-offset-2:first-child {
-        margin-left: 8.5%;
-        margin-right: 7%;
-    }
     #enterprise .help-block {
         left: 85%;
     }
@@ -1073,6 +1085,11 @@ select.form-control {
     }
     .col-10 {
         width: 87%;
+    }
+    @-moz-document url-prefix() { 
+      .col-10 {
+         width: 88.5%;
+      }
     }
     .phone1 input, .phone2 input, .phone3 input, .phone4 input {
         width: 75%;
@@ -1100,6 +1117,14 @@ select.form-control {
         margin-right: 24px;
     }
 } 
+
+
+@media (max-width: 1199px){
+    .account-name-container+.tooltip {
+        width: 115px;
+    }
+}
+
 
 @media (max-width: 991px){
     /*.wrapper {
