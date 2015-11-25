@@ -13,7 +13,7 @@
         
         <!-- Custom css files -->
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/styleAccount.css">
+        <link rel="stylesheet" href="styles/styleOrder.css">
         <link rel="stylesheet" href="styles/bootstrap-datepicker.min.css">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -137,7 +137,7 @@
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" id="date">
                                         <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-calendar"></i>
+                                            <i class="date-icon"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -277,6 +277,311 @@
                 </section>
             </div>
         </div>
+
+        <!-- Product Name A -->
+        <div id="product-1-modal" class="modal fade products-modals" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="modal-product-title">Product Name A</span>
+                        <span class="modal-product-description">Configuration</span>
+                    </div>
+                    <div class="modal-body row">
+                        <div class="side-content col-md-4">
+                            <div class="side-divider">
+                                <span>REQUIRED</span>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li>
+                                    <a href="#tab1" data-toggle="tab"><b class="modal-configured modal-configured-true"></b>Activity Charge Rules<b class="right-caret"></b></a>
+                                </li>
+                                <li class="active">
+                                    <a href="#address-tab" data-toggle="tab"><b class="modal-configured"></b>Add Address<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#discount-code-tab" data-toggle="tab"><b class="modal-configured"></b>Discount Code<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#service-tab" data-toggle="tab"><b class="modal-configured"></b>Service<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#description-tab" data-toggle="tab"><b class="modal-configured"></b>Short Description<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#one-time-tab" data-toggle="tab"><b class="modal-configured"></b>One-Time Charges<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#recurring-tab" data-toggle="tab"><b class="modal-configured"></b>Recurring Charges<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#subscription-tab" data-toggle="tab"><b class="modal-configured"></b>Subscription Configuration<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#tab9" data-toggle="tab"><b class="modal-configured"></b>Agreement<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#tab10" data-toggle="tab"><b class="modal-configured"></b>Service Custom Field<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#tab11" data-toggle="tab"><b class="modal-configured"></b>Trial Period<b class="right-caret"></b></a>
+                                </li>
+                            </ul>
+                            <div class="side-divider">
+                                <span>OPTIONAL</span>
+                            </div>
+                        </div>
+                        <div class="tab-content col-md-8">
+                            <div class="tab-pane" id="tab1">
+                               <!-- tbd -->
+                            </div>
+                            <div class="tab-pane active" id="address-tab">
+                                 <div class="form-group row">
+                                    <label for="countries" class="required control-label col-md-3">Country</label>
+                                    <div class="col-md-9 input-container">
+                                        <select id="countries" class="form-control js-example-basic-single">
+                                            <option value="AF">Afghanistan</option>
+                                            <option value="AL">Albania</option>
+                                            <option value="DZ">Algeria</option>
+                                            <option value="AS">American Samoa</option>
+                                            <option value="AD">Andorra</option>
+                                            <option value="AO">Angola</option>
+                                            <option value="AI">Anguilla</option>
+                                            <option value="TM">Turkmenistan</option>
+                                            <option value="TC">Turks and Caicos Islands</option>
+                                            <option value="TV">Tuvalu</option>
+                                            <option value="UG">Uganda</option>
+                                            <option value="UA">Ukraine</option>
+                                            <option value="AE">United Arab Emirates</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="US" selected>United States</option>
+                                            <option value="UM">United States Minor Outlying Islands</option>
+                                            <option value="UY">Uruguay</option>
+                                            <option value="UZ">Uzbekistan</option>
+                                            <option value="VU">Vanuatu</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="address-1" class="required control-label col-md-3">Address Line 1</label>
+                                    <div class="col-md-9 input-container">
+                                        <input type="text" class="form-control" id="address-1" name="address-1">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="address-2" class="control-label col-md-3">Address Line 2</label>
+                                    <div class="col-md-9 input-container">
+                                        <input type="text" class="form-control" id="address-2">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="city" class="required control-label col-md-3">City</label>
+                                    <div class="col-md-9 input-container">
+                                        <input type="text" class="form-control" id="city" name="city">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="statesUS" class="required control-label col-md-3">State</label>
+                                    <div class="col-md-9 input-container">
+                                        <select id="states" class="form-control js-example-basic-single">
+                                            <option value="AL">Alabama</option>
+                                            <option value="AK">Alaska</option>
+                                            <option value="ME">Maine</option>
+                                            <option value="MD">Maryland</option>
+                                            <option value="MO">Missouri</option>
+                                            <option value="MT">Montana</option>
+                                            <option value="NE">Nebraska</option>
+                                            <option value="NV">Nevada</option>
+                                            <option value="NH">New Hampshire</option>
+                                            <option value="NJ">New Jersey</option>
+                                            <option value="NM">New Mexico</option>
+                                            <option value="NY" selected>New York</option>
+                                            <option value="NC">North Carolina</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="postal-code" class="required control-label col-md-3">Postal Code</label>
+                                    <div class="col-md-4 input-container">
+                                        <input type="text" class="form-control" id="postal-code" name="postal-code">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="discount-code-tab">
+                                <div class="form-group row">
+                                    <label for="discount-code" class="control-label col-md-3">Discount Code</label>
+                                    <div class="col-md-9 input-container">
+                                        <select id="discount-code" class="form-control">
+                                            <option value="10">13861421- 10% off - For All Customers</option>
+                                            <option value="20">13564869 - 20% off - For New Customers</option>
+                                            <option value="30">12453442 - 30% off - For Premium Customers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="service-tab">
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <span class="service-label">Select Service to apply Add-On to</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>Applicable Services</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    <input type="radio" name="services" id="service-1" value="service-1" checked>
+                                                    Tract UI Product1
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    <input type="radio" name="services" id="service-2" value="service-2">
+                                                    Service 2
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="description-tab">
+                                <div class="form-group row">
+                                    <label for="description" class="control-label col-md-4">Short Description</label>
+                                    <div class="col-md-8 input-container">
+                                        <textarea class="form-control" id="description" rows="3">Exclusive Fee Pro's short description, this description is a little longer than others and has three lines</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="one-time-tab">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="row">
+                                            <th class="col-md-6">Description</th>
+                                            <th class="col-md-3">Date</th>
+                                            <th class="col-md-3">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="row">
+                                            <td class="col-md-6">
+                                                <input type="text" class="form-control" id="description-1" name="description-1">
+                                            </td>
+                                            <td class="modal-date-one-time col-md-3">
+                                                <input type="text" class="form-control date">
+                                                <span class="input-group-addon">
+                                                    <i class="date-icon"></i>
+                                                </span>
+                                            </td>
+                                            <td class="col-md-3 modal-amount-one-time">
+                                                <input type="text" class="form-control" id="amount-1" name="amount-1" class="ammount">
+                                                <span class="desc-remove"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <a href="#">+ Schedule New Charge</a>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <span>Total Amount  0.00 USD</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="recurring-tab">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="row">
+                                            <th class="col-md-6">Description</th>
+                                            <th class="col-md-3">Date</th>
+                                            <th class="col-md-3">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="row">
+                                            <td class="col-md-6">
+                                                <input type="text" class="form-control">
+                                            </td>
+                                            <td class="modal-date-recurring col-md-3">
+                                                <input type="text" class="form-control date">
+                                                <span class="input-group-addon">
+                                                    <i class="date-icon"></i>
+                                                </span>
+                                            </td>
+                                            <td class="col-md-3 modal-amount-recurring">
+                                                <input type="text" class="form-control"class="ammount" value="50.00">
+                                                <span class="desc-remove"></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <div class="col-md-6 text-left">
+                                        <a href="#">+ Schedule New Charge</a>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <span>Total Amount  50.00 USD</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="subscription-tab">
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <span class="service-label">This service allows up to 2 service identifiers</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="product-identifier" class="control-label col-md-4 text-center">Select Identifier</label>
+                                    <div class="col-md-8 input-container">
+                                        <select id="product-identifier" class="form-control">
+                                            <option value="12">12</option>
+                                            <option value="24">24</option>
+                                            <option value="36">36</option>
+                                        </select>
+                                    </div>
+                                    <span class="desc-remove"></span>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <a href="#">+ Add Another Identifier</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="tab9">
+                                <p>Data 9</p>
+                            </div>
+                            <div class="tab-pane" id="tab10">
+                                <p>Data 10</p>
+                            </div>
+                            <div class="tab-pane" id="tab11">
+                                <p>Data 11</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-6 text-left arrows">
+                                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+                                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                            </div>
+                            <div class="col-md-6 confirm-buttons">
+                                <a href="#" class="btn btn-default">Cancel</a>
+                                <a href="#" class="btn btn-primary">OK</a>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+           </div>
+        </div>
+        <!-- Product Name A modal end -->
         
         <!-- jQuery, custom scripts  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -285,94 +590,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
         <script src="js/bootstrap-datepicker.min.js"></script>
         <script src="js/createOrder.js"></script>
-
-        <!-- Product Name A -->
-        <div id="product-1-modal" class="modal fade products-modals" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span>Product Name A</span>
-                        <span>Configuration</span>
-                    </div>
-                    <div class="modal-body">
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a href="#tab1" data-toggle="tab">Activity Charge Rules<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Add Address<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Discount Code<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Service<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Short Description<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">One-Time Charges<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Recurring Charges<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Subscription Configuration<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Agreement<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Service Custom Field<b class="right-caret"></b></a>
-                            </li>
-                            <li>
-                                <a href="#tab2" data-toggle="tab">Trial Period<b class="right-caret"></b></a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="tab1">
-                                <div class="form-group row">
-                                    <label for="AccountName" class="required control-label col-md-3">Account Name</label>
-                                    <div class="col-md-9 input-container">
-                                        <select class="form-control account-placeholder" id="AccountName" name="AccountName" disabled>
-                                            <option value="">Please fill (First Name and Last Name) or (Company Name)</option>
-                                        </select>
-                                        <span class="account-name-container" data-toggle="tooltip" data-placement="right" title="" data-original-title="Account name is very required field"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="AccountName" class="required control-label col-md-3">Account Name</label>
-                                    <div class="col-md-9 input-container">
-                                        <select class="form-control account-placeholder" id="AccountName" name="AccountName" disabled>
-                                            <option value="">Please fill (First Name and Last Name) or (Company Name)</option>
-                                        </select>
-                                        <span class="account-name-container" data-toggle="tooltip" data-placement="right" title="" data-original-title="Account name is very required field"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="AccountName" class="required control-label col-md-3">Account Name</label>
-                                    <div class="col-md-9 input-container">
-                                        <select class="form-control account-placeholder" id="AccountName" name="AccountName" disabled>
-                                            <option value="">Please fill (First Name and Last Name) or (Company Name)</option>
-                                        </select>
-                                        <span class="account-name-container" data-toggle="tooltip" data-placement="right" title="" data-original-title="Account name is very required field"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tab2">
-                                <p>Data 2</p>
-                            </div>
-                        </div>
-                   </div>
-                   <div class="modal-footer">
-                         <a href="#" class="btn btn-primary">Close</a>
-                         <a href="#" class="btn btn-default">OK</a>
-                   </div>
-               </div>
-           </div>
-        </div>
-        <!-- Product Name A modal end -->
 
     </body>
 </html>

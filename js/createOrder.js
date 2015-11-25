@@ -49,6 +49,8 @@ $(document).ready(function(){
     var today = new Date();
     $('.input-group.date').datepicker("setDate", today);
     $('.input-group.date').datepicker('update');
+    $('.modal-date-one-time').datepicker("setDate", today);
+    $('.modal-date-one-time').datepicker('update');
 
     // additional options expanding
     // start of changes

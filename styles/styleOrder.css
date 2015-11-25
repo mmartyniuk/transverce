@@ -3,7 +3,9 @@ body {
     background-color: #fff;
 }
 body label {
-    letter-spacing: 0.5px;
+    font-weight: normal;
+    text-align: right;
+    padding-top: 6px;
 }
 
 label {
@@ -25,6 +27,14 @@ h3 {
     margin-bottom: 20px;
     margin-top: 10px;
     color: #A2A2A2;
+}
+
+.required:after {
+    content: '*';
+    color: #d3222a;
+    font-size: 15px;
+    margin-left: 3px;
+    position: absolute;
 }
 
 /* Aside and top menu */
@@ -270,6 +280,23 @@ h3 {
     padding-bottom: 10px;
 }
 
+.date-icon {
+    background-image: url('../assets/calendar.png'); 
+    position: absolute;
+    width: 18px;
+    height: 20px;
+    top: 8px;
+    cursor: pointer;
+    opacity: 0.7;
+    display: block;
+}
+.date-icon:hover {
+    opacity: 1;
+}
+.products-modals .date-icon {
+    position: relative;
+}
+
 .account-header .dropdown {
     margin-top: 10px;
 }
@@ -406,9 +433,14 @@ h3 {
 /* popups styling end*/
 
 /* modals */
-.products-modals .nav-tabs {
-    max-width: 30%;
-    min-width: 26%;
+.products-modals .modal-body {
+    padding: 0;
+}
+.products-modals .modal-header, .products-modals .modal-footer {
+    background-color: #F8F8F8;
+}
+
+.products-modals .side-content {
     float: left;
 }
 
@@ -417,9 +449,7 @@ h3 {
 }
 
 .products-modals .tab-content {
-    max-width: 76%;
-    float: left;
-    padding: 20px;
+    padding: 40px 100px 0 40px;
 }
 
 .products-modals .modal-footer {
@@ -434,4 +464,111 @@ h3 {
     right: 6px;
     top: 14px;
 }
+
+.side-divider {
+    background-color: #E3E3E3;
+    padding: 3px 8px 3px 25px;
+    width: 100%;
+    color: #B8B8B8;
+}
+
+.side-divider:first-child {
+    color: #D53B4E;
+}
+
+.products-modals .nav-tabs > li > a {
+    background-color: #F8F8F8;
+    color: #000;
+    font-size: 13px;
+    margin-right: 0;
+}
+
+.nav-tabs > li > a:hover {
+    color: #fff;
+    background-color: #4A90E2; 
+}
+
+.nav-tabs > li > a:hover .right-caret, .nav-tabs > li.active > a .right-caret {
+    border-left: 5px solid #fff;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #fff;
+    background-color: #4A90E2; 
+}
+
+.modal-configured {
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: left;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    border-radius: 50%;
+    margin-top: 1px;
+}
+.modal-configured.modal-configured-true {
+    border: none;
+    background: url('../assets/configured_ok.png') no-repeat;
+}
+
+.modal-footer .glyphicon-chevron-left, .modal-footer .glyphicon-chevron-right {
+    font-size: 20px;
+}
+
+.products-modals .modal-footer .arrows a {
+    border-color: #B8B8B8;
+    color: #B8B8B8;
+}
+
+.products-modals .modal-footer .btn-default {
+    background-color: #fff;
+}
+
+.modal-product-title {
+    font-size: 18px;
+    padding-right: 5px;
+}
+.modal-product-description, .service-label {
+    color: #BFBFBF;
+}
+
+.desc-remove {
+    background-image: url('../assets/delete_phone.png');
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    opacity: 0.7;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+
+.desc-remove:hover {
+    opacity: 1;
+}
+
+.tab-pane table td {
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-date-one-time input, .modal-amount-one-time input, .modal-date-recurring input, .modal-amount-recurring input {
+    width: 75%;
+    float: left;
+}
+.modal-date-one-time span, .modal-date-recurring span {
+    display: block;
+    padding-left: 80%;
+    background: none;
+    border: none;
+}
+
+.modal-date-one-time i, .modal-date-recurring i {
+    top: 0;
+}
+
+#one-time-tab table, #recurring-tab table {
+    margin-bottom: 20px;
+}
+
 /* modals end*/
