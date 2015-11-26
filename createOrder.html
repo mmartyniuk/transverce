@@ -250,7 +250,7 @@
                                 </tbody>
                             </table>
                             <div id="product-select" class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-12">
                                     <select id="add-product" class="form-control">
                                         <option value=""></option>
                                         <option value="product1">Product Name A</option>
@@ -285,6 +285,7 @@
                     <div class="modal-header">
                         <span class="modal-product-title">Product Name A</span>
                         <span class="modal-product-description">Configuration</span>
+                        <button type="button" class="close text-left" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body row">
                         <div class="side-content col-md-4">
@@ -317,13 +318,13 @@
                                     <a href="#subscription-tab" data-toggle="tab"><b class="modal-configured"></b>Subscription Configuration<b class="right-caret"></b></a>
                                 </li>
                                 <li>
-                                    <a href="#tab9" data-toggle="tab"><b class="modal-configured"></b>Agreement<b class="right-caret"></b></a>
+                                    <a href="#agreement-tab" data-toggle="tab"><b class="modal-configured"></b>Agreement<b class="right-caret"></b></a>
                                 </li>
                                 <li>
-                                    <a href="#tab10" data-toggle="tab"><b class="modal-configured"></b>Service Custom Field<b class="right-caret"></b></a>
+                                    <a href="#service-custom-tab" data-toggle="tab"><b class="modal-configured"></b>Service Custom Field<b class="right-caret"></b></a>
                                 </li>
                                 <li>
-                                    <a href="#tab11" data-toggle="tab"><b class="modal-configured"></b>Trial Period<b class="right-caret"></b></a>
+                                    <a href="#trial-period-tab" data-toggle="tab"><b class="modal-configured"></b>Trial Period<b class="right-caret"></b></a>
                                 </li>
                             </ul>
                             <div class="side-divider">
@@ -539,7 +540,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="product-identifier" class="control-label col-md-4 text-center">Select Identifier</label>
+                                    <label for="product-identifier" class="control-label col-md-3 text-center">Select Identifier</label>
                                     <div class="col-md-8 input-container">
                                         <select id="product-identifier" class="form-control">
                                             <option value="12">12</option>
@@ -555,14 +556,153 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab9">
-                                <p>Data 9</p>
+                            <div class="tab-pane" id="agreement-tab">
+                                <div class="form-group row">
+                                    <div class="col-md-4 text-right">
+                                        <span>Product</span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span>Product name A</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row text-right">
+                                    <div class="col-md-4">
+                                        <span>Requires Agreement</span>
+                                    </div>
+                                    <div class="col-md-8 text-left">
+                                        <span>Yes</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row dashed-block">
+                                    <label for="applicable-agreements" class="control-label col-md-4 text-right">Applicable Agreements</label>
+                                    <div class="col-md-8 input-container">
+                                        <select id="applicable-agreements" class="form-control">
+                                            <option value="1">1 Day Agreement</option>
+                                            <option value="2">2 Days Agreement</option>
+                                            <option value="3">3 Days Agreement</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row dashed-block-label">
+                                    <div class="col-md-4 text-right custom-label">
+                                        <span>Select Agreement Option</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="agreement-period" class="control-label col-md-4 text-right required">Agreement Period</label>
+                                    <div class="col-md-4 input-container">
+                                        <input type="text" class="form-control" id="agreement-period">
+                                    </div>
+                                    <div class="col-md-4 text-left custom-label">
+                                        <span>Month</span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="renewal-action" class="control-label col-md-4 text-right required">Renewal Action</label>
+                                    <div class="col-md-4 input-container">
+                                        <select id="renewal-action" class="form-control">
+                                            <option value="1">1 Day Agreement</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4 text-right">
+                                        <label class="control-label required">Renewal Pricing</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    <input type="radio" name="renewal-prices" id="renewal-product-price" value="renewal-product-price" checked>
+                                                    Product Price
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    <input type="radio" name="renewal-prices" id="renewal-service-price" value="renewal-service-price">
+                                                    Service Price
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="renewal-date" class="control-label col-md-4 text-right">Overrider End Date</label>
+                                    <div class="col-md-4 input-container agreement-date">
+                                        <input type="text" class="form-control date">
+                                        <span class="input-group-addon">
+                                            <i class="date-icon"></i>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="tab10">
-                                <p>Data 10</p>
+                            <div class="tab-pane" id="service-custom-tab">
+                                <div class="form-group row">
+                                    <div class="col-md-3 text-right">
+                                        <label for="service-cf-1" class="control-label">Service CF 1</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" id="service-cf-1">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 custom-label">
+                                                <span>Place for short description of the custom field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-3 text-right">
+                                        <label for="service-cf-2" class="control-label">Service CF 2</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input type="text" class="form-control" id="service-cf-2">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 custom-label">
+                                                <span>Place for short description of the custom field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-3 text-right">
+                                        <label for="service-cf-3" class="control-label">Service CF 3</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <select id="service-cf-3" class="form-control">
+                                                    <option value="">Pick List Value</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 custom-label">
+                                                <span>Place for short description of the custom field</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tab-pane" id="tab11">
-                                <p>Data 11</p>
+                            <div class="tab-pane" id="trial-period-tab">
+                                <div class="form-group row">
+                                    <label for="trial-length" class="control-label col-md-3 text-right required">Trial Period</label>
+                                    <div class="col-md-4 input-container">
+                                        <input type="text" class="form-control" id="trial-length" value="10">
+                                    </div>
+                                    <div class="col-md-3 text-left custom-label">
+                                        <span>Days</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -47,10 +47,12 @@ $(document).ready(function(){
 
     // applying datepicker here
     var today = new Date();
-    $('.input-group.date').datepicker("setDate", today);
+    /*$('.input-group.date').datepicker("setDate", today);
     $('.input-group.date').datepicker('update');
     $('.modal-date-one-time').datepicker("setDate", today);
     $('.modal-date-one-time').datepicker('update');
+    $('.agreement-date').datepicker("setDate", today);
+    $('.agreement-date').datepicker('update');*/
 
     // additional options expanding
     // start of changes
