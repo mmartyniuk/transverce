@@ -65,7 +65,7 @@ h3 {
     margin-left: 21.7%;
 }
 .col-md-3 select {
-    width: 173px;
+    width: 125px;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     opacity: 0.5;
@@ -1089,8 +1089,21 @@ select.form-control {
         left: -3.5%;
     }
     .date-container input, .card-cvc input {
-        width: 175px;
+        width: 120px;
     }
+    #enterprise .address-box label {
+        padding-left: 25px;
+    }
+    .col-10 {
+        width: 76%;
+    }
+    #autoPayment {
+        margin-left: 6px;
+    }
+    .address-box.сard-box .col-lg-offset-2:first-child {
+        margin-left: 1.7%;
+    }
+
 }
 
 @media (max-width: 1500px){
