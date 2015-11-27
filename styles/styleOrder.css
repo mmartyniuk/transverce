@@ -586,4 +586,29 @@ h3 {
 .agreement-date .date-icon {
     position: absolute;
 }
+
+.active-icon {
+    color: #6EAD00;
+    border: 1px solid #6EAD00;
+    font-size: 13px;
+    padding: 2px;
+}
+
+#activity-charge-tab .dropdown-menu {
+    right: 0;
+    left: inherit;
+    min-width: 110px;
+}
+
+#activity-charge-tab td, #activity-charge-tab th {
+    text-align: center;
+}
+
+.charge-actions {
+    font-weight: bold;
+}
+
+.charge-actions, .charge-actions:active, .charge-actions:hover {
+    text-decoration: none;
+}
 /* modals end*/

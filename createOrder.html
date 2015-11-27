@@ -294,7 +294,7 @@
                             </div>
                             <ul class="nav nav-tabs">
                                 <li>
-                                    <a href="#tab1" data-toggle="tab"><b class="modal-configured modal-configured-true"></b>Activity Charge Rules<b class="right-caret"></b></a>
+                                    <a href="#activity-charge-tab" data-toggle="tab"><b class="modal-configured modal-configured-true"></b>Activity Charge Rules<b class="right-caret"></b></a>
                                 </li>
                                 <li class="active">
                                     <a href="#address-tab" data-toggle="tab"><b class="modal-configured"></b>Add Address<b class="right-caret"></b></a>
@@ -332,8 +332,52 @@
                             </div>
                         </div>
                         <div class="tab-content col-md-8">
-                            <div class="tab-pane" id="tab1">
-                               <!-- tbd -->
+                            <div class="tab-pane" id="activity-charge-tab">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Status</th>
+                                            <th>Name</th>
+                                            <th>Rule</th>
+                                            <th>Rate</th>
+                                            <th>Allowance</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="active-icon">ACTIVE</span>
+                                            </td>
+                                            <td>Nice Activity</td>
+                                            <td>Matches All</td>
+                                            <td>3 per Min</td>
+                                            <td>5 Min</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <a class="dropdown-toggle charge-actions" data-toggle="dropdown" href="#">...</a>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li>
+                                                            <a tabindex="-1" href="#">Edit</a>
+                                                        </li>
+                                                        <li>
+                                                            <a tabindex="-1" href="#">Move Up</a>
+                                                        </li>
+                                                        <li>
+                                                            <a tabindex="-1" href="#">Move Down</a>
+                                                        </li>
+                                                        <li>
+                                                            <a tabindex="-1" href="#">Delete</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="new-activity">
+                                    <a href="#">New Activity Charge Rule</a>
+                                </div>
                             </div>
                             <div class="tab-pane active" id="address-tab">
                                  <div class="form-group row">
@@ -409,7 +453,7 @@
                             </div>
                             <div class="tab-pane" id="discount-code-tab">
                                 <div class="form-group row">
-                                    <label for="discount-code" class="control-label col-md-3">Discount Code</label>
+                                    <label for="discount-code" class="control-label col-md-3 required">Discount Code</label>
                                     <div class="col-md-9 input-container">
                                         <select id="discount-code" class="form-control">
                                             <option value="10">13861421- 10% off - For All Customers</option>

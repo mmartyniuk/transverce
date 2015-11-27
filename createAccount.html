@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
         <!-- Custom css files -->
         <link rel="stylesheet" href="styles/main.css">
@@ -83,11 +84,10 @@
                                 <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6">
                                     <h4>Create New Account</h4>
                                 </div>
-                                <div class="col-lg-2 col-lg-offset-6 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-1 col-xs-2 text-right">
+                                <div class="col-lg-3 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-1 col-xs-2 text-right">
                                     <div class="dropdown">
                                         <button class="btn btn-default" type="button" id="additional-options">
-                                            <span class="glyphicon glyphicon-cog"></span>
-                                            Add Fields
+                                            Optional Fields
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu additional-options-expanded">
@@ -297,7 +297,7 @@
                                                         <label class="control-label col-md-2 addresses-main-label">
                                                             Addresses
                                                         </label>
-                                                        <label class="control-label col-md-3">
+                                                        <label class="control-label col-md-4">
                                                             <input type="checkbox" id="showBilling"> Billing Address
                                                         </label>
                                                     </div>
@@ -378,10 +378,10 @@
                                                 </div>
                                                 <div class="row address-box"> 
                                                     <div class="col-9">
-                                                        <label class="control-label col-md-3 col-md-offset-2">
+                                                        <label class="control-label col-md-4 col-md-offset-2">
                                                             <input type="checkbox" id="showService"> Service Address
                                                         </label>
-                                                        <div class="col-md-4 col-md-offset-2 input-container hidden">
+                                                        <div class="col-md-4 col-md-offset-1 input-container hidden">
                                                             <label for="sameServiceEnterprise" class="control-label">
                                                                 <input type="checkbox" id="sameServiceEnterprise"> Same as billing
                                                             </label>
@@ -466,10 +466,10 @@
                                                 </div>
                                                 <div class="row address-box address-shipping"> 
                                                     <div class="col-9">
-                                                        <label class="control-label col-md-3 col-md-offset-2">
+                                                        <label class="control-label col-md-4 col-md-offset-2">
                                                             <input type="checkbox" id="showShipping"> Shipping Address
                                                         </label>
-                                                        <div class="col-md-4 col-md-offset-2 input-container hidden">
+                                                        <div class="col-md-4 col-md-offset-1 input-container hidden">
                                                             <label for="sameShippingEnterprise" class="control-label">
                                                                 <input type="checkbox" id="sameShippingEnterprise"> Same as billing
                                                             </label>
@@ -657,7 +657,7 @@
                                                             <div class="col-md-3 input-container date-container">
                                                                 <input type="tel" class="form-control" id="card-date">
                                                             </div>
-                                                            <label for="card-cvv" class="col-md-1 control-label required">CVV</label>
+                                                            <label for="card-cvv" class="col-md-2 control-label required label-cvv">CVV</label>
                                                             <div class="col-md-3 input-container card-cvc">
                                                                 <input type="tel" class="form-control" id="card-cvv">
                                                             </div>
@@ -670,7 +670,7 @@
                                                         </div>
                                                         <div class="row address-box сard-box"> 
                                                             <div class="col-9">
-                                                                <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 input-container card-same hidden">
+                                                                <div class="col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-2 input-container card-same hidden">
                                                                     <label for="sameServiceEnterprise" class="control-label">
                                                                         <input type="checkbox" id="samePayment"> Same as Billing
                                                                     </label>

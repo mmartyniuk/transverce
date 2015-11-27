@@ -2,6 +2,13 @@
 
 body {
     background-color: #e6e6e6;
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: 'Roboto', Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 body label {
     letter-spacing: 0.1px;
@@ -29,7 +36,7 @@ h3 {
 }
 
 #accountDetails .modal-header {
-    border-bottom: 2px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .submitForm.modal-footer {
@@ -78,7 +85,7 @@ h3 {
 .form-control {
     display: inline-block;
     margin-bottom: 9px;
-    height: 35px;
+    height: 32px;
     width: 86%;
     padding-right: 28px;
 }
@@ -96,7 +103,7 @@ h3 {
 }
 
 #enterprise .control-label {
-    padding-right: 13px;
+    padding-right: 10px;
     padding-top: 8px;
     font-weight: normal;
 }
@@ -106,7 +113,7 @@ h3 {
     position: absolute;
     background-color: #D0021B;
     color: #fff;
-    width: 20%;
+    width: 26%;
     left: 88%;
     padding: 10px 15px;
     top: -13px;
@@ -168,7 +175,8 @@ h3 {
 }
 
 .account-name-container+.tooltip {
-    width: 140px;
+    width: 160px;
+    font-size: 12px;
 }
 .account-name-container+.tooltip .tooltip-inner {
     border: 1px solid #aaa;
@@ -187,7 +195,7 @@ h3 {
     background: url('../assets/error_icon.png') no-repeat;
     height: 20px;
     width: 20px;
-    right: 29px;
+    right: 83px;
     top: 8px;
 }
 
@@ -207,7 +215,7 @@ h3 {
 }
 
 #enterprise .address-box .addresses-main-label {
-    padding-left: 33px;
+    padding-left: 23px;
 }
 
 .success-container-postal:after {
@@ -217,7 +225,7 @@ h3 {
     background: url('../assets/ok_green.png') no-repeat;
     height: 20px;
     width: 20px;
-    right: 29px;
+    right: 83px;
     top: 8px;
 }
 .errorIcon {
@@ -242,7 +250,7 @@ header .row h6 strong, label strong {
     font-size: 17px;
 }
 
-.col-lg-4.col-lg-offset-2.col-md-4.col-md-offset-2.input-container.card-same {
+.col-lg-6.col-lg-offset-2.col-md-6.col-md-offset-2.input-container.card-same {
     margin-top: -20px;
 }
 
@@ -293,11 +301,11 @@ select.form-control {
 }
 
 .header {
-    padding: 0 75px;
+    padding: 0 45px;
 }
 
 .modal-header {
-    padding: 7px 20px 4px;
+    padding: 6px 20px 10px;
 }
 
 .header h3 {
@@ -693,7 +701,7 @@ select.form-control {
     margin-top: 8px;
 }
 .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
-    width: 172px;
+    width: 120px;
 }
 
 .desc-remove {
@@ -775,8 +783,8 @@ select.form-control {
 }
 
 .margin-top-30, .title.divider.margin-top-30 {
-    margin-top: 17px;
-    margin-bottom: 7px;
+    margin-top: 11px;
+    margin-bottom: 4px;
 }
 
 .financial select {
@@ -799,13 +807,13 @@ select.form-control {
 }
 
 #postalCodeBilling, #postalCodeShipping, #postalCodeService, #postalCodePayment {
-    width: 172px;
+    width: 120px;
 }
 
 #enterprise .address-box label{
     font-weight: normal;
     text-align: left;
-    padding-left: 24px;
+    padding-left: 15px;
 }
 
 #BillingAdd, #shippingBlockEnterprise, #serviceBlockEnterprise {
@@ -856,8 +864,8 @@ select.form-control {
 }
 
 .dropdown button, a.btn.btn-default, .dropdown .btn-default:focus {
-    color: #3d77f9;
-    border: 1px solid #3d77f9;
+    color: #000;
+    border: 1px solid #a5a5a5;
     background: transparent;
 }
 
@@ -867,7 +875,6 @@ select.form-control {
 }
 
 .dropdown .caret {
-    margin-left: 5px;
     margin-right: 11px;
 }
 
@@ -879,19 +886,19 @@ select.form-control {
 .dropdown-menu.additional-options-expanded {
     left: inherit;
     right: 0;
-    margin-right: -21px;
+    margin-right: -68px;
 }
 
 #additional-options {
-    margin-right: -21px;
-    padding: 7px 0 5px 20px;
+    margin-top: 4px;
+    padding: 4px 0 2px 10px;
 }
 
 .modal-header .close {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 10px;
+    padding: 11px 36px 0 0;
 }
 
 .modal-header .close span {
@@ -949,7 +956,7 @@ select.form-control {
 }
 
 #autoPayment {
-    margin-left: 6px;
+    margin-left: 5px;
 }
 
 .credit-option {
@@ -982,6 +989,9 @@ select.form-control {
 .card-cvc {
     padding-right: 27px;
 }
+.label-cvv {
+    margin-left: -34px;
+}
 
 .paymentAddress {
     margin-top: 8px;
@@ -994,10 +1004,6 @@ select.form-control {
 
 .date-container {
     margin-right: 16px;
-}
-
-.cvv-n-date-container div, .cvv-n-date-container label {
-    padding-right: 10px;
 }
 
 .address-box.сard-box .col-lg-offset-2:first-child {
@@ -1013,6 +1019,9 @@ select.form-control {
         padding-top: 15px;
         padding-bottom: 13px;
     }
+    .dropdown-menu.additional-options-expanded {
+        margin-right: -117px;
+    }
 }
 
 @media (min-width: 992px){
@@ -1020,7 +1029,7 @@ select.form-control {
         margin: 0 -12px 32px -33px;
     }
     .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
-        width: 150px;
+        width: 120px;
     }
     .phone-container, #enterprise .сard-box label {
         padding-left: 0;
@@ -1032,6 +1041,9 @@ select.form-control {
     .col-offset {
         margin-left: 10.7%;
     }
+    .dropdown-menu.additional-options-expanded {
+        margin-right: -92px;
+    }
 }
 
 @media (min-width: 1200px){
@@ -1042,7 +1054,10 @@ select.form-control {
         width: 1024px;
     }
     .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
-        width: 150px;
+        width: 120px;
+    }
+    .dropdown-menu.additional-options-expanded {
+        margin-right: -69px;
     }
 }
 
@@ -1058,7 +1073,7 @@ select.form-control {
         white-space: nowrap;
     }
     .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
-        width: 125px;
+        width: 120px;
     }
     .phone-container {
         padding-left: 0;
@@ -1073,6 +1088,9 @@ select.form-control {
     #postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
         left: -3.5%;
     }
+    .date-container input, .card-cvc input {
+        width: 175px;
+    }
 }
 
 @media (max-width: 1500px){
@@ -1080,11 +1098,11 @@ select.form-control {
         margin-left: 0;
     }
     .col-9 {
-        width: 88%;
-        margin-left: 5%;
+        width: 72%;
+        margin-left: 11%;
     }
     .col-10 {
-        width: 87%;
+        width: 82%;
     }
     @-moz-document url-prefix() { 
       .col-10 {
@@ -1093,41 +1111,29 @@ select.form-control {
     }
     .phone1 input, .phone2 input, .phone3 input, .phone4 input {
         width: 75%;
-        margin-left: 1px;
     }
     #enterprise .address-box.сard-box {
-        padding-left: 107px;
+        padding-left: 58px;
     }
     #enterprise .address-box {
         padding-left: 50px;
     }
     .account-name-container {
-        right: 77px;
+        right: 65px;
     }
     #enterprise .help-block {
         left: 86%;
     }
     .icon-container:after {
-        right: 111px;
+        right: 100px;
     }
     #postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
         left: -2.5%;
     }
-    #enterprise .address-box .addresses-main-label {
-        padding-left: 54px;
-    }
-    .date-container {
-        margin-right: 24px;
-    }
-} 
-
-
-@media (max-width: 1199px){
-    .account-name-container+.tooltip {
-        width: 115px;
+    .date-container input, .card-cvc input {
+        width: 120px;
     }
 }
-
 
 @media (max-width: 991px){
     /*.wrapper {
@@ -1137,7 +1143,7 @@ select.form-control {
         margin-bottom: 3px;
     }
     .input-container {
-        padding-left: 5px;
+        padding-left: 8px;
         padding-right: 36px;
     }
     .the-fieldset {
@@ -1157,7 +1163,6 @@ select.form-control {
     }
     .phone1 input, .phone2 input, .phone3 input, .phone4 input {
         width: 58%;
-        margin-left: 0;
     }
     .phone-container {
         padding-left: 0;
