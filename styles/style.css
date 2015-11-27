@@ -37,10 +37,12 @@ h3 {
 
 #accountDetails .modal-header {
     border-bottom: 1px solid #e5e5e5;
+    background-color: #F8F8F8;
 }
 
 .submitForm.modal-footer {
-    border-top: 2px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    background-color: #F8F8F8;
     padding: 15px;
 }
 
@@ -721,6 +723,7 @@ select.form-control {
 
 .btn.pull-right.cancelForm {
     margin-right: 15px;
+    background-color: #fff;
 }
 
 .btn.pull-right:last-child {
