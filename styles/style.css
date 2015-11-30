@@ -684,7 +684,7 @@ select.form-control {
 
 .phone-container {
     position: relative;
-    padding-left: 41px;
+    padding-left: 0;
     padding-right: 23px;
 }
 
@@ -1006,47 +1006,12 @@ select.form-control {
 }
 
 .date-container {
-    margin-right: 13px;
+    margin-right: 19px;
 }
 
 .address-box.сard-box .col-lg-offset-2:first-child {
     margin-left: 7.7%;
     margin-right: 7%;
-}
-
-@media (min-width: 768px){
-    #nav-container {
-        left: 0;
-    }
-    .navbar-nav > li > a {
-        padding-top: 15px;
-        padding-bottom: 13px;
-    }
-    .dropdown-menu.additional-options-expanded {
-        margin-right: -117px;
-    }
-}
-
-@media (min-width: 992px){
-    .the-fieldset {
-        margin: 0 -12px 32px -33px;
-    }
-    .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
-        width: 120px;
-    }
-    .phone-container, #enterprise .сard-box label {
-        padding-left: 0;
-    }
-    .col-9 {
-        width: 71.7%;
-        margin: auto;
-    }
-    .col-offset {
-        margin-left: 10.7%;
-    }
-    .dropdown-menu.additional-options-expanded {
-        margin-right: -89px;
-    }
 }
 
 @media (min-width: 1200px){
@@ -1080,7 +1045,6 @@ select.form-control {
     }
     .phone-container {
         padding-left: 0;
-        padding-right: 0;
     }
     #enterprise .help-block {
         left: 85%;
@@ -1129,7 +1093,7 @@ select.form-control {
         width: 74.5%;
     }
     #enterprise .address-box.сard-box {
-        padding-left: 58px;
+        padding-left: 42px;
     }
     #enterprise .address-box {
         padding-left: 50px;
@@ -1144,78 +1108,9 @@ select.form-control {
         right: 100px;
     }
     #postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
-        left: -2.5%;
+        left: -11.5%;
     }
     .date-container input, .card-cvc input {
         width: 120px;
-    }
-}
-
-@media (max-width: 991px){
-    /*.wrapper {
-        padding: 0 0 0 20px;
-    }*/
-    .form-horizontal .control-label {
-        margin-bottom: 3px;
-    }
-    .input-container {
-        padding-left: 8px;
-        padding-right: 36px;
-    }
-    .the-fieldset {
-        margin: 0px -11px 1.5em -34px;
-    }
-    .col-offset {
-        margin-left: 5%;
-    }
-    .col-9 {
-        width: 100%;
-    }
-    .phone2, .phone3, .phone4 {
-        float: none !important;
-    }
-    .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
-        width: 115px;
-    }
-    .phone1 input, .phone2 input, .phone3 input, .phone4 input {
-        width: 58%;
-    }
-    .phone-container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .phone1 .input-container, .phone1 .phone-container, .phone2 .input-container, .phone2 .phone-container, .phone3 .input-container, .phone3 .phone-container, .phone4 .input-container, .phone4 .phone-container {
-        display: inline;
-    }
-    #enterprise .address-box, #enterprise .service-box, #enterprise .shipping-box {
-        padding-left: 11px;
-    }
-}
-
-@media (max-width: 767px){
-    .divider {
-        background: none;
-    }
-    .switcher .nav-tabs {
-        left: 0;
-    }
-    .col-offset {
-        margin-left: 0;
-    }
-    .col-9 {
-        width: 100%;
-    }
-    .help-block:before {
-        position: relative;
-        border: 7px solid transparent;
-        border-bottom: 7px solid #D0021B;
-        left: -7px;
-        top: -32px;
-    }
-    #enterprise .help-block {
-        position: relative;
-        width: auto;
-        left: 15px;
-        top: -6px;
     }
 }
