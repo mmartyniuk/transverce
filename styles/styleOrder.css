@@ -1,6 +1,7 @@
 /* Native elements */
 body {
     background-color: #fff;
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body label {
     font-weight: normal;
@@ -29,6 +30,10 @@ h3 {
     color: #A2A2A2;
 }
 
+header h2 {
+    font-size: 24px;
+    color: #A2A2A2;
+}
 .required:after {
     content: '*';
     color: #d3222a;
@@ -230,7 +235,7 @@ h3 {
 }
 
 #account {
-    padding: 40px 15px 0 135px;
+    padding: 0px 15px 0 122px;
     height: 100%;
 }
 

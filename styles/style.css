@@ -887,7 +887,8 @@ select.form-control {
 .dropdown-menu.additional-options-expanded {
     left: inherit;
     right: 0;
-    margin-right: -47px;
+    margin-right: -21px;
+    min-width: 190px;
 }
 
 #additional-options {
@@ -908,7 +909,7 @@ select.form-control {
 }
 
 .dropdown-menu > li > a {
-    padding: 3px 10px;
+    padding: 8px 9px 3px 17px;
 }
 
 .dropdown-menu .set-value input {
@@ -920,7 +921,7 @@ select.form-control {
     padding-right: 29px;
 }
 #accountDetails .modal-dialog.modal-lg {
-    max-width: 815px;
+    max-width: 800px;
 }
 
 .modal.fade.in {
@@ -1044,7 +1045,7 @@ select.form-control {
         margin-left: 10.7%;
     }
     .dropdown-menu.additional-options-expanded {
-        margin-right: -92px;
+        margin-right: -89px;
     }
 }
 
@@ -1059,7 +1060,7 @@ select.form-control {
         width: 120px;
     }
     .dropdown-menu.additional-options-expanded {
-        margin-right: -47px;
+        margin-right: -42px;
     }
 }
 
