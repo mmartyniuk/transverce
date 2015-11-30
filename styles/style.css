@@ -675,7 +675,7 @@ select.form-control {
 #spinnerCurr{
     position: absolute;
     top: -41px;
-    right: 63%;
+    right: 75%;
 }
 
 .currency-container {
@@ -841,7 +841,6 @@ select.form-control {
 
 #AccountName[disabled] {
     color: #aaa;
-    background-color: #fff;
     border-color: rgb(203, 213, 221);
     opacity: 1;
     cursor: default;
@@ -895,6 +894,7 @@ select.form-control {
 #additional-options {
     margin-top: 4px;
     padding: 4px 0 2px 10px;
+    background-color: #fff;
 }
 
 .modal-header .close {
