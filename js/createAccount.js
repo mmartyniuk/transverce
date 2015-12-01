@@ -457,7 +457,7 @@ $(document).ready(function(){
                 $('.payment-term').addClass('hidden');
             }
             break;
-            case 'Authorize Auto-Payment':
+            case 'Auth. Auto-Payment':
             if ($('.authorize-auto-payment').hasClass('hidden')){
                 $('.authorize-auto-payment').removeClass('hidden');
             } else {
