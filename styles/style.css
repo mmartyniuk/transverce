@@ -11,6 +11,7 @@ samp {
   font-family: 'Roboto', Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 body label {
+    color: #999;
     letter-spacing: 0.1px;
 }
 
@@ -972,6 +973,7 @@ select.form-control {
 .credit-option {
     margin-top: 6px;
     margin-bottom: 10px;
+    color: #999;
 }
 
 .credit-option #showCreditCard {
