@@ -40,6 +40,9 @@ h3 {
     border-bottom: 1px solid #e5e5e5;
     background-color: #F8F8F8;
 }
+.modal-header h6 {
+    color: #999;
+}
 
 .submitForm.modal-footer {
     border-top: 1px solid #e5e5e5;
@@ -193,7 +196,10 @@ h3 {
 .account-name-container+.tooltip .tooltip-arrow {
     border-right-color: #aaa;
 }
-
+#enterprise .tooltip .tooltip-arrow:before {
+    content: '';
+    border: 5px solid transparent;
+}
 .icon-container-postal:after {
     position: absolute;
     display: block;
@@ -223,10 +229,6 @@ h3 {
 #enterprise .address-box .addresses-main-label {
     color: #999;
     padding-left: 56px;
-}
-
-.card-same label {
-    color: #000;
 }
 
 .success-container-postal:after {
@@ -276,6 +278,9 @@ header .row h6 strong, label strong {
     padding: 0;
     right: 60px;
     border-top: 1px solid #d8d8d8;
+}
+.payment-divider-wrapper h4 span {
+    color: #000;
 }
 
 .payment-divider-wrapper span{
@@ -903,7 +908,7 @@ select.form-control {
 .dropdown-menu.additional-options-expanded {
     left: inherit;
     right: 0;
-    margin-right: -21px;
+    margin-right: -33px;
     min-width: 190px;
 }
 
@@ -981,6 +986,7 @@ select.form-control {
 .credit-option {
     margin-top: 6px;
     margin-bottom: 10px;
+    color: #999;
 }
 
 .credit-option #showCreditCard {
@@ -1006,9 +1012,6 @@ select.form-control {
     padding-bottom: 10px;
 }
 
-.card-cvc {
-    padding-right: 27px;
-}
 .label-cvv {
     margin-left: -76px;
 }
@@ -1019,7 +1022,7 @@ select.form-control {
 }
 
 .cvv-n-date-container input {
-    width: 100%;
+    width: 120px;
 }
 
 .date-container {
@@ -1031,16 +1034,22 @@ select.form-control {
     margin-right: 7%;
 }
 
-#enterprise .all-addresses-block .same-label-adresses label{
-    padding-left: 0;
-}
-#enterprise .all-addresses-block label{
-    color: #000;
-}
+/*#enterprise .all-addresses-block .same-label-adresses label{
+    padding-left: 26px;
+}*/
 
 #submitTheForm {
     padding: 7px 13px 8px 17px;
     margin-right: -14px;
+}
+#enterprise .tooltip .tooltip-arrow:before {
+    content: '';
+    border: 5px solid transparent;
+    top: -5px;
+    left: -4px;
+    height: 0;
+    border-right-color: #fff;
+    position: absolute;
 }
 @media (min-width: 768px){
     #nav-container {
@@ -1049,9 +1058,6 @@ select.form-control {
     .navbar-nav > li > a {
         padding-top: 15px;
         padding-bottom: 13px;
-    }
-    .dropdown-menu.additional-options-expanded {
-        margin-right: -117px;
     }
 }
 
@@ -1072,9 +1078,6 @@ select.form-control {
     .col-offset {
         margin-left: 10.7%;
     }
-    .dropdown-menu.additional-options-expanded {
-        margin-right: -89px;
-    }
 }
 
 @media (min-width: 1200px){
@@ -1086,9 +1089,6 @@ select.form-control {
     }
     .phone-type1, .phone-type2, .phone-type3, .phone-type4 {
         width: 120px;
-    }
-    .dropdown-menu.additional-options-expanded {
-        margin-right: -42px;
     }
 }
 
@@ -1111,16 +1111,13 @@ select.form-control {
         padding-right: 0;
     }
     #enterprise .help-block {
-        left: 76%;
+        left: 76.5%;
     }
     .icon-container:after {
         right: 170px;
     }
     #postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
         left: -11%;
-    }
-    .date-container input, .card-cvc input {
-        width: 120px;
     }
     #enterprise .address-box label {
         padding-left: 31px;
@@ -1144,15 +1141,11 @@ select.form-control {
     .col-offset {
         margin-left: 0;
     }
-    .col-9 {
-        width: 72%;
-        margin-left: 11%;
-    }
     .col-10 {
-        width: 81%;
+        width: 79%;
     }
-    .label-cvv {
-        margin-left: -85px;
+    #autoPayment {
+        margin-left: 4px;
     }
     @-moz-document url-prefix() { 
       .col-10 {
@@ -1168,23 +1161,24 @@ select.form-control {
     #enterprise .address-box {
         padding-left: 50px;
     }
-    .account-name-container, .desc-remove {
-        right: 124px;
-    }
     #enterprise .address-box .addresses-main-label {
         color: #999;
+        padding-left: 30px;
     }
     #enterprise .help-block {
-        left: 76%;
+        left: 76.5%;
     }
     .icon-container:after {
-        right: 157px;
+        right: 170px;
     }
     #postalCodeBilling-error.help-block, #postalCodeShipping-error.help-block, #postalCodeService-error.help-block, #postalCodePayment-error.help-block {
-        left: -12%;
+        left: -10.5%;
     }
-    .date-container input, .card-cvc input {
-        width: 120px;
+    #enterprise .address-box label {
+        padding-left: 22px;
+    }
+    #enterprise .address-box .card-same label {
+        padding-left: 11px;
     }
 }
 
