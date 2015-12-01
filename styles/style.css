@@ -179,12 +179,15 @@ h3 {
 
 .account-name-container+.tooltip {
     width: 160px;
-    font-size: 12px;
+    font-size: 11px;
 }
 .account-name-container+.tooltip .tooltip-inner {
     border: 1px solid #aaa;
     background-color: #fff;
-    color: #aaa;
+    padding: 5px 8px 5px 18px;
+    text-align: left;
+    color: #000;
+
 }
 
 .account-name-container+.tooltip .tooltip-arrow {
@@ -218,7 +221,12 @@ h3 {
 }
 
 #enterprise .address-box .addresses-main-label {
+    color: #999;
     padding-left: 56px;
+}
+
+.card-same label {
+    color: #000;
 }
 
 .success-container-postal:after {
@@ -973,7 +981,6 @@ select.form-control {
 .credit-option {
     margin-top: 6px;
     margin-bottom: 10px;
-    color: #999;
 }
 
 .credit-option #showCreditCard {
@@ -1026,6 +1033,9 @@ select.form-control {
 
 #enterprise .all-addresses-block .same-label-adresses label{
     padding-left: 0;
+}
+#enterprise .all-addresses-block label{
+    color: #000;
 }
 
 #submitTheForm {
@@ -1162,7 +1172,7 @@ select.form-control {
         right: 124px;
     }
     #enterprise .address-box .addresses-main-label {
-        padding-left: 29px;
+        color: #999;
     }
     #enterprise .help-block {
         left: 76%;
