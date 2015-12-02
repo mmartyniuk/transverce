@@ -289,7 +289,7 @@
                         <button type="button" class="close text-left" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body row">
-                        <div class="side-content col-md-4">
+                        <div class="side-content col-md-3">
                             <div class="side-divider">
                                 <span>REQUIRED</span>
                             </div>
@@ -298,16 +298,13 @@
                                     <a href="#activity-charge-tab" data-toggle="tab"><b class="modal-configured modal-configured-true"></b>Activity Charge Rules<b class="right-caret"></b></a>
                                 </li>
                                 <li class="active">
-                                    <a href="#address-tab" data-toggle="tab"><b class="modal-configured"></b>Add Address<b class="right-caret"></b></a>
+                                    <a href="#address-tab" data-toggle="tab"><b class="modal-configured"></b>Address<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#agreement-tab" data-toggle="tab"><b class="modal-configured"></b>Agreement<b class="right-caret"></b></a>
                                 </li>
                                 <li>
                                     <a href="#discount-code-tab" data-toggle="tab"><b class="modal-configured"></b>Discount Code<b class="right-caret"></b></a>
-                                </li>
-                                <li>
-                                    <a href="#service-tab" data-toggle="tab"><b class="modal-configured"></b>Service<b class="right-caret"></b></a>
-                                </li>
-                                <li>
-                                    <a href="#description-tab" data-toggle="tab"><b class="modal-configured"></b>Short Description<b class="right-caret"></b></a>
                                 </li>
                                 <li>
                                     <a href="#one-time-tab" data-toggle="tab"><b class="modal-configured"></b>One-Time Charges<b class="right-caret"></b></a>
@@ -316,23 +313,26 @@
                                     <a href="#recurring-tab" data-toggle="tab"><b class="modal-configured"></b>Recurring Charges<b class="right-caret"></b></a>
                                 </li>
                                 <li>
-                                    <a href="#subscription-tab" data-toggle="tab"><b class="modal-configured"></b>Subscription Configuration<b class="right-caret"></b></a>
+                                    <a href="#service-tab" data-toggle="tab"><b class="modal-configured"></b>Service<b class="right-caret"></b></a>
                                 </li>
                                 <li>
-                                    <a href="#agreement-tab" data-toggle="tab"><b class="modal-configured"></b>Agreement<b class="right-caret"></b></a>
-                                </li>
-                                <li>
-                                    <a href="#service-custom-tab" data-toggle="tab"><b class="modal-configured"></b>Service Custom Field<b class="right-caret"></b></a>
+                                    <a href="#subscription-tab" data-toggle="tab"><b class="modal-configured"></b>Subscription Config<b class="right-caret"></b></a>
                                 </li>
                                 <li>
                                     <a href="#trial-period-tab" data-toggle="tab"><b class="modal-configured"></b>Trial Period<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#description-tab" data-toggle="tab"><b class="modal-configured"></b>Short Description<b class="right-caret"></b></a>
+                                </li>
+                                <li>
+                                    <a href="#service-custom-tab" data-toggle="tab"><b class="modal-configured"></b>Custom Fields<b class="right-caret"></b></a>
                                 </li>
                             </ul>
                             <div class="side-divider">
                                 <span>OPTIONAL</span>
                             </div>
                         </div>
-                        <div class="tab-content col-md-8">
+                        <div class="tab-content col-md-9">
                             <div class="tab-pane" id="activity-charge-tab">
                                 <table class="table">
                                     <thead>
@@ -411,7 +411,7 @@
                             <div class="tab-pane active" id="address-tab">
                                  <div class="form-group row">
                                     <label for="countries" class="required control-label col-md-3">Country</label>
-                                    <div class="col-md-9 input-container">
+                                    <div class="col-md-8 input-container">
                                         <select id="countries" class="form-control js-example-basic-single">
                                             <option value="AF">Afghanistan</option>
                                             <option value="AL">Albania</option>
@@ -437,25 +437,25 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="address-1" class="required control-label col-md-3">Address Line 1</label>
-                                    <div class="col-md-9 input-container">
+                                    <div class="col-md-8 input-container">
                                         <input type="text" class="form-control" id="address-1" name="address-1">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="address-2" class="control-label col-md-3">Address Line 2</label>
-                                    <div class="col-md-9 input-container">
+                                    <div class="col-md-8 input-container">
                                         <input type="text" class="form-control" id="address-2">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="city" class="required control-label col-md-3">City</label>
-                                    <div class="col-md-9 input-container">
+                                    <div class="col-md-8 input-container">
                                         <input type="text" class="form-control" id="city" name="city">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="statesUS" class="required control-label col-md-3">State</label>
-                                    <div class="col-md-9 input-container">
+                                    <div class="col-md-8 input-container">
                                         <select id="states" class="form-control js-example-basic-single">
                                             <option value="AL">Alabama</option>
                                             <option value="AK">Alaska</option>
@@ -475,7 +475,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label for="postal-code" class="required control-label col-md-3">Postal Code</label>
-                                    <div class="col-md-4 input-container">
+                                    <div class="col-md-3 input-container">
                                         <input type="text" class="form-control" id="postal-code" name="postal-code">
                                     </div>
                                 </div>
@@ -483,8 +483,9 @@
                             <div class="tab-pane" id="discount-code-tab">
                                 <div class="form-group row">
                                     <label for="discount-code" class="control-label col-md-3 required">Discount Code</label>
-                                    <div class="col-md-9 input-container">
+                                    <div class="col-md-8 input-container">
                                         <select id="discount-code" class="form-control">
+                                            <option value="">Please Select</option>
                                             <option value="10">13861421- 10% off - For All Customers</option>
                                             <option value="20">13564869 - 20% off - For New Customers</option>
                                             <option value="30">12453442 - 30% off - For Premium Customers</option>
@@ -493,16 +494,16 @@
                                 </div>
                             </div>
                             <div class="tab-pane" id="service-tab">
-                                <div class="form-group row">
+                                <div class="form-group row service-content">
                                     <div class="col-md-12">
-                                        <span class="service-label">Select Service to apply Add-On to</span>
+                                        <span>Please select Service to apply <b>TRACT UI Product Add-on to</b></span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3 text-right">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <label>Applicable Services</label>
+                                                <label class="required">Service</label>
                                             </div>
                                         </div>
                                     </div>
@@ -511,7 +512,7 @@
                                             <div class="col-md-12">
                                                 <label>
                                                     <input type="radio" name="services" id="service-1" value="service-1" checked>
-                                                    Tract UI Product1
+                                                    None
                                                 </label>
                                             </div>
                                         </div>
@@ -519,7 +520,23 @@
                                             <div class="col-md-12">
                                                 <label>
                                                     <input type="radio" name="services" id="service-2" value="service-2">
-                                                    Service 2
+                                                    A great Service
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    <input type="radio" name="services" id="service-3" value="service-3">
+                                                    Another one
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>
+                                                    <input type="radio" name="services" id="service-4" value="service-4">
+                                                    No one wants this service
                                                 </label>
                                             </div>
                                         </div>
@@ -528,9 +545,20 @@
                             </div>
                             <div class="tab-pane" id="description-tab">
                                 <div class="form-group row">
-                                    <label for="description" class="control-label col-md-4">Short Description</label>
+                                    <div class="col-md-3 text-right">
+                                        <label for="description" class="control-label">Short Description</label>
+                                    </div>
                                     <div class="col-md-8 input-container">
-                                        <textarea class="form-control" id="description" rows="3">Exclusive Fee Pro's short description, this description is a little longer than others and has three lines</textarea>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <textarea class="form-control" id="description" rows="4">Exclusive Fee Pro's short description, this description is a little longer than others and has three lines</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <a class="btn btn-default">Revert</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -540,7 +568,7 @@
                                         <tr class="row">
                                             <th class="col-md-6">Description</th>
                                             <th class="col-md-3">Date</th>
-                                            <th class="col-md-3">Amount</th>
+                                            <th class="col-md-3">Amount (USD)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -550,23 +578,17 @@
                                             </td>
                                             <td class="modal-date-one-time col-md-3">
                                                 <input type="text" class="form-control date">
-                                                <span class="input-group-addon">
-                                                    <i class="date-icon"></i>
-                                                </span>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                                             </td>
-                                            <td class="col-md-3 modal-amount-one-time">
+                                            <td class="col-md-3">
                                                 <input type="text" class="form-control" id="amount-1" name="amount-1" class="ammount">
-                                                <span class="desc-remove"></span>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <div class="row">
-                                    <div class="col-md-6 text-left">
-                                        <a href="#">+ Schedule New Charge</a>
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <span>Total Amount  0.00 USD</span>
+                                    <div class="col-md-6 text-left schedule">
+                                        <a href="#">Schedule Charge</a>
                                     </div>
                                 </div>
                             </div>
@@ -576,147 +598,158 @@
                                         <tr class="row">
                                             <th class="col-md-6">Description</th>
                                             <th class="col-md-3">Date</th>
-                                            <th class="col-md-3">Amount</th>
+                                            <th class="col-md-3">Amount (USD)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="row">
                                             <td class="col-md-6">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" id="description-recurring-1" name="description-recurring-1">
                                             </td>
-                                            <td class="modal-date-recurring col-md-3">
+                                            <td class="modal-date-recurring-time col-md-3">
                                                 <input type="text" class="form-control date">
-                                                <span class="input-group-addon">
-                                                    <i class="date-icon"></i>
-                                                </span>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                                             </td>
-                                            <td class="col-md-3 modal-amount-recurring">
-                                                <input type="text" class="form-control"class="ammount" value="50.00">
-                                                <span class="desc-remove"></span>
+                                            <td class="col-md-3">
+                                                <input type="text" class="form-control" id="amount-recurring-1" name="amount-recurring-1" class="ammount">
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <div class="row">
-                                    <div class="col-md-6 text-left">
-                                        <a href="#">+ Schedule New Charge</a>
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <span>Total Amount  50.00 USD</span>
+                                    <div class="col-md-6 text-left schedule">
+                                        <a href="#">Schedule Charge</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="subscription-tab">
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <span class="service-label">This service allows up to 2 service identifiers</span>
+                                <div class="row">
+                                    <div class="col-md-12 subscription-title">
+                                        <span>This service allows up to 3 service identifiers</span>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="product-identifier" class="control-label col-md-3 text-center">Select Identifier</label>
-                                    <div class="col-md-8 input-container">
-                                        <select id="product-identifier" class="form-control">
-                                            <option value="12">12</option>
-                                            <option value="24">24</option>
-                                            <option value="36">36</option>
-                                        </select>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="text-right required">Service Identifier</label>
                                     </div>
-                                    <span class="desc-remove"></span>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <a href="#">+ Add Another Identifier</a>
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            <div class="col-md-10 form-group">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <span class="desc-remove"></span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-10 form-group">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <span class="desc-remove"></span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <a href="#" class="btn btn-default">Add Identifier</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="agreement-tab">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <span>Please select Agreement for TRACT UI product</span>
+                                    </div>
+                                </div>
+                                <div class="row agreement-block">
+                                    <div class="col-md-3">
+                                        <div class="form-group row">
+                                            <div class="col-md-12 text-right">
+                                                <label class="required">Agreement</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-group row">
+                                            <div class="col-md-12 text-left">
+                                                <label class="radio-group-label">
+                                                    <input type="radio" name="agreement-group">None
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12 text-left">
+                                                <label class="radio-group-label">
+                                                    <input type="radio" name="agreement-group" id="agreement-option-1" checked>1 Day Agreement [Termination - Flat Amount: $1.00]
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12 text-left">
+                                                <label class="radio-group-label">
+                                                    <input type="radio" name="agreement-group" id="agreement-option-2">1 M Agree % Prod [Termination - Percent Amount: 10%]
+                                                </label class="radio-group-label">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12 text-left">
+                                                <label class="radio-group-label">
+                                                    <input type="radio" name="agreement-group" id="agreement-option-3">1 M Agree % Serv [Termination - Percent Amount: 10%]
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row header">
+                                    <div class="col-md-10 title divider">
+                                        <h5>Agreement Details</h5>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a class="btn btn-default">Revert</a>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
-                                    <div class="col-md-4 text-right">
-                                        <span>Product</span>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <span>Product name A</span>
+                                    <label for="agreement-period" class="required control-label col-md-3">Period (Days)</label>
+                                    <div class="col-md-3 input-container">
+                                        <input type="text" class="form-control" id="agreement-period" name="agreement-period">
                                     </div>
                                 </div>
-                                <div class="form-group row text-right">
-                                    <div class="col-md-4">
-                                        <span>Requires Agreement</span>
-                                    </div>
-                                    <div class="col-md-8 text-left">
-                                        <span>Yes</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row dashed-block">
-                                    <label for="applicable-agreements" class="control-label col-md-4 text-right">Applicable Agreements</label>
+                                <div class="form-group row">
+                                    <label for="agreement-renewal-action" class="required control-label col-md-3">Renewal Action</label>
                                     <div class="col-md-8 input-container">
-                                        <select id="applicable-agreements" class="form-control">
-                                            <option value="1">1 Day Agreement</option>
-                                            <option value="2">2 Days Agreement</option>
-                                            <option value="3">3 Days Agreement</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row dashed-block-label">
-                                    <div class="col-md-4 text-right custom-label">
-                                        <span>Select Agreement Option</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="agreement-period" class="control-label col-md-4 text-right required">Agreement Period</label>
-                                    <div class="col-md-4 input-container">
-                                        <input type="text" class="form-control" id="agreement-period">
-                                    </div>
-                                    <div class="col-md-4 text-left custom-label">
-                                        <span>Month</span>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="renewal-action" class="control-label col-md-4 text-right required">Renewal Action</label>
-                                    <div class="col-md-4 input-container">
-                                        <select id="renewal-action" class="form-control">
-                                            <option value="1">1 Day Agreement</option>
+                                        <select id="agreement-renewal-action" class="form-control">
+                                            <option value="1">Renew Agreement</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-md-4 text-right">
-                                        <label class="control-label required">Renewal Pricing</label>
-                                    </div>
+                                    <label for="agreement-renewal-pricing-group" class="required control-label col-md-3">Renewal pricing</label>
                                     <div class="col-md-8">
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <label>
-                                                    <input type="radio" name="renewal-prices" id="renewal-product-price" value="renewal-product-price" checked>
-                                                    Product Price
-                                                </label>
-                                            </div>
+                                            <label>
+                                                <input type="radio" name="agreement-renewal-pricing-group" id="product-renewal" checked>
+                                                Product Price
+                                            </label>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <label>
-                                                    <input type="radio" name="renewal-prices" id="renewal-service-price" value="renewal-service-price">
-                                                    Service Price
-                                                </label>
-                                            </div>
+                                            <label>
+                                                <input type="radio" name="agreement-renewal-pricing-group" id="service-renewal">
+                                                Service Price
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="renewal-date" class="control-label col-md-4 text-right">Overrider End Date</label>
-                                    <div class="col-md-4 input-container agreement-date">
-                                        <input type="text" class="form-control date">
-                                        <span class="input-group-addon">
-                                            <i class="date-icon"></i>
-                                        </span>
+                                    <label for="agreement-date" class="required control-label col-md-3 long-label">Override End Date</label>
+                                    <div class="col-md-3 input-container">
+                                        <input type="checkbox" id="agreement-date">
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="service-custom-tab">
                                 <div class="form-group row">
                                     <div class="col-md-3 text-right">
-                                        <label for="service-cf-1" class="control-label">Service CF 1</label>
+                                        <label for="service-cf-1" class="control-label required">Custom Input</label>
                                     </div>
-                                    <div class="col-md-9">
+                                    <div class="col-md-8">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <input type="text" class="form-control" id="service-cf-1">
@@ -724,43 +757,48 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-12 custom-label">
-                                                <span>Place for short description of the custom field</span>
+                                                <span>How to fill this field? Please see p. 399 of our manual</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-3 text-right">
-                                        <label for="service-cf-2" class="control-label">Service CF 2</label>
+                                        <label for="service-cf-2" class="control-label required">Custom Select</label>
                                     </div>
-                                    <div class="col-md-9">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <input type="text" class="form-control" id="service-cf-2">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 custom-label">
-                                                <span>Place for short description of the custom field</span>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-8">
+                                        <select id="service-cf-2" class="form-control">
+                                            <option value="">Please Select</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-3 text-right">
-                                        <label for="service-cf-3" class="control-label">Service CF 3</label>
+                                        <label for="service-cf-2" class="control-label">Custom Radio</label>
                                     </div>
-                                    <div class="col-md-9">
+                                    <div class="col-md-8">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <select id="service-cf-3" class="form-control">
-                                                    <option value="">Pick List Value</option>
-                                                </select>
+                                                <label class="radio-group-label">
+                                                    <input type="radio" name="cf-radio" id="cf-radio-1" checked>
+                                                    None
+                                                </label>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12 custom-label">
-                                                <span>Place for short description of the custom field</span>
+                                            <div class="col-md-12">
+                                                <label class="radio-group-label">
+                                                    <input type="radio" name="cf-radio" id="cf-radio-2">
+                                                    Something
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="radio-group-label">
+                                                    <input type="radio" name="cf-radio" id="cf-radio-3">
+                                                    Something else
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
@@ -769,11 +807,11 @@
                             <div class="tab-pane" id="trial-period-tab">
                                 <div class="form-group row">
                                     <label for="trial-length" class="control-label col-md-3 text-right required">Trial Period</label>
-                                    <div class="col-md-4 input-container">
+                                    <div class="col-md-2 stick-container-left">
                                         <input type="text" class="form-control" id="trial-length" value="10">
                                     </div>
-                                    <div class="col-md-3 text-left custom-label">
-                                        <span>Days</span>
+                                    <div class="col-md-2 stick-container-right">
+                                        <a href="#" class="btn btn-default">Revert</a>
                                     </div>
                                 </div>
                             </div>
@@ -781,11 +819,11 @@
                     </div>
                     <div class="modal-footer">
                         <div class="row">
-                            <div class="col-md-6 text-left arrows">
+                            <div class="col-md-2 arrows">
                                 <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
                                 <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
                             </div>
-                            <div class="col-md-6 confirm-buttons">
+                            <div class="col-md-10 confirm-buttons">
                                 <a href="#" class="btn btn-default">Cancel</a>
                                 <a href="#" class="btn btn-primary">OK</a>
                             </div>

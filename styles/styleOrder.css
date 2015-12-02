@@ -7,6 +7,7 @@ body label {
     font-weight: normal;
     text-align: right;
     padding-top: 6px;
+    color: #999;
 }
 
 label {
@@ -34,12 +35,63 @@ header h2 {
     font-size: 24px;
     color: #A2A2A2;
 }
+.products-modals {
+    font-size: 13px;
+}
+
+.form-control {
+    height: 30px;
+    width: 98.5%;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
 .required:after {
     content: '*';
     color: #d3222a;
     font-size: 15px;
     margin-left: 3px;
     position: absolute;
+}
+
+.divider {
+    height: 43px;
+    background: url('../assets/line.png') repeat-x center center;
+}
+
+.divider h5{
+    display: inline-block;
+    background-color: #fff;
+    padding-right: 10px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+#agreement-tab .divider {
+    padding-left: 0;
+    margin-left: 10px;
+    margin-right: -10px;
+}
+.long-label {
+    padding-left: 10px;
+    padding-top: 0;
+}
+#agreement-tab .radio-group-label, #service-custom-tab .radio-group-label {
+    margin-left: 3px;
+}
+#agreement-tab .input-container {
+    padding-left: 11px;
+}
+.header .col-md-2 {
+    padding-top: 6px;
+}
+
+#agreement-tab .header .col-md-2 a{
+    padding: 4px 18px 3px 18px;
+    color: #AAA4A8;
+    border: 1px solid #AAA4A8;
 }
 
 /* Aside and top menu */
@@ -439,8 +491,32 @@ header h2 {
 /* popups styling end*/
 
 /* modals */
+.products-modals .modal-dialog.modal-lg {
+    max-width: 800px;
+}
+
+.products-modals .modal-dialog.modal-lg .side-content.col-md-3 {
+    max-width: 200px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.products-modals .modal-dialog.modal-lg .tab-content.col-md-9 {
+    max-width: 600px;
+}
+.products-modals .modal-header {
+    padding: 19px;
+}
+.products-modals .nav > li > a {
+    padding: 10px 12px 11px 12px;
+}
+.products-modals .close span {
+    font-size: 32px;
+    padding-right: 4px;
+}
+ 
 .products-modals .modal-body {
-    padding: 0;
+    padding: 0 15px;
 }
 .products-modals .modal-header, .products-modals .modal-footer {
     background-color: #F8F8F8;
@@ -449,13 +525,45 @@ header h2 {
 .products-modals .side-content {
     float: left;
 }
+.products-modals .tab-content label {
+    margin-left: 15px;
+    margin-right: -13px; 
+}
 
 .products-modals .nav-tabs > li {
     float: none;
 }
 
+#agreement-date {
+    margin: -2px 3px 0 4px;
+}
+
+.products-modals #one-time-tab .table > thead > tr > th, .products-modals #one-time-tab .table > tbody > tr > td, .products-modals #recurring-tab .table > thead > tr > th, .products-modals #recurring-tab .table > tbody > tr > td {
+    border: none;
+}
+
+.products-modals #one-time-tab .table > thead > tr > th, .products-modals #recurring-tab .table > thead > tr > th, .schedule a {
+    padding-left: 22px;
+}
+
+.schedule a {
+    font-weight: bold;
+}
+
+.products-modals #activity-charge-tab .table > tr > td {
+    text-align: left;
+}
+
+/*.products-modals #activity-charge-tab .table > thead > tr > td:first-child {
+    padding-left: 15px;
+}*/
+
+/*.products-modals .table > thead > tr > td {
+    padding-left: 20px;
+}*/
+
 .products-modals .tab-content {
-    padding: 40px;
+    padding: 30px 27px 0px 24px;
 }
 
 .products-modals .modal-footer {
@@ -467,7 +575,7 @@ header h2 {
     border-top: 5px solid transparent;
     border-left: 5px solid #000000;
     position: absolute;
-    right: 6px;
+    right: 9px;
     top: 14px;
 }
 
@@ -487,6 +595,10 @@ header h2 {
     color: #000;
     font-size: 13px;
     margin-right: 0;
+}
+
+#postal-code {
+    width: 75px;
 }
 
 .nav-tabs > li > a:hover {
@@ -525,6 +637,14 @@ header h2 {
 .products-modals .modal-footer .arrows a {
     border-color: #B8B8B8;
     color: #B8B8B8;
+    width: 50%;
+}
+
+.products-modals .modal-footer .arrows a:first-child {
+    float: left;
+}
+.modal-footer .arrows .btn + .btn {
+    margin-left: 0;
 }
 
 .products-modals .modal-footer .btn-default {
@@ -537,6 +657,16 @@ header h2 {
 }
 .modal-product-description, .service-label {
     color: #BFBFBF;
+}
+
+#agreement-tab {
+    padding: 7px;
+}
+#agreement-tab .agreement-group label {
+    margin-left: 5px;
+}
+#agreement-tab .agreement-block .form-group {
+    margin-bottom: 4px;
 }
 
 .desc-remove {
@@ -557,33 +687,96 @@ header h2 {
 .tab-pane table td {
     border-bottom: 1px solid #ddd;
 }
+    
+#one-time-tab .table > thead > tr > th, #one-time-tab .table > tbody > tr > td, #recurring-tab .table > thead > tr > th, #recurring-tab .table > tbody > tr > td {
+    padding: 8px 0 10px 7px;
+}
+#one-time-tab .table > thead > tr > th, #recurring-tab .table > thead > tr > th {
+    padding-bottom: 0px;
+}
 
-.modal-date-one-time input, .modal-amount-one-time input, .modal-date-recurring input, .modal-amount-recurring input, .agreement-date input {
-    width: 75%;
+.modal-date-one-time input, .modal-date-recurring-time input, .agreement-date input {
     float: left;
+    width: 67%;
 }
-.modal-date-one-time span, .modal-date-recurring span, .agreement-date span {
-    display: block;
-    padding-left: 80%;
-    background: none;
-    border: none;
+.modal-date-one-time .input-group-addon, .modal-date-recurring-time .input-group-addon, .agreement-date span {
+    width: auto;
+    padding: 6px 12px 5px 12px;
+}
+.new-activity {
+    font-weight: bold;
+    padding: 10px;
+}
+.service-content {
+    padding-top: 7px;
+    padding-left: 5px;
+    font-size: 13px;
 }
 
-.modal-date-one-time i, .modal-date-recurring i {
-    top: 0;
+#one-time-tab, #recurring-tab {
+    font-size: 13px;
+}
+.subscription-title {
+    padding: 7px 0 10px 19px;
+}
+#subscription-tab a.btn.btn-default {
+    color: #AAA4A8;
+    border: 1px solid #AAA4A8;
+    width: 98.5%;
+    padding: 4px 12px;
+}
+#subscription-tab .desc-remove {
+    margin-top: 6px;
+    margin-left: -9px;
+}
+.stick-container-left {
+    padding-right: 0;
+}
+.stick-container-left .form-control {
+    width: 100%;
+}
+.stick-container-right {
+    padding-left: 0;
+}
+.stick-container-right a {
+    padding: 4px 12px;
+    width: 100%;
+}
+#trial-period-tab label {
+    padding-left: 30px;
 }
 
-#one-time-tab table, #recurring-tab table {
+#trial-period-tab .form-group.row {
+    padding-top: 14px;
+}
+
+#description-tab a {
+    padding-top: 10px;
+    color: #AAA4A8;
+    border: 1px solid #AAA4A8;
+}
+#trial-period-tab a{
+    color: #AAA4A8;
+    border: 1px solid #AAA4A8;
+}
+#description-tab .col-md-2 {
+    padding-top: 10px;
+}
+
+/*#one-time-tab table, #recurring-tab table {
     margin-bottom: 20px;
-}
+}*/
 
-.dashed-block {
-    border-bottom: 1px dashed #B8B8B8;
-    padding-bottom: 20px;
+.agreement-block {
+    padding-bottom: 18px;
+    padding-top: 10px;
+}
+.row.header {
+    padding-bottom: 6px;
 }
 
 .custom-label span {
-    padding-top: 6px;
+    padding-left: 15px;
     display: block;
     color: #B8B8B8;
 }
@@ -595,8 +788,10 @@ header h2 {
 .active-icon {
     color: #6EAD00;
     border: 1px solid #6EAD00;
-    font-size: 13px;
-    padding: 2px;
+    font-size: 10px;
+    padding: 2px 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 #activity-charge-tab .dropdown-menu {
@@ -605,7 +800,7 @@ header h2 {
     min-width: 110px;
 }
 
-#activity-charge-tab td, #activity-charge-tab th {
+#activity-charge-tab .table tr td:last-child{
     text-align: center;
 }
 
