@@ -67,53 +67,58 @@
                 </ul>
             </aside>
             <div class="main-content row">
-                <header class="col-md-12 padding-content">
+                <header class="padding-content">
                     <div class="row">
                         <div class="col-md-6">
-                            <h2>Create New Order</h2>
-                        </div>
-                        <div class="col-md-6 text-right padding-content">
-                            <h6 class="text-right"><strong class="text-danger">&#42;</strong> Required</h6>
+                            <h1>New Order</h1>
                         </div>
                     </div>
                 </header>
-                <section class="account-header col-md-12 padding-content">
+                <section class="account-header padding-content">
                     <div class="row">
-                        <div class="col-md-5 section-title">
-                            <h3>Account</h3>
+                        <div class="col-5 section-title">
+                            <h3>
+                                <span>Account</span>
+                            </h3>
                         </div>
-                        <div class="col-md-5 section-title">
-                            <h3>Order Details</h3>
-                        </div>
-                        <div class="col-md-2 text-right padding-content">
-                            <div class="dropdown">
-                                <button class="btn btn-default" type="button" id="additional-options">
-                                    <span class="glyphicon glyphicon-cog"></span>
-                                Add Field
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu additional-options-expanded">
-                                    <li>
-                                        <a href="#" class="set-field"><input type="checkbox"> Purchase Order Number</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="set-field"><input type="checkbox"> Sales Referal</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="set-field"><input type="checkbox"> Custom Field A</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="set-field"><input type="checkbox"> Custom Field B</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="set-field"><input type="checkbox"> Notes</a>
-                                    </li>
-                                </ul>
+                        <div class="col-7 section-title padding-content">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h3>
+                                        <span>Order Details</span>
+                                    </h3>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="dropdown text-right">
+                                        <button class="btn btn-default" type="button" id="additional-options">
+                                            <span class="glyphicon glyphicon-cog"></span>
+                                        Configure Fields
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu additional-options-expanded">
+                                            <li>
+                                                <a href="#" class="set-field"><input type="checkbox"> Purchase Order Number</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="set-field"><input type="checkbox"> Sales Referal</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="set-field"><input type="checkbox"> Custom Field A</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="set-field"><input type="checkbox"> Custom Field B</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="set-field"><input type="checkbox"> Notes</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-5 padding-content">
+                        <div class="col-md-6 padding-content">
                             <dl>
                                 <dt>
                                     <span class="account-name">Account with autopayment (770)</span>
@@ -131,11 +136,11 @@
                                 <dd id="account-address-general">Austin, TX 78071 USA</dd>
                             </dl>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-6 additional-fields-wrapper">
                             <form class="form-horizontal">
                                 <div class="input-group date form-group row">
-                                    <label for="date" class="control-label col-md-3">Order date</label>
-                                    <div class="col-md-9">
+                                    <label for="date" class="control-label col-3">Order date</label>
+                                    <div class="col-md-8">
                                         <input type="text" class="form-control" id="date">
                                         <span class="input-group-addon">
                                             <i class="date-icon"></i>
@@ -143,32 +148,32 @@
                                     </div>
                                 </div>
                                 <div class="form-group hidden">
-                                    <label for="order-number" class="control-label col-md-3">Order Number</label>
-                                    <div class="col-md-9">
+                                    <label for="order-number" class="control-label col-3">Order Number</label>
+                                    <div class="col-md-8">
                                         <input type="text" class="form-control" id="order-number">
                                     </div>
                                 </div>
                                 <div class="form-group hidden">
-                                    <label for="sales-referal" class="control-label col-md-3">Sales Referal</label>
-                                    <div class="col-md-9">
+                                    <label for="sales-referal" class="control-label col-3">Sales Referal</label>
+                                    <div class="col-md-8">
                                         <input type="text" class="form-control" id="sales-referal">
                                     </div>
                                 </div>
                                 <div class="form-group hidden">
-                                    <label for="custom-field-1" class="control-label col-md-3">Custom Field 1</label>
-                                    <div class="col-md-9">
+                                    <label for="custom-field-1" class="control-label col-3">Custom Field 1</label>
+                                    <div class="col-md-8">
                                         <input type="text" class="form-control" id="custom-field-1">
                                     </div>
                                 </div>
                                 <div class="form-group hidden">
-                                    <label for="custom-field-2" class="control-label col-md-3">Custom Field 2</label>
-                                    <div class="col-md-9">
+                                    <label for="custom-field-2" class="control-label col-3">Custom Field 2</label>
+                                    <div class="col-md-8">
                                         <input type="text" class="form-control" id="custom-field-2">
                                     </div>
                                 </div>
                                 <div class="form-group hidden">
-                                    <label for="notes" class="control-label col-md-3">Notes</label>
-                                    <div class="col-md-9">
+                                    <label for="notes" class="control-label col-3">Notes</label>
+                                    <div class="col-md-8">
                                         <input type="text" class="form-control" id="notes">
                                     </div>
                                 </div>

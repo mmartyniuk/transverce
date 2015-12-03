@@ -21,19 +21,55 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 section {
-    margin-top: 20px;
-}
-
-h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
     margin-top: 10px;
-    color: #A2A2A2;
 }
 
-header h2 {
-    font-size: 24px;
+.col-5 {
+    width: 45%;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+}
+
+.col-7 {
+    width: 55%;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+}
+
+.account-header h3 {
+    font-size: 13px;
+    margin-bottom: 20px;
+    margin-top: 14px;
+    font-weight: 700;
     color: #A2A2A2;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.account-header h3:after {
+    float: left;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    background-color: #999;
+    width: 100%;
+    position: absolute;
+    top: 7px;
+    z-index: 8;
+}
+.section-title h3 span {
+    z-index: 9;
+    background-color: #fff;
+    padding-right: 9px;
+}
+
+h1 {
+    font-size: 27px;
+    margin-top: 26px;
+    font-weight: 400;
 }
 .products-modals {
     font-size: 13px;
@@ -292,7 +328,6 @@ header h2 {
 }
 
 .account-header {
-    background-color: #F8F8F8;
     padding-bottom: 20px;
     padding-top: 10px;
 }
@@ -302,7 +337,6 @@ header h2 {
 }
 
 .account-header .dropdown-menu {
-    left: inherit;
     right: 0;
 }
 
@@ -316,8 +350,44 @@ header h2 {
     background: transparent;
 }
 
+.account-header .col-md-6.padding-content {
+    padding-right: 39px;
+    padding-left: 33px;
+    padding-top: 8px;
+    font-size: 13px;
+}
+
+.account-header dt {
+    margin-bottom: 4px;
+}
+.additional-fields-wrapper {
+    padding-top: 6px;
+}
+.additional-fields-wrapper .col-3 {
+    float: left;
+    width: 29%;
+}
+.additional-fields-wrapper .input-group.date .input-group-addon {
+    padding: 8px 9px;
+    background-color: #fff;
+}
+.additional-fields-wrapper .date-icon {
+    top: 5px;
+}
+#account-address, #account-address-general {
+    line-height: 1.6;
+}
+
+.account-header.padding-content .btn.btn-default.change-account{
+    margin-left: 11px;
+    padding: 5px 13px;
+    border: #999;
+    color: #999;
+}
+
 .dropdown-menu > li > a {
     padding: 3px 10px;
+    white-space: normal;
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
@@ -326,11 +396,20 @@ header h2 {
 }
 
 .dropdown .glyphicon.glyphicon-cog {
-    padding-right: 5px;
+    padding-right: 1px;
 }
 
 .dropdown .caret {
     margin-left: 10px;
+}
+
+.section-title .dropdown .caret {
+    margin-left: 2px;
+}
+
+#additional-options {
+    margin-top: -5px;
+    font-size: 13px;
 }
 
 .input-group.date {
@@ -356,6 +435,10 @@ header h2 {
 
 .account-header .dropdown {
     margin-top: 10px;
+}
+
+.section-title .dropdown {
+    margin-left: 17px;
 }
 
 .order-table {
@@ -395,7 +478,7 @@ header h2 {
 }
 
 #date {
-    max-width: 206px;
+    max-width: 165px;
 }
 
 .table > thead > tr {
@@ -942,6 +1025,9 @@ header h2 {
 /* Configuration Pop-up */
 .popover-content {
     padding: 0;
+}
+.popover .popover-content .product-configuration-popup .product-optional-configuration {
+    margin-bottom: 5px;
 }
 .popover .popover-content .product-configuration-popup .product-required-configuration dt, .popover .popover-content .product-configuration-popup .product-optional-configuration dt {
     padding-bottom: 5px;
