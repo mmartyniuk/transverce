@@ -260,13 +260,19 @@ $(document).ready(function(){
     $('#product-1-popover').popover({
         trigger: 'hover',
         html: 'true',
-        content: '<div class="product-1-popup">'+
-        '<div>Parameter 1 is verified</div>'+
-        '<div>Parameter 2 is verified</div>'+
-        '<div>Parameter 3 is verified</div>'+
-        '<div>Parameter 4 is verified</div>'+
-        '<div>Parameter 5 is verified</div>'+
-        '</div>',
+        content: '<div class="product-configuration-popup">'+
+                     '<dl class="product-required-configuration">'+
+                         '<dt>REQUIRED</dt>'+
+                         '<dd><span class="validation-signature valid"></span>Activity Charge Rules</dd>'+
+                         '<dd><span class="validation-signature valid"></span>One-time Charges</dd>'+
+                         '<dd><span class="validation-signature invalid"></span>Agreement</dd>'+
+                     '</dl>'+
+                     '<dl class="product-optional-configuration">'+
+                         '<dt>OPTIONAL</dt>'+
+                         '<dd><span class="validation-signature default"></span>Short Description</dd>'+
+                         '<dd><span class="validation-signature default"></span>Custom Field</dd>'+
+                     '</dl>'+
+                 '</div>',
         placement: 'left'
     });
 

@@ -376,7 +376,6 @@ header h2 {
 .order-table table tr td:last-child span:last-child {
     font-size: 20px;
     color: #00f;
-    padding-left: 45px;
 }
 
 .order-table table tr td input {
@@ -482,10 +481,6 @@ header h2 {
 .popover {
     width: auto;
     padding: 10px 20px;
-}
-
-.popover .arrow {
-    display: none;
 }
 
 /* popups styling end*/
@@ -943,3 +938,47 @@ header h2 {
     border: 1px solid #e5e5e5;
 }
 /* modals end*/ 
+
+/* Configuration Pop-up */
+.popover-content {
+    padding: 0;
+}
+.popover .popover-content .product-configuration-popup .product-required-configuration dt, .popover .popover-content .product-configuration-popup .product-optional-configuration dt {
+    padding-bottom: 5px;
+    font-size: 12px;
+    color: #999;
+}
+.popover .popover-content .product-configuration-popup .product-required-configuration dd, .popover .popover-content .product-configuration-popup .product-optional-configuration dd {
+    font-size: 12px;
+    color: #3d77f9;
+}
+.product-configuration-popup dd {
+    margin-left: 20px;
+    margin-top: -5px;
+}
+.validation-signature {
+    padding-left: 0 !important;
+}
+.validation-signature {
+    display: block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    left: -17px;
+    bottom: -14px;
+}
+.validation-signature.valid {
+    background-color: #417505;
+    border: 2px solid #fff;
+}
+.validation-signature.invalid {
+    background-color: #fff;
+    border: 2px solid #D0021B;
+}
+.validation-signature.default {
+    background-color: #fff;
+    border: 2px solid #999;
+}
+
+/* Configuration Pop-up end*/
