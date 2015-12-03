@@ -491,17 +491,17 @@ header h2 {
 /* popups styling end*/
 
 /* modals */
-.products-modals .modal-dialog.modal-lg {
+.products-modals .modal-dialog.modal-lg, .browse-product-modal .modal-dialog.modal-lg {
     max-width: 800px;
 }
 
-.products-modals .modal-dialog.modal-lg .side-content.col-md-3 {
+.products-modals .modal-dialog.modal-lg .side-content.col-md-3, .browse-product-modal .modal-dialog.modal-lg .side-content.col-md-3  {
     max-width: 200px;
     padding-left: 0;
     padding-right: 0;
 }
 
-.products-modals .modal-dialog.modal-lg .tab-content.col-md-9 {
+.products-modals .modal-dialog.modal-lg .tab-content.col-md-9, .browse-product-modal .modal-dialog.modal-lg .browse-content.col-md-9 {
     max-width: 600px;
 }
 .products-modals .modal-header {
@@ -510,12 +510,12 @@ header h2 {
 .products-modals .nav > li > a {
     padding: 10px 12px 11px 12px;
 }
-.products-modals .close span {
+.products-modals .close span, .browse-product-modal .close {
     font-size: 32px;
     padding-right: 4px;
 }
  
-.products-modals .modal-body {
+.products-modals .modal-body, .browse-product-modal .modal-body {
     padding: 0 15px;
 }
 .products-modals .modal-header, .products-modals .modal-footer {
@@ -647,13 +647,14 @@ header h2 {
     margin-left: 0;
 }
 
-.products-modals .modal-footer .btn-default {
+.products-modals .modal-footer .btn-default, .browse-product-modal .modal-footer .btn-default {
     background-color: #fff;
 }
 
-.modal-product-title {
+.modal-product-title, .modal-browse-title {
     font-size: 18px;
     padding-right: 5px;
+    letter-spacing: 0;
 }
 .modal-product-description, .service-label {
     color: #BFBFBF;
@@ -811,4 +812,134 @@ header h2 {
 .charge-actions, .charge-actions:active, .charge-actions:hover {
     text-decoration: none;
 }
-/* modals end*/
+.browse-product-modal .modal-header {
+    padding: 0;
+}
+.browse-product-modal .modal-header, .browse-product-modal .modal-footer {
+    background-color: #F8F8F8;
+}
+
+.padding-18-container {
+    padding: 18px;
+}
+
+.browse-product-modal .nav-tabs > li > a {
+    margin-right: 0;
+}
+
+.browse-product-modal .modal-header .nav li {
+    width: 50%;
+    text-align: center;
+}
+
+.browse-product-modal .modal-header .nav li {
+    background-color: #E7E7E7;
+}
+
+.browse-product-modal {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+.browse-product-modal .modal-header .nav li a {
+    color: #736666;
+    
+}
+.browse-product-modal .nav-tabs li a {
+    padding: 6px 9px;
+}
+.browse-product-modal .modal-header .nav li.active a, .browse-product-modal .modal-header .nav li a:hover {
+    color: #fff;
+}
+.browse-product-modal .side-content {
+    background-color: #F3F3F3;
+}
+.browse-product-modal .side-divider:first-child {
+    color: #999;
+}
+.browse-product-modal .side-divider {
+    padding: 5px 15px 12px 15px;
+}
+.browse-product-modal .side-content .form-group {
+    padding: 0 15px;
+}
+
+.browse-product-modal .side-content .clear-filter.form-group  {
+    padding-top: 10px;
+}
+
+.browse-product-modal .side-content .clear-filter a {
+    width: 98.5%;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #AAA4A8;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+}
+#catalog-tab tr, #selected-products-tab tr {
+    font-size: 13px;
+    letter-spacing: 0;
+}
+.table > thead > .browse-heading {
+    background-color: #E9EFF4;
+}
+.browse-product-modal .table dl {
+    margin-bottom: 0;
+}
+.browse-content.col-md-9 {
+    padding: 27px 30px;
+    background-color: #fff;
+}
+.selection-container .selection-plus, .selection-container .selection-minus {
+    background-color: #F8F8F8;
+    border: 1px solid #999;
+    color: #000;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+.selection-container .glyphicon {
+    font-size: 12px;
+    left: -3px;
+}
+
+.selection-container .selection-plus {
+    margin-right: 10px;
+}
+
+.selection-container .selection-minus {
+    margin-left: 12px;
+    margin-right: 3px;
+}
+.padding-5 {
+    padding: 5px 0;
+}
+#catalog-tab .selection-vertical, #selected-products-tab .selection-vertical {
+    vertical-align: middle;
+}
+.browse-product-modal .modal-content {
+    background-color: #F3F3F3;
+}
+.padding-30 {
+    padding: 30px;
+}
+#selected-products-tab {
+    background-color: #fff;
+}
+.selection-vertical input {
+    width: 50%;
+}
+.selection-vertical .desc-remove {
+    margin-top: 4px;
+    margin-left: 15px;
+}
+.browse-content.col-md-9 tr th:last-child, .browse-content.col-md-9 tr td:last-child {
+    text-align: right;
+}
+.modal-footer a {
+    letter-spacing: 0;
+}
+.modal-footer a.btn.btn-default {
+    color: #000;
+    border: 1px solid #e5e5e5;
+}
+/* modals end*/ 

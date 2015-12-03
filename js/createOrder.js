@@ -269,10 +269,10 @@ $(document).ready(function(){
         '</div>',
         placement: 'left'
     });
+
     $('#product-1-popover').click(function() {
         $('#product-1-modal').modal('show');
-    })
-           
+    });
 
     $('#product-2-popover').popover({
         trigger: 'hover',
@@ -298,6 +298,12 @@ $(document).ready(function(){
         '<div>Parameter 5 is verified</div>'+
         '</div>',
         placement: 'left'
+    });
+
+    // browse products
+    $('.trigger-browse').click(function(e) {
+        e.preventDefault();
+        $('.browse-product-modal').modal('show');
     });
 
 });

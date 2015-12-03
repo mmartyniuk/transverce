@@ -201,8 +201,8 @@
                                         <td>
                                             <dl>
                                                 <dt class="product-name">Product Name A</dt>
+                                                <dd class="product-desc">Exclusive Fee Pro's shor description, this description is a little longer than others and has three lines</dd>
                                             </dl>
-                                            <dd class="product-desc">Exclusive Fee Pro's shor description, this description is a little longer than others and has three lines</dd>
                                         </td>
                                         <td><span class="product-type">Subscription</span></td>
                                         <td><span class="product-list-price">Monthly / <span class="product-list-price-value">225.00</span></span></td>
@@ -218,8 +218,8 @@
                                         <td>
                                             <dl>
                                                 <dt class="product-name">Product Name B</dt>
+                                                <dd class="product-desc">Another Exclusive Fee Pro's shor description, this description is shorter than previous</dd>
                                             </dl>
-                                            <dd class="product-desc">Another Exclusive Fee Pro's shor description, this description is shorter than previous</dd>
                                         </td>
                                         <td><span class="product-type">Subscription</span></td>
                                         <td><span class="product-list-price">Monthly / <span class="product-list-price-value">50.00</span></span></td>
@@ -235,8 +235,8 @@
                                         <td>
                                             <dl>
                                                 <dt class="product-name">Product Name C</dt>
+                                                <dd class="product-desc">This description is very short</dd>
                                             </dl>
-                                            <dd class="product-desc">This description is very short</dd>
                                         </td>
                                         <td><span class="product-type">Subscription</span></td>
                                         <td><span class="product-list-price">Monthly / <span class="product-list-price-value">100.00</span></span></td>
@@ -260,7 +260,7 @@
                                     </select>
                                     <span class="product-option-divider">or</span>
                                     <div class="product-select-browse">
-                                        <a class="btn btn-default" href="#">Browse</a>
+                                        <a class="btn btn-default trigger-browse" href="#">Browse</a>
                                     </div>
                                     <div class="product-select-cancel hidden">
                                         <a class="btn btn-default" href="#">Cancel</a>
@@ -833,6 +833,298 @@
            </div>
         </div>
         <!-- Product Name A modal end -->
+        <!-- Browse Products -->
+        <div class="modal fade browse-product-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="padding-18-container">
+                            <span class="modal-browse-title"><strong>Browse Products</strong></span>
+                            <button type="button" class="close text-left" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#catalog-tab" data-toggle="tab"><span class="tab-title"><strong>PRODUCT CATALOG</strong> 235</span></a>
+                            </li>
+                            <li>
+                                <a href="#selected-products-tab" data-toggle="tab"><span class="tab-title"><strong>SELECTED PRODUCTS</strong> 5</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-body row">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="catalog-tab">
+                                <div class="side-content col-md-3">
+                                    <div class="side-divider">
+                                        <strong>FILTER</strong>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="filter-name">BY NAME</label>
+                                        <input type="text" class="form-control" id="filter-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="filter-type">BY TYPE</label>
+                                        <select id="filter-type" class="form-control">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="filter-category">BY CATEGORY</label>
+                                        <select id="filter-category" class="form-control">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="filter-tags">BY TAGS</label>
+                                        <select id="filter-tags" class="form-control">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group clear-filter">
+                                        <a href="#" class="btn btn-default">Clear All Filters</a>
+                                    </div>
+                                </div>
+                                <div class="browse-content col-md-9">
+                                    <table class="table">
+                                        <thead>
+                                            <tr class="browse-heading">
+                                                <th class="col-md-6">Name</th>
+                                                <th class="col-md-3">List Price (USD)</th>
+                                                <th class="col-md-3">In Selection</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="selection-vertical">
+                                                    <dl>
+                                                        <dt class="product-name">Product Name A</dt>
+                                                        <dd class="product-desc">Exclusive Fee Pro's shor description, this 
+                                                        description is a little longer than others and has three lines</dd>
+                                                    </dl>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <dl>
+                                                        <dd class="padding-5">Monthly (225.00)</dd>
+                                                        <dd class="padding-5">Yearly (2250.00)</dd>
+                                                    </dl>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <dl>
+                                                        <dd>
+                                                            <div class="selection-container padding-5">
+                                                                <a href="#" class="selection-plus">
+                                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                                </a>
+                                                                <span class="selection-number"> 0 </span>
+                                                                <a href="#" class="selection-minus">
+                                                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                                                </a>
+                                                            </div>
+                                                        </dd>
+                                                        <dd>
+                                                            <div class="selection-container padding-5">
+                                                                <a href="#" class="selection-plus">
+                                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                                </a>
+                                                                <span class="selection-number"> 0 </span>
+                                                                <a href="#" class="selection-minus">
+                                                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                                                </a>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <dl>
+                                                        <dt class="product-name">SRID Product 1</dt>
+                                                        <dd class="product-desc">SRID product short description</dd>
+                                                    </dl>
+                                                </td>
+                                                <td>
+                                                    <dl>
+                                                        <dd>Monthly (25.00)</dd>
+                                                    </dl>
+                                                </td>
+                                                <td>
+                                                    <dl>
+                                                        <dd>
+                                                            <div class="selection-container">
+                                                                <a href="#" class="selection-plus">
+                                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                                </a>
+                                                                <span class="selection-number"> 0 </span>
+                                                                <a href="#" class="selection-minus">
+                                                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                                                </a>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <dl>
+                                                        <dt class="product-name">Exclusive Pro 1</dt>
+                                                        <dd class="product-desc">Exclusive Fee's short description</dd>
+                                                    </dl>
+                                                </td>
+                                                <td>
+                                                    <dl>
+                                                        <dd>Monthly (50.00)</dd>
+                                                    </dl>
+                                                </td>
+                                                <td>
+                                                    <dl>
+                                                        <dd>
+                                                            <div class="selection-container">
+                                                                <a href="#" class="selection-plus">
+                                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                                </a>
+                                                                <span class="selection-number"> 0 </span>
+                                                                <a href="#" class="selection-minus">
+                                                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                                                </a>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <dl>
+                                                        <dt class="product-name">Exclusive Pro 2</dt>
+                                                        <dd class="product-desc">Exclusive Fee's short description</dd>
+                                                    </dl>
+                                                </td>
+                                                <td>
+                                                    <dl>
+                                                        <dd>Monthly (50.00)</dd>
+                                                    </dl>
+                                                </td>
+                                                <td>
+                                                    <dl>
+                                                        <dd>
+                                                            <div class="selection-container">
+                                                                <a href="#" class="selection-plus">
+                                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                                </a>
+                                                                <span class="selection-number"> 0 </span>
+                                                                <a href="#" class="selection-minus">
+                                                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                                                </a>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <dl>
+                                                        <dt class="product-name">Exclusive Pro 3</dt>
+                                                        <dd class="product-desc">Exclusive Fee's short description</dd>
+                                                    </dl>
+                                                </td>
+                                                <td>
+                                                    <dl>
+                                                        <dd>Monthly (50.00)</dd>
+                                                    </dl>
+                                                </td>
+                                                <td>
+                                                    <dl>
+                                                        <dd>
+                                                            <div class="selection-container">
+                                                                <a href="#" class="selection-plus">
+                                                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                                                </a>
+                                                                <span class="selection-number"> 0 </span>
+                                                                <a href="#" class="selection-minus">
+                                                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                                                </a>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="selected-products-tab">
+                                <div class="browse-content padding-30">
+                                    <table class="table">
+                                        <thead class="row">
+                                            <tr class="browse-heading">
+                                                <th class="col-md-4">Name</th>
+                                                <th class="col-md-2">Type</th>
+                                                <th class="col-md-2">Category</th>
+                                                <th class="col-md-2">Tags</th>
+                                                <th class="col-md-2">In Selection</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="selection-vertical">
+                                                    <dl>
+                                                        <dt class="product-name">Exclusive Pro 2</dt>
+                                                        <dd class="product-desc">Exclusive Fee's short description</dd>
+                                                    </dl>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <span>Subscription</span>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <span>Category 1</span>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <span>Tag1, Tag2</span>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <input type="text" value="1">
+                                                    <span class="desc-remove"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="selection-vertical">
+                                                    <dl>
+                                                        <dt class="product-name">Product Name A</dt>
+                                                        <dd class="product-desc">Exclusive Fee Pro's shor description, this 
+                                                        description is a little longer than others and has three lines</dd>
+                                                    </dl>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <span>Subscription</span>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <span>Category 1</span>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <span>Tag1, Tag2</span>
+                                                </td>
+                                                <td class="selection-vertical">
+                                                    <input type="text" value="1">
+                                                    <span class="desc-remove"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-2">
+                                <a href="#" class="btn btn-default">Cancel</a>
+                                <a href="#" class="btn btn-primary">Add to Order</a>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+           </div>
+        </div>
+        <!-- Browse Products end -->
         
         <!-- jQuery, custom scripts  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
