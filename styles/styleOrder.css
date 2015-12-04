@@ -24,6 +24,23 @@ section {
     margin-top: 10px;
 }
 
+h4 {
+    font-size: 17px;
+    margin-top: 0;
+}
+section .bg-danger {
+    background-color: #F9F2F4;
+    color: #D0021B;
+    padding: 4px 0;
+    margin-top: 18px;
+}
+.navbar.container-fluid .nav > li > a {
+    padding: 14px 12px;
+}
+.padding-right-5 {
+    padding-right: 5px;
+}
+
 .col-5 {
     width: 45%;
     padding-left: 15px;
@@ -378,11 +395,22 @@ h1 {
     line-height: 1.6;
 }
 
-.account-header.padding-content .btn.btn-default.change-account{
+.account-header.padding-content .btn.btn-default.change-account, .btn.btn-default.trigger-browse, .product-select-cancel .btn.btn-default {
     margin-left: 11px;
     padding: 5px 13px;
-    border: #999;
+    border-color: #999;
     color: #999;
+}
+.btn.btn-default.trigger-browse, .btn.btn-default.product-select-cancel {
+    margin-left: 0;
+}
+
+.order-table table.table tbody tr td.total-container {
+    padding-left: 28px;
+}
+
+.dropdown-menu {
+    min-width: 150px;
 }
 
 .dropdown-menu > li > a {
@@ -410,10 +438,21 @@ h1 {
 #additional-options {
     margin-top: -5px;
     font-size: 13px;
+    border-color: #999;
+    color: #000;
+    background-color: #f8f8f8;
 }
 
-.input-group.date {
-    padding-bottom: 10px;
+#additional-options .glyphicon{
+    color: #999;
+}
+
+.additional-fields-wrapper .input-group.date {
+    padding-bottom: 0;
+}
+
+.additional-fields-wrapper .form-group > .col-md-8 input {
+    width: 63%;
 }
 
 .date-icon {
@@ -442,27 +481,26 @@ h1 {
 }
 
 .order-table {
-    margin-top: 20px;
+    padding: 0 6px 0 16px;
 }
 
 .order-table table tr td {
-    border-bottom: 2px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .order-table table tr td:last-child span {
-    font-size: 20px;
+    font-size: 23px;
     color: #00f;
-    padding-left: 22px;
+    padding-left: 15px;
     cursor: pointer;
 }
 
-.order-table table tr td:last-child span:last-child {
-    font-size: 20px;
-    color: #00f;
+.order-table .total-container {
+    padding: 9px 10px 10px 38px;
 }
 
 .order-table table tr td input {
-    width: 50%;
+    width: 85%;
 }
 
 .input-group.date .input-group-addon {
@@ -479,10 +517,6 @@ h1 {
 
 #date {
     max-width: 165px;
-}
-
-.table > thead > tr {
-    background: #fff;
 }
 
 .tt-menu {
@@ -529,6 +563,40 @@ h1 {
     padding-left: 40px;
     padding-right: 40px;
 }
+
+/*table*/
+.col-th-1 {
+    width: 37%; 
+}
+.col-th-2, .col-th-4, .col-th-7 {
+    width: 10%;
+}
+.col-th-3 {
+    width: 15.7%;
+}
+.col-th-5 {
+    width: 8%;
+}
+.col-th-6 {
+    width: 9.5%;
+}
+.order-table {
+    margin-top: 7px;
+}
+.order-table .table > thead > tr > th {
+    padding: 5px 6px 3px 16px;
+}
+.order-table {
+    font-size: 13px;
+}
+.order-table table.table tbody tr td {
+    vertical-align: middle;
+    padding: 8px 10px 10px 16px;
+}
+.order-table td > dl {
+    margin-bottom: 0;
+}
+/*table end*/
 
 /* select2 */
 .account-edit .select2-container {

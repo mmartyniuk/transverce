@@ -184,21 +184,23 @@
                 <section class="col-md-12 padding-content">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3>Order Items</h3>
-                            <!--<a class="btn btn-default" href="#">Add Product</a>-->
+                            <h4>Order Items</h4>
+                        </div>
+                        <div class="col-md-12 padding-right-5">
+                            <p class="bg-danger text-center">It seems that there is still one or two items to configure</p>
                         </div>
                     </div>
-                    <div class="row order-table padding-content">
+                    <div class="row order-table">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th class="col-md-3">Name</th>
-                                        <th class="col-md-2">Type</th>
-                                        <th class="col-md-2">List Price (USD)</th>
-                                        <th class="col-md-2">Order Price</th>
-                                        <th class="col-md-1">Quantity</th>
-                                        <th class="col-md-1">Total (USD)</th>
-                                        <th class="col-md-1">Configure</th>
+                                        <th class="col-th-1">Name</th>
+                                        <th class="col-th-2">Type</th>
+                                        <th class="col-th-3">List Price (USD)</th>
+                                        <th class="col-th-4">Order Price</th>
+                                        <th class="col-th-5">Quantity</th>
+                                        <th class="col-th-6">Total (USD)</th>
+                                        <th class="col-th-7">Configure</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -213,10 +215,9 @@
                                         <td><span class="product-list-price">Monthly / <span class="product-list-price-value">225.00</span></span></td>
                                         <td><input type="text" value="225" class="product-order-price"></td>
                                         <td><input type="text" value="1" class="product-qty"></td>
-                                        <td><span class="product-total">225.00</span></td>
+                                        <td class="total-container"><span class="product-total">225.00</span></td>
                                         <td>
                                             <span class="glyphicon glyphicon-cog" aria-hidden="true" id="product-1-popover"></span>
-                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                         </td>
                                     </tr>
                                     <tr class="product2 hidden">
@@ -230,10 +231,9 @@
                                         <td><span class="product-list-price">Monthly / <span class="product-list-price-value">50.00</span></span></td>
                                         <td><input type="text" value="50" class="product-order-price"></td>
                                         <td><input type="text" value="2" class="product-qty"></td>
-                                        <td><span class="product-total">100.00</span></td>
+                                        <td class="total-container"><span class="product-total">100.00</span></td>
                                         <td>
                                             <span class="glyphicon glyphicon-cog" aria-hidden="true" id="product-2-popover"></span>
-                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                         </td>
                                     </tr>
                                     <tr class="product3 hidden">
@@ -247,10 +247,9 @@
                                         <td><span class="product-list-price">Monthly / <span class="product-list-price-value">100.00</span></span></td>
                                         <td><input type="text" value="100" class="product-order-price"></td>
                                         <td><input type="text" value="1" class="product-qty"></td>
-                                        <td><span class="product-total">100.00</span></td>
+                                        <td class="total-container"><span class="product-total">100.00</span></td>
                                         <td>
                                             <span class="glyphicon glyphicon-cog" aria-hidden="true" id="product-3-popover"></span>
-                                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -275,8 +274,8 @@
                         </div>
                         <div class="row bottom-buttons">
                             <div class="col-md-12 text-right padding-content">
-                                <button class="btn btn-lg btn-default">Save As Draft</button>
-                                <button class="btn btn-lg btn-primary">Next</button>
+                                <button class="btn btn-default">Save As Draft</button>
+                                <button class="btn btn-primary">Next</button>
                             </div>
                         </div>
                     </div>
