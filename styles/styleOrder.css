@@ -37,6 +37,7 @@ section .bg-danger {
 .navbar.container-fluid .nav > li > a {
     padding: 14px 12px;
 }
+.additional-options-expanded
 .padding-right-5 {
     padding-right: 5px;
 }
@@ -1136,3 +1137,132 @@ h1 {
 }
 
 /* Configuration Pop-up end*/
+
+table.order-details-table.table > tbody > tr > td {
+    padding: 1px 2px 2px 30px;
+    border: none;
+    font-size: 13px;
+}
+.order-details-table tr td:first-child {
+    color: #999;
+}
+a.btn.btn-default.configuration-hide {
+    padding: 5px 13px;
+    border-color: #999;
+    color: #000; 
+    background-color: #F8F8F8;
+}
+.order-details-summary-container {
+    padding-right: 40px;
+    padding-top: 20px;
+}
+/* .order-last as a prefix */
+.order-last .order-account-info {
+    padding-top: 6px;
+}
+.order-last .order-account-info dt {
+    padding-bottom: 6px;
+}
+.order-last .additional-fields-wrapper {
+    padding: 11px 0 0 0;
+}
+.col-th-last-1 {
+    width: 32%;
+}
+.col-th-last-2, .col-th-last-3 {
+    width: 8%;
+}
+.col-th-last-4 {
+    width: 10%;
+}
+.col-th-last-5 {
+    width: 40%;
+}
+.order-last .order-details-summary.table {
+    font-size: 13px;
+}
+.order-last .product-desc {
+    padding-bottom: 10px;
+}
+.order-last .table > tbody > tr > td {
+    border: 1px solid #ddd;
+}
+.order-details-summary-container .table.order-details-summary tbody tr td.configuration-container {
+    padding: 0;
+}
+.order-details-summary-container .table.order-details-summary tbody tr td.configuration-container dl {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+
+}
+.order-details-summary-container .table.order-details-summary tbody tr td.configuration-container dl:last-child {
+    padding: 10px;
+    border-bottom: none;
+}
+
+.order-details-summary-container .table.order-details-summary tbody tr td.configuration-container dl dt, .order-control.table > tbody > tr > td dl dt {
+    color: #999;
+    font-weight: normal;
+}
+.order-summary {
+    padding-top: 20px;
+}
+.order-summary-section {
+    padding-right: 40px;
+    padding-top: 20px;
+}
+.order-control.table > thead > tr > th {
+    padding-right: 20px;
+}
+.order-control.table > tbody > tr > td {
+    padding-right: 18px;
+}
+.order-control.table > tbody > tr > td dl {
+    margin-bottom: 0;
+}
+.order-control.table > tbody > tr > td, .order-control.table > tbody > tr > td dl dt {
+    border: none;
+}
+.order-control.table > tbody > tr > td dl dt {
+    width: auto;
+    display: inline;
+    float: none;
+    clear: none;
+    padding-right: 16px;
+}
+.order-control.table > tbody > tr > td dl dd {
+    display: inline-block;
+    margin-left: 0;
+}
+.col-cs-8 {
+    width: 74%;
+}
+.col-cs-2 {
+    width: 13%;
+}
+.pre-footer-section {
+    padding-top: 20px;
+}
+.add-payment {
+    padding-top: 10px;
+}
+.add-payment a.btn.btn-default, footer .row a.btn.btn-default {
+    color: #000;
+    background-color: #F8F8F8;
+    border-color: #999;
+}
+
+.order-divider {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    background-color: #999;
+}
+footer .col-md-3.col-md-offset-8.text-right {
+    padding-right: 40px;
+}
+footer .row.padding-content {
+    margin: 0;
+    padding-left: 26px;
+    padding-right: 26px;
+}

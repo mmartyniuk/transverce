@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Create order step 2</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        
+        <!-- Custom css files -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/styleOrder.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- Account page -->
+        <nav class="navbar container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="assets/logo.png"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group row">
+                            <input type="text" class="form-control search" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-link">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                    <li class="active"><a href="#" class="letter-spacing"><i class="fa fa-plus"></i> Create</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Douglas Johnson <span class="caret"></span></a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <div class="container-fluid order-last" id="account">
+            <aside id="nav-container" class="visible-lg">
+                <ul id="nav">
+                    <li class="dropdown active">
+                        <a href=""><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href=""><i class="fa fa-users"></i><span>Accounts</span></a>
+                    </li>
+                </ul>
+            </aside>
+            <div class="main-content row">
+                <header class="padding-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h1>New Order</h1>
+                        </div>
+                    </div>
+                </header>
+                <section class="account-header padding-content">
+                    <div class="row">
+                        <div class="col-5 section-title">
+                            <h3>
+                                <span>Account</span>
+                            </h3>
+                        </div>
+                        <div class="col-7 section-title padding-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>
+                                        <span>Order Details</span>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 padding-content">
+                            <dl class="order-account-info">
+                                <dt>
+                                    <span class="account-name">Account with autopayment (770)</span>
+                                </dt>
+                                <dd id="account-address">620 Congress avenue</dd>
+                                <dd id="account-address-general">Austin, TX 78071 USA</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6 additional-fields-wrapper">
+                            <div class="col-md-8">
+                                <table class="table order-details-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-right">Order Date</td>
+                                            <td class="text-left">20/10/2015 (Today)</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Order Number</td>
+                                            <td class="text-left">123435423</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Order Status</td>
+                                            <td class="text-left">Draft</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Purchase Order</td>
+                                            <td class="text-left">23123423</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-right">Sales Referal</td>
+                                            <td class="text-left">Dough Johnson</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-md-12 padding-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Order Items</h4>
+                        </div>
+                        <div class="col-md-6 text-right padding-content">
+                            <a href="#" class="btn btn-default configuration-hide">Hide Configuration</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 order-details-summary-container">
+                            <table class="table order-details-summary">
+                                <thead>
+                                    <tr>
+                                        <th class="col-th-last-1">Item Summary</th>
+                                        <th class="col-th-last-2">Order Price</th>
+                                        <th class="col-th-last-3">Quantity</th>
+                                        <th class="col-th-last-4">Item Total</th>
+                                        <th class="col-th-last-5 text-center">Configuration</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <dl>
+                                                <dt class="product-name">Product Name A</dt>
+                                                <dd class="product-desc">Exclusive Fee Pro's shor description, this description is a little longer than others and has three lines</dd>
+                                                <dt class="product-name">Type: Subscription</dt>
+                                                <dt class="product-name">List Price (Monthly): 225.00 USD</dt>
+                                            </dl>
+                                        </td>
+                                        <td>225.00</td>
+                                        <td class="text-center">1</td>
+                                        <td>225.00</td>
+                                        <td class="configuration-container">
+                                            <dl class="dl-horizontal">
+                                                <dt>Service Agreement</dt>
+                                                <dd>Name: Sample Agreement</dd>
+                                                <dd>Agreement Period: 12 Months</dd>
+                                                <dd>End Date: 02/20/2016</dd>
+                                                <dd>End Action: Renew Action</dd>
+                                                <dd>Preserve price: No</dd>
+                                            </dl>
+                                            <dl class="dl-horizontal">
+                                                <dt>Scheduled Charges</dt>
+                                                <dd>Month 1 Jan 1, 2016 USD 125.00</dd>
+                                                <dd>Month 2 Jan 2, 2016 EUR 100.00</dd>
+                                            </dl>
+                                            <dl class="dl-horizontal">
+                                                <dt>Trial Period</dt>
+                                                <dd>30 days</dd>
+                                            </dl>
+                                            <dl class="dl-horizontal">
+                                                <dt>Discount Code</dt>
+                                                <dd>Astound Bonus Discount 10%</dd>
+                                                <dd>3 Service Periods</dd>
+                                            </dl>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <dl>
+                                                <dt class="product-name">Product Name B</dt>
+                                                <dd class="product-desc">Exclusive Fee Pro's shor description, this description is a little longer than others and has three lines</dd>
+                                                <dt class="product-name">Type: Subscription</dt>
+                                                <dt class="product-name">List Price (Monthly): 225.00 USD</dt>
+                                            </dl>
+                                        </td>
+                                        <td>50.00</td>
+                                        <td class="text-center">2</td>
+                                        <td>100.00</td>
+                                        <td class="configuration-container">
+                                            <dl class="dl-horizontal">
+                                                <dt>Service Agreement</dt>
+                                                <dd>Name: Sample Agreement</dd>
+                                                <dd>Agreement Period: 6 Months</dd>
+                                                <dd>End Date: 01/02/2015</dd>
+                                                <dd>End Action: Renew Action</dd>
+                                                <dd>Preserve price: Yes</dd>
+                                            </dl>
+                                            <dl class="dl-horizontal">
+                                                <dt>Notes</dt>
+                                                <dd>Payment on purchase required</dd>
+                                                <dd>3 Service Periods</dd>
+                                            </dl>
+                                            <dl class="dl-horizontal">
+                                                <dt>Preserve Price</dt>
+                                                <dd>No</dd>
+                                            </dl>
+                                            <dl class="dl-horizontal">
+                                                <dt>Service Resource</dt>
+                                                <dd>SRDI-SV0045</dd>
+                                            </dl>
+                                            <dl class="dl-horizontal">
+                                                <dt>Trial Period</dt>
+                                                <dd>15 days</dd>
+                                            </dl>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>  
+                <section class="col-md-12 padding-content pre-footer-section">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Order Summary</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 order-summary-section">
+                            <table class="table order-control">
+                                <thead>
+                                    <tr>
+                                        <th class="col-cs-8 text-right">Sub Total</th>
+                                        <th class="col-cs-2 text-right">Tax</th>
+                                        <th class="col-cs-2 text-right">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-right">
+                                            <dl class="dl-horizontal text-right">
+                                                <dt>Order Ammount (May Be Priorated)</dt>
+                                                <dd>8.525 USD</dd>
+                                            </dl>
+                                        </td>
+                                        <td class="text-right">522.57 USD</td>
+                                        <td class="text-right">9045.00 USD</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">
+                                            <dl class="dl-horizontal text-right">
+                                                <dt>Amount due now</dt>
+                                                <dd>100.00 USD</dd>
+                                            </dl>
+                                        </td>
+                                        <td class="text-right">100.00 USD</td>
+                                        <td class="text-right">5.00 USD</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-right add-payment">
+                                <a href="#" class="btn btn-default">Add Payment</a>
+                            </div>
+                            <hr class="order-divider"></hr>
+                        </div>
+                    </div>
+                </section> 
+                <footer>
+                    <div class="row padding-content">
+                        <div class="col-md-1">
+                            <a href="#" class="btn btn-default">Back</a>
+                        </div>
+                        <div class="col-md-3 col-md-offset-8 text-right">
+                            <a href="#" class="btn btn-default">Void Order</a>
+                            <a href="#" class="btn btn-primary">Place Order</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
